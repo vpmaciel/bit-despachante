@@ -1,0 +1,296 @@
+package erp.negocio.cartorio;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import erp.arquitetura.Sis;
+import erp.arquitetura.gui.ConfiguracaoGui;
+import erp.arquitetura.gui.EntradaMaiuscula;
+import erp.arquitetura.gui.EntradaMinuscula;
+import erp.arquitetura.gui.FocoEvento;
+import erp.arquitetura.gui.Gui;
+import erp.arquitetura.gui.ToolBar;
+
+@SuppressWarnings("serial")
+public final class CartorioPainelCad extends JPanel implements Gui {
+
+	private ConfiguracaoGui configuracaoGui;
+	private JTextField fieldBairro;
+	private JTextField fieldCep;
+	private JTextField fieldCidade;
+	private JTextField fieldCNPJ;
+	private JTextField fieldComarca;
+	private JTextField fieldComplemento;
+	private JTextField fieldDistrito;
+	private JTextField fieldEmail;
+	private JTextField fieldEstado;
+	private JTextField fieldFax;
+	private JTextField fieldFone1;
+	private JTextField fieldFone2;
+	private JTextField fieldLogradouro;
+	private JTextField fieldMunicipio;
+	private JTextField fieldNomeFantasia;
+	private JTextField fieldPais;
+	private JTextField fieldRazaoSocial;
+	private JTextField fieldSite;
+	private JTextField fieldSubstituto;
+	private JTextField fieldTitular;
+	private ToolBar toolBar;
+
+	public CartorioPainelCad() {
+		iniciarLayout();
+		iniciarGui();
+		iniciarFocoControlador();
+		iniciarGuiControlador();
+	}
+
+	@Override
+	public void atualizarTable() {
+	}
+
+	@Override
+	public ConfiguracaoGui getConfiguracaoGui() {
+		return configuracaoGui;
+	}
+
+	public JTextField getGuiBairro() {
+		return fieldBairro;
+	}
+
+	public JTextField getGuiCep() {
+		return fieldCep;
+	}
+
+	public JTextField getGuiCidade() {
+		return fieldCidade;
+	}
+
+	public JTextField getGuiCnpj() {
+		return fieldCNPJ;
+	}
+
+	public JTextField getGuiComarca() {
+		return fieldComarca;
+	}
+
+	public JTextField getGuiComplemento() {
+		return fieldComplemento;
+	}
+
+	public JTextField getGuiDistrito() {
+		return fieldDistrito;
+	}
+
+	public JTextField getGuiEmail() {
+		return fieldEmail;
+	}
+
+	public JTextField getGuiEstado() {
+		return fieldEstado;
+	}
+
+	public JTextField getGuiFax() {
+		return fieldFax;
+	}
+
+	public JTextField getGuiFone1() {
+		return fieldFone1;
+	}
+
+	public JTextField getGuiFone2() {
+		return fieldFone2;
+	}
+
+	public JTextField getGuiLogradouro() {
+		return fieldLogradouro;
+	}
+
+	public JTextField getGuiMunicipio() {
+		return fieldMunicipio;
+	}
+
+	public JTextField getGuiPais() {
+		return fieldPais;
+	}
+
+	public JTextField getGuiRazaoSocial() {
+		return fieldRazaoSocial;
+	}
+
+	public JTextField getGuiSite() {
+		return fieldSite;
+	}
+
+	public JTextField getGuiSubstituto() {
+		return fieldSubstituto;
+	}
+
+	public JTextField getGuiTitular() {
+		return fieldTitular;
+	}
+
+	public JTextField getNomeGuiFantasia() {
+		return fieldNomeFantasia;
+	}
+
+	public ToolBar getTB() {
+		return toolBar;
+	}
+
+	@Override
+	public void iniciarControlador() {
+	}
+
+	@Override
+	public void iniciarFocoControlador() {
+		new FocoEvento(this);
+	}
+
+	@Override
+	public void iniciarGui() {
+		toolBar = new ToolBar();
+
+		this.add(toolBar.getTB());
+
+		add(new JLabel("NOME FANTASIA"));
+
+		fieldNomeFantasia = new JTextField();
+		fieldNomeFantasia.setDocument(new EntradaMaiuscula(50));
+		add(fieldNomeFantasia);
+
+		add(new JLabel("RAZÃO SOCIAL"));
+
+		fieldRazaoSocial = new JTextField();
+		fieldRazaoSocial.setDocument(new EntradaMaiuscula(50));
+		add(fieldRazaoSocial);
+
+		add(new JLabel("COMARCA"));
+
+		fieldComarca = new JTextField();
+		fieldComarca.setDocument(new EntradaMaiuscula(50));
+		add(fieldComarca);
+
+		add(new JLabel("MUNICÍPIO"));
+
+		fieldMunicipio = new JTextField();
+		fieldMunicipio.setDocument(new EntradaMaiuscula(50));
+		add(fieldMunicipio);
+
+		add(new JLabel("DISTRITO"));
+
+		fieldDistrito = new JTextField();
+		fieldDistrito.setDocument(new EntradaMaiuscula(50));
+		add(fieldDistrito);
+
+		add(new JLabel("TITULAR"));
+
+		fieldTitular = new JTextField();
+		fieldTitular.setDocument(new EntradaMaiuscula(50));
+		add(fieldTitular);
+
+		add(new JLabel("SUBISTITUTO"));
+
+		fieldSubstituto = new JTextField();
+		fieldSubstituto.setDocument(new EntradaMaiuscula(50));
+		add(fieldSubstituto);
+
+		add(new JLabel("CNPJ"));
+
+		fieldCNPJ = new JTextField();
+		add(fieldCNPJ);
+
+		add(new JLabel("TELEFONE"));
+
+		fieldFone1 = new JTextField();
+		add(fieldFone1);
+
+		add(new JLabel("TELEFONE"));
+
+		fieldFone2 = new JTextField();
+		add(fieldFone2);
+
+		add(new JLabel("FAX"));
+		fieldFax = new JTextField();
+		add(fieldFax);
+
+		add(new JLabel("E-MAIL"));
+
+		fieldEmail = new JTextField();
+		fieldEmail.setDocument(new EntradaMinuscula(50));
+		add(fieldEmail);
+
+		add(new JLabel("SITE"));
+
+		fieldSite = new JTextField();
+		fieldSite.setDocument(new EntradaMinuscula(50));
+		add(fieldSite);
+
+		add(new JLabel("PAÍS"));
+
+		fieldPais = new JTextField();
+		fieldPais.setDocument(new EntradaMaiuscula(50));
+		add(fieldPais);
+
+		add(new JLabel("ESTADO"));
+
+		fieldEstado = new JTextField();
+		fieldEstado.setDocument(new EntradaMaiuscula(50));
+		add(fieldEstado);
+
+		add(new JLabel("CIDADE"));
+		fieldCidade = new JTextField();
+		fieldCidade.setDocument(new EntradaMaiuscula(50));
+		add(fieldCidade);
+
+		add(new JLabel("BAIRRO"));
+
+		fieldBairro = new JTextField();
+		fieldBairro.setDocument(new EntradaMaiuscula(50));
+		add(fieldBairro);
+
+		add(new JLabel("LOGRADOURO"));
+
+		fieldLogradouro = new JTextField();
+		fieldLogradouro.setDocument(new EntradaMaiuscula(50));
+		add(fieldLogradouro);
+
+		add(new JLabel("COMPLEMENTO"));
+
+		fieldComplemento = new JTextField();
+		fieldComplemento.setDocument(new EntradaMaiuscula(20));
+		add(fieldComplemento);
+
+		add(new JLabel("CEP"));
+
+		fieldCep = new JTextField();
+		add(fieldCep);
+
+	}
+
+	@Override
+	public void iniciarGuiControlador() {
+		configuracaoGui = new ConfiguracaoGui(this);
+	}
+
+	@Override
+	public void iniciarLayout() {
+		setBorder(Sis.getBordaPainel());
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+	}
+
+	@Override
+	public void iniciarTabela() {
+	}
+
+	@Override
+	public void limparGui() {
+		configuracaoGui.limparGui();
+	}
+
+	@Override
+	public void reiniciarGui() {
+
+	}
+}
