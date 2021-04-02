@@ -38,7 +38,7 @@ public class Arquivo {
 
 	public static void salvarConfiguracoes() {
 		try {
-			File file = new File("depto.cfg");
+			File file = new File("depto.txt");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
