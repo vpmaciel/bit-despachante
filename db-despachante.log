@@ -1,0 +1,26 @@
+/*C5*/SET SCHEMA PUBLIC
+drop table Atividade if exists
+drop table Empresa if exists
+drop table Evento if exists
+drop table Marca if exists
+drop table Pessoa if exists
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Atividade (id bigint not null, nome varchar(15), senha varchar(100), primary key (id))
+create table Empresa (id bigint not null, nome varchar(15), senha varchar(100), primary key (id))
+create table Evento (id bigint not null, data varchar(10), descricao varchar(50), horaInicio varchar(5), horaTermino varchar(5), tipoEvento varchar(5), primary key (id))
+create table Marca (id bigint not null, descricao varchar(100), primary key (id))
+create table Pessoa (id bigint not null, nome varchar(15), senha varchar(100), primary key (id))
+alter table Atividade add constraint INDEX_USUARIO_NOME unique (nome)
+alter table Marca add constraint INDEX_DESCRICAO unique (descricao)
+INSERT INTO MARCA VALUES(1,'A')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT
+/*C7*/SET SCHEMA PUBLIC
+DELETE FROM MARCA WHERE ID=1
+INSERT INTO MARCA VALUES(1,'BBBBB')
+COMMIT
+/*C10*/SET SCHEMA PUBLIC
+DELETE FROM MARCA WHERE ID=1
+INSERT INTO MARCA VALUES(1,'BBBBBDDDDD')
+COMMIT
