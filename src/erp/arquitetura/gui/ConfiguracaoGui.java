@@ -1,9 +1,9 @@
 package erp.arquitetura.gui;
 
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +27,10 @@ public final class ConfiguracaoGui extends Container {
 			this.componentList = this.getAllComponents(container);
 
 			for (Component comp : this.componentList) {
+				
+				comp.setFont(new Font("Arial", Font.PLAIN, 14));
 				if (comp instanceof JLabel) {
-					JLabel label = (JLabel) comp;
-					label.setBackground(new Color(185, 104, 6));
+					JLabel label = (JLabel) comp;					
 					label.setPreferredSize(new Dimension(620, 30));
 					label.setMinimumSize(new Dimension(620, 30));
 					label.setSize(new Dimension(620, 30));

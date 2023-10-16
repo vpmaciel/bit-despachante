@@ -62,7 +62,7 @@ public class Sis {
 	}
 
 	public static String getNomeSistema() {
-		return "BIT - AGENDA";
+		return "BIT - DESPACHANTE";
 	}
 
 	public static Cursor getNovaJanelaCursor() {

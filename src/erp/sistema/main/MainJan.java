@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
 import erp.arquitetura.Sis;
@@ -33,11 +32,10 @@ public class MainJan extends JFrame {
 	private JMenu menuCadastro;
 	private JMenuItem menuItemAjudaSobreSistema;	
 	private JMenuItem menuItemArquivoSair;	
-	private JMenuItem menuItemCadastroPessoa;
-	private JMenuItem menuItemCadastroEvento;
-	private JMenuItem menuItemCadastroEmpresa;
-	private JMenuItem menuItemCadastroAtividade;
-	private JMenuItem menuItemCadastroConta;
+	private JMenuItem menuItemCadastroCliente;
+	private JMenuItem menuItemCadastroVeiculo;
+	private JMenuItem menuItemCadastroServico;	
+	private JMenuItem menuItemCadastroPedidoPlaca;	
 	
 		public MainJan() {
 		iniciarGui();
@@ -64,34 +62,35 @@ public class MainJan extends JFrame {
 		return menuItemArquivoSair;
 	}	
 
-	public JMenuItem getMenuItemCadastroPessoa() {
-		return menuItemCadastroPessoa;
+	public JMenuItem getMenuItemCadastroCliente() {
+		return menuItemCadastroCliente;
 	}
 
-	public JMenuItem getMenuItemCadastroEvento() {
-		return menuItemCadastroEvento;
-	}
-
-	public JMenuItem getMenuItemCadastroEmpresa() {
-		return menuItemCadastroEmpresa;
+	public JMenuItem getMenuItemCadastroVeiculo() {
+		return menuItemCadastroVeiculo;
 	}
 	
-	public JMenuItem getMenuItemCadastroConta() {
-		return menuItemCadastroConta;
+	public JMenuItem getMenuItemCadastroPedidoPlaca() {
+		return menuItemCadastroPedidoPlaca;
+	}
+
+	public JMenuItem getMenuItemCadastroServico() {
+		return menuItemCadastroServico;
 	}
 
 	public void iniciarCont() {
 		mainControl = MainControl.getInstance(this);		
 		addWindowListener(mainControl.new FrameGerenteEventos());
 		menuItemArquivoSair.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroEvento.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroConta.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroEmpresa.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroPessoa.addActionListener(mainControl.new MenuGerenteEventos());
+		menuItemCadastroVeiculo.addActionListener(mainControl.new MenuGerenteEventos());
+		menuItemCadastroPedidoPlaca.addActionListener(mainControl.new MenuGerenteEventos());
+		menuItemCadastroServico.addActionListener(mainControl.new MenuGerenteEventos());
+		menuItemCadastroCliente.addActionListener(mainControl.new MenuGerenteEventos());
 		menuItemAjudaSobreSistema.addActionListener(mainControl.new MenuGerenteEventos());
 	}
 
 	private void iniciarGui() {
+		setTitle(Sis.getNomeSistema() + " - " + "PRINCIPAL");
 		setIconImage(Imagem.getLogoTipoImage());
 		setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		setMinimumSize(Sis.getTamanhoJanela());
@@ -110,22 +109,19 @@ public class MainJan extends JFrame {
 
 		menuCadastro = new JMenu("Cadastro");
 		menuCadastro.setMnemonic('C');
-		
-		menuItemCadastroAtividade = new JMenuItem("Atividade");
-		menuCadastro.add(menuItemCadastroAtividade);		
 				
-		menuItemCadastroConta = new JMenuItem("Conta");
-		menuCadastro.add(menuItemCadastroConta);
+		menuItemCadastroPedidoPlaca = new JMenuItem("Pedido de Placa");
+		menuCadastro.add(menuItemCadastroPedidoPlaca);
 		
-		menuItemCadastroEmpresa = new JMenuItem("Empresa");
-		menuCadastro.add(menuItemCadastroEmpresa);
+		menuItemCadastroServico = new JMenuItem("Serviço");
+		menuCadastro.add(menuItemCadastroServico);
 		
-		menuItemCadastroEvento = new JMenuItem("Evento");
-		menuCadastro.add(menuItemCadastroEvento);
+		menuItemCadastroVeiculo = new JMenuItem("Veículo");
+		menuCadastro.add(menuItemCadastroVeiculo);
 
-		menuItemCadastroPessoa = new JMenuItem("Pessoa");
-		menuCadastro.add(menuItemCadastroPessoa);					
-		
+		menuItemCadastroCliente = new JMenuItem("Cliente");
+		menuCadastro.add(menuItemCadastroCliente);
+				
 		menuBar.add(menuCadastro);
 
 		menuAjuda = new JMenu("Ajuda");

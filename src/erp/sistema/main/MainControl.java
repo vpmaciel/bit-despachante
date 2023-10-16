@@ -1,6 +1,7 @@
 package erp.sistema.main;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -8,14 +9,11 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
-import erp.sistema.atividade.AtividadeJan;
-import erp.sistema.empresa.EmpresaJanCad;
-import erp.sistema.evento.EventoJanCad;
-import erp.sistema.evento.EventoJanPesq;
-import erp.sistema.pessoa.PessoaJanCad;
-import erp.veiculo.marca.MarcaJanCad;
+import erp.cliente.ClienteJan;
+import erp.pedido.placa.PedidoPlacaJan;
+import erp.servico.ServicoJan;
+import erp.veiculo.VeiculoJan;
 
 public final class MainControl {
 
@@ -49,59 +47,58 @@ public final class MainControl {
 				if (Msg.confirmarSairDoSistema() == 0) {
 					System.exit(0);
 				}
+			}		
+			if (actionEvent.getSource() == mainJan.getMenuItemCadastroPedidoPlaca()) {
+				mostrarFrame(pedidoPlacaJan);
 			}
-			if (actionEvent.getSource() == mainJan.getMenuItemCadastroEmpresa()) {
-				mostrarFrame(eventoJanCad);
+			if (actionEvent.getSource() == mainJan.getMenuItemCadastroServico()) {
+				mostrarFrame(servicoJan);
 			}
-			
-			if (actionEvent.getSource() == mainJan.getMenuItemCadastroConta()) {
-				mostrarFrame(marcaJanCad);
+			if (actionEvent.getSource() == mainJan.getMenuItemCadastroCliente()) {
+				mostrarFrame(clienteJan);
+			}
+			if (actionEvent.getSource() == mainJan.getMenuItemCadastroVeiculo()) {
+				mostrarFrame(veiculoJan);
 			}
 		}
 	}
 	
-	private static AtividadeJan atividadeJan;
-	private static EventoJanCad eventoJanCad;
-	private static EmpresaJanCad empresaJanCad;
-	private static EventoJanPesq eventoJanPesq;
-	private static PessoaJanCad pessoaJanCad;
+	
+	
 	private static MainControl mainControl;
 	private static MainJan mainJan;
-	private static MarcaJanCad marcaJanCad;
-	
-	public static MarcaJanCad getMarcaJan() {
-		return marcaJanCad;
-	}
+	private static PedidoPlacaJan pedidoPlacaJan;
+	private static ServicoJan servicoJan;
+	private static ClienteJan clienteJan;
+	private static VeiculoJan veiculoJan;
 
-	public static EventoJanCad getAgendaEventoJanCad() {
-		return eventoJanCad;
-	}
-	
-	public static EmpresaJanCad getEmpresaJan() {
-		return empresaJanCad;
-	}
-
-	public static EventoJanPesq getAgendaEventoJanPesq() {
-		return eventoJanPesq;
-	}
-	
-	public static PessoaJanCad getPessoaJan() {
-		return pessoaJanCad;
-	}
 
 	public static synchronized MainControl getInstance(MainJan mainJan) {
 		if (mainControl == null) {			
 			return new MainControl(mainJan);
 		}
 		return mainControl;
+	}	
+	
+	public static PedidoPlacaJan getPedidoPlacaJan() {
+		return pedidoPlacaJan;
 	}
-
-	public static MainJan getMainJan() {
+	
+	public static VeiculoJan getVeiculoJan() {
+		return veiculoJan;
+	}
+	
+	
+	public static ClienteJan getClienteJan() {
+		return clienteJan;
+	}
+	
+	public static ServicoJan getServicoJan() {
+		return servicoJan;
+	}
+	
+		public static MainJan getMainJan() {
 		return mainJan;
-	}
-
-	public static AtividadeJan getAtividadeJan() {
-		return atividadeJan;
 	}
 
 	public static void mostrarFrame(JFrame frame) {
@@ -114,8 +111,7 @@ public final class MainControl {
 
 	private MainControl(MainJan mainJan) {
 		MainControl.mainJan = mainJan;
-		criarFrames();
-		setTitulo();
+		criarFrames();		
 	}
 
 	private void criarFrame(JFrame frame) {
@@ -123,28 +119,17 @@ public final class MainControl {
 		frame.setVisible(false);
 	}
 
-	private void criarFrames() {
-		atividadeJan = new AtividadeJan();
-		criarFrame(atividadeJan);
-
-		eventoJanCad = new EventoJanCad();
-		criarFrame(eventoJanCad);
-
-		eventoJanPesq = new EventoJanPesq();
-		criarFrame(eventoJanPesq);
+	private void criarFrames() {			
+		pedidoPlacaJan = new PedidoPlacaJan();
+		criarFrame(pedidoPlacaJan);
 		
-		marcaJanCad = new MarcaJanCad();
-		criarFrame(marcaJanCad);
-	}
-
-	private String getTitulo(String titulo) {
-		return Sis.getNomeSistema() + " - " + titulo;
-	}
-	
-	private void setTitulo() {
-		MainControl.getAgendaEventoJanCad().setTitle(getTitulo("EVENTO"));
-		MainControl.getAgendaEventoJanPesq().setTitle(getTitulo("EVENTO"));
-		MainControl.getMainJan().setTitle(getTitulo("PRINCIPAL"));
-		MainControl.getMarcaJan().setTitle(getTitulo("MARCA DE VEÍCULO"));
+		servicoJan = new ServicoJan();
+		criarFrame(pedidoPlacaJan);
+		
+		clienteJan = new ClienteJan();
+		criarFrame(clienteJan);
+		
+		veiculoJan = new VeiculoJan();
+		criarFrame(veiculoJan);
 	}
 }

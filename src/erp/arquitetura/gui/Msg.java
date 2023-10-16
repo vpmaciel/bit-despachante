@@ -70,7 +70,7 @@ public final class Msg {
 			JOptionPane.showMessageDialog(null, "Registros encontrados: " + totalPesquisaRegistro, "Informação",
 					JOptionPane.INFORMATION_MESSAGE);
 		} else {
-			JOptionPane.showMessageDialog(null, "Registro não encontrado !", "Informação", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Registro não encontrado !", "Informação", JOptionPane.WARNING_MESSAGE);
 		}
 	}
 
