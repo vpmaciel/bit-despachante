@@ -10,12 +10,13 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import erp.arquitetura.Data;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
 
 public class ClienteArqCsv {
 
-	private final String arquivo = "cliente.csv";
+	private final String arquivo = Data.getDataHoraArquivo() + "cliente.csv";
 
 	private BufferedWriter bufferedWriter = null;
 	private final String CSV_SEPARATOR = Sis.getCsvSeparador();

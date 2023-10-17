@@ -83,8 +83,6 @@ final class ClienteControl {
 				e.printStackTrace();
 			}
 
-			
-			
 		}
 	}
 
@@ -284,16 +282,16 @@ final class ClienteControl {
 
 	}
 
-	public Cliente getConta() {
-		return cliente;
-	}
-
 	public ClienteJan getCienteJanCad() {
 		return MainControl.getClienteJan();
 	}
 
 	public ClientePainelCad getClientePainelCad() {
 		return MainControl.getClienteJan().getContaPainelCad();
+	}
+
+	public Cliente getConta() {
+		return cliente;
 	}
 
 	public void setModelo(Cliente cliente) {

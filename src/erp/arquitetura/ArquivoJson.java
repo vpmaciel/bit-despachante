@@ -26,7 +26,7 @@ public class ArquivoJson<Tipo> {
 
 	public ArquivoJson(Tipo tipo, String nome) {
 		this.tipo = tipo;
-		arquivo = Sis.getCaminhoApp() + nome + ".json";
+		arquivo = Sis.getCaminhoApp() + Data.getDataHoraArquivo() + nome + ".json";
 	}
 
 	public List<Tipo> getListTipo() {
@@ -65,14 +65,6 @@ public class ArquivoJson<Tipo> {
 		return listTipo;
 	}
 
-	public void setListTipo(List<Tipo> listTipo) {
-		this.listTipo = listTipo;
-	}
-
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
-	}
-	
 	public File retornarArquivo(boolean abrirArquivo) {
 
 		try {
@@ -86,5 +78,13 @@ public class ArquivoJson<Tipo> {
 		}
 
 		return file;
+	}
+
+	public void setListTipo(List<Tipo> listTipo) {
+		this.listTipo = listTipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
 	}
 }

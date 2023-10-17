@@ -49,14 +49,6 @@ public final class ServicoJan extends JFrame implements Gui {
 		return configuracaoGui;
 	}
 
-	public ServicoPainelCad getPanelConta() {
-		return marcaPainelCad;
-	}
-
-	public JTabbedPane getTabbedPane() {
-		return tabbedPane;
-	}
-
 	public ServicoControl getContaCont() {
 		return marcaControl;
 	}
@@ -67,6 +59,14 @@ public final class ServicoJan extends JFrame implements Gui {
 
 	public ServicoPainelPesq getContaPainelPesq() {
 		return marcaPainelPesq;
+	}
+
+	public ServicoPainelCad getPanelConta() {
+		return marcaPainelCad;
+	}
+
+	public JTabbedPane getTabbedPane() {
+		return tabbedPane;
 	}
 
 	@Override
@@ -84,6 +84,8 @@ public final class ServicoJan extends JFrame implements Gui {
 		marcaPainelCad.getTB().getRegistrosBtn().addActionListener(marcaControl.new Registro());
 		marcaPainelCad.getTB().getCsvBtn().addActionListener(marcaControl.new FormatoCsv());
 		marcaPainelCad.getTB().getJsonBtn().addActionListener(marcaControl.new FormatoJson());
+		marcaPainelCad.getTB().getFecharCaixaBtn().setVisible(true);
+		marcaPainelCad.getTB().getFecharCaixaBtn().addActionListener(marcaControl.new FechaCaixa());
 
 		marcaPainelPesq.iniciarControlador();
 	}

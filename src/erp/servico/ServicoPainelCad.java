@@ -24,7 +24,6 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 	private JTextField fieldNomeCliente;
 	private JTextField fieldTelefoneCliente;
 	private ToolBar toolBar;
-	private ServicoControl marcaControl;
 
 	public ServicoPainelCad() {
 		iniciarLayout();
@@ -42,16 +41,40 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 		return configuracaoGui;
 	}
 
+	public JTextField getGuiCpfCnpjCliente() {
+		return fieldCpfCnpjCliente;
+	}
+
+	public JTextField getGuiData() {
+		return fieldData;
+	}
+
 	public JTextField getGuiDescricao() {
 		return fieldDescricao;
+	}
+
+	public JTextField getGuiNomeCliente() {
+		return fieldNomeCliente;
+	}
+
+	public JTextField getGuiPlaca() {
+		return fieldPlaca;
+	}
+
+	public JTextField getGuiTelefoneCliente() {
+		return fieldTelefoneCliente;
+	}
+
+	public JTextField getGuiValor() {
+		return fieldValor;
 	}
 
 	public ToolBar getTB() {
 		return toolBar;
 	}
 
-	public ServicoControl getUsuarioCont() {
-		return marcaControl;
+	public ToolBar getToolBar() {
+		return toolBar;
 	}
 
 	@Override
@@ -73,7 +96,7 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 		add(new JLabel("DATA"));
 
 		fieldData = new JTextField();
-		fieldData.setDocument(new EntradaMaiuscula(10));
+		fieldData.setEnabled(false);
 		add(fieldData);
 
 		add(new JLabel("PLACA DO VEÍCULO"));
@@ -127,6 +150,7 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 
 	@Override
 	public void iniciarTabela() {
+
 	}
 
 	@Override
@@ -136,5 +160,7 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 
 	@Override
 	public void reiniciarGui() {
+
 	}
+
 }

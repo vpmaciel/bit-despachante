@@ -1,10 +1,12 @@
 package erp.servico;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
+import erp.arquitetura.Data;
 import erp.arquitetura.util.TabelaModelo;
 
 @SuppressWarnings("serial")
@@ -16,7 +18,10 @@ public class ServicoTm extends AbstractTableModel {
 	private static TabelaModelo tabelaModelo = new TabelaModelo();
 	static {
 		tabelaModelo.adicionarColuna("ID", 0, 50);
-		tabelaModelo.adicionarColuna("DESCRIÇÃO", 1, 500);
+		tabelaModelo.adicionarColuna("DATA", 1, 100);
+		tabelaModelo.adicionarColuna("PLACA DO VEÍCULO", 2, 100);
+		tabelaModelo.adicionarColuna("DESCRIÇÃO DO SERVIÇO", 3, 500);
+		tabelaModelo.adicionarColuna("VALOR", 4, 100);
 
 		largura = new int[tabelaModelo.getTotalColunas()];
 		podeEditar = new boolean[tabelaModelo.getTotalColunas()];
@@ -44,8 +49,16 @@ public class ServicoTm extends AbstractTableModel {
 			return Long.class;
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
+		if (tabelaModelo.getNome(columnIndex).equals("DATA")) {
+			return Date.class;
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO") || tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
 			return String.class;
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("VALOR DO SERVIÇO")) {
+			return Float.class;
 		}
 
 		return String.class;
@@ -61,9 +74,8 @@ public class ServicoTm extends AbstractTableModel {
 		return tabelaModelo.getNome(column);
 	}
 
-	@Override
-	public int getRowCount() {
-		return marcaList.size();
+	public List<Servico> getContaList() {
+		return marcaList;
 	}
 
 	public Servico getMarca(int linha) {
@@ -73,8 +85,9 @@ public class ServicoTm extends AbstractTableModel {
 		return null;
 	}
 
-	public List<Servico> getContaList() {
-		return marcaList;
+	@Override
+	public int getRowCount() {
+		return marcaList.size();
 	}
 
 	@Override
@@ -85,8 +98,20 @@ public class ServicoTm extends AbstractTableModel {
 			return marca.getId();
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
+		if (tabelaModelo.getNome(columnIndex).equals("DATA")) {
+			return marca.getData();
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
+			return marca.getPlaca();
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
 			return marca.getDescricao();
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("VALOR DO SERVIÇO")) {
+			return marca.getValor();
 		}
 
 		return marca;
@@ -109,8 +134,20 @@ public class ServicoTm extends AbstractTableModel {
 			marca.setId(Long.parseLong(aValue.toString()));
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
+		if (tabelaModelo.getNome(columnIndex).equals("DATA")) {
+			marca.setData(Data.retornaData(aValue.toString()));
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
+			marca.setPlaca(aValue.toString());
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
 			marca.setDescricao(aValue.toString());
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("VALOR DO SERVIÇO")) {
+			marca.setValor(Float.parseFloat(aValue.toString()));
 		}
 
 		fireTableDataChanged();

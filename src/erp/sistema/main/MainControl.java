@@ -69,6 +69,10 @@ public final class MainControl {
 	private static ClienteJan clienteJan;
 	private static VeiculoJan veiculoJan;
 
+	public static ClienteJan getClienteJan() {
+		return clienteJan;
+	}
+
 	public static synchronized MainControl getInstance(MainJan mainJan) {
 		if (mainControl == null) {
 			return new MainControl(mainJan);
@@ -76,24 +80,20 @@ public final class MainControl {
 		return mainControl;
 	}
 
+	public static MainJan getMainJan() {
+		return mainJan;
+	}
+
 	public static PedidoPlacaJan getPedidoPlacaJan() {
 		return pedidoPlacaJan;
-	}
-
-	public static VeiculoJan getVeiculoJan() {
-		return veiculoJan;
-	}
-
-	public static ClienteJan getClienteJan() {
-		return clienteJan;
 	}
 
 	public static ServicoJan getServicoJan() {
 		return servicoJan;
 	}
 
-	public static MainJan getMainJan() {
-		return mainJan;
+	public static VeiculoJan getVeiculoJan() {
+		return veiculoJan;
 	}
 
 	public static void mostrarFrame(JFrame frame) {

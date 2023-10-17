@@ -32,7 +32,7 @@ final class ServicoSel implements ListSelectionListener {
 					ServicoTm marcaTm = (ServicoTm) table.getModel();
 					marcaTm.getMarca(table.getSelectedRow());
 
-					MainControl.mostrarFrame(MainControl.getPedidoPlacaJan());
+					MainControl.mostrarFrame(MainControl.getServicoJan());
 					MainControl.getServicoJan().getContaCont().setModelo(ServicoFac.getRegistro(marca));
 					MainControl.getServicoJan().getContaCont().atualizarGui();
 					MainControl.getServicoJan().setFocusable(true);

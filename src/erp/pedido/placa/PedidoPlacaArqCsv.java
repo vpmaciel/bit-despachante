@@ -10,12 +10,12 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import erp.arquitetura.Data;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
-import erp.pedido.placa.PedidoPlaca;
 
 public class PedidoPlacaArqCsv {
-	private final String arquivo = "pedido-de-placa.csv";
+	private final String arquivo = Data.getDataHoraArquivo() + "pedido-de-placa.csv";
 
 	private BufferedWriter bufferedWriter = null;
 	private final String CSV_SEPARATOR = Sis.getCsvSeparador();

@@ -17,6 +17,7 @@ public class ToolBar {
 	JButton buttonRegistros = new JButton(Imagem.getRegistros());
 	JButton buttonRelatorio = new JButton(Imagem.getRelatorio());
 	JButton buttonSalvar = new JButton(Imagem.getSalva());
+	JButton buttonFecharCaixa = new JButton(Imagem.getFecharCaixa());
 
 	JToolBar toolBar = new JToolBar();
 
@@ -57,6 +58,10 @@ public class ToolBar {
 
 		buttonRelatorio.setToolTipText("Relatório");
 		toolBar.add(buttonRelatorio);
+
+		buttonFecharCaixa.setToolTipText("Fechar Caixa");
+		buttonFecharCaixa.setVisible(false);
+		toolBar.add(buttonFecharCaixa);
 	}
 
 	public JButton getCsvBtn() {
@@ -65,6 +70,10 @@ public class ToolBar {
 
 	public JButton getExcluirBtn() {
 		return buttonExclui;
+	}
+
+	public JButton getFecharCaixaBtn() {
+		return buttonFecharCaixa;
 	}
 
 	public JButton getHomeBtn() {

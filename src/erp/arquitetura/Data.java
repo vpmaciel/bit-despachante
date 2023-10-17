@@ -3,6 +3,7 @@ package erp.arquitetura;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
@@ -111,7 +112,21 @@ public class Data {
 		return data;
 	}
 
+	public static Date retornaData(String dataString) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date data = null;
+		try {
+			data = dateFormat.parse(dataString);
+			System.out.println("Data convertida: " + data);
+		} catch (java.text.ParseException e) {
+			e.printStackTrace();
+		}
+
+		return data;
+	}
+
 	private Data() {
 
 	}
+
 }

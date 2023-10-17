@@ -38,6 +38,13 @@ public class ClienteTm extends AbstractTableModel {
 		clienteList.addAll(lista);
 	}
 
+	public Cliente getCliente(int linha) {
+		if (clienteList.size() > 0) {
+			return clienteList.get(linha);
+		}
+		return null;
+	}
+
 	@Override
 	public Class<?> getColumnClass(int columnIndex) {
 
@@ -45,11 +52,7 @@ public class ClienteTm extends AbstractTableModel {
 			return Long.class;
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
-			return String.class;
-		}
-
-		if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
+		if (tabelaModelo.getNome(columnIndex).equals("NOME") || tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
 			return String.class;
 		}
 
@@ -66,20 +69,13 @@ public class ClienteTm extends AbstractTableModel {
 		return tabelaModelo.getNome(column);
 	}
 
+	public List<Cliente> getContaList() {
+		return clienteList;
+	}
+
 	@Override
 	public int getRowCount() {
 		return clienteList.size();
-	}
-
-	public Cliente getCliente(int linha) {
-		if (clienteList.size() > 0) {
-			return clienteList.get(linha);
-		}
-		return null;
-	}
-
-	public List<Cliente> getContaList() {
-		return clienteList;
 	}
 
 	@Override

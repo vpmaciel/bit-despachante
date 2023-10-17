@@ -36,8 +36,8 @@ public class Relatorio {
 
 			PdfPTable head = new PdfPTable(1);
 			PdfPCell cell = new PdfPCell(new Paragraph(titulo, font));
-			cell.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
-			cell.setVerticalAlignment(PdfPCell.ALIGN_CENTER);
+			cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+			cell.setVerticalAlignment(Element.ALIGN_CENTER);
 			cell.setBorder(0);
 			head.addCell(cell);
 			head.setTotalWidth(page.getWidth() - document.leftMargin() - document.rightMargin());

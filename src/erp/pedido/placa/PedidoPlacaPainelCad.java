@@ -15,14 +15,14 @@ import erp.arquitetura.gui.ToolBar;
 @SuppressWarnings("serial")
 public final class PedidoPlacaPainelCad extends JPanel implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;	
+	private ConfiguracaoGui configuracaoGui;
 	private JTextField fieldPlaca;
 	private JTextField fieldTipoPlaca;
 	private JTextField fieldCorPlaca;
 	private JTextField fieldCpfCnpjProprietario;
 	private JTextField fieldRenavam;
 	private JTextField fieldQuantidade;
-	private ToolBar toolBar;	
+	private ToolBar toolBar;
 
 	public PedidoPlacaPainelCad() {
 		iniciarLayout();
@@ -39,11 +39,35 @@ public final class PedidoPlacaPainelCad extends JPanel implements Gui {
 	public ConfiguracaoGui getConfiguracaoGui() {
 		return configuracaoGui;
 	}
-	
+
+	public JTextField getGuiCorPlaca() {
+		return fieldCorPlaca;
+	}
+
+	public JTextField getGuiCpfCnpjProprietario() {
+		return fieldCpfCnpjProprietario;
+	}
+
+	public JTextField getGuiPlaca() {
+		return fieldPlaca;
+	}
+
+	public JTextField getGuiQuantidade() {
+		return fieldQuantidade;
+	}
+
+	public JTextField getGuiRenavam() {
+		return fieldRenavam;
+	}
+
+	public JTextField getGuiTipoPlaca() {
+		return fieldTipoPlaca;
+	}
+
 	public ToolBar getTB() {
 		return toolBar;
 	}
-	
+
 	@Override
 	public void iniciarControlador() {
 
@@ -111,7 +135,7 @@ public final class PedidoPlacaPainelCad extends JPanel implements Gui {
 
 	@Override
 	public void iniciarTabela() {
-	
+
 	}
 
 	@Override
@@ -121,32 +145,7 @@ public final class PedidoPlacaPainelCad extends JPanel implements Gui {
 
 	@Override
 	public void reiniciarGui() {
-	
+
 	}
 
-	public JTextField getGuiPlaca() {
-		return fieldPlaca;
-	}
-
-	public JTextField getGuiTipoPlaca() {
-		return fieldTipoPlaca;
-	}
-
-	public JTextField getGuiCorPlaca() {
-		return fieldCorPlaca;
-	}
-
-	public JTextField getGuiCpfCnpjProprietario() {
-		return fieldCpfCnpjProprietario;
-	}
-
-	public JTextField getGuiRenavam() {
-		return fieldRenavam;
-	}
-
-	public JTextField getGuiQuantidade() {
-		return fieldQuantidade;
-	}
-	
-	
 }

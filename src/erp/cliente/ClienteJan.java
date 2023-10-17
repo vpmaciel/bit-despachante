@@ -44,21 +44,13 @@ public final class ClienteJan extends JFrame implements Gui {
 
 	}
 
+	public ClienteControl getClienteCont() {
+		return clienteControl;
+	}
+
 	@Override
 	public ConfiguracaoGui getConfiguracaoGui() {
 		return configuracaoGui;
-	}
-
-	public ClientePainelCad getPanelConta() {
-		return clientePainelCad;
-	}
-
-	public JTabbedPane getTabbedPane() {
-		return tabbedPane;
-	}
-
-	public ClienteControl getClienteCont() {
-		return clienteControl;
 	}
 
 	public ClientePainelCad getContaPainelCad() {
@@ -67,6 +59,14 @@ public final class ClienteJan extends JFrame implements Gui {
 
 	public ClientePainelPesq getContaPainelPesq() {
 		return clientePainelPesq;
+	}
+
+	public ClientePainelCad getPanelConta() {
+		return clientePainelCad;
+	}
+
+	public JTabbedPane getTabbedPane() {
+		return tabbedPane;
 	}
 
 	@Override

@@ -66,16 +66,16 @@ public class MainJan extends JFrame {
 		return menuItemCadastroCliente;
 	}
 
-	public JMenuItem getMenuItemCadastroVeiculo() {
-		return menuItemCadastroVeiculo;
-	}
-
 	public JMenuItem getMenuItemCadastroPedidoPlaca() {
 		return menuItemCadastroPedidoPlaca;
 	}
 
 	public JMenuItem getMenuItemCadastroServico() {
 		return menuItemCadastroServico;
+	}
+
+	public JMenuItem getMenuItemCadastroVeiculo() {
+		return menuItemCadastroVeiculo;
 	}
 
 	public void iniciarCont() {

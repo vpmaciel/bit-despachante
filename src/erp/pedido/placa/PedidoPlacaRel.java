@@ -25,7 +25,7 @@ public class PedidoPlacaRel {
 	private PdfWriter writer = null;
 	private Font font = new Font(Font.FontFamily.COURIER, 8, Font.NORMAL);
 
-	public PedidoPlacaRel(List<PedidoPlaca> marcas) {
+	public PedidoPlacaRel(List<PedidoPlaca> pedidoList) {
 
 		try {
 			writer = PdfWriter.getInstance(document, new FileOutputStream(arquivo));
@@ -33,17 +33,17 @@ public class PedidoPlacaRel {
 
 			long contador = 1;
 
-			for (PedidoPlaca marca : marcas) {
+			for (PedidoPlaca pedido : pedidoList) {
 				relatorio.getCabecalho(writer, document, "PEDIDO DE PLACA");
-				document.add(new Paragraph("DATA: " + marca.getData(), font));
-				document.add(new Paragraph("QUANTIDADE: " + marca.getQuantidade(), font));
-				document.add(new Paragraph("PLACA DO VEÍCULO: " + marca.getPlaca(), font));
-				document.add(new Paragraph("COR DA PLACA: " + marca.getCorPlaca(), font));
-				document.add(new Paragraph("TIPO DE PLACA: " + marca.getTipoPlaca(), font));
-				document.add(new Paragraph("CPF | CNPJ DO PROPRIETÁRIO: " + marca.getCpfCnpjProprietario(), font));
-				document.add(new Paragraph("RENAVAM: " + marca.getRenavam(), font));
+				document.add(new Paragraph("DATA: " + pedido.getData(), font));
+				document.add(new Paragraph("QUANTIDADE: " + pedido.getQuantidade(), font));
+				document.add(new Paragraph("PLACA DO VEÍCULO: " + pedido.getPlaca(), font));
+				document.add(new Paragraph("COR DA PLACA: " + pedido.getCorPlaca(), font));
+				document.add(new Paragraph("TIPO DE PLACA: " + pedido.getTipoPlaca(), font));
+				document.add(new Paragraph("CPF | CNPJ DO PROPRIETÁRIO: " + pedido.getCpfCnpjProprietario(), font));
+				document.add(new Paragraph("RENAVAM: " + pedido.getRenavam(), font));
 				relatorio.getRodape(writer, document);
-				if (contador < marcas.size()) {
+				if (contador < pedidoList.size()) {
 					document.newPage();
 				}
 				contador++;
@@ -56,9 +56,6 @@ public class PedidoPlacaRel {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Relatório não pode ser gerado !", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
-
-		
-		
 	}
 
 	public File retornarRelatorio() {

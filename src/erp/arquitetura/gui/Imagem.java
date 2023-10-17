@@ -57,6 +57,11 @@ public class Imagem {
 		return imageIcon;
 	}
 
+	public static ImageIcon getFecharCaixa() {
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/delete_sign_32px.png"));
+		return imageIcon;
+	}
+
 	public static ImageIcon getGrafico() {
 		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/combo_chart_32px.png"));
 		return imageIcon;

@@ -48,7 +48,7 @@ final class ServicoImp implements ServicoDao {
 			entityManager = Jpa.getEntityManagerFactory().createEntityManager();
 			entityTransaction = entityManager.getTransaction();
 			entityTransaction.begin();
-			Query query = entityManager.createQuery("select T from Marca T order by T.descricao", Servico.class);
+			Query query = entityManager.createQuery("select T from Servico T order by T.data", Servico.class);
 			marcaList = query.getResultList();
 		} catch (Exception exception) {
 			exception.printStackTrace();
@@ -121,7 +121,9 @@ final class ServicoImp implements ServicoDao {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("telefoneCliente"), marca.getTelefoneCliente()));
 			}
 
-			predicateList.add(criteriaBuilder.equal(rootMarca.get("valor"), marca.getValor()));
+			if (marca.getValor() != null) {
+				predicateList.add(criteriaBuilder.equal(rootMarca.get("valor"), marca.getValor()));
+			}
 
 			criteriaQuery.select(rootMarca).where(predicateList.toArray(new Predicate[] {}));
 

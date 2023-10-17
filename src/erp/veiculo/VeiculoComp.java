@@ -8,7 +8,7 @@ public final class VeiculoComp {
 
 		@Override
 		public int compare(Object o1, Object o2) {
-			return ((Veiculo) o1).getDescricao().compareTo(((Veiculo) o2).getDescricao());
+			return ((Veiculo) o1).getMarca().compareTo(((Veiculo) o2).getMarca());
 		}
 	}
 }

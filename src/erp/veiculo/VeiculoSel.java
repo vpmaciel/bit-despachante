@@ -23,17 +23,17 @@ final class VeiculoSel implements ListSelectionListener {
 			int[] selRows = table.getSelectedRows();
 			TableModel tm = table.getModel();
 			if (selRows.length > 0) {
-				Veiculo marcaPesquisaRegistro = new Veiculo();
-				marcaPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], VeiculoTm.ID));
+				Veiculo veiculoPesquisaRegistro = new Veiculo();
+				veiculoPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], VeiculoTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					Veiculo marca = ((List<Veiculo>) VeiculoFac.pesquisarRegistro(marcaPesquisaRegistro))
+					Veiculo veiculo = ((List<Veiculo>) VeiculoFac.pesquisarRegistro(veiculoPesquisaRegistro))
 							.get(table.getSelectedRow());
-					VeiculoTm marcaTm = (VeiculoTm) table.getModel();
-					marcaTm.getMarca(table.getSelectedRow());
+					VeiculoTm veiculoTm = (VeiculoTm) table.getModel();
+					veiculoTm.getMarca(table.getSelectedRow());
 
-					MainControl.mostrarFrame(MainControl.getPedidoPlacaJan());
-					MainControl.getVeiculoJan().getVeiculoCont().setModelo(VeiculoFac.getRegistro(marca));
+					MainControl.mostrarFrame(MainControl.getVeiculoJan());
+					MainControl.getVeiculoJan().getVeiculoCont().setModelo(VeiculoFac.getRegistro(veiculo));
 					MainControl.getVeiculoJan().getVeiculoCont().atualizarGui();
 					MainControl.getVeiculoJan().setFocusable(true);
 					MainControl.getVeiculoJan().getTabbedPane().setSelectedIndex(0);

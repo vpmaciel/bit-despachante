@@ -52,8 +52,8 @@ public class ClienteRel {
 			JOptionPane.showMessageDialog(null, "Arquivo não encontrado !", "Erro", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Relatório não pode ser gerado !", "Erro", JOptionPane.ERROR_MESSAGE);
-		}	
-		
+		}
+
 	}
 
 	public File retornarRelatorio() {

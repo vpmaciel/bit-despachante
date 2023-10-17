@@ -41,92 +41,87 @@ public class PedidoPlaca implements Serializable {
 	@Column(length = 50, name = "PEDIDO_DE_PLACA_TIPO_PLACA")
 	private String tipoPlaca;
 
-
-	public Long getId() {
-		return id;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if ((obj == null) || (getClass() != obj.getClass()))
+			return false;
+		PedidoPlaca other = (PedidoPlaca) obj;
+		return Objects.equals(id, other.id);
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getRenavam() {
-		return renavam;
-	}
-
-	public void setRenavam(String renavam) {
-		this.renavam = renavam;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public String getPlaca() {
-		return placa;
-	}
-
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-
-	public Integer getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
+	public String getCorPlaca() {
+		return corPlaca;
 	}
 
 	public String getCpfCnpjProprietario() {
 		return cpfCnpjProprietario;
 	}
 
-	public void setCpfCnpjProprietario(String cpfCnpjCliente) {
-		this.cpfCnpjProprietario = cpfCnpjCliente;
-	}
-	
-	public String getCorPlaca() {
-		return corPlaca;
+	public Date getData() {
+		return data;
 	}
 
-	public void setCorPlaca(String corPlaca) {
-		this.corPlaca = corPlaca;
+	public Long getId() {
+		return id;
 	}
 
-	
+	public String getPlaca() {
+		return placa;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public String getRenavam() {
+		return renavam;
+	}
+
 	public String getTipoPlaca() {
 		return tipoPlaca;
 	}
-
-	public void setTipoPlaca(String tipoPlaca) {
-		this.tipoPlaca = tipoPlaca;
-	}
-
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PedidoPlaca other = (PedidoPlaca) obj;
-		return Objects.equals(id, other.id);
+	public void setCorPlaca(String corPlaca) {
+		this.corPlaca = corPlaca;
+	}
+
+	public void setCpfCnpjProprietario(String cpfCnpjCliente) {
+		this.cpfCnpjProprietario = cpfCnpjCliente;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public void setRenavam(String renavam) {
+		this.renavam = renavam;
+	}
+
+	public void setTipoPlaca(String tipoPlaca) {
+		this.tipoPlaca = tipoPlaca;
 	}
 
 	@Override
 	public String toString() {
-		return this.renavam;
+		return this.placa;
 	}
 }

@@ -27,11 +27,11 @@ public class Servico implements Serializable {
 	private Long id = null;
 	@Column(name = "SERVICO_DATA", columnDefinition = "date")
 	@Temporal(TemporalType.DATE)
-	private Date data;
+	private Date data = new Date();
 	@Column(length = 7, name = "SERVICO_PLACA_VEICULO")
 	private String placa;
 	@Column(name = "SERVICO_VALOR")
-	private float valor;
+	private Float valor;
 	@Column(length = 50, name = "SERVICO_DESCRICAO")
 	private String descricao;
 	@Column(length = 18, name = "SERVICO_CPF_CNPJ_CLIENTE")
@@ -41,68 +41,46 @@ public class Servico implements Serializable {
 	@Column(length = 50, name = "SERVICO_TELEFONE_CLIENTE")
 	private String telefoneCliente;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public String getPlaca() {
-		return placa;
-	}
-
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-
-	public float getValor() {
-		return valor;
-	}
-
-	public void setValor(float valor) {
-		this.valor = valor;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if ((obj == null) || (getClass() != obj.getClass()))
+			return false;
+		Servico other = (Servico) obj;
+		return Objects.equals(id, other.id);
 	}
 
 	public String getCpfCnpjCliente() {
 		return cpfCnpjCliente;
 	}
 
-	public void setCpfCnpjCliente(String cpfCnpjCliente) {
-		this.cpfCnpjCliente = cpfCnpjCliente;
+	public Date getData() {
+		return data;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getNomeCliente() {
 		return nomeCliente;
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
+	public String getPlaca() {
+		return placa;
 	}
 
 	public String getTelefoneCliente() {
 		return telefoneCliente;
 	}
 
-	public void setTelefoneCliente(String telefoneCliente) {
-		this.telefoneCliente = telefoneCliente;
+	public Float getValor() {
+		return valor;
 	}
 
 	@Override
@@ -110,16 +88,36 @@ public class Servico implements Serializable {
 		return Objects.hash(id);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Servico other = (Servico) obj;
-		return Objects.equals(id, other.id);
+	public void setCpfCnpjCliente(String cpfCnpjCliente) {
+		this.cpfCnpjCliente = cpfCnpjCliente;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public void setTelefoneCliente(String telefoneCliente) {
+		this.telefoneCliente = telefoneCliente;
+	}
+
+	public void setValor(Float valor) {
+		this.valor = valor;
 	}
 
 	@Override

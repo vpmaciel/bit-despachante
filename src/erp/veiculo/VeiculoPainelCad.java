@@ -16,15 +16,13 @@ import erp.arquitetura.gui.ToolBar;
 public final class VeiculoPainelCad extends JPanel implements Gui {
 
 	private ConfiguracaoGui configuracaoGui;
-	private JTextField fieldData;
 	private JTextField fieldPlaca;
-	private JTextField fieldValor;
-	private JTextField fieldDescricao;
-	private JTextField fieldCpfCnpjCliente;
-	private JTextField fieldNomeCliente;
-	private JTextField fieldTelefoneCliente;
+	private JTextField fieldMarca;
+	private JTextField fieldNomeProprietario;
+	private JTextField fieldCpfCnpjProprietario;
+	private JTextField fieldModelo;
+
 	private ToolBar toolBar;
-	private VeiculoControl marcaControl;
 
 	public VeiculoPainelCad() {
 		iniciarLayout();
@@ -42,16 +40,28 @@ public final class VeiculoPainelCad extends JPanel implements Gui {
 		return configuracaoGui;
 	}
 
-	public JTextField getGuiDescricao() {
-		return fieldDescricao;
+	public JTextField getGuiCpfCnpjProprietario() {
+		return fieldCpfCnpjProprietario;
+	}
+
+	public JTextField getGuiMarca() {
+		return fieldMarca;
+	}
+
+	public JTextField getGuiModelo() {
+		return fieldModelo;
+	}
+
+	public JTextField getGuiNomeProprietario() {
+		return fieldNomeProprietario;
+	}
+
+	public JTextField getGuiPlaca() {
+		return fieldPlaca;
 	}
 
 	public ToolBar getTB() {
 		return toolBar;
-	}
-
-	public VeiculoControl getUsuarioCont() {
-		return marcaControl;
 	}
 
 	@Override
@@ -78,27 +88,27 @@ public final class VeiculoPainelCad extends JPanel implements Gui {
 
 		add(new JLabel("MARCA DO VEÍCULO"));
 
-		fieldValor = new JTextField();
-		fieldValor.setDocument(new EntradaMaiuscula(10));
-		add(fieldValor);
+		fieldMarca = new JTextField();
+		fieldMarca.setDocument(new EntradaMaiuscula(10));
+		add(fieldMarca);
 
 		add(new JLabel("MODELO DO VEÍCULO"));
 
-		fieldNomeCliente = new JTextField();
-		fieldNomeCliente.setDocument(new EntradaMaiuscula(10));
-		add(fieldNomeCliente);
+		fieldModelo = new JTextField();
+		fieldModelo.setDocument(new EntradaMaiuscula(10));
+		add(fieldModelo);
 
 		add(new JLabel("CPF | CNPJ DO PROPRIETÁRIO"));
 
-		fieldCpfCnpjCliente = new JTextField();
-		fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(10));
-		add(fieldCpfCnpjCliente);
+		fieldCpfCnpjProprietario = new JTextField();
+		fieldCpfCnpjProprietario.setDocument(new EntradaMaiuscula(10));
+		add(fieldCpfCnpjProprietario);
 
 		add(new JLabel("NOME DO PROPRIETÁRIO"));
 
-		fieldDescricao = new JTextField();
-		fieldDescricao.setDocument(new EntradaMaiuscula(10));
-		add(fieldDescricao);
+		fieldNomeProprietario = new JTextField();
+		fieldNomeProprietario.setDocument(new EntradaMaiuscula(10));
+		add(fieldNomeProprietario);
 	}
 
 	@Override
@@ -114,6 +124,7 @@ public final class VeiculoPainelCad extends JPanel implements Gui {
 
 	@Override
 	public void iniciarTabela() {
+
 	}
 
 	@Override
@@ -123,5 +134,7 @@ public final class VeiculoPainelCad extends JPanel implements Gui {
 
 	@Override
 	public void reiniciarGui() {
+
 	}
+
 }

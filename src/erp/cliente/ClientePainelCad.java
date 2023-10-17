@@ -39,12 +39,12 @@ public final class ClientePainelCad extends JPanel implements Gui {
 		return configuracaoGui;
 	}
 
-	public JTextField getGuiEmail() {
-		return fieldEmail;
-	}
-
 	public JTextField getGuiCpfCnpj() {
 		return fieldCpfCnpj;
+	}
+
+	public JTextField getGuiEmail() {
+		return fieldEmail;
 	}
 
 	public JTextField getGuiNome() {

@@ -96,29 +96,30 @@ final class PedidoPlacaImp implements PedidoPlacaDao {
 			List<Predicate> predicateList = new ArrayList<>();
 
 			if ((marca.getCpfCnpjProprietario() != null) && (marca.getCpfCnpjProprietario().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootMarca.get("cpfCnpjProprietario"), marca.getCpfCnpjProprietario()));
-			}			
-			
+				predicateList.add(
+						criteriaBuilder.equal(rootMarca.get("cpfCnpjProprietario"), marca.getCpfCnpjProprietario()));
+			}
+
 			if ((marca.getPlaca() != null) && (marca.getPlaca().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("placa"), marca.getPlaca()));
 			}
-			
+
 			if ((marca.getRenavam() != null) && (marca.getRenavam().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("renavam"), marca.getRenavam()));
 			}
-			
+
 			if ((marca.getCorPlaca() != null) && (marca.getCorPlaca().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("corPlaca"), marca.getCorPlaca()));
 			}
-			
+
 			if ((marca.getTipoPlaca() != null) && (marca.getTipoPlaca().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("tipoPlaca"), marca.getTipoPlaca()));
 			}
 			System.out.println(marca.getQuantidade());
 			if (marca.getQuantidade() != null) {
-				predicateList.add(criteriaBuilder.equal(rootMarca.get("quantidade"), marca.getQuantidade()));	
+				predicateList.add(criteriaBuilder.equal(rootMarca.get("quantidade"), marca.getQuantidade()));
 			}
-			
+
 			criteriaQuery.select(rootMarca).where(predicateList.toArray(new Predicate[] {}));
 			marcaList = entityManager.createQuery(criteriaQuery).getResultList();
 		} catch (Exception exception) {

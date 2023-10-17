@@ -18,10 +18,6 @@ public final class VeiculoFac {
 		return marcaDao.getRegistro(marca);
 	}
 
-	public static boolean isRegistroValido(Veiculo marca) {
-		return marcaDao.isRegistroValido(marca);
-	}
-
 	public static Collection<Veiculo> pesquisarRegistro(Veiculo marca) {
 		return marcaDao.pesquisarRegistro(marca);
 	}

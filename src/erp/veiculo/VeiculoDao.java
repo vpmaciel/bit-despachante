@@ -10,8 +10,6 @@ public interface VeiculoDao {
 
 	Veiculo getRegistro(Veiculo marca);
 
-	boolean isRegistroValido(Veiculo marca);
-
 	Collection<Veiculo> pesquisarRegistro(Veiculo marca);
 
 	void salvarRegistro(Veiculo marca);

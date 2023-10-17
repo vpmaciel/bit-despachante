@@ -27,8 +27,8 @@ final class PedidoPlacaSel implements ListSelectionListener {
 				pedidoPlacaPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], PedidoPlacaTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					PedidoPlaca pedidoPlaca = ((List<PedidoPlaca>) PedidoPlacaFac.pesquisarRegistro(pedidoPlacaPesquisaRegistro))
-							.get(table.getSelectedRow());
+					PedidoPlaca pedidoPlaca = ((List<PedidoPlaca>) PedidoPlacaFac
+							.pesquisarRegistro(pedidoPlacaPesquisaRegistro)).get(table.getSelectedRow());
 					PedidoPlacaTm pedidoPlacaTm = (PedidoPlacaTm) table.getModel();
 					pedidoPlacaTm.getMarca(table.getSelectedRow());
 

@@ -1,7 +1,6 @@
 package erp.veiculo;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,100 +8,68 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
+
+import erp.arquitetura.Formatacao;
 
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
-@Table(name = "SERVICO")
-
+@Table(name = "VEICULO", uniqueConstraints = {
+		@UniqueConstraint(columnNames = { "VEICULO_CPF_CNPJ_PROPRIETARIO", "VEICULO_PLACA" }) }, indexes = {
+				@Index(name = "INDEX_VEICULO_PLACA", columnList = "VEICULO_PLACA", unique = true) })
 public class Veiculo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(length = 100, name = "SERVICO_ID")
+	@Column(length = 100, name = "VEICULO_ID")
 	private Long id = null;
-	@Column(name = "SERVICO_DATA", columnDefinition = "date")
-	@Temporal(TemporalType.DATE)
-	private Date data;
-	@Column(length = 7, name = "SERVICO_PLACA_VEICULO")
+	@Column(length = 7, name = "VEICULO_PLACA")
 	private String placa;
-	@Column(name = "SERVICO_VALOR")
-	private float valor;
-	@Column(length = 50, name = "SERVICO_DESCRICAO")
-	private String descricao;
-	@Column(length = 18, name = "SERVICO_CPF_CNPJ_CLIENTE")
-	private String cpfCnpjCliente;
-	@Column(length = 50, name = "SERVICO_NOME_CLIENTE")
-	private String nomeCliente;
-	@Column(length = 50, name = "SERVICO_TELEFONE_CLIENTE")
-	private String telefoneCliente;
+	@Column(length = 50, name = "VEICULO_MARCA")
+	private String marca;
+	@Column(length = 18, name = "VEICULO_CPF_CNPJ_PROPRIETARIO")
+	private String cpfCnpjProprietario;
+	@Column(length = 50, name = "VEICULO_NOME_PROPRIETARIO")
+	private String nomeProprietario;
+	@Column(length = 50, name = "VEICULO_MODELO")
+	private String modelo;
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if ((obj == null) || (getClass() != obj.getClass()))
+			return false;
+		Veiculo other = (Veiculo) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	public String getCpfCnpjProprietario() {
+		return cpfCnpjProprietario;
+	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public String getMarca() {
+		return marca;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getModelo() {
+		return modelo;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
+	public String getNomeProprietario() {
+		return nomeProprietario;
 	}
 
 	public String getPlaca() {
 		return placa;
-	}
-
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-
-	public float getValor() {
-		return valor;
-	}
-
-	public void setValor(float valor) {
-		this.valor = valor;
-	}
-
-	public String getCpfCnpjCliente() {
-		return cpfCnpjCliente;
-	}
-
-	public void setCpfCnpjCliente(String cpfCnpjCliente) {
-		this.cpfCnpjCliente = cpfCnpjCliente;
-	}
-
-	public String getNomeCliente() {
-		return nomeCliente;
-	}
-
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
-	}
-
-	public String getTelefoneCliente() {
-		return telefoneCliente;
-	}
-
-	public void setTelefoneCliente(String telefoneCliente) {
-		this.telefoneCliente = telefoneCliente;
 	}
 
 	@Override
@@ -110,20 +77,32 @@ public class Veiculo implements Serializable {
 		return Objects.hash(id);
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Veiculo other = (Veiculo) obj;
-		return Objects.equals(id, other.id);
+	public void setCpfCnpjProprietario(String cpfCnpjProprietario) {
+		this.cpfCnpjProprietario = Formatacao.removerAcentos(cpfCnpjProprietario);
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = Formatacao.removerAcentos(marca);
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = Formatacao.removerAcentos(modelo);
+	}
+
+	public void setNomeProprietario(String nomeProprietario) {
+		this.nomeProprietario = Formatacao.removerAcentos(nomeProprietario);
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = Formatacao.removerAcentos(placa);
 	}
 
 	@Override
 	public String toString() {
-		return this.descricao;
+		return this.placa;
 	}
 }

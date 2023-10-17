@@ -16,7 +16,9 @@ public class VeiculoTm extends AbstractTableModel {
 	private static TabelaModelo tabelaModelo = new TabelaModelo();
 	static {
 		tabelaModelo.adicionarColuna("ID", 0, 50);
-		tabelaModelo.adicionarColuna("DESCRIÇÃO", 1, 500);
+		tabelaModelo.adicionarColuna("PLACA", 1, 100);
+		tabelaModelo.adicionarColuna("MARCA", 2, 400);
+		tabelaModelo.adicionarColuna("MODELO", 3, 400);
 
 		largura = new int[tabelaModelo.getTotalColunas()];
 		podeEditar = new boolean[tabelaModelo.getTotalColunas()];
@@ -44,7 +46,7 @@ public class VeiculoTm extends AbstractTableModel {
 			return Long.class;
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA") || tabelaModelo.getNome(columnIndex).equals("MARCA") || tabelaModelo.getNome(columnIndex).equals("MODELO")) {
 			return String.class;
 		}
 
@@ -61,9 +63,8 @@ public class VeiculoTm extends AbstractTableModel {
 		return tabelaModelo.getNome(column);
 	}
 
-	@Override
-	public int getRowCount() {
-		return marcaList.size();
+	public List<Veiculo> getContaList() {
+		return marcaList;
 	}
 
 	public Veiculo getMarca(int linha) {
@@ -73,8 +74,9 @@ public class VeiculoTm extends AbstractTableModel {
 		return null;
 	}
 
-	public List<Veiculo> getContaList() {
-		return marcaList;
+	@Override
+	public int getRowCount() {
+		return marcaList.size();
 	}
 
 	@Override
@@ -85,8 +87,16 @@ public class VeiculoTm extends AbstractTableModel {
 			return marca.getId();
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
-			return marca.getDescricao();
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA")) {
+			return marca.getPlaca();
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("MARCA")) {
+			return marca.getMarca();
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("MODELO")) {
+			return marca.getModelo();
 		}
 
 		return marca;
@@ -109,8 +119,16 @@ public class VeiculoTm extends AbstractTableModel {
 			marca.setId(Long.parseLong(aValue.toString()));
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
-			marca.setDescricao(aValue.toString());
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA")) {
+			marca.setPlaca(aValue.toString());
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("MARCA")) {
+			marca.setMarca(aValue.toString());
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("MODELO")) {
+			marca.setModelo(aValue.toString());
 		}
 
 		fireTableDataChanged();

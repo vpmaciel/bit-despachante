@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
-import erp.arquitetura.validacao.Entrada;
-import erp.arquitetura.validacao.RegExp;
 import erp.sistema.main.MainControl;
 
 final class VeiculoControl {
@@ -24,7 +22,7 @@ final class VeiculoControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			if ((veiculo == null) || (veiculo.getDescricao() == null)
+			if ((veiculo == null) || (veiculo.getId() == null)
 					|| (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
 				return;
 			}
@@ -76,19 +74,14 @@ final class VeiculoControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 
-			List<Veiculo> listVeiculo = new LinkedList<>();
-
 			try {
-
-				ArquivoJson<Veiculo> arquivoJson = new ArquivoJson<>(veiculo, "usuario");
+				ArquivoJson<Veiculo> arquivoJson = new ArquivoJson<>(veiculo, "veiculo");
 				arquivoJson.gravarArquivo(VeiculoFac.getRegistro());
+				arquivoJson.retornarArquivo(true);
+				Sis.abrirDiretorio();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
-			VeiculoArqCsv veiculoArqCsv = new VeiculoArqCsv(listVeiculo);
-			veiculoArqCsv.retornarArquivo(true);
-			Sis.abrirDiretorio();
 		}
 	}
 
@@ -128,7 +121,7 @@ final class VeiculoControl {
 		public void actionPerformed(ActionEvent actionEvent) {
 			List<Veiculo> veiculos = new LinkedList<>();
 
-			if (veiculo.getDescricao() == null) {
+			if (veiculo.getMarca() == null) {
 				Msg.avisoImprimiRegistroNaoCadastrado();
 				return;
 			}
@@ -157,7 +150,7 @@ final class VeiculoControl {
 		public void actionPerformed(ActionEvent actionEvent) {
 			veiculo = new Veiculo();
 			getVeiculoJanCad().limparGui();
-			getVeiculoPainelCad().getGuiDescricao().requestFocus();
+			getVeiculoPainelCad().getGuiPlaca().requestFocus();
 		}
 	}
 
@@ -196,15 +189,15 @@ final class VeiculoControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 
-			List<Veiculo> veiculos = new LinkedList<>();
+			List<Veiculo> veiculoList = new LinkedList<>();
 
 			try {
-				veiculos = new LinkedList<>(VeiculoFac.pesquisarRegistro(new Veiculo()));
+				veiculoList = new LinkedList<>(VeiculoFac.pesquisarRegistro(new Veiculo()));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			VeiculoRel veiculoRel = new VeiculoRel(veiculos);
+			VeiculoRel veiculoRel = new VeiculoRel(veiculoList);
 			veiculoRel.retornarRelatorio();
 
 		}
@@ -217,17 +210,11 @@ final class VeiculoControl {
 			try {
 
 				int mensagem = Msg.confirmarSalvarRegistro();
-				if ((mensagem != JOptionPane.YES_OPTION)
-						|| !Entrada.validar(getVeiculoPainelCad().getGuiDescricao(), "NOME", RegExp.NOME, true)
-						|| !Entrada.validar(getVeiculoPainelCad().getGuiDescricao(), "DESCRIÇÃO", RegExp.NUMERO_BANCO,
-								false)) {
-					return;
-				}
 
-				if (((getVeiculoPainelCad().getGuiDescricao().getText()) == null)
-						|| (getVeiculoPainelCad().getGuiDescricao().getText().length() == 0)) {
-					getVeiculoPainelCad().getGuiDescricao().requestFocus();
-					Msg.avisoCampoObrigatorio("NOME");
+				if (((getVeiculoPainelCad().getGuiPlaca().getText()) == null)
+						|| (getVeiculoPainelCad().getGuiPlaca().getText().length() == 0)) {
+					getVeiculoPainelCad().getGuiPlaca().requestFocus();
+					Msg.avisoCampoObrigatorio("PLACA DO VEÍCULO");
 					return;
 				}
 				if (mensagem == JOptionPane.YES_OPTION) {
@@ -236,15 +223,15 @@ final class VeiculoControl {
 					veiculo = new Veiculo();
 					MainControl.getVeiculoJan().limparGui();
 					Msg.sucessoSalvarRegistro();
-					getVeiculoPainelCad().getGuiDescricao().requestFocus();
+					getVeiculoPainelCad().getGuiPlaca().requestFocus();
 				}
 			} catch (Exception e) {
 				Throwable throwable = e.getCause().getCause();
 				String mensagem = throwable.toString();
 				if (mensagem.contains("ConstraintViolationException")) {
-					if (mensagem.contains("INDEX_DESCRICAO")) {
-						Msg.avisoCampoDuplicado("NOME");
-						getVeiculoPainelCad().getGuiDescricao().requestFocus();
+					if (mensagem.contains("INDEX_VEICULO_PLACA")) {
+						Msg.avisoCampoDuplicado("PLACA DO VEÍCULO");
+						getVeiculoPainelCad().getGuiPlaca().requestFocus();
 					} else {
 						Msg.avisoCampoDuplicado();
 					}
@@ -264,14 +251,23 @@ final class VeiculoControl {
 		if (veiculo == null) {
 			return;
 		}
-		getVeiculoPainelCad().getGuiDescricao().setText(veiculo.getDescricao());
+		getVeiculoPainelCad().getGuiCpfCnpjProprietario().setText(veiculo.getCpfCnpjProprietario());
+		getVeiculoPainelCad().getGuiMarca().setText(veiculo.getMarca());
+		getVeiculoPainelCad().getGuiModelo().setText(veiculo.getModelo());
+		getVeiculoPainelCad().getGuiNomeProprietario().setText(veiculo.getNomeProprietario());
+		getVeiculoPainelCad().getGuiPlaca().setText(veiculo.getPlaca());
+
 	}
 
 	public void atualizarObjeto() {
 		if (veiculo == null) {
 			veiculo = new Veiculo();
 		}
-		veiculo.setDescricao(getVeiculoPainelCad().getGuiDescricao().getText());
+		veiculo.setCpfCnpjProprietario(getVeiculoPainelCad().getGuiCpfCnpjProprietario().getText());
+		veiculo.setMarca(getVeiculoPainelCad().getGuiMarca().getText());
+		veiculo.setModelo(getVeiculoPainelCad().getGuiModelo().getText());
+		veiculo.setNomeProprietario(getVeiculoPainelCad().getGuiNomeProprietario().getText());
+		veiculo.setPlaca(getVeiculoPainelCad().getGuiPlaca().getText());
 	}
 
 	public Veiculo getVeiculo() {

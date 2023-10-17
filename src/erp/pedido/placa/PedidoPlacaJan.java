@@ -49,14 +49,6 @@ public final class PedidoPlacaJan extends JFrame implements Gui {
 		return configuracaoGui;
 	}
 
-	public PedidoPlacaPainelCad getPanelConta() {
-		return marcaPainelCad;
-	}
-
-	public JTabbedPane getTabbedPane() {
-		return tabbedPane;
-	}
-
 	public PedidoPlacaControl getContaCont() {
 		return marcaControl;
 	}
@@ -67,6 +59,14 @@ public final class PedidoPlacaJan extends JFrame implements Gui {
 
 	public PedidoPlacaPainelPesq getContaPainelPesq() {
 		return marcaPainelPesq;
+	}
+
+	public PedidoPlacaPainelCad getPanelConta() {
+		return marcaPainelCad;
+	}
+
+	public JTabbedPane getTabbedPane() {
+		return tabbedPane;
 	}
 
 	@Override

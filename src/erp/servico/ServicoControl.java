@@ -12,10 +12,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import erp.arquitetura.ArquivoJson;
+import erp.arquitetura.Numero;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
-import erp.arquitetura.validacao.Entrada;
-import erp.arquitetura.validacao.RegExp;
 import erp.sistema.main.MainControl;
 
 final class ServicoControl {
@@ -32,6 +31,30 @@ final class ServicoControl {
 				ServicoFac.deletarRegistro(servico);
 				getContaJanCad().limparGui();
 				servico = new Servico();
+				Msg.sucessoExcluiRegistro();
+			} catch (Exception e) {
+				Msg.erroExcluiRegistro();
+			}
+		}
+	}
+
+	public class FechaCaixa implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent actionEvent) {
+			if (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION) {
+				return;
+			}
+
+			try {
+				List<Servico> listConta = new LinkedList<>();
+				listConta = new LinkedList<>(ServicoFac.pesquisarRegistro(new Servico()));
+
+				for (Servico servico_item : listConta) {
+					ServicoFac.deletarRegistro(servico_item);
+				}
+
+				getContaJanCad().limparGui();
 				Msg.sucessoExcluiRegistro();
 			} catch (Exception e) {
 				Msg.erroExcluiRegistro();
@@ -75,20 +98,16 @@ final class ServicoControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-
-			List<Servico> listConta = new LinkedList<>();
-
 			try {
 
-				ArquivoJson<Servico> arquivoJson = new ArquivoJson<>(servico, "usuario");
+				ArquivoJson<Servico> arquivoJson = new ArquivoJson<>(servico, "servico");
 				arquivoJson.gravarArquivo(ServicoFac.getRegistro());
+				arquivoJson.retornarArquivo(true);
+				Sis.abrirDiretorio();
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
-			ServicoArqCsv servicoArqCsv = new ServicoArqCsv(listConta);
-			servicoArqCsv.retornarArquivo(true);
-			Sis.abrirDiretorio();
 		}
 	}
 
@@ -157,7 +176,7 @@ final class ServicoControl {
 		public void actionPerformed(ActionEvent actionEvent) {
 			servico = new Servico();
 			getContaJanCad().limparGui();
-			getContaPainelCad().getGuiDescricao().requestFocus();
+			getContaPainelCad().getGuiPlaca().requestFocus();
 		}
 	}
 
@@ -217,38 +236,38 @@ final class ServicoControl {
 			try {
 
 				int mensagem = Msg.confirmarSalvarRegistro();
-				if ((mensagem != JOptionPane.YES_OPTION)
-						|| !Entrada.validar(getContaPainelCad().getGuiDescricao(), "NOME", RegExp.NOME, true)
-						|| !Entrada.validar(getContaPainelCad().getGuiDescricao(), "DESCRIÇÃO", RegExp.NUMERO_BANCO,
-								false)) {
+
+				if (((getContaPainelCad().getGuiPlaca().getText()) == null)
+						|| (getContaPainelCad().getGuiPlaca().getText().length() == 0)) {
+					getContaPainelCad().getGuiPlaca().requestFocus();
+					Msg.avisoCampoObrigatorio("PLACA DO VEÍCULO");
 					return;
 				}
 
 				if (((getContaPainelCad().getGuiDescricao().getText()) == null)
 						|| (getContaPainelCad().getGuiDescricao().getText().length() == 0)) {
 					getContaPainelCad().getGuiDescricao().requestFocus();
-					Msg.avisoCampoObrigatorio("NOME");
+					Msg.avisoCampoObrigatorio("DESCRIÇÃO DO SERVIÇO");
 					return;
 				}
+
+				if (((getContaPainelCad().getGuiValor().getText()) == null)
+						|| (getContaPainelCad().getGuiValor().getText().length() == 0)) {
+					getContaPainelCad().getGuiValor().requestFocus();
+					Msg.avisoCampoObrigatorio("VALOR DO SERVIÇO");
+					return;
+				}
+
 				if (mensagem == JOptionPane.YES_OPTION) {
 					atualizarObjeto();
 					ServicoFac.salvarRegistro(servico);
 					servico = new Servico();
 					MainControl.getServicoJan().limparGui();
 					Msg.sucessoSalvarRegistro();
-					getContaPainelCad().getGuiDescricao().requestFocus();
+					getContaPainelCad().getGuiPlaca().requestFocus();
 				}
 			} catch (Exception e) {
-				Throwable throwable = e.getCause().getCause();
-				String mensagem = throwable.toString();
-				if (mensagem.contains("ConstraintViolationException")) {
-					if (mensagem.contains("INDEX_DESCRICAO")) {
-						Msg.avisoCampoDuplicado("NOME");
-						getContaPainelCad().getGuiDescricao().requestFocus();
-					} else {
-						Msg.avisoCampoDuplicado();
-					}
-				}
+				getContaPainelCad().getGuiPlaca().requestFocus();
 				e.printStackTrace();
 				Msg.erroSalvarRegistro();
 			}
@@ -264,14 +283,25 @@ final class ServicoControl {
 		if (servico == null) {
 			return;
 		}
+		getContaPainelCad().getGuiCpfCnpjCliente().setText(servico.getCpfCnpjCliente());
+		getContaPainelCad().getGuiData().setText(servico.getData().toString());
 		getContaPainelCad().getGuiDescricao().setText(servico.getDescricao());
+		getContaPainelCad().getGuiNomeCliente().setText(servico.getNomeCliente());
+		getContaPainelCad().getGuiPlaca().setText(servico.getPlaca());
+		getContaPainelCad().getGuiTelefoneCliente().setText(servico.getTelefoneCliente());
+		getContaPainelCad().getGuiValor().setText(Numero.FloatToString(servico.getValor()));
 	}
 
 	public void atualizarObjeto() {
 		if (servico == null) {
 			servico = new Servico();
 		}
+		servico.setCpfCnpjCliente(getContaPainelCad().getGuiDescricao().getText());
 		servico.setDescricao(getContaPainelCad().getGuiDescricao().getText());
+		servico.setNomeCliente(getContaPainelCad().getGuiNomeCliente().getText());
+		servico.setPlaca(getContaPainelCad().getGuiPlaca().getText());
+		servico.setTelefoneCliente(getContaPainelCad().getGuiTelefoneCliente().getText());
+		servico.setValor(Numero.stringToFloat(getContaPainelCad().getGuiValor().getText()));
 	}
 
 	public Servico getConta() {

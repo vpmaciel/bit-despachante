@@ -10,28 +10,58 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import erp.arquitetura.Data;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
 
 public class ServicoArqCsv {
-
-	private final String arquivo = "marca-de-veiculo.csv";
+	private final String arquivo = Data.getDataHoraArquivo() + "servico-de-placa.csv";
 
 	private BufferedWriter bufferedWriter = null;
 	private final String CSV_SEPARATOR = Sis.getCsvSeparador();
 	private File file;
 
-	public ServicoArqCsv(final List<Servico> listUsuario) {
+	public ServicoArqCsv(final List<Servico> listServico) {
 		try {
 			bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(arquivo), "UTF-8"));
 
 			StringBuffer cabecalho = new StringBuffer();
-			cabecalho.append("DESCRIÇÃO");
+			cabecalho.append("SERVICO_ID");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_DATA");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_PLACA_VEICULO");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_VALOR");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_DESCRICAO");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_CPF_CNPJ_CLIENTE");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_NOME_CLIENTE");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("SERVICO_TELEFONE_CLIENTE");
+			cabecalho.append(CSV_SEPARATOR);
 			bufferedWriter.write(cabecalho.toString());
+
 			bufferedWriter.newLine();
-			for (Servico marca : listUsuario) {
+			for (Servico servicoPlaca : listServico) {
 				StringBuffer linha = new StringBuffer();
-				linha.append(marca.getDescricao());
+				linha.append(servicoPlaca.getId());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getData());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getPlaca());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getValor());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getDescricao());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getCpfCnpjCliente());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getNomeCliente());
+				linha.append(CSV_SEPARATOR);
+				linha.append(servicoPlaca.getTelefoneCliente());
 				linha.append(CSV_SEPARATOR);
 				bufferedWriter.write(linha.toString());
 				bufferedWriter.newLine();
