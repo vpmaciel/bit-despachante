@@ -12,26 +12,56 @@ import java.util.List;
 
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
+import erp.pedido.placa.PedidoPlaca;
 
 public class PedidoPlacaArqCsv {
-
-	private final String arquivo = "marca-de-veiculo.csv";
+	private final String arquivo = "pedido-de-placa.csv";
 
 	private BufferedWriter bufferedWriter = null;
 	private final String CSV_SEPARATOR = Sis.getCsvSeparador();
 	private File file;
 
-	public PedidoPlacaArqCsv(final List<PedidoPlaca> listUsuario) {
+	public PedidoPlacaArqCsv(final List<PedidoPlaca> listPedidoPlaca) {
 		try {
 			bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(arquivo), "UTF-8"));
 
 			StringBuffer cabecalho = new StringBuffer();
-			cabecalho.append("DESCRIÇÃO");						
+			cabecalho.append("PEDIDO_DE_PLACA_ID");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_DATA");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_PLACA_VEICULO");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_QUANTIDADE");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_RENAVAM");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_CPF_CNPJ_PROPRIETARIO");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_COR_PLACA");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("PEDIDO_DE_PLACA_TIPO_PLACA");
+			cabecalho.append(CSV_SEPARATOR);
 			bufferedWriter.write(cabecalho.toString());
+
 			bufferedWriter.newLine();
-			for (PedidoPlaca marca : listUsuario) {
+			for (PedidoPlaca pedidoPlaca : listPedidoPlaca) {
 				StringBuffer linha = new StringBuffer();
-				linha.append(marca.getDescricao());
+				linha.append(pedidoPlaca.getId());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getData());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getPlaca());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getQuantidade());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getRenavam());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getCpfCnpjProprietario());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getCorPlaca());
+				linha.append(CSV_SEPARATOR);
+				linha.append(pedidoPlaca.getTipoPlaca());
 				linha.append(CSV_SEPARATOR);
 				bufferedWriter.write(linha.toString());
 				bufferedWriter.newLine();

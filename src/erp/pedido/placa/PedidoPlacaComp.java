@@ -8,7 +8,7 @@ public final class PedidoPlacaComp {
 
 		@Override
 		public int compare(Object o1, Object o2) {
-			return ((PedidoPlaca) o1).getDescricao().compareTo(((PedidoPlaca) o2).getDescricao());
+			return ((PedidoPlaca) o1).getRenavam().compareTo(((PedidoPlaca) o2).getRenavam());
 		}
 	}
 }

@@ -1,11 +1,13 @@
 package erp.pedido.placa;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,8 +16,6 @@ import javax.swing.JOptionPane;
 import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
-import erp.arquitetura.validacao.Entrada;
-import erp.arquitetura.validacao.RegExp;
 import erp.sistema.main.MainControl;
 
 final class PedidoPlacaControl {
@@ -24,13 +24,14 @@ final class PedidoPlacaControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			if ((cliente == null) || (cliente.getDescricao() == null) || (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
+			if ((pedidoPlaca == null) || (pedidoPlaca.getRenavam() == null)
+					|| (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
 				return;
 			}
 			try {
-				PedidoPlacaFac.deletarRegistro(cliente);
-				getContaJanCad().limparGui();
-				cliente = new PedidoPlaca();
+				PedidoPlacaFac.deletarRegistro(pedidoPlaca);
+				getPedidoPlacaJanCad().limparGui();
+				pedidoPlaca = new PedidoPlaca();
 				Msg.sucessoExcluiRegistro();
 			} catch (Exception e) {
 				Msg.erroExcluiRegistro();
@@ -43,13 +44,13 @@ final class PedidoPlacaControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 			try {
-				getContaJanCad().setVisible(false);
+				getPedidoPlacaJanCad().setVisible(false);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
 	public class FormatoCsv implements ActionListener {
 
 		@Override
@@ -74,40 +75,33 @@ final class PedidoPlacaControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-
-			List<PedidoPlaca> listConta = new LinkedList<>();
-
 			try {
 
-				ArquivoJson<PedidoPlaca> arquivoJson = new ArquivoJson<>(cliente, "usuario");
-				arquivoJson.gravarArquivo(PedidoPlacaFac.getRegistro());				
+				ArquivoJson<PedidoPlaca> arquivoJson = new ArquivoJson<>(pedidoPlaca, "pedido-de-placa");
+				arquivoJson.gravarArquivo(PedidoPlacaFac.getRegistro());
+				arquivoJson.retornarArquivo(true);
+				Sis.abrirDiretorio();
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
-
-			PedidoPlacaArqCsv clienteArqCsv = new PedidoPlacaArqCsv(listConta);
-			clienteArqCsv.retornarArquivo(true);
-			Sis.abrirDiretorio();
+			}			
 		}
 	}
-
-
 
 	public class Frame extends WindowAdapter {
 
 		@Override
 		public void windowActivated(WindowEvent e) {
-			getContaJanCad().reiniciarGui();
+			getPedidoPlacaJanCad().reiniciarGui();
 		}
 
 		@Override
 		public void windowClosing(WindowEvent e) {
-			getContaJanCad().setVisible(false);
+			getPedidoPlacaJanCad().setVisible(false);
 		}
 
 		@Override
 		public void windowOpened(WindowEvent e) {
-			cliente = new PedidoPlaca();
+			pedidoPlaca = new PedidoPlaca();
 		}
 	}
 
@@ -129,11 +123,11 @@ final class PedidoPlacaControl {
 		public void actionPerformed(ActionEvent actionEvent) {
 			List<PedidoPlaca> clientes = new LinkedList<>();
 
-			if (cliente.getDescricao() == null) {
+			if (pedidoPlaca.getRenavam() == null) {
 				Msg.avisoImprimiRegistroNaoCadastrado();
 				return;
 			}
-			if (clientes.add(PedidoPlacaFac.getRegistro(cliente))) {
+			if (clientes.add(PedidoPlacaFac.getRegistro(pedidoPlaca))) {
 				PedidoPlacaRel clienteRel = new PedidoPlacaRel(clientes);
 				clienteRel.retornarRelatorio();
 			}
@@ -156,9 +150,9 @@ final class PedidoPlacaControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			cliente = new PedidoPlaca();
-			getContaJanCad().limparGui();
-			getContaPainelCad().getGuiDescricao().requestFocus();
+			pedidoPlaca = new PedidoPlaca();
+			getPedidoPlacaJanCad().limparGui();
+			getPedidoPlacaPainelCad().getGuiQuantidade().requestFocus();
 		}
 	}
 
@@ -166,10 +160,10 @@ final class PedidoPlacaControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			cliente = new PedidoPlaca();
+			pedidoPlaca = new PedidoPlaca();
 			atualizarObjeto();
 			long totalPesquisaRegistro = 0;
-			totalPesquisaRegistro = MainControl.getPedidoPlacaJan().getContaPainelPesq().pesquisarRegistro(cliente);
+			totalPesquisaRegistro = MainControl.getPedidoPlacaJan().getContaPainelPesq().pesquisarRegistro(pedidoPlaca);
 			Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 			if (totalPesquisaRegistro > 0) {
@@ -219,73 +213,107 @@ final class PedidoPlacaControl {
 			try {
 
 				int mensagem = Msg.confirmarSalvarRegistro();
-				if ((mensagem != JOptionPane.YES_OPTION) || !Entrada.validar(getContaPainelCad().getGuiDescricao(), "NOME", RegExp.NOME, true) || !Entrada.validar(getContaPainelCad().getGuiDescricao(), "DESCRIÇÃO", RegExp.NUMERO_BANCO, false)) {
+
+				if (((getPedidoPlacaPainelCad().getGuiQuantidade().getText()) == null)
+						|| (getPedidoPlacaPainelCad().getGuiQuantidade().getText().length() == 0)) {
+					getPedidoPlacaPainelCad().getGuiQuantidade().requestFocus();
+					Msg.avisoCampoObrigatorio("QUANTIDADE");
 					return;
 				}
 
-				if (((getContaPainelCad().getGuiDescricao().getText()) == null)
-						|| (getContaPainelCad().getGuiDescricao().getText().length() == 0)) {
-					getContaPainelCad().getGuiDescricao().requestFocus();
-					Msg.avisoCampoObrigatorio("NOME");
+				if (((getPedidoPlacaPainelCad().getGuiPlaca().getText()) == null)
+						|| (getPedidoPlacaPainelCad().getGuiPlaca().getText().length() == 0)) {
+					getPedidoPlacaPainelCad().getGuiPlaca().requestFocus();
+					Msg.avisoCampoObrigatorio("PLACA DO VEÍCULO");
 					return;
 				}
+
+				if (((getPedidoPlacaPainelCad().getGuiCorPlaca().getText()) == null)
+						|| (getPedidoPlacaPainelCad().getGuiCorPlaca().getText().length() == 0)) {
+					getPedidoPlacaPainelCad().getGuiCorPlaca().requestFocus();
+					Msg.avisoCampoObrigatorio("COR DA PALCA");
+					return;
+				}
+
+				if (((getPedidoPlacaPainelCad().getGuiTipoPlaca().getText()) == null)
+						|| (getPedidoPlacaPainelCad().getGuiTipoPlaca().getText().length() == 0)) {
+					getPedidoPlacaPainelCad().getGuiTipoPlaca().requestFocus();
+					Msg.avisoCampoObrigatorio("TIPO DE PLACA");
+					return;
+				}
+
+				if (((getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().getText()) == null)
+						|| (getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().getText().length() == 0)) {
+					getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().requestFocus();
+					Msg.avisoCampoObrigatorio("CPF | CNPJ DO PROPRIETÁRIO");
+					return;
+				}
+
 				if (mensagem == JOptionPane.YES_OPTION) {
 					atualizarObjeto();
-					PedidoPlacaFac.salvarRegistro(cliente);
-					cliente = new PedidoPlaca();
+					PedidoPlacaFac.salvarRegistro(pedidoPlaca);
+					pedidoPlaca = new PedidoPlaca();
 					MainControl.getPedidoPlacaJan().limparGui();
 					Msg.sucessoSalvarRegistro();
-					getContaPainelCad().getGuiDescricao().requestFocus();
+					getPedidoPlacaPainelCad().getGuiQuantidade().requestFocus();
 				}
+
 			} catch (Exception e) {
-				Throwable throwable = e.getCause().getCause();
-				String mensagem = throwable.toString();
-				if (mensagem.contains("ConstraintViolationException")) {
-					if (mensagem.contains("INDEX_DESCRICAO")) {
-						Msg.avisoCampoDuplicado("NOME");
-						getContaPainelCad().getGuiDescricao().requestFocus();
-					} else {
-						Msg.avisoCampoDuplicado();
-					}
-				}
+				getPedidoPlacaPainelCad().getGuiQuantidade().requestFocus();
 				e.printStackTrace();
 				Msg.erroSalvarRegistro();
 			}
 		}
 	}
 
-	private PedidoPlaca cliente;
+	private PedidoPlaca pedidoPlaca;
 
 	PedidoPlacaControl() {
 	}
 
 	public void atualizarGui() {
-		if (cliente == null) {
+		if (pedidoPlaca == null) {
 			return;
 		}
-		getContaPainelCad().getGuiDescricao().setText(cliente.getDescricao());		
+		getPedidoPlacaPainelCad().getGuiCorPlaca().setText(pedidoPlaca.getCorPlaca());
+		getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().setText(pedidoPlaca.getCpfCnpjProprietario());
+		getPedidoPlacaPainelCad().getGuiPlaca().setText(pedidoPlaca.getPlaca());
+		getPedidoPlacaPainelCad().getGuiQuantidade().setText(String.valueOf(pedidoPlaca.getQuantidade()));
+		getPedidoPlacaPainelCad().getGuiRenavam().setText(pedidoPlaca.getRenavam());
+		getPedidoPlacaPainelCad().getGuiTipoPlaca().setText(pedidoPlaca.getTipoPlaca());
 	}
 
 	public void atualizarObjeto() {
-		if (cliente == null) {
-			cliente = new PedidoPlaca();
+		if (pedidoPlaca == null) {
+			pedidoPlaca = new PedidoPlaca();
 		}
-		cliente.setDescricao(getContaPainelCad().getGuiDescricao().getText());		
+		pedidoPlaca.setData(new Date());
+		pedidoPlaca.setCorPlaca(getPedidoPlacaPainelCad().getGuiCorPlaca().getText());
+		pedidoPlaca.setCpfCnpjProprietario(getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().getText());
+		pedidoPlaca.setPlaca(getPedidoPlacaPainelCad().getGuiPlaca().getText());
+		try {
+			pedidoPlaca.setQuantidade(Integer.parseInt(getPedidoPlacaPainelCad().getGuiQuantidade().getText()));
+		} catch (Exception e) {
+			pedidoPlaca.setQuantidade(null);
+		}
+		
+		pedidoPlaca.setRenavam(getPedidoPlacaPainelCad().getGuiRenavam().getText());
+		pedidoPlaca.setTipoPlaca(getPedidoPlacaPainelCad().getGuiTipoPlaca().getText());
 	}
 
-	public PedidoPlaca getConta() {
-		return cliente;
+	public PedidoPlaca getPedidoPlaca() {
+		return pedidoPlaca;
 	}
 
-	public PedidoPlacaJan getContaJanCad() {
+	public PedidoPlacaJan getPedidoPlacaJanCad() {
 		return MainControl.getPedidoPlacaJan();
 	}
 
-	public PedidoPlacaPainelCad getContaPainelCad() {
+	public PedidoPlacaPainelCad getPedidoPlacaPainelCad() {
 		return MainControl.getPedidoPlacaJan().getContaPainelCad();
 	}
 
 	public void setModelo(PedidoPlaca cliente) {
-		this.cliente = cliente;
+		this.pedidoPlaca = cliente;
 	}
 }

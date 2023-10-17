@@ -4,30 +4,26 @@ import java.util.Collection;
 
 public final class PedidoPlacaFac {
 
-	private static final PedidoPlacaDao marcaDao = new PedidoPlacaImp();
+	private static final PedidoPlacaDao pedidoPlacaDao = new PedidoPlacaImp();
 
 	public static void deletarRegistro(PedidoPlaca marca) {
-		marcaDao.deletarRegistro(marca);
+		pedidoPlacaDao.deletarRegistro(marca);
 	}
 
 	public static Collection<PedidoPlaca> getRegistro() {
-		return marcaDao.getRegistro();
+		return pedidoPlacaDao.getRegistro();
 	}
 
 	public static PedidoPlaca getRegistro(PedidoPlaca marca) {
-		return marcaDao.getRegistro(marca);
-	}
-
-	public static boolean isRegistroValido(PedidoPlaca marca) {
-		return marcaDao.isRegistroValido(marca);
+		return pedidoPlacaDao.getRegistro(marca);
 	}
 
 	public static Collection<PedidoPlaca> pesquisarRegistro(PedidoPlaca marca) {
-		return marcaDao.pesquisarRegistro(marca);
+		return pedidoPlacaDao.pesquisarRegistro(marca);
 	}
 
 	public static void salvarRegistro(PedidoPlaca marca) {
-		marcaDao.salvarRegistro(marca);
+		pedidoPlacaDao.salvarRegistro(marca);
 	}
 
 	private PedidoPlacaFac() {

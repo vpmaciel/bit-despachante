@@ -1,7 +1,6 @@
 package erp.sistema.main;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -47,7 +46,7 @@ public final class MainControl {
 				if (Msg.confirmarSairDoSistema() == 0) {
 					System.exit(0);
 				}
-			}		
+			}
 			if (actionEvent.getSource() == mainJan.getMenuItemCadastroPedidoPlaca()) {
 				mostrarFrame(pedidoPlacaJan);
 			}
@@ -62,9 +61,7 @@ public final class MainControl {
 			}
 		}
 	}
-	
-	
-	
+
 	private static MainControl mainControl;
 	private static MainJan mainJan;
 	private static PedidoPlacaJan pedidoPlacaJan;
@@ -72,32 +69,30 @@ public final class MainControl {
 	private static ClienteJan clienteJan;
 	private static VeiculoJan veiculoJan;
 
-
 	public static synchronized MainControl getInstance(MainJan mainJan) {
-		if (mainControl == null) {			
+		if (mainControl == null) {
 			return new MainControl(mainJan);
 		}
 		return mainControl;
-	}	
-	
+	}
+
 	public static PedidoPlacaJan getPedidoPlacaJan() {
 		return pedidoPlacaJan;
 	}
-	
+
 	public static VeiculoJan getVeiculoJan() {
 		return veiculoJan;
 	}
-	
-	
+
 	public static ClienteJan getClienteJan() {
 		return clienteJan;
 	}
-	
+
 	public static ServicoJan getServicoJan() {
 		return servicoJan;
 	}
-	
-		public static MainJan getMainJan() {
+
+	public static MainJan getMainJan() {
 		return mainJan;
 	}
 
@@ -111,7 +106,7 @@ public final class MainControl {
 
 	private MainControl(MainJan mainJan) {
 		MainControl.mainJan = mainJan;
-		criarFrames();		
+		criarFrames();
 	}
 
 	private void criarFrame(JFrame frame) {
@@ -119,16 +114,16 @@ public final class MainControl {
 		frame.setVisible(false);
 	}
 
-	private void criarFrames() {			
+	private void criarFrames() {
 		pedidoPlacaJan = new PedidoPlacaJan();
 		criarFrame(pedidoPlacaJan);
-		
+
 		servicoJan = new ServicoJan();
 		criarFrame(pedidoPlacaJan);
-		
+
 		clienteJan = new ClienteJan();
 		criarFrame(clienteJan);
-		
+
 		veiculoJan = new VeiculoJan();
 		criarFrame(veiculoJan);
 	}

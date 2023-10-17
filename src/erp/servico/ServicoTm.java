@@ -15,7 +15,7 @@ public class ServicoTm extends AbstractTableModel {
 	private static boolean[] podeEditar;
 	private static TabelaModelo tabelaModelo = new TabelaModelo();
 	static {
-		tabelaModelo.adicionarColuna("ID", 0, 50);		
+		tabelaModelo.adicionarColuna("ID", 0, 50);
 		tabelaModelo.adicionarColuna("DESCRIÇÃO", 1, 500);
 
 		largura = new int[tabelaModelo.getTotalColunas()];
@@ -39,7 +39,7 @@ public class ServicoTm extends AbstractTableModel {
 
 	@Override
 	public Class<?> getColumnClass(int columnIndex) {
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			return Long.class;
 		}
@@ -80,15 +80,15 @@ public class ServicoTm extends AbstractTableModel {
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		Servico marca = marcaList.get(rowIndex);
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			return marca.getId();
 		}
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
 			return marca.getDescricao();
 		}
-		
+
 		return marca;
 	}
 
@@ -104,14 +104,14 @@ public class ServicoTm extends AbstractTableModel {
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		marca = marcaList.get(rowIndex);
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			marca.setId(Long.parseLong(aValue.toString()));
 		}
 
 		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
 			marca.setDescricao(aValue.toString());
-		}		
+		}
 
 		fireTableDataChanged();
 	}

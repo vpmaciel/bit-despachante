@@ -24,12 +24,13 @@ final class VeiculoSel implements ListSelectionListener {
 			TableModel tm = table.getModel();
 			if (selRows.length > 0) {
 				Veiculo marcaPesquisaRegistro = new Veiculo();
-				marcaPesquisaRegistro.setId((Long)tm.getValueAt(selRows[0], VeiculoTm.ID));
+				marcaPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], VeiculoTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					Veiculo marca = ((List<Veiculo>) VeiculoFac.pesquisarRegistro(marcaPesquisaRegistro)).get(table.getSelectedRow());
+					Veiculo marca = ((List<Veiculo>) VeiculoFac.pesquisarRegistro(marcaPesquisaRegistro))
+							.get(table.getSelectedRow());
 					VeiculoTm marcaTm = (VeiculoTm) table.getModel();
-					marcaTm.getMarca(table.getSelectedRow());					
+					marcaTm.getMarca(table.getSelectedRow());
 
 					MainControl.mostrarFrame(MainControl.getPedidoPlacaJan());
 					MainControl.getVeiculoJan().getVeiculoCont().setModelo(VeiculoFac.getRegistro(marca));

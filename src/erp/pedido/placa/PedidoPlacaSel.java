@@ -23,16 +23,17 @@ final class PedidoPlacaSel implements ListSelectionListener {
 			int[] selRows = table.getSelectedRows();
 			TableModel tm = table.getModel();
 			if (selRows.length > 0) {
-				PedidoPlaca marcaPesquisaRegistro = new PedidoPlaca();
-				marcaPesquisaRegistro.setId((Long)tm.getValueAt(selRows[0], PedidoPlacaTm.ID));
+				PedidoPlaca pedidoPlacaPesquisaRegistro = new PedidoPlaca();
+				pedidoPlacaPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], PedidoPlacaTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					PedidoPlaca marca = ((List<PedidoPlaca>) PedidoPlacaFac.pesquisarRegistro(marcaPesquisaRegistro)).get(table.getSelectedRow());
-					PedidoPlacaTm marcaTm = (PedidoPlacaTm) table.getModel();
-					marcaTm.getMarca(table.getSelectedRow());					
+					PedidoPlaca pedidoPlaca = ((List<PedidoPlaca>) PedidoPlacaFac.pesquisarRegistro(pedidoPlacaPesquisaRegistro))
+							.get(table.getSelectedRow());
+					PedidoPlacaTm pedidoPlacaTm = (PedidoPlacaTm) table.getModel();
+					pedidoPlacaTm.getMarca(table.getSelectedRow());
 
 					MainControl.mostrarFrame(MainControl.getPedidoPlacaJan());
-					MainControl.getPedidoPlacaJan().getContaCont().setModelo(PedidoPlacaFac.getRegistro(marca));
+					MainControl.getPedidoPlacaJan().getContaCont().setModelo(PedidoPlacaFac.getRegistro(pedidoPlaca));
 					MainControl.getPedidoPlacaJan().getContaCont().atualizarGui();
 					MainControl.getPedidoPlacaJan().setFocusable(true);
 					MainControl.getPedidoPlacaJan().getTabbedPane().setSelectedIndex(0);

@@ -96,7 +96,7 @@ final class ServicoImp implements ServicoDao {
 			Root<Servico> rootMarca = criteriaQuery.from(Servico.class);
 
 			List<Predicate> predicateList = new ArrayList<>();
-			
+
 			if ((marca.getCpfCnpjCliente() != null) && !(marca.getCpfCnpjCliente().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("cpfCnpjCliente"), marca.getCpfCnpjCliente()));
 			}
@@ -104,26 +104,25 @@ final class ServicoImp implements ServicoDao {
 			if (marca.getData() != null) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("data"), marca.getData()));
 			}
-			
+
 			if ((marca.getDescricao() != null) && !(marca.getDescricao().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("descricao"), marca.getDescricao()));
-			}			
-			
+			}
+
 			if ((marca.getNomeCliente() != null) && !(marca.getNomeCliente().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("nomeCliente"), marca.getDescricao()));
 			}
-			
+
 			if ((marca.getPlaca() != null) && !(marca.getPlaca().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("placa"), marca.getDescricao()));
 			}
-			
+
 			if ((marca.getTelefoneCliente() != null) && !(marca.getTelefoneCliente().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("telefoneCliente"), marca.getTelefoneCliente()));
 			}
-			
+
 			predicateList.add(criteriaBuilder.equal(rootMarca.get("valor"), marca.getValor()));
-			
-						
+
 			criteriaQuery.select(rootMarca).where(predicateList.toArray(new Predicate[] {}));
 
 			marcaList = entityManager.createQuery(criteriaQuery).getResultList();
@@ -152,10 +151,10 @@ final class ServicoImp implements ServicoDao {
 			CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 			CriteriaQuery<Servico> criteriaQuery = criteriaBuilder.createQuery(Servico.class);
 			Root<Servico> rootMarca = criteriaQuery.from(Servico.class);
-			List<Predicate> predicateList = new ArrayList<>();			
+			List<Predicate> predicateList = new ArrayList<>();
 			if ((marca.getDescricao() != null) && (marca.getDescricao().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootMarca.get("descricao"), marca.getDescricao()));
-			}			
+			}
 			criteriaQuery.select(rootMarca).where(predicateList.toArray(new Predicate[] {}));
 			marcaList = entityManager.createQuery(criteriaQuery).getResultList();
 		} catch (Exception exception) {

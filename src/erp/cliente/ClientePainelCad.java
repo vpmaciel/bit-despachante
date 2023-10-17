@@ -16,13 +16,12 @@ import erp.arquitetura.gui.ToolBar;
 @SuppressWarnings("serial")
 public final class ClientePainelCad extends JPanel implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;	
-	private JTextField fieldNome;	
-	private JTextField fieldCpfCnpj;	
-	private JTextField fieldTelefone;	
-	private JTextField fieldEmail;	
+	private ConfiguracaoGui configuracaoGui;
+	private JTextField fieldNome;
+	private JTextField fieldCpfCnpj;
+	private JTextField fieldTelefone;
+	private JTextField fieldEmail;
 	private ToolBar toolBar;
-	private ClienteControl clienteControl;
 
 	public ClientePainelCad() {
 		iniciarLayout();
@@ -43,25 +42,21 @@ public final class ClientePainelCad extends JPanel implements Gui {
 	public JTextField getGuiEmail() {
 		return fieldEmail;
 	}
-	
+
 	public JTextField getGuiCpfCnpj() {
 		return fieldCpfCnpj;
 	}
-	
+
 	public JTextField getGuiNome() {
 		return fieldNome;
 	}
-	
+
 	public JTextField getGuiTelefone() {
 		return fieldTelefone;
 	}
 
 	public ToolBar getTB() {
 		return toolBar;
-	}
-
-	public ClienteControl getUsuarioCont() {
-		return clienteControl;
 	}
 
 	@Override
@@ -80,32 +75,31 @@ public final class ClientePainelCad extends JPanel implements Gui {
 
 		add(toolBar.getTB());
 
-		
 		add(new JLabel("NOME"));
 
 		fieldNome = new JTextField();
 		fieldNome.setDocument(new EntradaMaiuscula(50));
 		add(fieldNome);
-		
+
 		add(new JLabel("CPF | CNPJ"));
 
-		fieldCpfCnpj = new JTextField();		
+		fieldCpfCnpj = new JTextField();
 		fieldCpfCnpj.setDocument(new EntradaMaiuscula(14));
 		fieldCpfCnpj.addKeyListener(new SomenteNumeros());
 		add(fieldCpfCnpj);
-		
+
 		add(new JLabel("E-MAIL"));
 
 		fieldEmail = new JTextField();
 		fieldEmail.setDocument(new EntradaMaiuscula(70));
 		add(fieldEmail);
-		
+
 		add(new JLabel("TELEFONE"));
 
 		fieldTelefone = new JTextField();
 		fieldTelefone.setDocument(new EntradaMaiuscula(11));
 		fieldTelefone.addKeyListener(new SomenteNumeros());
-		add(fieldTelefone);	
+		add(fieldTelefone);
 
 	}
 

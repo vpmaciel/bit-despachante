@@ -15,8 +15,9 @@ public class PedidoPlacaTm extends AbstractTableModel {
 	private static boolean[] podeEditar;
 	private static TabelaModelo tabelaModelo = new TabelaModelo();
 	static {
-		tabelaModelo.adicionarColuna("ID", 0, 50);		
-		tabelaModelo.adicionarColuna("DESCRIÇÃO", 1, 500);
+		tabelaModelo.adicionarColuna("ID", 0, 50);
+		tabelaModelo.adicionarColuna("QUANTIDADE", 1, 200);
+		tabelaModelo.adicionarColuna("PLACA DO VEÍCULO", 2, 200);
 
 		largura = new int[tabelaModelo.getTotalColunas()];
 		podeEditar = new boolean[tabelaModelo.getTotalColunas()];
@@ -25,26 +26,30 @@ public class PedidoPlacaTm extends AbstractTableModel {
 			podeEditar[i] = false;
 		}
 	}
-	private PedidoPlaca marca;
+	private PedidoPlaca pedidoPlaca;
 
-	private List<PedidoPlaca> marcaList = new LinkedList<>();
+	private List<PedidoPlaca> pedidoPlacaList = new LinkedList<>();
 
 	public PedidoPlacaTm() {
 
 	}
 
 	public PedidoPlacaTm(List<PedidoPlaca> lista) {
-		marcaList.addAll(lista);
+		pedidoPlacaList.addAll(lista);
 	}
 
 	@Override
 	public Class<?> getColumnClass(int columnIndex) {
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			return Long.class;
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
+		if (tabelaModelo.getNome(columnIndex).equals("QUANTIDADE")) {
+			return Integer.class;
+		}
+		
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
 			return String.class;
 		}
 
@@ -63,33 +68,37 @@ public class PedidoPlacaTm extends AbstractTableModel {
 
 	@Override
 	public int getRowCount() {
-		return marcaList.size();
+		return pedidoPlacaList.size();
 	}
 
 	public PedidoPlaca getMarca(int linha) {
-		if (marcaList.size() > 0) {
-			return marcaList.get(linha);
+		if (pedidoPlacaList.size() > 0) {
+			return pedidoPlacaList.get(linha);
 		}
 		return null;
 	}
 
 	public List<PedidoPlaca> getContaList() {
-		return marcaList;
+		return pedidoPlacaList;
 	}
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		PedidoPlaca marca = marcaList.get(rowIndex);
-		
+		PedidoPlaca pedidoPlaca = pedidoPlacaList.get(rowIndex);
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-			return marca.getId();
+			return pedidoPlaca.getId();
+		}
+
+		if (tabelaModelo.getNome(columnIndex).equals("QUANTIDADE")) {
+			return pedidoPlaca.getQuantidade();
 		}
 		
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
-			return marca.getDescricao();
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
+			return pedidoPlaca.getPlaca();
 		}
-		
-		return marca;
+
+		return pedidoPlaca;
 	}
 
 	@Override
@@ -97,21 +106,25 @@ public class PedidoPlacaTm extends AbstractTableModel {
 		return podeEditar[columnIndex];
 	}
 
-	public void setContaList(List<PedidoPlaca> marca) {
-		marcaList = marca;
+	public void setContaList(List<PedidoPlaca> pedidoPlacaList) {
+		this.pedidoPlacaList = pedidoPlacaList;
 	}
 
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-		marca = marcaList.get(rowIndex);
-		
+		pedidoPlaca = pedidoPlacaList.get(rowIndex);
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-			marca.setId(Long.parseLong(aValue.toString()));
+			pedidoPlaca.setId(Long.parseLong(aValue.toString()));
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO")) {
-			marca.setDescricao(aValue.toString());
-		}		
+		if (tabelaModelo.getNome(columnIndex).equals("QUANTIDADE")) {
+			pedidoPlaca.setQuantidade(Integer.parseInt(aValue.toString()));
+		}
+		
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
+			pedidoPlaca.setPlaca(aValue.toString());
+		}
 
 		fireTableDataChanged();
 	}

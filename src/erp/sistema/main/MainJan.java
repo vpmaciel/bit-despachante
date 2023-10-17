@@ -30,14 +30,14 @@ public class MainJan extends JFrame {
 	private JMenu menuArquivo;
 	private final JMenuBar menuBar = new JMenuBar();
 	private JMenu menuCadastro;
-	private JMenuItem menuItemAjudaSobreSistema;	
-	private JMenuItem menuItemArquivoSair;	
+	private JMenuItem menuItemAjudaSobreSistema;
+	private JMenuItem menuItemArquivoSair;
 	private JMenuItem menuItemCadastroCliente;
 	private JMenuItem menuItemCadastroVeiculo;
-	private JMenuItem menuItemCadastroServico;	
-	private JMenuItem menuItemCadastroPedidoPlaca;	
-	
-		public MainJan() {
+	private JMenuItem menuItemCadastroServico;
+	private JMenuItem menuItemCadastroPedidoPlaca;
+
+	public MainJan() {
 		iniciarGui();
 		iniciarCont();
 	}
@@ -60,7 +60,7 @@ public class MainJan extends JFrame {
 
 	public JMenuItem getMenuItemArquivoSair() {
 		return menuItemArquivoSair;
-	}	
+	}
 
 	public JMenuItem getMenuItemCadastroCliente() {
 		return menuItemCadastroCliente;
@@ -69,7 +69,7 @@ public class MainJan extends JFrame {
 	public JMenuItem getMenuItemCadastroVeiculo() {
 		return menuItemCadastroVeiculo;
 	}
-	
+
 	public JMenuItem getMenuItemCadastroPedidoPlaca() {
 		return menuItemCadastroPedidoPlaca;
 	}
@@ -79,7 +79,7 @@ public class MainJan extends JFrame {
 	}
 
 	public void iniciarCont() {
-		mainControl = MainControl.getInstance(this);		
+		mainControl = MainControl.getInstance(this);
 		addWindowListener(mainControl.new FrameGerenteEventos());
 		menuItemArquivoSair.addActionListener(mainControl.new MenuGerenteEventos());
 		menuItemCadastroVeiculo.addActionListener(mainControl.new MenuGerenteEventos());
@@ -102,26 +102,26 @@ public class MainJan extends JFrame {
 		menuArquivo.setMnemonic('A');
 
 		menuItemArquivoSair = new JMenuItem("Sair");
-		
+
 		menuArquivo.add(menuItemArquivoSair);
 
 		menuBar.add(menuArquivo);
 
 		menuCadastro = new JMenu("Cadastro");
 		menuCadastro.setMnemonic('C');
-				
+
 		menuItemCadastroPedidoPlaca = new JMenuItem("Pedido de Placa");
 		menuCadastro.add(menuItemCadastroPedidoPlaca);
-		
+
 		menuItemCadastroServico = new JMenuItem("Serviço");
 		menuCadastro.add(menuItemCadastroServico);
-		
+
 		menuItemCadastroVeiculo = new JMenuItem("Veículo");
 		menuCadastro.add(menuItemCadastroVeiculo);
 
 		menuItemCadastroCliente = new JMenuItem("Cliente");
 		menuCadastro.add(menuItemCadastroCliente);
-				
+
 		menuBar.add(menuCadastro);
 
 		menuAjuda = new JMenu("Ajuda");

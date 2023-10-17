@@ -18,10 +18,6 @@ public final class ClienteFac {
 		return marcaDao.getRegistro(marca);
 	}
 
-	public static boolean isRegistroValido(Cliente marca) {
-		return marcaDao.isRegistroValido(marca);
-	}
-
 	public static Collection<Cliente> pesquisarRegistro(Cliente marca) {
 		return marcaDao.pesquisarRegistro(marca);
 	}

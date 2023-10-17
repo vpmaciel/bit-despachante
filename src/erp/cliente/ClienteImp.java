@@ -48,7 +48,7 @@ final class ClienteImp implements ClienteDao {
 			entityManager = Jpa.getEntityManagerFactory().createEntityManager();
 			entityTransaction = entityManager.getTransaction();
 			entityTransaction.begin();
-			Query query = entityManager.createQuery("select T from Cliente T order by T.descricao", Cliente.class);
+			Query query = entityManager.createQuery("select T from Cliente T order by T.nome", Cliente.class);
 			clienteList = query.getResultList();
 		} catch (Exception exception) {
 			exception.printStackTrace();
@@ -82,54 +82,6 @@ final class ClienteImp implements ClienteDao {
 	}
 
 	@Override
-	public boolean isRegistroValido(Cliente cliente) {
-		EntityManager entityManager = null;
-		EntityTransaction entityTransaction = null;
-		List<Cliente> clienteList = null;
-		try {
-			entityManager = Jpa.getEntityManagerFactory().createEntityManager();
-			entityTransaction = entityManager.getTransaction();
-			entityTransaction.begin();
-
-			CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-			CriteriaQuery<Cliente> criteriaQuery = criteriaBuilder.createQuery(Cliente.class);
-			Root<Cliente> rootCliente = criteriaQuery.from(Cliente.class);
-
-			List<Predicate> predicateList = new ArrayList<>();
-			
-			if ((cliente.getCpfCnpj() != null) && !(cliente.getCpfCnpj().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootCliente.get("cpfCnpj"), cliente.getCpfCnpj()));
-			}						
-			
-			if ((cliente.getEmail() != null) && !(cliente.getEmail().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootCliente.get("email"), cliente.getCpfCnpj()));
-			}
-			
-			if ((cliente.getNome() != null) && !(cliente.getNome().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootCliente.get("nome"), cliente.getCpfCnpj()));
-			}
-			
-			if ((cliente.getTelefone() != null) && !(cliente.getTelefone().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootCliente.get("telefone"), cliente.getTelefone()));
-			}					
-						
-			criteriaQuery.select(rootCliente).where(predicateList.toArray(new Predicate[] {}));
-
-			clienteList = entityManager.createQuery(criteriaQuery).getResultList();
-
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			throw exception;
-		} finally {
-			if (entityManager.isOpen()) {
-				entityManager.close();
-			}
-		}
-
-		return clienteList.size() == 1;
-	}
-
-	@Override
 	public Collection<Cliente> pesquisarRegistro(Cliente cliente) {
 		EntityManager entityManager = null;
 		EntityTransaction entityTransaction = null;
@@ -141,23 +93,23 @@ final class ClienteImp implements ClienteDao {
 			CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 			CriteriaQuery<Cliente> criteriaQuery = criteriaBuilder.createQuery(Cliente.class);
 			Root<Cliente> rootCliente = criteriaQuery.from(Cliente.class);
-			List<Predicate> predicateList = new ArrayList<>();	
-			
-			if ((cliente.getCpfCnpj() != null) && !(cliente.getCpfCnpj().length() > 0)) {
+			List<Predicate> predicateList = new ArrayList<>();
+
+			if ((cliente.getCpfCnpj() != null) && (cliente.getCpfCnpj().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootCliente.get("cpfCnpj"), cliente.getCpfCnpj()));
-			}						
-			
-			if ((cliente.getEmail() != null) && !(cliente.getEmail().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootCliente.get("email"), cliente.getCpfCnpj()));
 			}
-			
-			if ((cliente.getNome() != null) && !(cliente.getNome().length() > 0)) {
-				predicateList.add(criteriaBuilder.equal(rootCliente.get("nome"), cliente.getCpfCnpj()));
+
+			if ((cliente.getEmail() != null) && (cliente.getEmail().length() > 0)) {
+				predicateList.add(criteriaBuilder.equal(rootCliente.get("email"), cliente.getEmail()));
 			}
-			
-			if ((cliente.getTelefone() != null) && !(cliente.getTelefone().length() > 0)) {
+
+			if ((cliente.getNome() != null) && (cliente.getNome().length() > 0)) {
+				predicateList.add(criteriaBuilder.equal(rootCliente.get("nome"), cliente.getNome()));
+			}
+
+			if ((cliente.getTelefone() != null) && (cliente.getTelefone().length() > 0)) {
 				predicateList.add(criteriaBuilder.equal(rootCliente.get("telefone"), cliente.getTelefone()));
-			}	
+			}
 			criteriaQuery.select(rootCliente).where(predicateList.toArray(new Predicate[] {}));
 			clienteList = entityManager.createQuery(criteriaQuery).getResultList();
 		} catch (Exception exception) {

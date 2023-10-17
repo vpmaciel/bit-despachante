@@ -5,37 +5,60 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import erp.arquitetura.Data;
 import erp.arquitetura.Relatorio;
 import erp.arquitetura.Sis;
 
 public class PedidoPlacaRel {
 
-	private String arquivo = Sis.getCaminhoApp() + "marca-de-veiculo.pdf";
+	private String arquivo = Sis.getCaminhoApp() + Data.getDataHoraArquivo() + "pedido-de-placa.pdf";
 	private Document document = new Document();
 	private Relatorio relatorio = new Relatorio();
-	private String titulo = "CONTAS";
 	private PdfWriter writer = null;
+	private Font font = new Font(Font.FontFamily.COURIER, 8, Font.NORMAL);
 
 	public PedidoPlacaRel(List<PedidoPlaca> marcas) {
 
-		try {			
+		try {
 			writer = PdfWriter.getInstance(document, new FileOutputStream(arquivo));
-			relatorio.criarRelatorio(writer, document, titulo);
+			relatorio.criarRelatorio(writer, document);
+
+			long contador = 1;
 
 			for (PedidoPlaca marca : marcas) {
-				document.add(new Paragraph("MARCA: " + marca.getDescricao()));
+				relatorio.getCabecalho(writer, document, "PEDIDO DE PLACA");
+				document.add(new Paragraph("DATA: " + marca.getData(), font));
+				document.add(new Paragraph("QUANTIDADE: " + marca.getQuantidade(), font));
+				document.add(new Paragraph("PLACA DO VEÍCULO: " + marca.getPlaca(), font));
+				document.add(new Paragraph("COR DA PLACA: " + marca.getCorPlaca(), font));
+				document.add(new Paragraph("TIPO DE PLACA: " + marca.getTipoPlaca(), font));
+				document.add(new Paragraph("CPF | CNPJ DO PROPRIETÁRIO: " + marca.getCpfCnpjProprietario(), font));
+				document.add(new Paragraph("RENAVAM: " + marca.getRenavam(), font));
+				relatorio.getRodape(writer, document);
+				if (contador < marcas.size()) {
+					document.newPage();
+				}
+				contador++;
+
 			}
+			document.close();
+			relatorio.retornarRelatorio(arquivo);
 		} catch (DocumentException | FileNotFoundException e) {
-			System.err.println(e.getMessage());
+			JOptionPane.showMessageDialog(null, "Arquivo não encontrado !", "Erro", JOptionPane.ERROR_MESSAGE);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Relatório não pode ser gerado !", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
-		relatorio.getRodape(writer, document);
-		document.close();
-		relatorio.retornarRelatorio(arquivo);
+
+		
+		
 	}
 
 	public File retornarRelatorio() {

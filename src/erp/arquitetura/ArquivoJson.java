@@ -1,8 +1,11 @@
 package erp.arquitetura;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,6 +22,7 @@ public class ArquivoJson<Tipo> {
 	private String arquivo;
 	private List<Tipo> listTipo = new LinkedList<>();
 	private Tipo tipo;
+	private File file;
 
 	public ArquivoJson(Tipo tipo, String nome) {
 		this.tipo = tipo;
@@ -67,5 +71,20 @@ public class ArquivoJson<Tipo> {
 
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
+	}
+	
+	public File retornarArquivo(boolean abrirArquivo) {
+
+		try {
+			Sis.abrirDiretorio();
+			file = new File(arquivo);
+			if (abrirArquivo) {
+				Desktop.getDesktop().open(file);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return file;
 	}
 }

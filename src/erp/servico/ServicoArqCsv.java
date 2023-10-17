@@ -26,7 +26,7 @@ public class ServicoArqCsv {
 			bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(arquivo), "UTF-8"));
 
 			StringBuffer cabecalho = new StringBuffer();
-			cabecalho.append("DESCRIÇÃO");						
+			cabecalho.append("DESCRIÇÃO");
 			bufferedWriter.write(cabecalho.toString());
 			bufferedWriter.newLine();
 			for (Servico marca : listUsuario) {

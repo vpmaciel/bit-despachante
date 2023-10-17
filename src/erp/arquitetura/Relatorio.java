@@ -17,19 +17,11 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class Relatorio {
 
-	public void criarRelatorio(PdfWriter writer, Document document, String titulo) {
+	public void criarRelatorio(PdfWriter writer, Document document) {
 		try {
 
 			document.open();
 			document.setPageSize(PageSize.A4);
-
-			Font font = new Font(Font.FontFamily.COURIER, 20, Font.BOLD);
-			Paragraph paragraph = new Paragraph(titulo, font);
-
-			paragraph.setAlignment(Element.ALIGN_CENTER);
-			document.add(paragraph);
-			document.newPage();
-			paragraph.setAlignment(Element.ALIGN_JUSTIFIED);
 
 		} catch (Exception exception) {
 			exception.printStackTrace();
@@ -37,9 +29,35 @@ public class Relatorio {
 		}
 	}
 
+	public void getCabecalho(PdfWriter writer, Document document, String titulo) {
+		try {
+			Font font = new Font(Font.FontFamily.COURIER, 8, Font.NORMAL);
+			Rectangle page = document.getPageSize();
+
+			PdfPTable head = new PdfPTable(1);
+			PdfPCell cell = new PdfPCell(new Paragraph(titulo, font));
+			cell.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
+			cell.setVerticalAlignment(PdfPCell.ALIGN_CENTER);
+			cell.setBorder(0);
+			head.addCell(cell);
+			head.setTotalWidth(page.getWidth() - document.leftMargin() - document.rightMargin());
+			head.writeSelectedRows(0, -1, document.leftMargin(),
+					page.getHeight() - document.topMargin() + head.getTotalHeight(), writer.getDirectContent());
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro ao definir o cabeçalho do relatório !", "Erro",
+					JOptionPane.ERROR_MESSAGE);
+
+			JOptionPane.showMessageDialog(null, "O arquivo já está sendo usado por outro processo !", "Erro",
+					JOptionPane.ERROR_MESSAGE);
+
+		}
+	}
+
 	public void getRodape(PdfWriter writer, Document document) {
 		try {
-			Font font = new Font(Font.FontFamily.COURIER, 8, Font.BOLD);
+			Font font = new Font(Font.FontFamily.COURIER, 8, Font.NORMAL);
 			Rectangle page = document.getPageSize();
 			PdfPTable foot = new PdfPTable(1);
 			PdfPCell cell = new PdfPCell(new Paragraph(Data.getDataHoraCompleta(), font));
@@ -52,8 +70,12 @@ public class Relatorio {
 
 		} catch (Exception exception) {
 			exception.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro ao definir o rodapé do relatório", "Erro",
+			JOptionPane.showMessageDialog(null, "Erro ao definir o rodapé do relatório !", "Erro",
 					JOptionPane.ERROR_MESSAGE);
+
+			JOptionPane.showMessageDialog(null, "O arquivo já está sendo usado por outro processo !", "Erro",
+					JOptionPane.ERROR_MESSAGE);
+
 		}
 	}
 

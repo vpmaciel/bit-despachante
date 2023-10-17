@@ -1,6 +1,5 @@
 package erp.servico;
 
-import javax.persistence.Column;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,14 +15,14 @@ import erp.arquitetura.gui.ToolBar;
 @SuppressWarnings("serial")
 public final class ServicoPainelCad extends JPanel implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;	
-	private JTextField fieldData;	
-	private JTextField fieldPlaca;	
-	private JTextField fieldValor;	
-	private JTextField fieldDescricao;	
-	private JTextField fieldCpfCnpjCliente;	
-	private JTextField fieldNomeCliente;	
-	private JTextField fieldTelefoneCliente;	
+	private ConfiguracaoGui configuracaoGui;
+	private JTextField fieldData;
+	private JTextField fieldPlaca;
+	private JTextField fieldValor;
+	private JTextField fieldDescricao;
+	private JTextField fieldCpfCnpjCliente;
+	private JTextField fieldNomeCliente;
+	private JTextField fieldTelefoneCliente;
 	private ToolBar toolBar;
 	private ServicoControl marcaControl;
 
@@ -71,51 +70,47 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 
 		add(toolBar.getTB());
 
-		
 		add(new JLabel("DATA"));
 
 		fieldData = new JTextField();
 		fieldData.setDocument(new EntradaMaiuscula(10));
 		add(fieldData);
-		
+
 		add(new JLabel("PLACA DO VEÍCULO"));
 
 		fieldPlaca = new JTextField();
 		fieldPlaca.setDocument(new EntradaMaiuscula(10));
 		add(fieldPlaca);
-		
+
 		add(new JLabel("DESCRIÇÃO DO SERVIÇO"));
 
 		fieldDescricao = new JTextField();
 		fieldDescricao.setDocument(new EntradaMaiuscula(10));
 		add(fieldDescricao);
-		
+
 		add(new JLabel("VALOR DO SERVIÇO"));
 
 		fieldValor = new JTextField();
 		fieldValor.setDocument(new EntradaMaiuscula(10));
-		add(fieldValor);	
-
+		add(fieldValor);
 
 		add(new JLabel("CPF/CNPJ DO CLIENTE"));
 
 		fieldCpfCnpjCliente = new JTextField();
 		fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(10));
-		add(fieldCpfCnpjCliente);	
+		add(fieldCpfCnpjCliente);
 
-			
 		add(new JLabel("NOME DO CLIENTE"));
 
 		fieldNomeCliente = new JTextField();
 		fieldNomeCliente.setDocument(new EntradaMaiuscula(10));
-		add(fieldNomeCliente);	
+		add(fieldNomeCliente);
 
-		
 		add(new JLabel("TELEFONE DO CLIENTE"));
 
 		fieldTelefoneCliente = new JTextField();
 		fieldTelefoneCliente.setDocument(new EntradaMaiuscula(10));
-		add(fieldTelefoneCliente);	
+		add(fieldTelefoneCliente);
 
 	}
 

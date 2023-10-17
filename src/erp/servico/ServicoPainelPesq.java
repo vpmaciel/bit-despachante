@@ -36,7 +36,7 @@ public final class ServicoPainelPesq extends JPanel {
 		}
 		Tabela.configurarLarguraColunasTabela(table, ServicoTm.largura);
 		((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
-				.setHorizontalAlignment(SwingConstants.RIGHT);		
+				.setHorizontalAlignment(SwingConstants.RIGHT);
 		table.setRowSelectionAllowed(true);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

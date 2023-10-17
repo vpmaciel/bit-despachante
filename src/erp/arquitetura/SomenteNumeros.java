@@ -27,10 +27,10 @@ public class SomenteNumeros implements KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		JTextField textField = (JTextField) e.getSource();		
-		
+		JTextField textField = (JTextField) e.getSource();
+
 		if (!(e.getKeyChar() >= '0' && e.getKeyChar() <= '9')) {
 			textField.setText("");
-		} 	
+		}
 	}
 }

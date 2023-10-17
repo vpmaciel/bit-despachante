@@ -24,12 +24,13 @@ final class ClienteSel implements ListSelectionListener {
 			TableModel tm = table.getModel();
 			if (selRows.length > 0) {
 				Cliente clientePesquisaRegistro = new Cliente();
-				clientePesquisaRegistro.setId((Long)tm.getValueAt(selRows[0], ClienteTm.ID));
+				clientePesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], ClienteTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					Cliente cliente = ((List<Cliente>) ClienteFac.pesquisarRegistro(clientePesquisaRegistro)).get(table.getSelectedRow());
+					Cliente cliente = ((List<Cliente>) ClienteFac.pesquisarRegistro(clientePesquisaRegistro))
+							.get(table.getSelectedRow());
 					ClienteTm clienteTm = (ClienteTm) table.getModel();
-					clienteTm.getCliente(table.getSelectedRow());					
+					clienteTm.getCliente(table.getSelectedRow());
 
 					MainControl.mostrarFrame(MainControl.getClienteJan());
 					MainControl.getClienteJan().getClienteCont().setModelo(ClienteFac.getRegistro(cliente));

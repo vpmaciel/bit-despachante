@@ -15,7 +15,7 @@ public class ClienteTm extends AbstractTableModel {
 	private static boolean[] podeEditar;
 	private static TabelaModelo tabelaModelo = new TabelaModelo();
 	static {
-		tabelaModelo.adicionarColuna("ID", 0, 50);		
+		tabelaModelo.adicionarColuna("ID", 0, 50);
 		tabelaModelo.adicionarColuna("NOME", 1, 700);
 		tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 300);
 
@@ -40,7 +40,7 @@ public class ClienteTm extends AbstractTableModel {
 
 	@Override
 	public Class<?> getColumnClass(int columnIndex) {
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			return Long.class;
 		}
@@ -48,7 +48,7 @@ public class ClienteTm extends AbstractTableModel {
 		if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
 			return String.class;
 		}
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
 			return String.class;
 		}
@@ -85,19 +85,19 @@ public class ClienteTm extends AbstractTableModel {
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		Cliente cliente = clienteList.get(rowIndex);
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			return cliente.getId();
 		}
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
 			return cliente.getNome();
 		}
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
 			return cliente.getCpfCnpj();
 		}
-		
+
 		return cliente;
 	}
 
@@ -106,14 +106,14 @@ public class ClienteTm extends AbstractTableModel {
 		return podeEditar[columnIndex];
 	}
 
-	public void setContaList(List<Cliente> cliente) {
-		clienteList = cliente;
+	public void setContaList(List<Cliente> clienteList) {
+		this.clienteList = clienteList;
 	}
 
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		cliente = clienteList.get(rowIndex);
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
 			cliente.setId(Long.parseLong(aValue.toString()));
 		}
@@ -121,10 +121,10 @@ public class ClienteTm extends AbstractTableModel {
 		if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
 			cliente.setNome(aValue.toString());
 		}
-		
+
 		if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
 			cliente.setCpfCnpj(aValue.toString());
-		}		
+		}
 
 		fireTableDataChanged();
 	}

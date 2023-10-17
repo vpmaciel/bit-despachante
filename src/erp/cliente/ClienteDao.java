@@ -10,8 +10,6 @@ public interface ClienteDao {
 
 	Cliente getRegistro(Cliente marca);
 
-	boolean isRegistroValido(Cliente marca);
-
 	Collection<Cliente> pesquisarRegistro(Cliente marca);
 
 	void salvarRegistro(Cliente marca);

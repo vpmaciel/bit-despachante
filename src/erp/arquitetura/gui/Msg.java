@@ -17,37 +17,36 @@ public final class Msg {
 
 	public static void avisoCampoDiferente(JLabel label1, JLabel label2) {
 		JOptionPane.showMessageDialog(null, label1.getText() + " e " + label2.getText() + " são diferentes !",
-				"Informação", JOptionPane.INFORMATION_MESSAGE);
+				"Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoCampoDuplicado() {
 		JOptionPane.showMessageDialog(null, "Já está cadastrado em outro registro !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoCampoDuplicado(String campo) {
 		JOptionPane.showMessageDialog(null, campo + " : " + "\nJá está cadastrado em outro registro !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoCampoDuplicado(String campo, String valor) {
 		JOptionPane.showMessageDialog(null, campo + " : " + valor + "\nJá está cadastrado em outro registro !",
-				"Informação", JOptionPane.INFORMATION_MESSAGE);
+				"Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoCampoInvalido(Object campo) {
 		JOptionPane.showMessageDialog(null, campo.toString().toUpperCase() + " inválido !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoCampoObrigatorio(Object campo) {
 		JOptionPane.showMessageDialog(null, "Voce precisa preencher o campo " + campo.toString().toUpperCase(),
-				"Informação", JOptionPane.INFORMATION_MESSAGE);
+				"Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoCartaoCreditoInvalido() {
-		JOptionPane.showMessageDialog(null, "Cartão de Crédito inválido !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Cartão de Crédito inválido !", "Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoContactarEmpresa() {
@@ -57,11 +56,6 @@ public final class Msg {
 
 	public static void avisoImprimiRegistroNaoCadastrado() {
 		JOptionPane.showMessageDialog(null, "Registro não cadastrado no sistema !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
-	}
-
-	public static void avisoPesquisaRegistro() {
-		JOptionPane.showMessageDialog(null, "PesquisaRegistrondo Registro !", "Informação",
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 
@@ -80,11 +74,11 @@ public final class Msg {
 
 	public static void avisoUsuarioNaoExcluiRegistro() {
 		JOptionPane.showMessageDialog(null, "Voce não pode excluir este usuário !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static void avisoUsuarioNaoLogado() {
-		JOptionPane.showMessageDialog(null, "Usuário não está Logado !", "Informação", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Usuário não está Logado !", "Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
 	public static int confirmarExcluiRegistro() {

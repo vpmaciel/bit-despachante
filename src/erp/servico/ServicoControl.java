@@ -24,7 +24,8 @@ final class ServicoControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			if ((servico == null) || (servico.getDescricao() == null) || (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
+			if ((servico == null) || (servico.getDescricao() == null)
+					|| (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
 				return;
 			}
 			try {
@@ -49,7 +50,7 @@ final class ServicoControl {
 			}
 		}
 	}
-	
+
 	public class FormatoCsv implements ActionListener {
 
 		@Override
@@ -80,7 +81,7 @@ final class ServicoControl {
 			try {
 
 				ArquivoJson<Servico> arquivoJson = new ArquivoJson<>(servico, "usuario");
-				arquivoJson.gravarArquivo(ServicoFac.getRegistro());				
+				arquivoJson.gravarArquivo(ServicoFac.getRegistro());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -90,8 +91,6 @@ final class ServicoControl {
 			Sis.abrirDiretorio();
 		}
 	}
-
-
 
 	public class Frame extends WindowAdapter {
 
@@ -183,8 +182,7 @@ final class ServicoControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 			long totalPesquisaRegistro = 0;
-			totalPesquisaRegistro = MainControl.getServicoJan().getContaPainelPesq()
-					.pesquisarRegistro(new Servico());
+			totalPesquisaRegistro = MainControl.getServicoJan().getContaPainelPesq().pesquisarRegistro(new Servico());
 			Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 			if (totalPesquisaRegistro > 0) {
@@ -219,7 +217,10 @@ final class ServicoControl {
 			try {
 
 				int mensagem = Msg.confirmarSalvarRegistro();
-				if ((mensagem != JOptionPane.YES_OPTION) || !Entrada.validar(getContaPainelCad().getGuiDescricao(), "NOME", RegExp.NOME, true) || !Entrada.validar(getContaPainelCad().getGuiDescricao(), "DESCRIÇÃO", RegExp.NUMERO_BANCO, false)) {
+				if ((mensagem != JOptionPane.YES_OPTION)
+						|| !Entrada.validar(getContaPainelCad().getGuiDescricao(), "NOME", RegExp.NOME, true)
+						|| !Entrada.validar(getContaPainelCad().getGuiDescricao(), "DESCRIÇÃO", RegExp.NUMERO_BANCO,
+								false)) {
 					return;
 				}
 
@@ -263,14 +264,14 @@ final class ServicoControl {
 		if (servico == null) {
 			return;
 		}
-		getContaPainelCad().getGuiDescricao().setText(servico.getDescricao());		
+		getContaPainelCad().getGuiDescricao().setText(servico.getDescricao());
 	}
 
 	public void atualizarObjeto() {
 		if (servico == null) {
 			servico = new Servico();
 		}
-		servico.setDescricao(getContaPainelCad().getGuiDescricao().getText());		
+		servico.setDescricao(getContaPainelCad().getGuiDescricao().getText());
 	}
 
 	public Servico getConta() {

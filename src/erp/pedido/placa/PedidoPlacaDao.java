@@ -10,8 +10,6 @@ public interface PedidoPlacaDao {
 
 	PedidoPlaca getRegistro(PedidoPlaca marca);
 
-	boolean isRegistroValido(PedidoPlaca marca);
-
 	Collection<PedidoPlaca> pesquisarRegistro(PedidoPlaca marca);
 
 	void salvarRegistro(PedidoPlaca marca);

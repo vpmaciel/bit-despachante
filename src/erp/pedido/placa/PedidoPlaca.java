@@ -17,44 +17,45 @@ import javax.persistence.TemporalType;
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
-@Table(name = "SERVICO")
+@Table(name = "PEDIDO_DE_PLACA")
 
 public class PedidoPlaca implements Serializable {
 
-	@Id	
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(length = 100, name = "SERVICO_ID")
+	@Column(length = 100, name = "PEDIDO_DE_PLACA_ID")
 	private Long id = null;
-	@Column(name="SERVICO_DATA", columnDefinition = "date")
-	@Temporal(TemporalType.DATE)	
+	@Column(name = "PEDIDO_DE_PLACA_DATA", columnDefinition = "TIMESTAMP")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date data;
-	@Column(length = 7, name = "SERVICO_PLACA_VEICULO")
+	@Column(length = 7, name = "PEDIDO_DE_PLACA_PLACA_VEICULO")
 	private String placa;
-	@Column(name = "SERVICO_VALOR")
-	private float valor;
-	@Column(length = 50, name = "SERVICO_DESCRICAO")
-	private String descricao;
-	@Column(length = 18, name = "SERVICO_CPF_CNPJ_CLIENTE")
-	private String cpfCnpjCliente;
-	@Column(length = 50, name = "SERVICO_NOME_CLIENTE")
-	private String nomeCliente;
-	@Column(length = 50, name = "SERVICO_TELEFONE_CLIENTE")
-	private String telefoneCliente;		
-	
+	@Column(name = "PEDIDO_DE_PLACA_QUANTIDADE")
+	private Integer quantidade;
+	@Column(length = 50, name = "PEDIDO_DE_PLACA_RENAVAM")
+	private String renavam;
+	@Column(length = 18, name = "PEDIDO_DE_PLACA_CPF_CNPJ_PROPRIETARIO")
+	private String cpfCnpjProprietario;
+	@Column(length = 50, name = "PEDIDO_DE_PLACA_COR_PLACA")
+	private String corPlaca;
+	@Column(length = 50, name = "PEDIDO_DE_PLACA_TIPO_PLACA")
+	private String tipoPlaca;
+
+
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
-	}	
-
-	public String getDescricao() {
-		return descricao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public String getRenavam() {
+		return renavam;
+	}
+
+	public void setRenavam(String renavam) {
+		this.renavam = renavam;
 	}
 
 	public Date getData() {
@@ -73,37 +74,39 @@ public class PedidoPlaca implements Serializable {
 		this.placa = placa;
 	}
 
-	public float getValor() {
-		return valor;
+	public Integer getQuantidade() {
+		return quantidade;
 	}
 
-	public void setValor(float valor) {
-		this.valor = valor;
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
-	public String getCpfCnpjCliente() {
-		return cpfCnpjCliente;
+	public String getCpfCnpjProprietario() {
+		return cpfCnpjProprietario;
 	}
 
-	public void setCpfCnpjCliente(String cpfCnpjCliente) {
-		this.cpfCnpjCliente = cpfCnpjCliente;
+	public void setCpfCnpjProprietario(String cpfCnpjCliente) {
+		this.cpfCnpjProprietario = cpfCnpjCliente;
+	}
+	
+	public String getCorPlaca() {
+		return corPlaca;
 	}
 
-	public String getNomeCliente() {
-		return nomeCliente;
+	public void setCorPlaca(String corPlaca) {
+		this.corPlaca = corPlaca;
 	}
 
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
+	
+	public String getTipoPlaca() {
+		return tipoPlaca;
 	}
 
-	public String getTelefoneCliente() {
-		return telefoneCliente;
+	public void setTipoPlaca(String tipoPlaca) {
+		this.tipoPlaca = tipoPlaca;
 	}
 
-	public void setTelefoneCliente(String telefoneCliente) {
-		this.telefoneCliente = telefoneCliente;
-	}
 
 	@Override
 	public int hashCode() {
@@ -124,6 +127,6 @@ public class PedidoPlaca implements Serializable {
 
 	@Override
 	public String toString() {
-		return this.descricao;
+		return this.renavam;
 	}
 }

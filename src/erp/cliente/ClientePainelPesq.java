@@ -21,13 +21,13 @@ public final class ClientePainelPesq extends JPanel {
 
 	private final ClienteTm marcaTableModel;
 	private final JTable table;
-	List<Cliente> marcaList = null;
+	List<Cliente> clienteList = null;
 
 	public ClientePainelPesq() {
 		setBorder(Sis.getBordaPainel());
 
-		marcaList = new LinkedList<>();
-		marcaTableModel = new ClienteTm(marcaList);
+		clienteList = new LinkedList<>();
+		marcaTableModel = new ClienteTm(clienteList);
 
 		table = new JTable();
 		table.setModel(marcaTableModel);
@@ -36,7 +36,7 @@ public final class ClientePainelPesq extends JPanel {
 		}
 		Tabela.configurarLarguraColunasTabela(table, ClienteTm.largura);
 		((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
-				.setHorizontalAlignment(SwingConstants.RIGHT);		
+				.setHorizontalAlignment(SwingConstants.RIGHT);
 		table.setRowSelectionAllowed(true);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -66,13 +66,13 @@ public final class ClientePainelPesq extends JPanel {
 	}
 
 	public int pesquisarRegistro(Cliente marca) {
-		marcaList = new LinkedList<>();
+		clienteList = new LinkedList<>();
 		try {
-			marcaList = new LinkedList<>(ClienteFac.pesquisarRegistro(marca));
+			clienteList = new LinkedList<>(ClienteFac.pesquisarRegistro(marca));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		atualizarGui(marcaList);
-		return marcaList.size();
+		atualizarGui(clienteList);
+		return clienteList.size();
 	}
 }

@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
-import erp.arquitetura.validacao.Entrada;
-import erp.arquitetura.validacao.RegExp;
 import erp.sistema.main.MainControl;
 
 final class ClienteControl {
@@ -24,12 +22,13 @@ final class ClienteControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			if ((cliente == null) || (cliente.getCpfCnpj() == null) || (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
+			if ((cliente == null) || (cliente.getCpfCnpj() == null)
+					|| (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION)) {
 				return;
 			}
 			try {
 				ClienteFac.deletarRegistro(cliente);
-				getContaJanCad().limparGui();
+				getCienteJanCad().limparGui();
 				cliente = new Cliente();
 				Msg.sucessoExcluiRegistro();
 			} catch (Exception e) {
@@ -43,13 +42,13 @@ final class ClienteControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 			try {
-				getContaJanCad().setVisible(false);
+				getCienteJanCad().setVisible(false);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	
+
 	public class FormatoCsv implements ActionListener {
 
 		@Override
@@ -74,35 +73,31 @@ final class ClienteControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-
-			List<Cliente> listConta = new LinkedList<>();
-
 			try {
 
-				ArquivoJson<Cliente> arquivoJson = new ArquivoJson<>(cliente, "usuario");
-				arquivoJson.gravarArquivo(ClienteFac.getRegistro());				
+				ArquivoJson<Cliente> arquivoJson = new ArquivoJson<>(cliente, "cliente");
+				arquivoJson.gravarArquivo(ClienteFac.getRegistro());
+				arquivoJson.retornarArquivo(true);
+				Sis.abrirDiretorio();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			ClienteArqCsv clienteArqCsv = new ClienteArqCsv(listConta);
-			clienteArqCsv.retornarArquivo(true);
-			Sis.abrirDiretorio();
+			
+			
 		}
 	}
-
-
 
 	public class Frame extends WindowAdapter {
 
 		@Override
 		public void windowActivated(WindowEvent e) {
-			getContaJanCad().reiniciarGui();
+			getCienteJanCad().reiniciarGui();
 		}
 
 		@Override
 		public void windowClosing(WindowEvent e) {
-			getContaJanCad().setVisible(false);
+			getCienteJanCad().setVisible(false);
 		}
 
 		@Override
@@ -157,8 +152,8 @@ final class ClienteControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 			cliente = new Cliente();
-			getContaJanCad().limparGui();
-			getContaPainelCad().getGuiEmail().requestFocus();
+			getCienteJanCad().limparGui();
+			getClientePainelCad().getGuiNome().requestFocus();
 		}
 	}
 
@@ -168,7 +163,9 @@ final class ClienteControl {
 		public void actionPerformed(ActionEvent actionEvent) {
 			cliente = new Cliente();
 			atualizarObjeto();
+
 			long totalPesquisaRegistro = 0;
+
 			totalPesquisaRegistro = MainControl.getClienteJan().getContaPainelPesq().pesquisarRegistro(cliente);
 			Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
@@ -182,9 +179,10 @@ final class ClienteControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
+
 			long totalPesquisaRegistro = 0;
-			totalPesquisaRegistro = MainControl.getClienteJan().getContaPainelPesq()
-					.pesquisarRegistro(new Cliente());
+
+			totalPesquisaRegistro = MainControl.getClienteJan().getContaPainelPesq().pesquisarRegistro(new Cliente());
 			Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 			if (totalPesquisaRegistro > 0) {
@@ -219,31 +217,37 @@ final class ClienteControl {
 			try {
 
 				int mensagem = Msg.confirmarSalvarRegistro();
-				if ((mensagem != JOptionPane.YES_OPTION) || !Entrada.validar(getContaPainelCad().getGuiNome(), "NOME", RegExp.NOME, true)) {
-					return;
-				}
 
-				if (((getContaPainelCad().getGuiEmail().getText()) == null)
-						|| (getContaPainelCad().getGuiEmail().getText().length() == 0)) {
-					getContaPainelCad().getGuiEmail().requestFocus();
+				if (((getClientePainelCad().getGuiNome().getText()) == null)
+						|| (getClientePainelCad().getGuiNome().getText().length() == 0)) {
+					getClientePainelCad().getGuiNome().requestFocus();
 					Msg.avisoCampoObrigatorio("NOME");
 					return;
 				}
+
+				if (((getClientePainelCad().getGuiCpfCnpj().getText()) == null)
+						|| (getClientePainelCad().getGuiCpfCnpj().getText().length() == 0)) {
+					getClientePainelCad().getGuiCpfCnpj().requestFocus();
+					Msg.avisoCampoObrigatorio("CPF | CNPJ");
+					return;
+				}
+
 				if (mensagem == JOptionPane.YES_OPTION) {
 					atualizarObjeto();
 					ClienteFac.salvarRegistro(cliente);
 					cliente = new Cliente();
 					MainControl.getClienteJan().limparGui();
 					Msg.sucessoSalvarRegistro();
-					getContaPainelCad().getGuiEmail().requestFocus();
+					getClientePainelCad().getGuiNome().requestFocus();
 				}
+
 			} catch (Exception e) {
 				Throwable throwable = e.getCause().getCause();
 				String mensagem = throwable.toString();
 				if (mensagem.contains("ConstraintViolationException")) {
-					if (mensagem.contains("INDEX_CPF_CNPJ")) {
+					if (mensagem.contains("INDEX_CLIENTE_CPF_CNPJ")) {
 						Msg.avisoCampoDuplicado("CPF | CNPJ");
-						getContaPainelCad().getGuiEmail().requestFocus();
+						getClientePainelCad().getGuiNome().requestFocus();
 					} else {
 						Msg.avisoCampoDuplicado();
 					}
@@ -263,32 +267,32 @@ final class ClienteControl {
 		if (cliente == null) {
 			return;
 		}
-		getContaPainelCad().getGuiEmail().setText(cliente.getEmail());		
-		getContaPainelCad().getGuiCpfCnpj().setText(cliente.getCpfCnpj());
-		getContaPainelCad().getGuiNome().setText(cliente.getNome());
-		getContaPainelCad().getGuiTelefone().setText(cliente.getTelefone());
+		getClientePainelCad().getGuiEmail().setText(cliente.getEmail());
+		getClientePainelCad().getGuiCpfCnpj().setText(cliente.getCpfCnpj());
+		getClientePainelCad().getGuiNome().setText(cliente.getNome());
+		getClientePainelCad().getGuiTelefone().setText(cliente.getTelefone());
 	}
 
 	public void atualizarObjeto() {
 		if (cliente == null) {
 			cliente = new Cliente();
 		}
-		cliente.setCpfCnpj(getContaPainelCad().getGuiCpfCnpj().getText());	
-		cliente.setEmail(getContaPainelCad().getGuiEmail().getText());
-		cliente.setNome(getContaPainelCad().getGuiNome().getText());
-		cliente.setTelefone(getContaPainelCad().getGuiTelefone().getText());
-		
+		cliente.setCpfCnpj(getClientePainelCad().getGuiCpfCnpj().getText());
+		cliente.setEmail(getClientePainelCad().getGuiEmail().getText());
+		cliente.setNome(getClientePainelCad().getGuiNome().getText());
+		cliente.setTelefone(getClientePainelCad().getGuiTelefone().getText());
+
 	}
 
 	public Cliente getConta() {
 		return cliente;
 	}
 
-	public ClienteJan getContaJanCad() {
+	public ClienteJan getCienteJanCad() {
 		return MainControl.getClienteJan();
 	}
 
-	public ClientePainelCad getContaPainelCad() {
+	public ClientePainelCad getClientePainelCad() {
 		return MainControl.getClienteJan().getContaPainelCad();
 	}
 

@@ -84,7 +84,7 @@ public final class PedidoPlacaJan extends JFrame implements Gui {
 		marcaPainelCad.getTB().getRegistrosBtn().addActionListener(marcaControl.new Registro());
 		marcaPainelCad.getTB().getCsvBtn().addActionListener(marcaControl.new FormatoCsv());
 		marcaPainelCad.getTB().getJsonBtn().addActionListener(marcaControl.new FormatoJson());
-		
+
 		marcaPainelPesq.iniciarControlador();
 	}
 
@@ -94,7 +94,7 @@ public final class PedidoPlacaJan extends JFrame implements Gui {
 	}
 
 	@Override
-	public void iniciarGui() {		
+	public void iniciarGui() {
 		setTitle(Sis.getNomeSistema() + " - " + "PEDIDO DE PLACA");
 		setIconImage(Imagem.getLogoTipoImage());
 		tabbedPane = new JTabbedPane();

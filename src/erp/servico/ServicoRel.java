@@ -23,9 +23,9 @@ public class ServicoRel {
 
 	public ServicoRel(List<Servico> marcas) {
 
-		try {			
+		try {
 			writer = PdfWriter.getInstance(document, new FileOutputStream(arquivo));
-			relatorio.criarRelatorio(writer, document, titulo);
+			relatorio.criarRelatorio(writer, document);
 
 			for (Servico marca : marcas) {
 				document.add(new Paragraph("MARCA: " + marca.getDescricao()));

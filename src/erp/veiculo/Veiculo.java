@@ -21,12 +21,12 @@ import javax.persistence.TemporalType;
 
 public class Veiculo implements Serializable {
 
-	@Id	
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(length = 100, name = "SERVICO_ID")
 	private Long id = null;
-	@Column(name="SERVICO_DATA", columnDefinition = "date")
-	@Temporal(TemporalType.DATE)	
+	@Column(name = "SERVICO_DATA", columnDefinition = "date")
+	@Temporal(TemporalType.DATE)
 	private Date data;
 	@Column(length = 7, name = "SERVICO_PLACA_VEICULO")
 	private String placa;
@@ -39,15 +39,15 @@ public class Veiculo implements Serializable {
 	@Column(length = 50, name = "SERVICO_NOME_CLIENTE")
 	private String nomeCliente;
 	@Column(length = 50, name = "SERVICO_TELEFONE_CLIENTE")
-	private String telefoneCliente;		
-	
+	private String telefoneCliente;
+
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
-	}	
+	}
 
 	public String getDescricao() {
 		return descricao;

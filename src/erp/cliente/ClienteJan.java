@@ -84,7 +84,7 @@ public final class ClienteJan extends JFrame implements Gui {
 		clientePainelCad.getTB().getRegistrosBtn().addActionListener(clienteControl.new Registro());
 		clientePainelCad.getTB().getCsvBtn().addActionListener(clienteControl.new FormatoCsv());
 		clientePainelCad.getTB().getJsonBtn().addActionListener(clienteControl.new FormatoJson());
-		
+
 		clientePainelPesq.iniciarControlador();
 	}
 
@@ -94,7 +94,7 @@ public final class ClienteJan extends JFrame implements Gui {
 	}
 
 	@Override
-	public void iniciarGui() {		
+	public void iniciarGui() {
 		setTitle(Sis.getNomeSistema() + " - " + "CLIENTE");
 		setIconImage(Imagem.getLogoTipoImage());
 		tabbedPane = new JTabbedPane();

@@ -24,12 +24,13 @@ final class ServicoSel implements ListSelectionListener {
 			TableModel tm = table.getModel();
 			if (selRows.length > 0) {
 				Servico marcaPesquisaRegistro = new Servico();
-				marcaPesquisaRegistro.setId((Long)tm.getValueAt(selRows[0], ServicoTm.ID));
+				marcaPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], ServicoTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					Servico marca = ((List<Servico>) ServicoFac.pesquisarRegistro(marcaPesquisaRegistro)).get(table.getSelectedRow());
+					Servico marca = ((List<Servico>) ServicoFac.pesquisarRegistro(marcaPesquisaRegistro))
+							.get(table.getSelectedRow());
 					ServicoTm marcaTm = (ServicoTm) table.getModel();
-					marcaTm.getMarca(table.getSelectedRow());					
+					marcaTm.getMarca(table.getSelectedRow());
 
 					MainControl.mostrarFrame(MainControl.getPedidoPlacaJan());
 					MainControl.getServicoJan().getContaCont().setModelo(ServicoFac.getRegistro(marca));

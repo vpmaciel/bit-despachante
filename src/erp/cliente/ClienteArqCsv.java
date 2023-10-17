@@ -15,23 +15,41 @@ import erp.arquitetura.gui.Msg;
 
 public class ClienteArqCsv {
 
-	private final String arquivo = "marca-de-veiculo.csv";
+	private final String arquivo = "cliente.csv";
 
 	private BufferedWriter bufferedWriter = null;
 	private final String CSV_SEPARATOR = Sis.getCsvSeparador();
 	private File file;
 
-	public ClienteArqCsv(final List<Cliente> listUsuario) {
+	public ClienteArqCsv(final List<Cliente> listCliente) {
 		try {
 			bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(arquivo), "UTF-8"));
 
 			StringBuffer cabecalho = new StringBuffer();
-			cabecalho.append("DESCRIÇÃO");						
+			cabecalho.append("CLIENTE_IDENTIFICADOR");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("CLIENTE_NOME");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("CLIENTE_CPF_CNPJ");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("CLIENTE_EMAIL");
+			cabecalho.append(CSV_SEPARATOR);
+			cabecalho.append("CLIENTE_TELEFONE");
+			cabecalho.append(CSV_SEPARATOR);
 			bufferedWriter.write(cabecalho.toString());
+
 			bufferedWriter.newLine();
-			for (Cliente marca : listUsuario) {
+			for (Cliente cliente : listCliente) {
 				StringBuffer linha = new StringBuffer();
-				linha.append(marca.getCpfCnpj());
+				linha.append(cliente.getId());
+				linha.append(CSV_SEPARATOR);
+				linha.append(cliente.getNome());
+				linha.append(CSV_SEPARATOR);
+				linha.append(cliente.getCpfCnpj());
+				linha.append(CSV_SEPARATOR);
+				linha.append(cliente.getEmail());
+				linha.append(CSV_SEPARATOR);
+				linha.append(cliente.getTelefone());
 				linha.append(CSV_SEPARATOR);
 				bufferedWriter.write(linha.toString());
 				bufferedWriter.newLine();

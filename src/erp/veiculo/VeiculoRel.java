@@ -23,9 +23,9 @@ public class VeiculoRel {
 
 	public VeiculoRel(List<Veiculo> marcas) {
 
-		try {			
+		try {
 			writer = PdfWriter.getInstance(document, new FileOutputStream(arquivo));
-			relatorio.criarRelatorio(writer, document, titulo);
+			relatorio.criarRelatorio(writer, document);
 
 			for (Veiculo marca : marcas) {
 				document.add(new Paragraph("MARCA: " + marca.getDescricao()));

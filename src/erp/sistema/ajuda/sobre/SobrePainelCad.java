@@ -1,9 +1,9 @@
 package erp.sistema.ajuda.sobre;
 
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -37,10 +37,12 @@ public class SobrePainelCad extends JPanel {
 		labelAutor.setCursor(Sis.getNovaJanelaCursor());
 		labelAutor.addMouseListener(new Internet().new MailSistema("vpmaciel@gmail.com"));
 		labelCopyright.setText("Copyright 2019. Todos os direitos reservados.");
-		labelEmpresa.setText("<html><a href=\"https://www.linkedin.com/in/vpmaciel/\">https://www.linkedin.com/in/vpmaciel/</a><html>");
+		labelEmpresa.setText(
+				"<html><a href=\"https://www.linkedin.com/in/vpmaciel/\">https://www.linkedin.com/in/vpmaciel/</a><html>");
 		labelEmpresa.setCursor(Sis.getNovaJanelaCursor());
 		labelEmpresa.addMouseListener(new Internet().new LinkSistema("https://www.linkedin.com/in/vpmaciel/"));
-		labelPix.setText("<html>DOE QUALQUER VALOR<br>CHAVE PIX PARA O CPF: 054.284.486-95<br>NOME:VICENTE PAULO MACIEL</html>");
+		labelPix.setText(
+				"<html>DOE QUALQUER VALOR<br>CHAVE PIX PARA O CPF: 054.284.486-95<br>NOME:VICENTE PAULO MACIEL</html>");
 		labelPix.setFont(new Font("Arial", Font.PLAIN, 24));
 		this.add(labelTitulo, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
