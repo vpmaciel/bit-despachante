@@ -83,31 +83,31 @@ public final class VeiculoPainelCad extends JPanel implements Gui {
 		add(new JLabel("PLACA DO VEÍCULO"));
 
 		fieldPlaca = new JTextField();
-		fieldPlaca.setDocument(new EntradaMaiuscula(10));
+		fieldPlaca.setDocument(new EntradaMaiuscula(8));
 		add(fieldPlaca);
 
 		add(new JLabel("MARCA DO VEÍCULO"));
 
 		fieldMarca = new JTextField();
-		fieldMarca.setDocument(new EntradaMaiuscula(10));
+		fieldMarca.setDocument(new EntradaMaiuscula(50));
 		add(fieldMarca);
 
 		add(new JLabel("MODELO DO VEÍCULO"));
 
 		fieldModelo = new JTextField();
-		fieldModelo.setDocument(new EntradaMaiuscula(10));
+		fieldModelo.setDocument(new EntradaMaiuscula(50));
 		add(fieldModelo);
 
 		add(new JLabel("CPF | CNPJ DO PROPRIETÁRIO"));
 
 		fieldCpfCnpjProprietario = new JTextField();
-		fieldCpfCnpjProprietario.setDocument(new EntradaMaiuscula(10));
+		fieldCpfCnpjProprietario.setDocument(new EntradaMaiuscula(20));
 		add(fieldCpfCnpjProprietario);
 
 		add(new JLabel("NOME DO PROPRIETÁRIO"));
 
 		fieldNomeProprietario = new JTextField();
-		fieldNomeProprietario.setDocument(new EntradaMaiuscula(10));
+		fieldNomeProprietario.setDocument(new EntradaMaiuscula(50));
 		add(fieldNomeProprietario);
 	}
 

@@ -42,20 +42,34 @@ final class ServicoControl {
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
-			if (Msg.confirmarExcluiRegistro() != JOptionPane.YES_OPTION) {
+			if (Msg.confirmarFecharCaixa() != JOptionPane.YES_OPTION) {
 				return;
 			}
 
+			Float totalCaixa = 0.0f;
+
 			try {
+
 				List<Servico> listConta = new LinkedList<>();
 				listConta = new LinkedList<>(ServicoFac.pesquisarRegistro(new Servico()));
 
+				if (listConta.size() == 0) {
+					JOptionPane.showMessageDialog(null, "Caixa sem lançamentos !", "Aviso", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
+
+				ServicoArqCsv servicoArqCsv = new ServicoArqCsv(listConta);
+
 				for (Servico servico_item : listConta) {
+					totalCaixa += servico_item.getValor();
 					ServicoFac.deletarRegistro(servico_item);
 				}
 
 				getContaJanCad().limparGui();
-				Msg.sucessoExcluiRegistro();
+				Msg.sucessoFecharCaixa();
+				JOptionPane.showMessageDialog(null, "Caixa Fechado: R$ " + Numero.FloatToString(totalCaixa));
+				servicoArqCsv.retornarArquivo(true);
+				Sis.abrirDiretorio();
 			} catch (Exception e) {
 				Msg.erroExcluiRegistro();
 			}
@@ -215,15 +229,19 @@ final class ServicoControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 
-			List<Servico> servicos = new LinkedList<>();
+			List<Servico> servicoList = new LinkedList<>();
 
 			try {
-				servicos = new LinkedList<>(ServicoFac.pesquisarRegistro(new Servico()));
+				if (servicoList.size() == 0) {
+					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
+				servicoList = new LinkedList<>(ServicoFac.pesquisarRegistro(new Servico()));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			ServicoRel servicoRel = new ServicoRel(servicos);
+			ServicoRel servicoRel = new ServicoRel(servicoList);
 			servicoRel.retornarRelatorio();
 
 		}
@@ -296,7 +314,7 @@ final class ServicoControl {
 		if (servico == null) {
 			servico = new Servico();
 		}
-		servico.setCpfCnpjCliente(getContaPainelCad().getGuiDescricao().getText());
+		servico.setCpfCnpjCliente(getContaPainelCad().getGuiCpfCnpjCliente().getText());
 		servico.setDescricao(getContaPainelCad().getGuiDescricao().getText());
 		servico.setNomeCliente(getContaPainelCad().getGuiNomeCliente().getText());
 		servico.setPlaca(getContaPainelCad().getGuiPlaca().getText());

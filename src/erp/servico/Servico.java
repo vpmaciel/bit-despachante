@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import erp.arquitetura.Formatacao;
+
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
@@ -28,17 +30,17 @@ public class Servico implements Serializable {
 	@Column(name = "SERVICO_DATA", columnDefinition = "date")
 	@Temporal(TemporalType.DATE)
 	private Date data = new Date();
-	@Column(length = 7, name = "SERVICO_PLACA_VEICULO")
+	@Column(length = 8, name = "SERVICO_PLACA_VEICULO")
 	private String placa;
 	@Column(name = "SERVICO_VALOR")
 	private Float valor;
 	@Column(length = 50, name = "SERVICO_DESCRICAO")
 	private String descricao;
-	@Column(length = 18, name = "SERVICO_CPF_CNPJ_CLIENTE")
+	@Column(length = 20, name = "SERVICO_CPF_CNPJ_CLIENTE")
 	private String cpfCnpjCliente;
 	@Column(length = 50, name = "SERVICO_NOME_CLIENTE")
 	private String nomeCliente;
-	@Column(length = 50, name = "SERVICO_TELEFONE_CLIENTE")
+	@Column(length = 15, name = "SERVICO_TELEFONE_CLIENTE")
 	private String telefoneCliente;
 
 	@Override
@@ -97,7 +99,7 @@ public class Servico implements Serializable {
 	}
 
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		this.descricao = Formatacao.removerAcentos(descricao);
 	}
 
 	public void setId(Long id) {
@@ -105,7 +107,7 @@ public class Servico implements Serializable {
 	}
 
 	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
+		this.nomeCliente = Formatacao.removerAcentos(nomeCliente);
 	}
 
 	public void setPlaca(String placa) {

@@ -192,6 +192,10 @@ final class VeiculoControl {
 			List<Veiculo> veiculoList = new LinkedList<>();
 
 			try {
+				if (veiculoList.size() == 0) {
+					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
 				veiculoList = new LinkedList<>(VeiculoFac.pesquisarRegistro(new Veiculo()));
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -232,8 +236,6 @@ final class VeiculoControl {
 					if (mensagem.contains("INDEX_VEICULO_PLACA")) {
 						Msg.avisoCampoDuplicado("PLACA DO VEÍCULO");
 						getVeiculoPainelCad().getGuiPlaca().requestFocus();
-					} else {
-						Msg.avisoCampoDuplicado();
 					}
 				}
 				e.printStackTrace();

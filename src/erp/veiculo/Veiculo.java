@@ -25,13 +25,13 @@ public class Veiculo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(length = 100, name = "VEICULO_ID")
+	@Column(name = "VEICULO_ID")
 	private Long id = null;
-	@Column(length = 7, name = "VEICULO_PLACA")
+	@Column(length = 8, name = "VEICULO_PLACA")
 	private String placa;
 	@Column(length = 50, name = "VEICULO_MARCA")
 	private String marca;
-	@Column(length = 18, name = "VEICULO_CPF_CNPJ_PROPRIETARIO")
+	@Column(length = 20, name = "VEICULO_CPF_CNPJ_PROPRIETARIO")
 	private String cpfCnpjProprietario;
 	@Column(length = 50, name = "VEICULO_NOME_PROPRIETARIO")
 	private String nomeProprietario;

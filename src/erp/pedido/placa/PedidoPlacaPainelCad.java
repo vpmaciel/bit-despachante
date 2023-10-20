@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import erp.arquitetura.NumeroInteiro;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.ConfiguracaoGui;
 import erp.arquitetura.gui.EntradaMaiuscula;
@@ -87,37 +88,39 @@ public final class PedidoPlacaPainelCad extends JPanel implements Gui {
 		add(new JLabel("QUANTIDADE"));
 
 		fieldQuantidade = new JTextField();
-		fieldQuantidade.setDocument(new EntradaMaiuscula(10));
+		fieldQuantidade.setDocument(new EntradaMaiuscula(1));
+		fieldQuantidade.addKeyListener(new NumeroInteiro());
 		add(fieldQuantidade);
 
 		add(new JLabel("PLACA DO VEÍCULO"));
 
 		fieldPlaca = new JTextField();
-		fieldPlaca.setDocument(new EntradaMaiuscula(10));
+		fieldPlaca.setDocument(new EntradaMaiuscula(7));
 		add(fieldPlaca);
 
 		add(new JLabel("COR DA PLACA"));
 
 		fieldCorPlaca = new JTextField();
-		fieldCorPlaca.setDocument(new EntradaMaiuscula(10));
+		fieldCorPlaca.setDocument(new EntradaMaiuscula(50));
 		add(fieldCorPlaca);
 
 		add(new JLabel("TIPO DE PLACA"));
 
 		fieldTipoPlaca = new JTextField();
-		fieldTipoPlaca.setDocument(new EntradaMaiuscula(10));
+		fieldTipoPlaca.setDocument(new EntradaMaiuscula(50));
 		add(fieldTipoPlaca);
 
 		add(new JLabel("CPF | CNPJ DO PROPRIETÁRIO"));
 
 		fieldCpfCnpjProprietario = new JTextField();
-		fieldCpfCnpjProprietario.setDocument(new EntradaMaiuscula(10));
+		fieldCpfCnpjProprietario.setDocument(new EntradaMaiuscula(20));
 		add(fieldCpfCnpjProprietario);
 
 		add(new JLabel("RENAVAM"));
 
 		fieldRenavam = new JTextField();
-		fieldRenavam.setDocument(new EntradaMaiuscula(10));
+		fieldRenavam.setDocument(new EntradaMaiuscula(50));
+		fieldRenavam.addKeyListener(new NumeroInteiro());
 		add(fieldRenavam);
 
 	}

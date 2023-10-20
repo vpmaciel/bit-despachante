@@ -191,15 +191,19 @@ final class PedidoPlacaControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 
-			List<PedidoPlaca> clientes = new LinkedList<>();
+			List<PedidoPlaca> pedidoPlacaList = new LinkedList<>();
 
 			try {
-				clientes = new LinkedList<>(PedidoPlacaFac.pesquisarRegistro(new PedidoPlaca()));
+				if (pedidoPlacaList.size() == 0) {
+					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
+				pedidoPlacaList = new LinkedList<>(PedidoPlacaFac.pesquisarRegistro(new PedidoPlaca()));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			PedidoPlacaRel clienteRel = new PedidoPlacaRel(clientes);
+			PedidoPlacaRel clienteRel = new PedidoPlacaRel(pedidoPlacaList);
 			clienteRel.retornarRelatorio();
 
 		}

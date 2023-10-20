@@ -1,7 +1,5 @@
 package erp.arquitetura.documento;
 
-import erp.arquitetura.gui.Msg;
-
 public class CartaoCredito {
 
 	public static boolean validar(String numero, boolean obrigatorio) {
@@ -43,7 +41,6 @@ public class CartaoCredito {
 		if ((soma % 10) == 0) {
 			return true;
 		}
-		Msg.avisoCartaoCreditoInvalido();
 		return false;
 	}
 }

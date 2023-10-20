@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import erp.arquitetura.Sis;
-import erp.arquitetura.SomenteNumeros;
 import erp.arquitetura.gui.ConfiguracaoGui;
 import erp.arquitetura.gui.EntradaMaiuscula;
 import erp.arquitetura.gui.FocoEvento;
@@ -84,8 +83,7 @@ public final class ClientePainelCad extends JPanel implements Gui {
 		add(new JLabel("CPF | CNPJ"));
 
 		fieldCpfCnpj = new JTextField();
-		fieldCpfCnpj.setDocument(new EntradaMaiuscula(14));
-		fieldCpfCnpj.addKeyListener(new SomenteNumeros());
+		fieldCpfCnpj.setDocument(new EntradaMaiuscula(20));
 		add(fieldCpfCnpj);
 
 		add(new JLabel("E-MAIL"));
@@ -97,8 +95,7 @@ public final class ClientePainelCad extends JPanel implements Gui {
 		add(new JLabel("TELEFONE"));
 
 		fieldTelefone = new JTextField();
-		fieldTelefone.setDocument(new EntradaMaiuscula(11));
-		fieldTelefone.addKeyListener(new SomenteNumeros());
+		fieldTelefone.setDocument(new EntradaMaiuscula(15));
 		add(fieldTelefone);
 
 	}

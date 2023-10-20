@@ -1,6 +1,5 @@
 package erp.arquitetura.gui;
 
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import erp.sistema.ajuda.sobre.SobrePainelCad;
@@ -15,16 +14,6 @@ public final class Msg {
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 
-	public static void avisoCampoDiferente(JLabel label1, JLabel label2) {
-		JOptionPane.showMessageDialog(null, label1.getText() + " e " + label2.getText() + " são diferentes !",
-				"Informação", JOptionPane.WARNING_MESSAGE);
-	}
-
-	public static void avisoCampoDuplicado() {
-		JOptionPane.showMessageDialog(null, "Já está cadastrado em outro registro !", "Informação",
-				JOptionPane.WARNING_MESSAGE);
-	}
-
 	public static void avisoCampoDuplicado(String campo) {
 		JOptionPane.showMessageDialog(null, campo + " : " + "\nJá está cadastrado em outro registro !", "Informação",
 				JOptionPane.WARNING_MESSAGE);
@@ -35,24 +24,11 @@ public final class Msg {
 				"Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
-	public static void avisoCampoInvalido(Object campo) {
-		JOptionPane.showMessageDialog(null, campo.toString().toUpperCase() + " inválido !", "Informação",
-				JOptionPane.WARNING_MESSAGE);
-	}
-
 	public static void avisoCampoObrigatorio(Object campo) {
 		JOptionPane.showMessageDialog(null, "Voce precisa preencher o campo " + campo.toString().toUpperCase(),
 				"Informação", JOptionPane.WARNING_MESSAGE);
 	}
 
-	public static void avisoCartaoCreditoInvalido() {
-		JOptionPane.showMessageDialog(null, "Cartão de Crédito inválido !", "Informação", JOptionPane.WARNING_MESSAGE);
-	}
-
-	public static void avisoContactarEmpresa() {
-		JOptionPane.showMessageDialog(null, "Entre em contato com o desenvolvedor do sistema !", "Informação",
-				JOptionPane.INFORMATION_MESSAGE);
-	}
 
 	public static void avisoImprimiRegistroNaoCadastrado() {
 		JOptionPane.showMessageDialog(null, "Registro não cadastrado no sistema !", "Informação",
@@ -86,6 +62,11 @@ public final class Msg {
 				JOptionPane.YES_NO_OPTION, null, botoesSimNao, botoesSimNao[JOptionPane.INFORMATION_MESSAGE]);
 	}
 
+	public static int confirmarFecharCaixa() {
+		return JOptionPane.showOptionDialog(null, "Fechar o caixa ?", "Informação", JOptionPane.INFORMATION_MESSAGE,
+				JOptionPane.YES_NO_OPTION, null, botoesSimNao, botoesSimNao[JOptionPane.INFORMATION_MESSAGE]);
+	}
+
 	public static int confirmarFecharJanela() {
 		return JOptionPane.showOptionDialog(null, "Deseja fechar a janela ?", "Informação",
 				JOptionPane.INFORMATION_MESSAGE, JOptionPane.YES_NO_OPTION, null, botoesSimNao,
@@ -93,7 +74,7 @@ public final class Msg {
 	}
 
 	public static int confirmarSairDoSistema() {
-		return JOptionPane.showOptionDialog(null, "Sair do Sistema ?", "Informação", JOptionPane.INFORMATION_MESSAGE,
+		return JOptionPane.showOptionDialog(null, "Sair do Sistema ?", "Informação", JOptionPane.WARNING_MESSAGE,
 				JOptionPane.YES_NO_OPTION, null, botoesSimNao, botoesSimNao[JOptionPane.YES_NO_OPTION]);
 	}
 
@@ -117,10 +98,6 @@ public final class Msg {
 	public static void erroCampoInvalido() {
 		JOptionPane.showMessageDialog(null, "Digitou tecla não permitida para este campo !", "Erro",
 				JOptionPane.ERROR_MESSAGE);
-	}
-
-	public static void erroCampoNumerico() {
-		JOptionPane.showMessageDialog(null, "Voce deve digitar um número !", "Informação", JOptionPane.ERROR_MESSAGE);
 	}
 
 	public static void erroCodificacao() {
@@ -175,15 +152,6 @@ public final class Msg {
 				JOptionPane.ERROR_MESSAGE);
 	}
 
-	public static void erroValorInteiro() {
-		JOptionPane.showMessageDialog(null, "Digite um número de -2147483648 até 2147483647", "Erro",
-				JOptionPane.ERROR_MESSAGE);
-	}
-
-	public static void erroValorInteiroSemSinal() {
-		JOptionPane.showMessageDialog(null, "Digite um número de 0 até 2147483647", "Erro", JOptionPane.ERROR_MESSAGE);
-	}
-
 	public static void erroValorInvalido() {
 		JOptionPane.showMessageDialog(null, "Valor inválido !", "Erro", JOptionPane.ERROR_MESSAGE);
 	}
@@ -221,5 +189,11 @@ public final class Msg {
 	public static void sucessoSalvarRegistro() {
 		JOptionPane.showMessageDialog(null, "Registro salvo com sucesso !", "Informação",
 				JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public static void sucessoFecharCaixa() {
+		JOptionPane.showMessageDialog(null, "Caixa fechado com sucesso !", "Informação",
+				JOptionPane.INFORMATION_MESSAGE);
+
 	}
 }

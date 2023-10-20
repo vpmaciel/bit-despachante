@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import erp.arquitetura.NumeroDecimal;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.ConfiguracaoGui;
 import erp.arquitetura.gui.EntradaMaiuscula;
@@ -102,37 +103,37 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 		add(new JLabel("PLACA DO VEÍCULO"));
 
 		fieldPlaca = new JTextField();
-		fieldPlaca.setDocument(new EntradaMaiuscula(10));
+		fieldPlaca.setDocument(new EntradaMaiuscula(8));
 		add(fieldPlaca);
 
 		add(new JLabel("DESCRIÇÃO DO SERVIÇO"));
 
 		fieldDescricao = new JTextField();
-		fieldDescricao.setDocument(new EntradaMaiuscula(10));
+		fieldDescricao.setDocument(new EntradaMaiuscula(50));
 		add(fieldDescricao);
 
 		add(new JLabel("VALOR DO SERVIÇO"));
 
 		fieldValor = new JTextField();
-		fieldValor.setDocument(new EntradaMaiuscula(10));
+		fieldValor.addKeyListener(new NumeroDecimal());
 		add(fieldValor);
 
-		add(new JLabel("CPF/CNPJ DO CLIENTE"));
+		add(new JLabel("CPF | CNPJ DO CLIENTE"));
 
 		fieldCpfCnpjCliente = new JTextField();
-		fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(10));
+		fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(20));
 		add(fieldCpfCnpjCliente);
 
 		add(new JLabel("NOME DO CLIENTE"));
 
 		fieldNomeCliente = new JTextField();
-		fieldNomeCliente.setDocument(new EntradaMaiuscula(10));
+		fieldNomeCliente.setDocument(new EntradaMaiuscula(50));
 		add(fieldNomeCliente);
 
 		add(new JLabel("TELEFONE DO CLIENTE"));
 
 		fieldTelefoneCliente = new JTextField();
-		fieldTelefoneCliente.setDocument(new EntradaMaiuscula(10));
+		fieldTelefoneCliente.setDocument(new EntradaMaiuscula(15));
 		add(fieldTelefoneCliente);
 
 	}

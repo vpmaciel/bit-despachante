@@ -5,13 +5,16 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JTextField;
 
-public class SomenteNumeros implements KeyListener {
+public class NumeroDecimal implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		JTextField textField = (JTextField) e.getSource();
 
-		if (!(e.getKeyChar() >= '0' && e.getKeyChar() <= '9')) {
+		if (!((e.getKeyChar() >= '0' && e.getKeyChar() <= '9') || e.getKeyChar() == ',')) {
+			textField.setText("");
+		}
+		if (textField.getText().length() > 10) {
 			textField.setText("");
 		}
 	}
@@ -20,7 +23,10 @@ public class SomenteNumeros implements KeyListener {
 	public void keyReleased(KeyEvent e) {
 		JTextField textField = (JTextField) e.getSource();
 
-		if (!(e.getKeyChar() >= '0' && e.getKeyChar() <= '9')) {
+		if (!((e.getKeyChar() >= '0' && e.getKeyChar() <= '9') || e.getKeyChar() == ',')) {
+			textField.setText("");
+		}
+		if (textField.getText().length() > 10) {
 			textField.setText("");
 		}
 	}
@@ -29,7 +35,10 @@ public class SomenteNumeros implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		JTextField textField = (JTextField) e.getSource();
 
-		if (!(e.getKeyChar() >= '0' && e.getKeyChar() <= '9')) {
+		if (!((e.getKeyChar() >= '0' && e.getKeyChar() <= '9') || e.getKeyChar() == ',')) {
+			textField.setText("");
+		}
+		if (textField.getText().length() > 10) {
 			textField.setText("");
 		}
 	}

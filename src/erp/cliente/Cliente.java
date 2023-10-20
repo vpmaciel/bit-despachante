@@ -13,6 +13,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import erp.arquitetura.Formatacao;
+
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
@@ -28,11 +30,11 @@ public class Cliente implements Serializable {
 	private Long id = null;
 	@Column(length = 50, name = "CLIENTE_NOME")
 	private String nome;
-	@Column(length = 14, name = "CLIENTE_CPF_CNPJ")
+	@Column(length = 20, name = "CLIENTE_CPF_CNPJ")
 	private String cpfCnpj;
 	@Column(length = 70, name = "CLIENTE_EMAIL")
 	private String email;
-	@Column(length = 50, name = "CLIENTE_TELEFONE")
+	@Column(length = 15, name = "CLIENTE_TELEFONE")
 	private String telefone;
 
 	@Override
@@ -75,7 +77,7 @@ public class Cliente implements Serializable {
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = Formatacao.removerAcentos(email);
 	}
 
 	public void setId(Long id) {
@@ -83,7 +85,7 @@ public class Cliente implements Serializable {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = Formatacao.removerAcentos(nome);
 	}
 
 	public void setTelefone(String telefone) {

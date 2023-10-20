@@ -54,6 +54,7 @@ public class ToolBar {
 		toolBar.add(buttonCsv);
 
 		buttonJson.setToolTipText("Arquivo json");
+		buttonJson.setVisible(false);
 		toolBar.add(buttonJson);
 
 		buttonRelatorio.setToolTipText("Relatório");

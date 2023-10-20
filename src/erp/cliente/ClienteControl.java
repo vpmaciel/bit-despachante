@@ -194,15 +194,19 @@ final class ClienteControl {
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 
-			List<Cliente> clientes = new LinkedList<>();
+			List<Cliente> clienteList = new LinkedList<>();
 
 			try {
-				clientes = new LinkedList<>(ClienteFac.pesquisarRegistro(new Cliente()));
+				if (clienteList.size() == 0) {
+					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
+				clienteList = new LinkedList<>(ClienteFac.pesquisarRegistro(new Cliente()));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			ClienteRel clienteRel = new ClienteRel(clientes);
+			ClienteRel clienteRel = new ClienteRel(clienteList);
 			clienteRel.retornarRelatorio();
 
 		}
@@ -246,8 +250,6 @@ final class ClienteControl {
 					if (mensagem.contains("INDEX_CLIENTE_CPF_CNPJ")) {
 						Msg.avisoCampoDuplicado("CPF | CNPJ");
 						getClientePainelCad().getGuiNome().requestFocus();
-					} else {
-						Msg.avisoCampoDuplicado();
 					}
 				}
 				e.printStackTrace();

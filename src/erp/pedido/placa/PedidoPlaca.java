@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import erp.arquitetura.Formatacao;
+
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
@@ -23,7 +25,7 @@ public class PedidoPlaca implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(length = 100, name = "PEDIDO_DE_PLACA_ID")
+	@Column(name = "PEDIDO_DE_PLACA_ID")
 	private Long id = null;
 	@Column(name = "PEDIDO_DE_PLACA_DATA", columnDefinition = "TIMESTAMP")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -34,7 +36,7 @@ public class PedidoPlaca implements Serializable {
 	private Integer quantidade;
 	@Column(length = 50, name = "PEDIDO_DE_PLACA_RENAVAM")
 	private String renavam;
-	@Column(length = 18, name = "PEDIDO_DE_PLACA_CPF_CNPJ_PROPRIETARIO")
+	@Column(length = 20, name = "PEDIDO_DE_PLACA_CPF_CNPJ_PROPRIETARIO")
 	private String cpfCnpjProprietario;
 	@Column(length = 50, name = "PEDIDO_DE_PLACA_COR_PLACA")
 	private String corPlaca;
@@ -89,7 +91,7 @@ public class PedidoPlaca implements Serializable {
 	}
 
 	public void setCorPlaca(String corPlaca) {
-		this.corPlaca = corPlaca;
+		this.corPlaca = Formatacao.removerAcentos(corPlaca);
 	}
 
 	public void setCpfCnpjProprietario(String cpfCnpjCliente) {
@@ -117,7 +119,7 @@ public class PedidoPlaca implements Serializable {
 	}
 
 	public void setTipoPlaca(String tipoPlaca) {
-		this.tipoPlaca = tipoPlaca;
+		this.tipoPlaca = Formatacao.removerAcentos(tipoPlaca);
 	}
 
 	@Override
