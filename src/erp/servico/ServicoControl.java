@@ -232,11 +232,11 @@ final class ServicoControl {
 			List<Servico> servicoList = new LinkedList<>();
 
 			try {
+				servicoList = new LinkedList<>(ServicoFac.pesquisarRegistro(new Servico()));
 				if (servicoList.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
 					return;
-				}
-				servicoList = new LinkedList<>(ServicoFac.pesquisarRegistro(new Servico()));
+				}				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

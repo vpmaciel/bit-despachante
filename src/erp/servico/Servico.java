@@ -25,7 +25,7 @@ public class Servico implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(length = 100, name = "SERVICO_ID")
+	@Column(name = "SERVICO_ID")
 	private Long id = null;
 	@Column(name = "SERVICO_DATA", columnDefinition = "date")
 	@Temporal(TemporalType.DATE)

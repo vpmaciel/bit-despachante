@@ -19,9 +19,9 @@ public class ServicoTm extends AbstractTableModel {
 	static {
 		tabelaModelo.adicionarColuna("ID", 0, 50);
 		tabelaModelo.adicionarColuna("DATA", 1, 100);
-		tabelaModelo.adicionarColuna("PLACA DO VEÍCULO", 2, 100);
+		tabelaModelo.adicionarColuna("PLACA DO VEÍCULO", 2, 200);
 		tabelaModelo.adicionarColuna("DESCRIÇÃO DO SERVIÇO", 3, 500);
-		tabelaModelo.adicionarColuna("VALOR", 4, 100);
+		tabelaModelo.adicionarColuna("VALOR DO SERVIÇO", 4, 200);
 
 		largura = new int[tabelaModelo.getTotalColunas()];
 		podeEditar = new boolean[tabelaModelo.getTotalColunas()];
@@ -53,7 +53,11 @@ public class ServicoTm extends AbstractTableModel {
 			return Date.class;
 		}
 
-		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO") || tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
+		if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
+			return String.class;
+		}
+		
+		if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
 			return String.class;
 		}
 

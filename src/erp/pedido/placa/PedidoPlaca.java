@@ -30,7 +30,7 @@ public class PedidoPlaca implements Serializable {
 	@Column(name = "PEDIDO_DE_PLACA_DATA", columnDefinition = "TIMESTAMP")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data;
-	@Column(length = 7, name = "PEDIDO_DE_PLACA_PLACA_VEICULO")
+	@Column(length = 8, name = "PEDIDO_DE_PLACA_PLACA_VEICULO")
 	private String placa;
 	@Column(name = "PEDIDO_DE_PLACA_QUANTIDADE")
 	private Integer quantidade;

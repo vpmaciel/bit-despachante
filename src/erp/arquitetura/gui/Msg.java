@@ -2,15 +2,15 @@ package erp.arquitetura.gui;
 
 import javax.swing.JOptionPane;
 
-import erp.sistema.ajuda.sobre.SobrePainelCad;
 import erp.sistema.main.MainJan;
+import erp.sistema.main.SobrePainel;
 
 public final class Msg {
 
 	private static Object[] botoesSimNao = new Object[] { "Sim", "Nao" };
 
 	public static void ajuda() {
-		JOptionPane.showMessageDialog(MainJan.getFrameMain(), new SobrePainelCad(), "Sobre o Sistema",
+		JOptionPane.showMessageDialog(MainJan.getFrameMain(), new SobrePainel(), "Sobre o Sistema",
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 

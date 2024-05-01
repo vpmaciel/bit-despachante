@@ -95,7 +95,7 @@ public final class PedidoPlacaPainelCad extends JPanel implements Gui {
 		add(new JLabel("PLACA DO VEÍCULO"));
 
 		fieldPlaca = new JTextField();
-		fieldPlaca.setDocument(new EntradaMaiuscula(7));
+		fieldPlaca.setDocument(new EntradaMaiuscula(8));
 		add(fieldPlaca);
 
 		add(new JLabel("COR DA PLACA"));

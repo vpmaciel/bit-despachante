@@ -23,17 +23,17 @@ final class ServicoSel implements ListSelectionListener {
 			int[] selRows = table.getSelectedRows();
 			TableModel tm = table.getModel();
 			if (selRows.length > 0) {
-				Servico marcaPesquisaRegistro = new Servico();
-				marcaPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], ServicoTm.ID));
+				Servico servicoPesquisaRegistro = new Servico();
+				servicoPesquisaRegistro.setId((Long) tm.getValueAt(selRows[0], ServicoTm.ID));
 
 				if (table.getSelectedRow() != -1) {
-					Servico marca = ((List<Servico>) ServicoFac.pesquisarRegistro(marcaPesquisaRegistro))
+					Servico servico = ((List<Servico>) ServicoFac.pesquisarRegistro(servicoPesquisaRegistro))
 							.get(table.getSelectedRow());
-					ServicoTm marcaTm = (ServicoTm) table.getModel();
-					marcaTm.getMarca(table.getSelectedRow());
+					ServicoTm servicoTm = (ServicoTm) table.getModel();
+					servicoTm.getMarca(table.getSelectedRow());
 
 					MainControl.mostrarFrame(MainControl.getServicoJan());
-					MainControl.getServicoJan().getContaCont().setModelo(ServicoFac.getRegistro(marca));
+					MainControl.getServicoJan().getContaCont().setModelo(ServicoFac.getRegistro(servico));
 					MainControl.getServicoJan().getContaCont().atualizarGui();
 					MainControl.getServicoJan().setFocusable(true);
 					MainControl.getServicoJan().getTabbedPane().setSelectedIndex(0);

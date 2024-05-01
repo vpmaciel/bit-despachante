@@ -192,11 +192,11 @@ final class VeiculoControl {
 			List<Veiculo> veiculoList = new LinkedList<>();
 
 			try {
+				veiculoList = new LinkedList<>(VeiculoFac.pesquisarRegistro(new Veiculo()));
 				if (veiculoList.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
 					return;
-				}
-				veiculoList = new LinkedList<>(VeiculoFac.pesquisarRegistro(new Veiculo()));
+				}				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

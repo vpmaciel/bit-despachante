@@ -28,7 +28,7 @@ public class Imagem {
 	}
 
 	public static ImageIcon getCsv() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/csv_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/csv.png"));
 		return imageIcon;
 	}
 
@@ -43,7 +43,7 @@ public class Imagem {
 	}
 
 	public static ImageIcon getExclui() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/delete_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/delete.png"));
 		return imageIcon;
 	}
 
@@ -58,7 +58,7 @@ public class Imagem {
 	}
 
 	public static ImageIcon getFecharCaixa() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/delete_sign_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/faturamento.png"));
 		return imageIcon;
 	}
 
@@ -68,7 +68,7 @@ public class Imagem {
 	}
 
 	public static ImageIcon getHome() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/home_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/home.png"));
 		return imageIcon;
 	}
 
@@ -78,7 +78,7 @@ public class Imagem {
 	}
 
 	public static ImageIcon getImprime() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/print_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/print.png"));
 		return imageIcon;
 	}
 
@@ -109,12 +109,12 @@ public class Imagem {
 	}
 
 	public static ImageIcon getNovo() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/add_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/add.png"));
 		return imageIcon;
 	}
 
 	public static ImageIcon getPesquisar() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/search_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/search.png"));
 		return imageIcon;
 	}
 
@@ -124,12 +124,12 @@ public class Imagem {
 	}
 
 	public static ImageIcon getRegistros() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/database_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/registros.png"));
 		return imageIcon;
 	}
 
 	public static ImageIcon getRelatorio() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/pdf_2_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/pdf.png"));
 		return imageIcon;
 	}
 
@@ -139,7 +139,7 @@ public class Imagem {
 	}
 
 	public static ImageIcon getSalva() {
-		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/save_32px.png"));
+		imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/save.png"));
 		return imageIcon;
 	}
 

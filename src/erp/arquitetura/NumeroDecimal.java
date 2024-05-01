@@ -15,7 +15,8 @@ public class NumeroDecimal implements KeyListener{
 			textField.setText("");
 		}
 		if (textField.getText().length() > 10) {
-			textField.setText("");
+            e.consume(); // Ignora a tecla digitada
+
 		}
 	}
 
@@ -27,7 +28,7 @@ public class NumeroDecimal implements KeyListener{
 			textField.setText("");
 		}
 		if (textField.getText().length() > 10) {
-			textField.setText("");
+            e.consume(); // Ignora a tecla digitada
 		}
 	}
 
@@ -39,7 +40,7 @@ public class NumeroDecimal implements KeyListener{
 			textField.setText("");
 		}
 		if (textField.getText().length() > 10) {
-			textField.setText("");
+            e.consume(); // Ignora a tecla digitada
 		}
 	}
 }

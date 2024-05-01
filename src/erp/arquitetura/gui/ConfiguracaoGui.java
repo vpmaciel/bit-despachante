@@ -28,7 +28,7 @@ public final class ConfiguracaoGui extends Container {
 
 			for (Component comp : this.componentList) {
 
-				comp.setFont(new Font("Arial", Font.PLAIN, 14));
+				comp.setFont(new Font("Tahoma", Font.PLAIN, 12));
 				if (comp instanceof JLabel) {
 					JLabel label = (JLabel) comp;
 					label.setPreferredSize(new Dimension(620, 30));

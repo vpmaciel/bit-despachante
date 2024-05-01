@@ -194,11 +194,11 @@ final class PedidoPlacaControl {
 			List<PedidoPlaca> pedidoPlacaList = new LinkedList<>();
 
 			try {
+				pedidoPlacaList = new LinkedList<>(PedidoPlacaFac.pesquisarRegistro(new PedidoPlaca()));
 				if (pedidoPlacaList.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
 					return;
-				}
-				pedidoPlacaList = new LinkedList<>(PedidoPlacaFac.pesquisarRegistro(new PedidoPlaca()));
+				}				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

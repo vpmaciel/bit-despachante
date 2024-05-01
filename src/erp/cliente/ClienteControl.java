@@ -197,11 +197,11 @@ final class ClienteControl {
 			List<Cliente> clienteList = new LinkedList<>();
 
 			try {
+				clienteList = new LinkedList<>(ClienteFac.pesquisarRegistro(new Cliente()));
 				if (clienteList.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Sem registros para gerar relatório !", "Aviso", JOptionPane.WARNING_MESSAGE);
 					return;
-				}
-				clienteList = new LinkedList<>(ClienteFac.pesquisarRegistro(new Cliente()));
+				}				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

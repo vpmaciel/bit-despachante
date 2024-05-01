@@ -22,7 +22,7 @@ public class ToolBar {
 	JToolBar toolBar = new JToolBar();
 
 	public ToolBar() {
-		Dimension tamanhoToolBar = new Dimension(620, 40);
+		Dimension tamanhoToolBar = new Dimension(620, 60);
 		toolBar.setPreferredSize(tamanhoToolBar);
 		toolBar.setMinimumSize(tamanhoToolBar);
 		toolBar.setSize(tamanhoToolBar);

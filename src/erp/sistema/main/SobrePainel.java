@@ -1,6 +1,5 @@
-package erp.sistema.ajuda.sobre;
+package erp.sistema.main;
 
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -13,15 +12,14 @@ import erp.arquitetura.Internet;
 import erp.arquitetura.Sis;
 
 @SuppressWarnings("serial")
-public class SobrePainelCad extends JPanel {
+public class SobrePainel extends JPanel {
 
 	private final JLabel labelAutor = new JLabel();
 	private final JLabel labelCopyright = new JLabel();
 	private final JLabel labelEmpresa = new JLabel();
 	private final JLabel labelTitulo = new JLabel();
-	private final JLabel labelPix = new JLabel();
 
-	public SobrePainelCad() {
+	public SobrePainel() {
 		super();
 		inicializarGui();
 	}
@@ -41,9 +39,7 @@ public class SobrePainelCad extends JPanel {
 				"<html><a href=\"https://www.linkedin.com/in/vpmaciel/\">https://www.linkedin.com/in/vpmaciel/</a><html>");
 		labelEmpresa.setCursor(Sis.getNovaJanelaCursor());
 		labelEmpresa.addMouseListener(new Internet().new LinkSistema("https://www.linkedin.com/in/vpmaciel/"));
-		labelPix.setText(
-				"<html>DOE QUALQUER VALOR<br>CHAVE PIX PARA O CPF: 054.284.486-95<br>NOME:VICENTE PAULO MACIEL</html>");
-		labelPix.setFont(new Font("Arial", Font.PLAIN, 24));
+		
 		this.add(labelTitulo, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.NONE, new Insets(5, 15, 0, 15), 0, 0));
 		this.add(labelAutor, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
@@ -51,8 +47,6 @@ public class SobrePainelCad extends JPanel {
 		this.add(labelCopyright, new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.NONE, new Insets(0, 15, 0, 15), 0, 0));
 		this.add(labelEmpresa, new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
-				GridBagConstraints.NONE, new Insets(0, 15, 5, 15), 0, 0));
-		this.add(labelPix, new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
 				GridBagConstraints.NONE, new Insets(0, 15, 5, 15), 0, 0));
 	}
 }

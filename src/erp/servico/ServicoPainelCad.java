@@ -116,6 +116,7 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 
 		fieldValor = new JTextField();
 		fieldValor.addKeyListener(new NumeroDecimal());
+		fieldValor.setDocument(new EntradaMaiuscula(15));
 		add(fieldValor);
 
 		add(new JLabel("CPF | CNPJ DO CLIENTE"));

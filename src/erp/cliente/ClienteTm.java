@@ -16,8 +16,8 @@ public class ClienteTm extends AbstractTableModel {
 	private static TabelaModelo tabelaModelo = new TabelaModelo();
 	static {
 		tabelaModelo.adicionarColuna("ID", 0, 50);
-		tabelaModelo.adicionarColuna("NOME", 1, 700);
-		tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 300);
+		tabelaModelo.adicionarColuna("NOME", 1, 500);
+		tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 250);
 
 		largura = new int[tabelaModelo.getTotalColunas()];
 		podeEditar = new boolean[tabelaModelo.getTotalColunas()];

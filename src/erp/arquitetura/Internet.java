@@ -21,7 +21,7 @@ public class Internet {
 		public void mouseClicked(MouseEvent arg0) {
 			Desktop desktop = null;
 			try {
-				URI uri = new URI("http://" + this.endereco);
+				URI uri = new URI(this.endereco);
 				if (Desktop.isDesktopSupported()) {
 					desktop = Desktop.getDesktop();
 				}

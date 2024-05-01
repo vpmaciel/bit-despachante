@@ -15,6 +15,7 @@ public class Jpa {
 
 	static {
 		try {
+	            
 			emf = Persistence.createEntityManagerFactory("erp");
 
 		} catch (Exception ex) {
@@ -24,16 +25,16 @@ public class Jpa {
 		}
 	}
 
-	public static EntityManagerFactory getEntityManagerFactory() {
-		return emf;
-	}
-
 	public static Session getHibernateSession() {
 
 		final SessionFactory sf = new Configuration().configure("persistence.xml").buildSessionFactory();
-
 		// factory = new Configuration().configure().buildSessionFactory();
 		final Session session = sf.openSession();
 		return session;
+	}
+
+	public static EntityManagerFactory getEntityManagerFactory() {
+
+		return emf;
 	}
 }
