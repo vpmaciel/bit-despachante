@@ -3,12 +3,13 @@ package erp.arquitetura.gui;
 import java.awt.Dimension;
 
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JToolBar;
 
 public class ToolBar {
 
 	JButton buttonCsv = new JButton(Imagem.getCsv());
-	JButton buttonExclui = new JButton(Imagem.getExclui());
+	JButton buttonExclui = new JButton(Imagem.getExclui());	
 	JButton buttonHome = new JButton(Imagem.getHome());
 	JButton buttonImprime = new JButton(Imagem.getImprime());
 	JButton buttonJson = new JButton(Imagem.getJson());
@@ -22,7 +23,7 @@ public class ToolBar {
 	JToolBar toolBar = new JToolBar();
 
 	public ToolBar() {
-		Dimension tamanhoToolBar = new Dimension(620, 60);
+		Dimension tamanhoToolBar = new Dimension(620, 40);
 		toolBar.setPreferredSize(tamanhoToolBar);
 		toolBar.setMinimumSize(tamanhoToolBar);
 		toolBar.setSize(tamanhoToolBar);
@@ -54,15 +55,10 @@ public class ToolBar {
 		toolBar.add(buttonCsv);
 
 		buttonJson.setToolTipText("Arquivo json");
-		buttonJson.setVisible(false);
 		toolBar.add(buttonJson);
 
 		buttonRelatorio.setToolTipText("Relatório");
 		toolBar.add(buttonRelatorio);
-
-		buttonFecharCaixa.setToolTipText("Fechar Caixa");
-		buttonFecharCaixa.setVisible(false);
-		toolBar.add(buttonFecharCaixa);
 	}
 
 	public JButton getCsvBtn() {
@@ -71,11 +67,7 @@ public class ToolBar {
 
 	public JButton getExcluirBtn() {
 		return buttonExclui;
-	}
-
-	public JButton getFecharCaixaBtn() {
-		return buttonFecharCaixa;
-	}
+	}	
 
 	public JButton getHomeBtn() {
 		return buttonHome;
@@ -111,5 +103,10 @@ public class ToolBar {
 
 	public JToolBar getTB() {
 		return toolBar;
+	}
+
+	public JButton getFecharCaixaBtn() {
+		// 
+		return buttonFecharCaixa;
 	}
 }
