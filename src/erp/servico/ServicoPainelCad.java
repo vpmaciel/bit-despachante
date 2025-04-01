@@ -16,153 +16,153 @@ import erp.arquitetura.gui.ToolBar;
 @SuppressWarnings("serial")
 public final class ServicoPainelCad extends JPanel implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;
-	private JTextField fieldData;
-	private JTextField fieldPlaca;
-	private JTextField fieldValor;
-	private JTextField fieldDescricao;
-	private JTextField fieldCpfCnpjCliente;
-	private JTextField fieldNomeCliente;
-	private JTextField fieldTelefoneCliente;
-	private ToolBar toolBar;
+    private ConfiguracaoGui configuracaoGui;
+    private JTextField fieldData;
+    private JTextField fieldPlaca;
+    private JTextField fieldValor;
+    private JTextField fieldDescricao;
+    private JTextField fieldCpfCnpjCliente;
+    private JTextField fieldNomeCliente;
+    private JTextField fieldTelefoneCliente;
+    private ToolBar toolBar;
 
-	public ServicoPainelCad() {
-		iniciarLayout();
-		iniciarGui();
-		iniciarFocoControlador();
-		iniciarGuiControlador();
-	}
+    public ServicoPainelCad() {
+	iniciarLayout();
+	iniciarGui();
+	iniciarFocoControlador();
+	iniciarGuiControlador();
+    }
 
-	@Override
-	public void atualizarTable() {
-	}
+    @Override
+    public void atualizarTable() {
+    }
 
-	@Override
-	public ConfiguracaoGui getConfiguracaoGui() {
-		return configuracaoGui;
-	}
+    @Override
+    public ConfiguracaoGui getConfiguracaoGui() {
+	return configuracaoGui;
+    }
 
-	public JTextField getGuiCpfCnpjCliente() {
-		return fieldCpfCnpjCliente;
-	}
+    public JTextField getGuiCpfCnpjCliente() {
+	return fieldCpfCnpjCliente;
+    }
 
-	public JTextField getGuiData() {
-		return fieldData;
-	}
+    public JTextField getGuiData() {
+	return fieldData;
+    }
 
-	public JTextField getGuiDescricao() {
-		return fieldDescricao;
-	}
+    public JTextField getGuiDescricao() {
+	return fieldDescricao;
+    }
 
-	public JTextField getGuiNomeCliente() {
-		return fieldNomeCliente;
-	}
+    public JTextField getGuiNomeCliente() {
+	return fieldNomeCliente;
+    }
 
-	public JTextField getGuiPlaca() {
-		return fieldPlaca;
-	}
+    public JTextField getGuiPlaca() {
+	return fieldPlaca;
+    }
 
-	public JTextField getGuiTelefoneCliente() {
-		return fieldTelefoneCliente;
-	}
+    public JTextField getGuiTelefoneCliente() {
+	return fieldTelefoneCliente;
+    }
 
-	public JTextField getGuiValor() {
-		return fieldValor;
-	}
+    public JTextField getGuiValor() {
+	return fieldValor;
+    }
 
-	public ToolBar getTB() {
-		return toolBar;
-	}
+    public ToolBar getTB() {
+	return toolBar;
+    }
 
-	public ToolBar getToolBar() {
-		return toolBar;
-	}
+    public ToolBar getToolBar() {
+	return toolBar;
+    }
 
-	@Override
-	public void iniciarControlador() {
+    @Override
+    public void iniciarControlador() {
 
-	}
+    }
 
-	@Override
-	public void iniciarFocoControlador() {
-		new FocoEvento(this);
-	}
+    @Override
+    public void iniciarFocoControlador() {
+	new FocoEvento(this);
+    }
 
-	@Override
-	public void iniciarGui() {
-		toolBar = new ToolBar();
+    @Override
+    public void iniciarGui() {
+	toolBar = new ToolBar();
 
-		add(toolBar.getTB());
+	add(toolBar.getTB());
 
-		add(new JLabel("DATA"));
+	add(new JLabel("Data"));
 
-		fieldData = new JTextField();
-		fieldData.setEnabled(false);
-		add(fieldData);
+	fieldData = new JTextField();
+	fieldData.setEnabled(false);
+	add(fieldData);
 
-		add(new JLabel("PLACA DO VEÍCULO"));
+	add(new JLabel("Placa do Veículo"));
 
-		fieldPlaca = new JTextField();
-		fieldPlaca.setDocument(new EntradaMaiuscula(8));
-		add(fieldPlaca);
+	fieldPlaca = new JTextField();
+	fieldPlaca.setDocument(new EntradaMaiuscula(8));
+	add(fieldPlaca);
 
-		add(new JLabel("DESCRIÇÃO DO SERVIÇO"));
+	add(new JLabel("Descrição do Serviço"));
 
-		fieldDescricao = new JTextField();
-		fieldDescricao.setDocument(new EntradaMaiuscula(50));
-		add(fieldDescricao);
+	fieldDescricao = new JTextField();
+	fieldDescricao.setDocument(new EntradaMaiuscula(50));
+	add(fieldDescricao);
 
-		add(new JLabel("VALOR DO SERVIÇO"));
+	add(new JLabel("Valor do Serviço"));
 
-		fieldValor = new JTextField();
-		fieldValor.addKeyListener(new NumeroDecimal());
-		fieldValor.setDocument(new EntradaMaiuscula(15));
-		add(fieldValor);
+	fieldValor = new JTextField();
+	fieldValor.addKeyListener(new NumeroDecimal());
+	fieldValor.setDocument(new EntradaMaiuscula(15));
+	add(fieldValor);
 
-		add(new JLabel("CPF | CNPJ DO CLIENTE"));
+	add(new JLabel("CPF | CNPJ do Cliente"));
 
-		fieldCpfCnpjCliente = new JTextField();
-		fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(20));
-		add(fieldCpfCnpjCliente);
+	fieldCpfCnpjCliente = new JTextField();
+	fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(20));
+	add(fieldCpfCnpjCliente);
 
-		add(new JLabel("NOME DO CLIENTE"));
+	add(new JLabel("Nome do do Cliente"));
 
-		fieldNomeCliente = new JTextField();
-		fieldNomeCliente.setDocument(new EntradaMaiuscula(50));
-		add(fieldNomeCliente);
+	fieldNomeCliente = new JTextField();
+	fieldNomeCliente.setDocument(new EntradaMaiuscula(50));
+	add(fieldNomeCliente);
 
-		add(new JLabel("TELEFONE DO CLIENTE"));
+	add(new JLabel("Telefone do Cliente"));
 
-		fieldTelefoneCliente = new JTextField();
-		fieldTelefoneCliente.setDocument(new EntradaMaiuscula(15));
-		add(fieldTelefoneCliente);
+	fieldTelefoneCliente = new JTextField();
+	fieldTelefoneCliente.setDocument(new EntradaMaiuscula(15));
+	add(fieldTelefoneCliente);
 
-	}
+    }
 
-	@Override
-	public void iniciarGuiControlador() {
-		configuracaoGui = new ConfiguracaoGui(this);
-	}
+    @Override
+    public void iniciarGuiControlador() {
+	configuracaoGui = new ConfiguracaoGui(this);
+    }
 
-	@Override
-	public void iniciarLayout() {
-		setBorder(Sis.getBordaPainel());
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-	}
+    @Override
+    public void iniciarLayout() {
+	setBorder(Sis.getBordaPainel());
+	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    }
 
-	@Override
-	public void iniciarTabela() {
+    @Override
+    public void iniciarTabela() {
 
-	}
+    }
 
-	@Override
-	public void limparGui() {
-		configuracaoGui.limparGui();
-	}
+    @Override
+    public void limparGui() {
+	configuracaoGui.limparGui();
+    }
 
-	@Override
-	public void reiniciarGui() {
+    @Override
+    public void reiniciarGui() {
 
-	}
+    }
 
 }

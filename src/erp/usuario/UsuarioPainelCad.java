@@ -16,104 +16,104 @@ import erp.arquitetura.gui.ToolBar;
 @SuppressWarnings("serial")
 public final class UsuarioPainelCad extends JPanel implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;
-	private JTextField fieldNome;
-	private JTextField fieldSenha;
-	private JTextField fieldEmail;
-	private ToolBar toolBar;
-	private UsuarioControl usuarioControl;
+    private ConfiguracaoGui configuracaoGui;
+    private JTextField fieldNome;
+    private JTextField fieldSenha;
+    private JTextField fieldEmail;
+    private ToolBar toolBar;
+    private UsuarioControl usuarioControl;
 
-	public UsuarioPainelCad() {
-		iniciarLayout();
-		iniciarGui();
-		iniciarFocoControlador();
-		iniciarGuiControlador();
-	}
+    public UsuarioPainelCad() {
+	iniciarLayout();
+	iniciarGui();
+	iniciarFocoControlador();
+	iniciarGuiControlador();
+    }
 
-	@Override
-	public void atualizarTable() {
-	}
+    @Override
+    public void atualizarTable() {
+    }
 
-	@Override
-	public ConfiguracaoGui getConfiguracaoGui() {
-		return configuracaoGui;
-	}
+    @Override
+    public ConfiguracaoGui getConfiguracaoGui() {
+	return configuracaoGui;
+    }
 
-	public JTextField getGuiNome() {
-		return fieldNome;
-	}
+    public JTextField getGuiNome() {
+	return fieldNome;
+    }
 
-	public JTextField getGuiSenha() {
-		return fieldSenha;
-	}
-	
-	public JTextComponent getGuiEmail() {
-		return fieldEmail;
-	}
+    public JTextField getGuiSenha() {
+	return fieldSenha;
+    }
 
-	public ToolBar getTB() {
-		return toolBar;
-	}
+    public JTextComponent getGuiEmail() {
+	return fieldEmail;
+    }
 
-	public UsuarioControl getUsuarioCont() {
-		return usuarioControl;
-	}
+    public ToolBar getTB() {
+	return toolBar;
+    }
 
-	@Override
-	public void iniciarControlador() {
-	}
+    public UsuarioControl getUsuarioCont() {
+	return usuarioControl;
+    }
 
-	@Override
-	public void iniciarFocoControlador() {
-		new FocoEvento(this);
-	}
+    @Override
+    public void iniciarControlador() {
+    }
 
-	@Override
-	public void iniciarGui() {
-		toolBar = new ToolBar();
+    @Override
+    public void iniciarFocoControlador() {
+	new FocoEvento(this);
+    }
 
-		add(toolBar.getTB());
+    @Override
+    public void iniciarGui() {
+	toolBar = new ToolBar();
 
-		add(new JLabel("NOME"));
+	add(toolBar.getTB());
 
-		fieldNome = new JTextField();
-		fieldNome.setDocument(new EntradaMaiuscula(50));
-		add(fieldNome);
-		
-		add(new JLabel("EMAIL"));
+	add(new JLabel("Nome"));
 
-		fieldEmail = new JTextField();
-		fieldEmail.setDocument(new EntradaMaiuscula(100));
-		add(fieldEmail);
+	fieldNome = new JTextField();
+	fieldNome.setDocument(new EntradaMaiuscula(50));
+	add(fieldNome);
 
-		add(new JLabel("SENHA"));
+	add(new JLabel("E-mail"));
 
-		fieldSenha = new JTextField();
-		fieldSenha.setDocument(new EntradaMaiuscula(10));
-		add(fieldSenha);
-	}
+	fieldEmail = new JTextField();
+	fieldEmail.setDocument(new EntradaMaiuscula(100));
+	add(fieldEmail);
 
-	@Override
-	public void iniciarGuiControlador() {
-		configuracaoGui = new ConfiguracaoGui(this);
-	}
+	add(new JLabel("Senha"));
 
-	@Override
-	public void iniciarLayout() {
-		setBorder(Sis.getBordaPainel());
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-	}
+	fieldSenha = new JTextField();
+	fieldSenha.setDocument(new EntradaMaiuscula(10));
+	add(fieldSenha);
+    }
 
-	@Override
-	public void iniciarTabela() {
-	}
+    @Override
+    public void iniciarGuiControlador() {
+	configuracaoGui = new ConfiguracaoGui(this);
+    }
 
-	@Override
-	public void limparGui() {
-		configuracaoGui.limparGui();
-	}
+    @Override
+    public void iniciarLayout() {
+	setBorder(Sis.getBordaPainel());
+	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    }
 
-	@Override
-	public void reiniciarGui() {
-	}
+    @Override
+    public void iniciarTabela() {
+    }
+
+    @Override
+    public void limparGui() {
+	configuracaoGui.limparGui();
+    }
+
+    @Override
+    public void reiniciarGui() {
+    }
 }

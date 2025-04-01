@@ -19,42 +19,42 @@ import erp.arquitetura.Sis;
 
 public class UsuarioRel {
 
-	private String arquivo = Sis.getCaminhoApp() + Data.getDataHoraArquivo() + "usuario.pdf";
-	private Document document = new Document();
-	private Relatorio relatorio = new Relatorio();
-	private PdfWriter writer = null;
-	private Font font = new Font(Font.FontFamily.COURIER, 8, Font.NORMAL);
+    private String arquivo = Sis.getCaminhoApp() + Data.getDataHoraArquivo() + "usuario.pdf";
+    private Document document = new Document();
+    private Relatorio relatorio = new Relatorio();
+    private PdfWriter writer = null;
+    private Font font = new Font(Font.FontFamily.COURIER, 8, Font.NORMAL);
 
-	public UsuarioRel(List<Usuario> usuarioList) {
+    public UsuarioRel(List<Usuario> usuarioList) {
 
-		try {
-			writer = PdfWriter.getInstance(document, new FileOutputStream(arquivo));
-			relatorio.criarRelatorio(writer, document);
+	try {
+	    writer = PdfWriter.getInstance(document, new FileOutputStream(arquivo));
+	    relatorio.criarRelatorio(writer, document);
 
-			long contador = 1;
+	    long contador = 1;
 
-			for (Usuario usuario : usuarioList) {
-				relatorio.getCabecalho(writer, document, "CLIENTE");
-				document.add(new Paragraph("NOME: " + usuario.getNome(), font));				
-				document.add(new Paragraph("EMAIL: " + usuario.getEmail(), font));				
-				relatorio.getRodape(writer, document);
-				if (contador < usuarioList.size()) {
-					document.newPage();
-				}
-				contador++;
-
-			}
-			document.close();
-			relatorio.retornarRelatorio(arquivo);
-		} catch (DocumentException | FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "Arquivo não encontrado !", "Erro", JOptionPane.ERROR_MESSAGE);
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Relatório não pode ser gerado !", "Erro", JOptionPane.ERROR_MESSAGE);
+	    for (Usuario usuario : usuarioList) {
+		relatorio.getCabecalho(writer, document, "CLIENTE");
+		document.add(new Paragraph("NOME: " + usuario.getNome(), font));
+		document.add(new Paragraph("EMAIL: " + usuario.getEmail(), font));
+		relatorio.getRodape(writer, document);
+		if (contador < usuarioList.size()) {
+		    document.newPage();
 		}
+		contador++;
 
+	    }
+	    document.close();
+	    relatorio.retornarRelatorio(arquivo);
+	} catch (DocumentException | FileNotFoundException e) {
+	    JOptionPane.showMessageDialog(null, "Arquivo não encontrado !", "Erro", JOptionPane.ERROR_MESSAGE);
+	} catch (Exception e) {
+	    JOptionPane.showMessageDialog(null, "Relatório não pode ser gerado !", "Erro", JOptionPane.ERROR_MESSAGE);
 	}
 
-	public File retornarRelatorio() {
-		return relatorio.retornarRelatorio(arquivo);
-	}
+    }
+
+    public File retornarRelatorio() {
+	return relatorio.retornarRelatorio(arquivo);
+    }
 }

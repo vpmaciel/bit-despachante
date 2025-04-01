@@ -1,49 +1,62 @@
 package erp.arquitetura;
 
-import java.security.MessageDigest;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Locale;
+import java.io.Serializable;
+import java.util.Objects;
 
-public class Chave {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 
-	private static String getData() {
-		Locale locale = Sis.getLocale();
-		Calendar calendar = new GregorianCalendar();
+@SuppressWarnings("serial")
+@PersistenceContext(unitName = "erp")
+@Entity
+@Table(name = "CHAVE")
+public class Chave implements Serializable {
 
-		String data = "";
-		DateFormat dateFormat = new SimpleDateFormat("MM-yyyy", locale);
-		data += dateFormat.format(calendar.getTime());
-		return data;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(length = 100, name = "CHAVE_IDENTIFICADOR")
+    private Long id = null;
+    @Column(length = 50, name = "CHAVE_DESCRICAO")
+    private String descricao;
 
-	private String chave;
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if ((obj == null) || (getClass() != obj.getClass()))
+	    return false;
+	Chave other = (Chave) obj;
+	return Objects.equals(id, other.id);
+    }
 
-	public Chave() {
-		super();
-		String original = getData();
-		MessageDigest algorithm = null;
-		byte messageDigest[] = null;
-		try {
-			algorithm = MessageDigest.getInstance("SHA-256");
-			messageDigest = algorithm.digest(original.getBytes("UTF-8"));
-		} catch (Exception exception) {
-			// TODO Auto-generated catch block
-			exception.printStackTrace();
-		}
+    public Long getId() {
+	return id;
+    }
 
-		StringBuilder hexString = new StringBuilder();
-		for (byte b : messageDigest) {
-			hexString.append(String.format("%02X", 0xFF & b));
-		}
-		String senha = hexString.toString();
-		this.chave = senha;
-		System.out.println(this.chave);
-	}
+    public String getDescricao() {
+	return descricao;
+    }
 
-	public String getChave() {
-		return this.chave;
-	}
+    @Override
+    public int hashCode() {
+	return Objects.hash(id);
+    }
+
+    public void setId(Long id) {
+	this.id = id;
+    }
+
+    public void setDescricao(String descricao) {
+	this.descricao = descricao;
+    }
+
+    @Override
+    public String toString() {
+	return this.descricao;
+    }
 }

@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.ConfiguracaoGui;
 import erp.arquitetura.gui.EntradaMaiuscula;
+import erp.arquitetura.gui.EntradaMinuscula;
 import erp.arquitetura.gui.FocoEvento;
 import erp.arquitetura.gui.Gui;
 import erp.arquitetura.gui.ToolBar;
@@ -15,112 +16,112 @@ import erp.arquitetura.gui.ToolBar;
 @SuppressWarnings("serial")
 public final class ClientePainelCad extends JPanel implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;
-	private JTextField fieldNome;
-	private JTextField fieldCpfCnpj;
-	private JTextField fieldTelefone;
-	private JTextField fieldEmail;
-	private ToolBar toolBar;
+    private ConfiguracaoGui configuracaoGui;
+    private JTextField fieldNome;
+    private JTextField fieldCpfCnpj;
+    private JTextField fieldTelefone;
+    private JTextField fieldEmail;
+    private ToolBar toolBar;
 
-	public ClientePainelCad() {
-		iniciarLayout();
-		iniciarGui();
-		iniciarFocoControlador();
-		iniciarGuiControlador();
-	}
+    public ClientePainelCad() {
+	iniciarLayout();
+	iniciarGui();
+	iniciarFocoControlador();
+	iniciarGuiControlador();
+    }
 
-	@Override
-	public void atualizarTable() {
-	}
+    @Override
+    public void atualizarTable() {
+    }
 
-	@Override
-	public ConfiguracaoGui getConfiguracaoGui() {
-		return configuracaoGui;
-	}
+    @Override
+    public ConfiguracaoGui getConfiguracaoGui() {
+	return configuracaoGui;
+    }
 
-	public JTextField getGuiCpfCnpj() {
-		return fieldCpfCnpj;
-	}
+    public JTextField getGuiCpfCnpj() {
+	return fieldCpfCnpj;
+    }
 
-	public JTextField getGuiEmail() {
-		return fieldEmail;
-	}
+    public JTextField getGuiEmail() {
+	return fieldEmail;
+    }
 
-	public JTextField getGuiNome() {
-		return fieldNome;
-	}
+    public JTextField getGuiNome() {
+	return fieldNome;
+    }
 
-	public JTextField getGuiTelefone() {
-		return fieldTelefone;
-	}
+    public JTextField getGuiTelefone() {
+	return fieldTelefone;
+    }
 
-	public ToolBar getTB() {
-		return toolBar;
-	}
+    public ToolBar getTB() {
+	return toolBar;
+    }
 
-	@Override
-	public void iniciarControlador() {
+    @Override
+    public void iniciarControlador() {
 
-	}
+    }
 
-	@Override
-	public void iniciarFocoControlador() {
-		new FocoEvento(this);
-	}
+    @Override
+    public void iniciarFocoControlador() {
+	new FocoEvento(this);
+    }
 
-	@Override
-	public void iniciarGui() {
-		toolBar = new ToolBar();
+    @Override
+    public void iniciarGui() {
+	toolBar = new ToolBar();
 
-		add(toolBar.getTB());
+	add(toolBar.getTB());
 
-		add(new JLabel("NOME"));
+	add(new JLabel("NOME"));
 
-		fieldNome = new JTextField();
-		fieldNome.setDocument(new EntradaMaiuscula(50));
-		add(fieldNome);
+	fieldNome = new JTextField();
+	fieldNome.setDocument(new EntradaMaiuscula(50));
+	add(fieldNome);
 
-		add(new JLabel("CPF | CNPJ"));
+	add(new JLabel("CPF | CNPJ"));
 
-		fieldCpfCnpj = new JTextField();
-		fieldCpfCnpj.setDocument(new EntradaMaiuscula(20));
-		add(fieldCpfCnpj);
+	fieldCpfCnpj = new JTextField();
+	fieldCpfCnpj.setDocument(new EntradaMaiuscula(20));
+	add(fieldCpfCnpj);
 
-		add(new JLabel("E-MAIL"));
+	add(new JLabel("E-MAIL"));
 
-		fieldEmail = new JTextField();
-		fieldEmail.setDocument(new EntradaMaiuscula(70));
-		add(fieldEmail);
+	fieldEmail = new JTextField();
+	fieldEmail.setDocument(new EntradaMinuscula(200));
+	add(fieldEmail);
 
-		add(new JLabel("TELEFONE"));
+	add(new JLabel("TELEFONE"));
 
-		fieldTelefone = new JTextField();
-		fieldTelefone.setDocument(new EntradaMaiuscula(15));
-		add(fieldTelefone);
+	fieldTelefone = new JTextField();
+	fieldTelefone.setDocument(new EntradaMaiuscula(15));
+	add(fieldTelefone);
 
-	}
+    }
 
-	@Override
-	public void iniciarGuiControlador() {
-		configuracaoGui = new ConfiguracaoGui(this);
-	}
+    @Override
+    public void iniciarGuiControlador() {
+	configuracaoGui = new ConfiguracaoGui(this);
+    }
 
-	@Override
-	public void iniciarLayout() {
-		setBorder(Sis.getBordaPainel());
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-	}
+    @Override
+    public void iniciarLayout() {
+	setBorder(Sis.getBordaPainel());
+	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    }
 
-	@Override
-	public void iniciarTabela() {
-	}
+    @Override
+    public void iniciarTabela() {
+    }
 
-	@Override
-	public void limparGui() {
-		configuracaoGui.limparGui();
-	}
+    @Override
+    public void limparGui() {
+	configuracaoGui.limparGui();
+    }
 
-	@Override
-	public void reiniciarGui() {
-	}
+    @Override
+    public void reiniciarGui() {
+    }
 }

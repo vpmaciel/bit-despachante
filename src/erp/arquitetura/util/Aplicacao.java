@@ -5,30 +5,30 @@ import java.io.InputStreamReader;
 
 public class Aplicacao {
 
-	public static boolean estaExecutando(String processo) {
-		if (System.getProperty("os.name").contains("windows")) {
+    public static boolean estaExecutando(String processo) {
+	if (System.getProperty("os.name").contains("windows")) {
 
-		}
-
-		return estaExecutandoLinux(processo);
 	}
 
-	public static boolean estaExecutandoLinux(String processo) {
-		try {
-			Process p = Runtime.getRuntime().exec("ps ax"); // aqui fica o comando que vai pegar os processos
+	return estaExecutandoLinux(processo);
+    }
 
-			BufferedReader resultado = new BufferedReader(new InputStreamReader(p.getInputStream()));
+    public static boolean estaExecutandoLinux(String processo) {
+	try {
+	    Process p = Runtime.getRuntime().exec("ps ax"); // aqui fica o comando que vai pegar os processos
 
-			// mostra os resultados obtidos pelo comando 'ps ax'
-			String s;
-			while ((s = resultado.readLine()) != null)
-				if (s.contains("athos")) {
-					return true;
-				}
-			System.out.println(s);
-		} catch (Exception ex) {
-			ex.printStackTrace();
+	    BufferedReader resultado = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+	    // mostra os resultados obtidos pelo comando 'ps ax'
+	    String s;
+	    while ((s = resultado.readLine()) != null)
+		if (s.contains("athos")) {
+		    return true;
 		}
-		return false;
+	    System.out.println(s);
+	} catch (Exception ex) {
+	    ex.printStackTrace();
 	}
+	return false;
+    }
 }

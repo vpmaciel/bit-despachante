@@ -21,139 +21,139 @@ import erp.arquitetura.gui.Imagem;
 @SuppressWarnings("serial")
 public final class PedidoPlacaJan extends JFrame implements Gui {
 
-	private ConfiguracaoGui configuracaoGui;
-	private JTabbedPane tabbedPane;
-	private PedidoPlacaControl marcaControl;
-	private PedidoPlacaPainelCad marcaPainelCad;
-	private PedidoPlacaPainelPesq marcaPainelPesq;
+    private ConfiguracaoGui configuracaoGui;
+    private JTabbedPane tabbedPane;
+    private PedidoPlacaControl pedidoPlacaControl;
+    private PedidoPlacaPainelCad pedidoPlacaPainelCad;
+    private PedidoPlacaPainelPesq pedidoPlacaPainelPesq;
 
-	public PedidoPlacaJan() {
-		iniciarLayout();
-		iniciarGui();
-		iniciarFocoControlador();
-		iniciarGuiControlador();
-		iniciarControlador();
-	}
+    public PedidoPlacaJan() {
+	iniciarLayout();
+	iniciarGui();
+	iniciarFocoControlador();
+	iniciarGuiControlador();
+	iniciarControlador();
+    }
 
-	@Override
-	public void atualizarTable() {
+    @Override
+    public void atualizarTable() {
 
-	}
+    }
 
-	public void desabilitarGui() {
+    public void desabilitarGui() {
 
-	}
+    }
 
-	@Override
-	public ConfiguracaoGui getConfiguracaoGui() {
-		return configuracaoGui;
-	}
+    @Override
+    public ConfiguracaoGui getConfiguracaoGui() {
+	return configuracaoGui;
+    }
 
-	public PedidoPlacaControl getContaCont() {
-		return marcaControl;
-	}
+    public PedidoPlacaControl getPedidoPlacaCont() {
+	return pedidoPlacaControl;
+    }
 
-	public PedidoPlacaPainelCad getContaPainelCad() {
-		return marcaPainelCad;
-	}
+    public PedidoPlacaPainelCad getPedidoPlacaPainelCad() {
+	return pedidoPlacaPainelCad;
+    }
 
-	public PedidoPlacaPainelPesq getContaPainelPesq() {
-		return marcaPainelPesq;
-	}
+    public PedidoPlacaPainelPesq getPedidoPlacaPainelPesq() {
+	return pedidoPlacaPainelPesq;
+    }
 
-	public PedidoPlacaPainelCad getPanelConta() {
-		return marcaPainelCad;
-	}
+    public PedidoPlacaPainelCad getPanelPedidoPlacaCad() {
+	return pedidoPlacaPainelCad;
+    }
 
-	public JTabbedPane getTabbedPane() {
-		return tabbedPane;
-	}
+    public JTabbedPane getTabbedPane() {
+	return tabbedPane;
+    }
 
-	@Override
-	public void iniciarControlador() {
-		setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-		marcaControl = new PedidoPlacaControl();
-		addWindowListener(marcaControl.new Frame());
-		marcaPainelCad.getTB().getExcluirBtn().addActionListener(marcaControl.new Exclui());
-		marcaPainelCad.getTB().getNovoBtn().addActionListener(marcaControl.new Novo());
-		marcaPainelCad.getTB().getPesquisarBtn().addActionListener(marcaControl.new Pesquisa());
-		marcaPainelCad.getTB().getImprimirBtn().addActionListener(marcaControl.new Imprime());
-		marcaPainelCad.getTB().getRelatorioBtn().addActionListener(marcaControl.new Relatorio());
-		marcaPainelCad.getTB().getSalvarBtn().addActionListener(marcaControl.new Salva());
-		marcaPainelCad.getTB().getHomeBtn().addActionListener(marcaControl.new Home());
-		marcaPainelCad.getTB().getRegistrosBtn().addActionListener(marcaControl.new Registro());
-		marcaPainelCad.getTB().getCsvBtn().addActionListener(marcaControl.new FormatoCsv());
-		marcaPainelCad.getTB().getJsonBtn().addActionListener(marcaControl.new FormatoJson());
+    @Override
+    public void iniciarControlador() {
+	setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+	pedidoPlacaControl = new PedidoPlacaControl();
+	addWindowListener(pedidoPlacaControl.new Frame());
+	pedidoPlacaPainelCad.getTB().getExcluirBtn().addActionListener(pedidoPlacaControl.new Exclui());
+	pedidoPlacaPainelCad.getTB().getNovoBtn().addActionListener(pedidoPlacaControl.new Novo());
+	pedidoPlacaPainelCad.getTB().getPesquisarBtn().addActionListener(pedidoPlacaControl.new Pesquisa());
+	pedidoPlacaPainelCad.getTB().getImprimirBtn().addActionListener(pedidoPlacaControl.new Imprime());
+	pedidoPlacaPainelCad.getTB().getRelatorioBtn().addActionListener(pedidoPlacaControl.new Relatorio());
+	pedidoPlacaPainelCad.getTB().getSalvarBtn().addActionListener(pedidoPlacaControl.new Salva());
+	pedidoPlacaPainelCad.getTB().getHomeBtn().addActionListener(pedidoPlacaControl.new Home());
+	pedidoPlacaPainelCad.getTB().getRegistrosBtn().addActionListener(pedidoPlacaControl.new Registro());
+	pedidoPlacaPainelCad.getTB().getCsvBtn().addActionListener(pedidoPlacaControl.new FormatoCsv());
+	pedidoPlacaPainelCad.getTB().getJsonBtn().addActionListener(pedidoPlacaControl.new FormatoJson());
 
-		marcaPainelPesq.iniciarControlador();
-	}
+	pedidoPlacaPainelPesq.iniciarControlador();
+    }
 
-	@Override
-	public void iniciarFocoControlador() {
-		new FocoEvento(this);
-	}
+    @Override
+    public void iniciarFocoControlador() {
+	new FocoEvento(this);
+    }
 
-	@Override
-	public void iniciarGui() {
-		setTitle(Sis.getNomeSistema() + " - " + "PEDIDO DE PLACA");
-		setIconImage(Imagem.getLogoTipoImage());
-		tabbedPane = new JTabbedPane();
-		marcaPainelCad = new PedidoPlacaPainelCad();
-		marcaPainelPesq = new PedidoPlacaPainelPesq();
+    @Override
+    public void iniciarGui() {
+	setTitle(Sis.getNomeSistema() + " - " + "PEDIDO DE PLACA");
+	setIconImage(Imagem.getLogoTipoImage());
+	tabbedPane = new JTabbedPane();
+	pedidoPlacaPainelCad = new PedidoPlacaPainelCad();
+	pedidoPlacaPainelPesq = new PedidoPlacaPainelPesq();
 
-		final JScrollPane scrollPane = new JScrollPane(marcaPainelCad);
+	final JScrollPane scrollPane = new JScrollPane(pedidoPlacaPainelCad);
 
-		KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner",
-				new PropertyChangeListener() {
+	KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner",
+		new PropertyChangeListener() {
 
-					@Override
-					public void propertyChange(PropertyChangeEvent evt) {
-						if (!(evt.getNewValue() instanceof JComponent)) {
-							return;
-						}
-						JComponent focused = (JComponent) evt.getNewValue();
-						if (marcaPainelCad.isAncestorOf(focused)) {
-							marcaPainelCad.scrollRectToVisible(focused.getBounds());
-						}
-					}
-				});
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		    @Override
+		    public void propertyChange(PropertyChangeEvent evt) {
+			if (!(evt.getNewValue() instanceof JComponent)) {
+			    return;
+			}
+			JComponent focused = (JComponent) evt.getNewValue();
+			if (pedidoPlacaPainelCad.isAncestorOf(focused)) {
+			    pedidoPlacaPainelCad.scrollRectToVisible(focused.getBounds());
+			}
+		    }
+		});
+	scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-		tabbedPane.addTab("Cadastro", scrollPane);
-		tabbedPane.addTab("Pesquisa", marcaPainelPesq);
+	tabbedPane.addTab("Cadastro", scrollPane);
+	tabbedPane.addTab("Pesquisa", pedidoPlacaPainelPesq);
 
-		add(tabbedPane);
-		setContentPane(tabbedPane);
-		pack();
+	add(tabbedPane);
+	setContentPane(tabbedPane);
+	pack();
 
-	}
+    }
 
-	@Override
-	public void iniciarGuiControlador() {
-		configuracaoGui = new ConfiguracaoGui(this);
-	}
+    @Override
+    public void iniciarGuiControlador() {
+	configuracaoGui = new ConfiguracaoGui(this);
+    }
 
-	@Override
-	public void iniciarLayout() {
-		setLayout(new FlowLayout(FlowLayout.CENTER));
-		setPreferredSize(Sis.getTamanhoJanela());
-		setMinimumSize(Sis.getTamanhoJanela());
-		setSize(Sis.getTamanhoJanela());
-		setMaximumSize(Sis.getTamanhoJanela());
-	}
+    @Override
+    public void iniciarLayout() {
+	setLayout(new FlowLayout(FlowLayout.CENTER));
+	setPreferredSize(Sis.getTamanhoJanela());
+	setMinimumSize(Sis.getTamanhoJanela());
+	setSize(Sis.getTamanhoJanela());
+	setMaximumSize(Sis.getTamanhoJanela());
+    }
 
-	@Override
-	public void iniciarTabela() {
+    @Override
+    public void iniciarTabela() {
 
-	}
+    }
 
-	@Override
-	public void limparGui() {
-		marcaPainelCad.limparGui();
-	}
+    @Override
+    public void limparGui() {
+	pedidoPlacaPainelCad.limparGui();
+    }
 
-	@Override
-	public void reiniciarGui() {
-		marcaPainelCad.reiniciarGui();
-	}
+    @Override
+    public void reiniciarGui() {
+	pedidoPlacaPainelCad.reiniciarGui();
+    }
 }

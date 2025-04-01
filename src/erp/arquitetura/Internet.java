@@ -9,58 +9,58 @@ import java.net.URISyntaxException;
 
 public class Internet {
 
-	public class LinkSistema extends MouseAdapter {
+    public class LinkSistema extends MouseAdapter {
 
-		private final String endereco;
+	private final String endereco;
 
-		public LinkSistema(String endereco) {
-			this.endereco = endereco;
-		}
-
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
-			Desktop desktop = null;
-			try {
-				URI uri = new URI(this.endereco);
-				if (Desktop.isDesktopSupported()) {
-					desktop = Desktop.getDesktop();
-				}
-				if (desktop != null) {
-					desktop.browse(uri);
-				}
-			} catch (IOException ioException) {
-				ioException.printStackTrace();
-			} catch (URISyntaxException uriSyntaxException) {
-				uriSyntaxException.printStackTrace();
-			}
-		}
+	public LinkSistema(String endereco) {
+	    this.endereco = endereco;
 	}
 
-	public class MailSistema extends MouseAdapter {
-
-		private final String endereco;
-
-		public MailSistema(String endereco) {
-			this.endereco = endereco;
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+	    Desktop desktop = null;
+	    try {
+		URI uri = new URI(this.endereco);
+		if (Desktop.isDesktopSupported()) {
+		    desktop = Desktop.getDesktop();
 		}
-
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
-			Desktop desktop = null;
-			try {
-				URI uri = new URI("mailto:" + this.endereco);
-				if (Desktop.isDesktopSupported()) {
-					desktop = Desktop.getDesktop();
-				}
-				if (desktop != null) {
-					desktop.mail(uri);
-				}
-			} catch (IOException ioException) {
-				ioException.printStackTrace();
-			} catch (URISyntaxException uriSyntaxException) {
-				uriSyntaxException.printStackTrace();
-			}
+		if (desktop != null) {
+		    desktop.browse(uri);
 		}
+	    } catch (IOException ioException) {
+		ioException.printStackTrace();
+	    } catch (URISyntaxException uriSyntaxException) {
+		uriSyntaxException.printStackTrace();
+	    }
 	}
+    }
+
+    public class MailSistema extends MouseAdapter {
+
+	private final String endereco;
+
+	public MailSistema(String endereco) {
+	    this.endereco = endereco;
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+	    Desktop desktop = null;
+	    try {
+		URI uri = new URI("mailto:" + this.endereco);
+		if (Desktop.isDesktopSupported()) {
+		    desktop = Desktop.getDesktop();
+		}
+		if (desktop != null) {
+		    desktop.mail(uri);
+		}
+	    } catch (IOException ioException) {
+		ioException.printStackTrace();
+	    } catch (URISyntaxException uriSyntaxException) {
+		uriSyntaxException.printStackTrace();
+	    }
+	}
+    }
 
 }

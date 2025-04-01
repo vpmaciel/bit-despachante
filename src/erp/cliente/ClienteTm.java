@@ -10,118 +10,119 @@ import erp.arquitetura.util.TabelaModelo;
 @SuppressWarnings("serial")
 public class ClienteTm extends AbstractTableModel {
 
-	public static final int ID = 0;
-	public static int[] largura;
-	private static boolean[] podeEditar;
-	private static TabelaModelo tabelaModelo = new TabelaModelo();
-	static {
-		tabelaModelo.adicionarColuna("ID", 0, 50);
-		tabelaModelo.adicionarColuna("NOME", 1, 500);
-		tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 250);
+    public static final int ID = 0;
+    public static int[] largura;
+    private static boolean[] podeEditar;
+    private static TabelaModelo tabelaModelo = new TabelaModelo();
+    static {
+	tabelaModelo.adicionarColuna("ID", 0, 50);
+	tabelaModelo.adicionarColuna("NOME", 1, 500);
+	tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 250);
 
-		largura = new int[tabelaModelo.getTotalColunas()];
-		podeEditar = new boolean[tabelaModelo.getTotalColunas()];
-		for (int i = 0; i < tabelaModelo.getTotalColunas(); i++) {
-			largura[i] = tabelaModelo.getLargura(i);
-			podeEditar[i] = false;
-		}
+	largura = new int[tabelaModelo.getTotalColunas()];
+	podeEditar = new boolean[tabelaModelo.getTotalColunas()];
+	for (int i = 0; i < tabelaModelo.getTotalColunas(); i++) {
+	    largura[i] = tabelaModelo.getLargura(i);
+	    podeEditar[i] = false;
 	}
-	private Cliente cliente;
+    }
+    private Cliente cliente;
 
-	private List<Cliente> clienteList = new LinkedList<>();
+    private List<Cliente> clienteList = new LinkedList<>();
 
-	public ClienteTm() {
+    public ClienteTm() {
 
+    }
+
+    public ClienteTm(List<Cliente> lista) {
+	clienteList.addAll(lista);
+    }
+
+    public Cliente getCliente(int linha) {
+	if (clienteList.size() > 0) {
+	    return clienteList.get(linha);
 	}
+	return null;
+    }
 
-	public ClienteTm(List<Cliente> lista) {
-		clienteList.addAll(lista);
-	}
+    @Override
+    public Class<?> getColumnClass(int columnIndex) {
 
-	public Cliente getCliente(int linha) {
-		if (clienteList.size() > 0) {
-			return clienteList.get(linha);
-		}
-		return null;
-	}
-
-	@Override
-	public Class<?> getColumnClass(int columnIndex) {
-
-		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-			return Long.class;
-		}
-
-		if (tabelaModelo.getNome(columnIndex).equals("NOME") || tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
-			return String.class;
-		}
-
-		return String.class;
+	if (tabelaModelo.getNome(columnIndex).equals("ID")) {
+	    return Long.class;
 	}
 
-	@Override
-	public int getColumnCount() {
-		return largura.length;
+	if (tabelaModelo.getNome(columnIndex).equals("NOME")
+		|| tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
+	    return String.class;
 	}
 
-	@Override
-	public String getColumnName(int column) {
-		return tabelaModelo.getNome(column);
+	return String.class;
+    }
+
+    @Override
+    public int getColumnCount() {
+	return largura.length;
+    }
+
+    @Override
+    public String getColumnName(int column) {
+	return tabelaModelo.getNome(column);
+    }
+
+    public List<Cliente> getContaList() {
+	return clienteList;
+    }
+
+    @Override
+    public int getRowCount() {
+	return clienteList.size();
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+	Cliente cliente = clienteList.get(rowIndex);
+
+	if (tabelaModelo.getNome(columnIndex).equals("ID")) {
+	    return cliente.getId();
 	}
 
-	public List<Cliente> getContaList() {
-		return clienteList;
+	if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
+	    return cliente.getNome();
 	}
 
-	@Override
-	public int getRowCount() {
-		return clienteList.size();
+	if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
+	    return cliente.getCpfCnpj();
 	}
 
-	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {
-		Cliente cliente = clienteList.get(rowIndex);
+	return cliente;
+    }
 
-		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-			return cliente.getId();
-		}
+    @Override
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+	return podeEditar[columnIndex];
+    }
 
-		if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
-			return cliente.getNome();
-		}
+    public void setContaList(List<Cliente> clienteList) {
+	this.clienteList = clienteList;
+    }
 
-		if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
-			return cliente.getCpfCnpj();
-		}
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+	cliente = clienteList.get(rowIndex);
 
-		return cliente;
+	if (tabelaModelo.getNome(columnIndex).equals("ID")) {
+	    cliente.setId(Long.parseLong(aValue.toString()));
 	}
 
-	@Override
-	public boolean isCellEditable(int rowIndex, int columnIndex) {
-		return podeEditar[columnIndex];
+	if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
+	    cliente.setNome(aValue.toString());
 	}
 
-	public void setContaList(List<Cliente> clienteList) {
-		this.clienteList = clienteList;
+	if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
+	    cliente.setCpfCnpj(aValue.toString());
 	}
 
-	@Override
-	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-		cliente = clienteList.get(rowIndex);
-
-		if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-			cliente.setId(Long.parseLong(aValue.toString()));
-		}
-
-		if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
-			cliente.setNome(aValue.toString());
-		}
-
-		if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
-			cliente.setCpfCnpj(aValue.toString());
-		}
-
-		fireTableDataChanged();
-	}
+	fireTableDataChanged();
+    }
 }

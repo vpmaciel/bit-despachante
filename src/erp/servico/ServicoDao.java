@@ -4,15 +4,15 @@ import java.util.Collection;
 
 public interface ServicoDao {
 
-	void deletarRegistro(Servico marca);
+    void deletarRegistro(Servico marca);
 
-	Collection<Servico> getRegistro();
+    Collection<Servico> getRegistro();
 
-	Servico getRegistro(Servico marca);
+    Servico getRegistro(Servico marca);
 
-	boolean isRegistroValido(Servico marca);
+    boolean isRegistroValido(Servico marca);
 
-	Collection<Servico> pesquisarRegistro(Servico marca);
+    Collection<Servico> pesquisarRegistro(Servico marca);
 
-	void salvarRegistro(Servico marca);
+    void salvarRegistro(Servico marca);
 }

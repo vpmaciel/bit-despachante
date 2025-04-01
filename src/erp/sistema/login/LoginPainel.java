@@ -19,106 +19,104 @@ import erp.arquitetura.gui.Gui;
 @SuppressWarnings("serial")
 public final class LoginPainel extends JPanel implements Gui {
 
-	private JButton buttonEntrar;
-	private ConfiguracaoGui configuracaoGui;
-	private JTextField fieldNome;
-	private JPasswordField fieldSenha;
+    private JButton buttonEntrar;
+    private ConfiguracaoGui configuracaoGui;
+    private JTextField fieldNome;
+    private JPasswordField fieldSenha;
 
-	public LoginPainel() {
-		iniciarLayout();
-		iniciarGui();
-		iniciarFocoControlador();
-		iniciarGuiControlador();
-	}
+    public LoginPainel() {
+	iniciarLayout();
+	iniciarGui();
+	iniciarFocoControlador();
+	iniciarGuiControlador();
+    }
 
-	public void atualizarLabel() {
-	}
+    public void atualizarLabel() {
+    }
 
-	@Override
-	public void atualizarTable() {
-	}
+    @Override
+    public void atualizarTable() {
+    }
 
-	public JButton getButtonEntrar() {
-		return buttonEntrar;
-	}
+    public JButton getButtonEntrar() {
+	return buttonEntrar;
+    }
 
-	@Override
-	public ConfiguracaoGui getConfiguracaoGui() {
-		return configuracaoGui;
-	}
+    @Override
+    public ConfiguracaoGui getConfiguracaoGui() {
+	return configuracaoGui;
+    }
 
-	public JTextField getTextFieldNome() {
-		return fieldNome;
-	}
+    public JTextField getGUINome() {
+	return fieldNome;
+    }
 
-	public JPasswordField getTextFieldSenha() {
-		return fieldSenha;
-	}
+    public JPasswordField getGUISenha() {
+	return fieldSenha;
+    }
 
-	@Override
-	public void iniciarControlador() {
+    @Override
+    public void iniciarControlador() {
 
-	}
+    }
 
-	@Override
-	public void iniciarFocoControlador() {
-		new FocoEvento(this);
-	}
+    @Override
+    public void iniciarFocoControlador() {
+	new FocoEvento(this);
+    }
 
-	@Override
-	public void iniciarGui() {
+    @Override
+    public void iniciarGui() {
 
-		add(new JLabel("Usuário"));
+	add(new JLabel("USUÁRIO"));
 
-		fieldNome = new JTextField(25);
-		fieldNome.setDocument(new EntradaMaiuscula(10));
-		fieldNome.setText("ADMIN");
-		fieldNome.requestFocus();
-		add(fieldNome);
+	fieldNome = new JTextField(50);
+	fieldNome.setDocument(new EntradaMaiuscula(50));	
+	fieldNome.requestFocus();
+	add(fieldNome);
 
-		add(new JLabel("Senha"));
+	add(new JLabel("SENHA"));
 
-		fieldSenha = new JPasswordField(25);
-		fieldSenha.setDocument(new EntradaMaiuscula(10));
-		fieldSenha.setText("123");
-		add(fieldSenha);
+	fieldSenha = new JPasswordField(50);
+	fieldSenha.setDocument(new EntradaMaiuscula(8));	
+	add(fieldSenha);
 
-		add(new JLabel(""));
+	add(new JLabel(""));
 
-		buttonEntrar = new JButton("Entrar");
-		buttonEntrar.setBackground(Color.LIGHT_GRAY);
-        buttonEntrar.setOpaque(true); // Garante que a cor de fundo seja aplicada
-		buttonEntrar.setPreferredSize(new Dimension(100, 30));
-		buttonEntrar.setMinimumSize(new Dimension(100, 30));
-		buttonEntrar.setSize(new Dimension(100, 30));
-		buttonEntrar.setMaximumSize(new Dimension(100, 30));
+	buttonEntrar = new JButton("Entrar");
+	buttonEntrar.setBackground(Color.LIGHT_GRAY);
+	buttonEntrar.setOpaque(true);
+	buttonEntrar.setPreferredSize(new Dimension(100, 30));
+	buttonEntrar.setMinimumSize(new Dimension(100, 30));
+	buttonEntrar.setSize(new Dimension(100, 30));
+	buttonEntrar.setMaximumSize(new Dimension(100, 30));
 
-		add(buttonEntrar);
-	}
+	add(buttonEntrar);
+    }
 
-	@Override
-	public void iniciarGuiControlador() {
-		configuracaoGui = new ConfiguracaoGui(this);
-	}
+    @Override
+    public void iniciarGuiControlador() {
+	configuracaoGui = new ConfiguracaoGui(this);
+    }
 
-	@Override
-	public void iniciarLayout() {
-		setBorder(Sis.getBordaPainel());
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-	}
+    @Override
+    public void iniciarLayout() {
+	setBorder(Sis.getBordaPainel());
+	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    }
 
-	@Override
-	public void iniciarTabela() {
+    @Override
+    public void iniciarTabela() {
 
-	}
+    }
 
-	@Override
-	public void limparGui() {
+    @Override
+    public void limparGui() {
 
-	}
+    }
 
-	@Override
-	public void reiniciarGui() {
+    @Override
+    public void reiniciarGui() {
 
-	}
+    }
 }

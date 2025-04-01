@@ -2,23 +2,23 @@ package erp.arquitetura.gui;
 
 public interface Gui {
 
-	void atualizarTable();
+    void atualizarTable();
 
-	ConfiguracaoGui getConfiguracaoGui();
+    ConfiguracaoGui getConfiguracaoGui();
 
-	void iniciarControlador();
+    void iniciarControlador();
 
-	void iniciarFocoControlador();
+    void iniciarFocoControlador();
 
-	void iniciarGui();
+    void iniciarGui();
 
-	void iniciarGuiControlador();
+    void iniciarGuiControlador();
 
-	void iniciarLayout();
+    void iniciarLayout();
 
-	void iniciarTabela();
+    void iniciarTabela();
 
-	void limparGui();
+    void limparGui();
 
-	void reiniciarGui();
+    void reiniciarGui();
 }

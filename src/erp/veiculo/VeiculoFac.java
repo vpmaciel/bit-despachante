@@ -4,28 +4,28 @@ import java.util.Collection;
 
 public final class VeiculoFac {
 
-	private static final VeiculoDao marcaDao = new VeiculoImp();
+    private static final VeiculoDao veiculoDao = new VeiculoImp();
 
-	public static void deletarRegistro(Veiculo marca) {
-		marcaDao.deletarRegistro(marca);
-	}
+    public static void deletarRegistro(Veiculo veiculo) {
+	veiculoDao.deletarRegistro(veiculo);
+    }
 
-	public static Collection<Veiculo> getRegistro() {
-		return marcaDao.getRegistro();
-	}
+    public static Collection<Veiculo> getRegistro() {
+	return veiculoDao.getRegistro();
+    }
 
-	public static Veiculo getRegistro(Veiculo marca) {
-		return marcaDao.getRegistro(marca);
-	}
+    public static Veiculo getRegistro(Veiculo veiculo) {
+	return veiculoDao.getRegistro(veiculo);
+    }
 
-	public static Collection<Veiculo> pesquisarRegistro(Veiculo marca) {
-		return marcaDao.pesquisarRegistro(marca);
-	}
+    public static Collection<Veiculo> pesquisarRegistro(Veiculo veiculo) {
+	return veiculoDao.pesquisarRegistro(veiculo);
+    }
 
-	public static void salvarRegistro(Veiculo marca) {
-		marcaDao.salvarRegistro(marca);
-	}
+    public static void salvarRegistro(Veiculo veiculo) {
+	veiculoDao.salvarRegistro(veiculo);
+    }
 
-	private VeiculoFac() {
-	}
+    private VeiculoFac() {
+    }
 }

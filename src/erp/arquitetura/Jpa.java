@@ -11,30 +11,30 @@ import erp.arquitetura.gui.Msg;
 
 public class Jpa {
 
-	private static final EntityManagerFactory emf;
+    private static final EntityManagerFactory emf;
 
-	static {
-		try {
-	            
-			emf = Persistence.createEntityManagerFactory("erp");
+    static {
+	try {
 
-		} catch (Exception ex) {
-			Msg.erroConectarDataBase();
-			ex.printStackTrace();
-			throw new ExceptionInInitializerError(ex);
-		}
+	    emf = Persistence.createEntityManagerFactory("erp");
+
+	} catch (Exception ex) {
+	    Msg.erroConectarDataBase();
+	    ex.printStackTrace();
+	    throw new ExceptionInInitializerError(ex);
 	}
+    }
 
-	public static Session getHibernateSession() {
+    public static Session getHibernateSession() {
 
-		final SessionFactory sf = new Configuration().configure("persistence.xml").buildSessionFactory();
-		// factory = new Configuration().configure().buildSessionFactory();
-		final Session session = sf.openSession();
-		return session;
-	}
+	final SessionFactory sf = new Configuration().configure("persistence.xml").buildSessionFactory();
+	// factory = new Configuration().configure().buildSessionFactory();
+	final Session session = sf.openSession();
+	return session;
+    }
 
-	public static EntityManagerFactory getEntityManagerFactory() {
+    public static EntityManagerFactory getEntityManagerFactory() {
 
-		return emf;
-	}
+	return emf;
+    }
 }

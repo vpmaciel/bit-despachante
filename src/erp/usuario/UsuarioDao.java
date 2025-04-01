@@ -4,15 +4,15 @@ import java.util.Collection;
 
 public interface UsuarioDao {
 
-	void deletarRegistro(Usuario usuario);
+    void deletarRegistro(Usuario usuario);
 
-	Collection<Usuario> getRegistro();
+    Collection<Usuario> getRegistro();
 
-	Usuario getRegistro(Usuario usuario);
+    Usuario getRegistro(Usuario usuario);
 
-	boolean isRegistroValido(Usuario usuario);
+    boolean isRegistroValido(Usuario usuario);
 
-	Collection<Usuario> pesquisarRegistro(Usuario usuario);
+    Collection<Usuario> pesquisarRegistro(Usuario usuario);
 
-	void salvarRegistro(Usuario usuario);
+    void salvarRegistro(Usuario usuario);
 }

@@ -10,109 +10,109 @@ import javax.swing.JTextField;
 
 public class EventoFocoValidar implements FocusListener {
 
-	private String expressao = null;
-	private Pattern pattern = null;
+    private String expressao = null;
+    private Pattern pattern = null;
 
-	public EventoFocoValidar(Pattern pattern) {
-		this.setPattern(pattern);
+    public EventoFocoValidar(Pattern pattern) {
+	this.setPattern(pattern);
+    }
+
+    public EventoFocoValidar(String expressao) {
+	this.setExpressao(expressao);
+    }
+
+    @Override
+    public void focusGained(FocusEvent arg0) {
+    }
+
+    @Override
+    public void focusLost(FocusEvent event) {
+	try {
+	    Component component = event.getComponent();
+	    if (this.expressao != null) {
+		this.validar(component, this.expressao);
+	    } else {
+		this.validar(component, this.pattern);
+	    }
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
+    }
 
-	public EventoFocoValidar(String expressao) {
-		this.setExpressao(expressao);
-	}
+    public String getExpressao() {
+	return this.expressao;
+    }
 
-	@Override
-	public void focusGained(FocusEvent arg0) {
-	}
+    public Pattern getPattern() {
+	return this.pattern;
+    }
 
-	@Override
-	public void focusLost(FocusEvent event) {
-		try {
-			Component component = event.getComponent();
-			if (this.expressao != null) {
-				this.validar(component, this.expressao);
-			} else {
-				this.validar(component, this.pattern);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+    public void setExpressao(String expressao) {
+	this.expressao = expressao;
+    }
+
+    public void setPattern(Pattern pattern) {
+	this.pattern = pattern;
+    }
+
+    public boolean validar(Component component, Pattern p) {
+	String entrada = ((JTextField) component).getText();
+	entrada = ((JTextField) component).getText();
+	Matcher m = p.matcher(entrada);
+	try {
+	    if (component instanceof JTextField) {
+		if (m.find()) {
+		    return true;
 		}
+		if (((JTextField) component).getText().replaceAll("\\D", "").equals("")) {
+		    ((JTextField) component).requestFocus();
+		}
+		((JTextField) component).setText("");
+		return false;
+	    }
+	    if (component instanceof JTextField) {
+		if (m.find()) {
+		    return true;
+		}
+		if (!entrada.equals("")) {
+		    ((JTextField) component).requestFocus();
+		}
+		((JTextField) component).setText("");
+		return false;
+	    }
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
+	return false;
+    }
 
-	public String getExpressao() {
-		return this.expressao;
-	}
-
-	public Pattern getPattern() {
-		return this.pattern;
-	}
-
-	public void setExpressao(String expressao) {
-		this.expressao = expressao;
-	}
-
-	public void setPattern(Pattern pattern) {
-		this.pattern = pattern;
-	}
-
-	public boolean validar(Component component, Pattern p) {
-		String entrada = ((JTextField) component).getText();
+    public boolean validar(Component component, String validar) {
+	String entrada = ((JTextField) component).getText();
+	try {
+	    if (component instanceof JTextField) {
 		entrada = ((JTextField) component).getText();
-		Matcher m = p.matcher(entrada);
-		try {
-			if (component instanceof JTextField) {
-				if (m.find()) {
-					return true;
-				}
-				if (((JTextField) component).getText().replaceAll("\\D", "").equals("")) {
-					((JTextField) component).requestFocus();
-				}
-				((JTextField) component).setText("");
-				return false;
-			}
-			if (component instanceof JTextField) {
-				if (m.find()) {
-					return true;
-				}
-				if (!entrada.equals("")) {
-					((JTextField) component).requestFocus();
-				}
-				((JTextField) component).setText("");
-				return false;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (entrada.matches(validar)) {
+		    return true;
 		}
-		return false;
-	}
-
-	public boolean validar(Component component, String validar) {
-		String entrada = ((JTextField) component).getText();
-		try {
-			if (component instanceof JTextField) {
-				entrada = ((JTextField) component).getText();
-				if (entrada.matches(validar)) {
-					return true;
-				}
-				if (!((JTextField) component).getText().replaceAll("\\D", "").equals("")) {
-					((JTextField) component).requestFocus();
-				}
-				((JTextField) component).setText("");
-				return false;
-			}
-			if (component instanceof JTextField) {
-				if (entrada.matches(validar)) {
-					return true;
-				}
-				if (!entrada.equals("")) {
-					((JTextField) component).requestFocus();
-				}
-				((JTextField) component).setText("");
-				return false;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (!((JTextField) component).getText().replaceAll("\\D", "").equals("")) {
+		    ((JTextField) component).requestFocus();
 		}
+		((JTextField) component).setText("");
 		return false;
+	    }
+	    if (component instanceof JTextField) {
+		if (entrada.matches(validar)) {
+		    return true;
+		}
+		if (!entrada.equals("")) {
+		    ((JTextField) component).requestFocus();
+		}
+		((JTextField) component).setText("");
+		return false;
+	    }
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
+	return false;
+    }
 }

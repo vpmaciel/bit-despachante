@@ -12,147 +12,146 @@ import erp.arquitetura.gui.Imagem;
 @SuppressWarnings("serial")
 public class MainJan extends JFrame {
 
-	private static MainControl mainControl;
+    private static MainController mainController;
 
-	public static MainJan getFrameMain() {
-		return MainControl.getMainJan();
-	}
+    public static MainJan getFrameMain() {
+	return MainController.getMainJan();
+    }
 
-	public static MainControl getMainControl() {
-		return mainControl;
-	}
+    public static MainController getMainControl() {
+	return mainController;
+    }
 
-	static void mostrarFrame(JFrame frame) {
-		MainControl.mostrarFrame(frame);
-	}
+    static void mostrarFrame(JFrame frame) {
+	MainController.mostrarFrame(frame);
+    }
 
-	private JMenu menuAjuda;
-	private JMenu menuArquivo;
-	private final JMenuBar menuBar = new JMenuBar();
-	private JMenu menuCadastro;
-	private JMenuItem menuItemAjudaSobreSistema;
-	private JMenuItem menuItemArquivoLogin;
-	private JMenuItem menuItemArquivoUsuario;
-	private JMenuItem menuItemArquivoSair;
-	private JMenuItem menuItemCadastroCliente;
-	private JMenuItem menuItemCadastroVeiculo;
-	private JMenuItem menuItemCadastroServico;
-	private JMenuItem menuItemCadastroPedidoPlaca;
-	
+    private JMenu menuAjuda;
+    private JMenu menuArquivo;
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu menuCadastro;
+    private JMenuItem menuItemAjudaSobreSistema;
+    private JMenuItem menuItemArquivoLogin;
+    private JMenuItem menuItemArquivoUsuario;
+    private JMenuItem menuItemArquivoSair;
+    private JMenuItem menuItemCadastroCliente;
+    private JMenuItem menuItemCadastroVeiculo;
+    private JMenuItem menuItemCadastroServico;
+    private JMenuItem menuItemCadastroPedidoPlaca;
 
-	public MainJan() {
-		iniciarGui();
-		iniciarCont();
-	}
+    public MainJan() {
+	iniciarGui();
+	iniciarController();
+    }
 
-	public JMenu getMenuAjuda() {
-		return menuAjuda;
-	}
+    public JMenu getMenuAjuda() {
+	return menuAjuda;
+    }
 
-	public JMenu getMenuArquivo() {
-		return menuArquivo;
-	}
+    public JMenu getMenuArquivo() {
+	return menuArquivo;
+    }
 
-	public JMenu getMenuCadastro() {
-		return menuCadastro;
-	}
+    public JMenu getMenuCadastro() {
+	return menuCadastro;
+    }
 
-	public JMenuItem getMenuItemAjudaSobreSistema() {
-		return menuItemAjudaSobreSistema;
-	}
-	
-	public Object getMenuItemArquivoLogin() {
-		return menuItemArquivoLogin;
-	}
-	
-	public Object getMenuItemArquivoUsuario() {
-		return menuItemArquivoUsuario;
-	}
+    public JMenuItem getMenuItemAjudaSobreSistema() {
+	return menuItemAjudaSobreSistema;
+    }
 
-	public JMenuItem getMenuItemArquivoSair() {
-		return menuItemArquivoSair;
-	}
+    public Object getMenuItemArquivoLogin() {
+	return menuItemArquivoLogin;
+    }
 
-	public JMenuItem getMenuItemCadastroCliente() {
-		return menuItemCadastroCliente;
-	}
+    public Object getMenuItemArquivoUsuario() {
+	return menuItemArquivoUsuario;
+    }
 
-	public JMenuItem getMenuItemCadastroPedidoPlaca() {
-		return menuItemCadastroPedidoPlaca;
-	}
+    public JMenuItem getMenuItemArquivoSair() {
+	return menuItemArquivoSair;
+    }
 
-	public JMenuItem getMenuItemCadastroServico() {
-		return menuItemCadastroServico;
-	}
+    public JMenuItem getMenuItemCadastroCliente() {
+	return menuItemCadastroCliente;
+    }
 
-	public JMenuItem getMenuItemCadastroVeiculo() {
-		return menuItemCadastroVeiculo;
-	}
+    public JMenuItem getMenuItemCadastroPedidoPlaca() {
+	return menuItemCadastroPedidoPlaca;
+    }
 
-	public void iniciarCont() {
-		mainControl = MainControl.getInstance(this);
-		addWindowListener(mainControl.new FrameGerenteEventos());
-		menuItemArquivoSair.addActionListener(mainControl.new MenuGerenteEventos());		
-		menuItemArquivoUsuario.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemArquivoLogin.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroVeiculo.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroPedidoPlaca.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroServico.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemCadastroCliente.addActionListener(mainControl.new MenuGerenteEventos());
-		menuItemAjudaSobreSistema.addActionListener(mainControl.new MenuGerenteEventos());
-	}
+    public JMenuItem getMenuItemCadastroServico() {
+	return menuItemCadastroServico;
+    }
 
-	private void iniciarGui() {
-		setTitle(Sis.getNomeSistema() + " - " + "PRINCIPAL");
-		setIconImage(Imagem.getLogoTipoImage());
-		setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-		setMinimumSize(Sis.getTamanhoJanela());
-		setSize(Sis.getTamanhoJanela());
-		setPreferredSize(Sis.getTamanhoJanela());
-		setMaximumSize(Sis.getTamanhoJanela());
+    public JMenuItem getMenuItemCadastroVeiculo() {
+	return menuItemCadastroVeiculo;
+    }
 
-		menuArquivo = new JMenu("Arquivo");
-		menuArquivo.setMnemonic('A');
+    public void iniciarController() {
+	mainController = MainController.getInstance(this);
+	addWindowListener(mainController.new FrameGerenteEventos());
+	menuItemArquivoSair.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemArquivoUsuario.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemArquivoLogin.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemCadastroVeiculo.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemCadastroPedidoPlaca.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemCadastroServico.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemCadastroCliente.addActionListener(mainController.new MenuGerenteEventos());
+	menuItemAjudaSobreSistema.addActionListener(mainController.new MenuGerenteEventos());
+    }
 
-		menuItemArquivoLogin = new JMenuItem("Login");
-		
-		menuArquivo.add(menuItemArquivoLogin);
-		
-		menuItemArquivoUsuario = new JMenuItem("Usuário");
-		
-		menuArquivo.add(menuItemArquivoUsuario);
-		
-		menuItemArquivoSair = new JMenuItem("Sair");
+    private void iniciarGui() {
+	setTitle(Sis.getNomeSistema() + " - " + "PRINCIPAL");
+	setIconImage(Imagem.getLogoTipoImage());
+	setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+	setMinimumSize(Sis.getTamanhoJanela());
+	setSize(Sis.getTamanhoJanela());
+	setPreferredSize(Sis.getTamanhoJanela());
+	setMaximumSize(Sis.getTamanhoJanela());
 
-		menuArquivo.add(menuItemArquivoSair);
+	menuArquivo = new JMenu("Arquivo");
+	menuArquivo.setMnemonic('A');
 
-		menuBar.add(menuArquivo);
+	menuItemArquivoLogin = new JMenuItem("Login");
 
-		menuCadastro = new JMenu("Cadastro");
-		menuCadastro.setMnemonic('C');
+	menuArquivo.add(menuItemArquivoLogin);
 
-		menuItemCadastroPedidoPlaca = new JMenuItem("Pedido de Placa");
-		menuCadastro.add(menuItemCadastroPedidoPlaca);
+	menuItemArquivoUsuario = new JMenuItem("Usuário");
 
-		menuItemCadastroServico = new JMenuItem("Serviço");
-		menuCadastro.add(menuItemCadastroServico);
+	menuArquivo.add(menuItemArquivoUsuario);
 
-		menuItemCadastroVeiculo = new JMenuItem("Veículo");
-		menuCadastro.add(menuItemCadastroVeiculo);
+	menuItemArquivoSair = new JMenuItem("Sair");
 
-		menuItemCadastroCliente = new JMenuItem("Cliente");
-		menuCadastro.add(menuItemCadastroCliente);
+	menuArquivo.add(menuItemArquivoSair);
 
-		menuBar.add(menuCadastro);
+	menuBar.add(menuArquivo);
 
-		menuAjuda = new JMenu("Ajuda");
-		menuAjuda.setMnemonic('u');
+	menuCadastro = new JMenu("Cadastro");
+	menuCadastro.setMnemonic('C');
 
-		menuItemAjudaSobreSistema = new JMenuItem("Sobre o Sistema");
-		menuAjuda.add(menuItemAjudaSobreSistema);
+	menuItemCadastroPedidoPlaca = new JMenuItem("Pedido de Placa");
+	menuCadastro.add(menuItemCadastroPedidoPlaca);
 
-		menuBar.add(menuAjuda);
+	menuItemCadastroServico = new JMenuItem("Serviço");
+	menuCadastro.add(menuItemCadastroServico);
 
-		setJMenuBar(menuBar);
-	}
+	menuItemCadastroVeiculo = new JMenuItem("Veículo");
+	menuCadastro.add(menuItemCadastroVeiculo);
+
+	menuItemCadastroCliente = new JMenuItem("Cliente");
+	menuCadastro.add(menuItemCadastroCliente);
+
+	menuBar.add(menuCadastro);
+
+	menuAjuda = new JMenu("Ajuda");
+	menuAjuda.setMnemonic('u');
+
+	menuItemAjudaSobreSistema = new JMenuItem("Sobre o Sistema");
+	menuAjuda.add(menuItemAjudaSobreSistema);
+
+	menuBar.add(menuAjuda);
+
+	setJMenuBar(menuBar);
+    }
 }

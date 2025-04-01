@@ -19,63 +19,63 @@ import erp.arquitetura.gui.Tabela;
 @SuppressWarnings("serial")
 public final class UsuarioPainelPesq extends JPanel {
 
-	private final UsuarioTm agenciaTableModel;
-	private final JTable table;
-	List<Usuario> usuarioList = null;
+    private final UsuarioTm agenciaTableModel;
+    private final JTable table;
+    List<Usuario> usuarioList = null;
 
-	public UsuarioPainelPesq() {
-		setBorder(Sis.getBordaPainel());
+    public UsuarioPainelPesq() {
+	setBorder(Sis.getBordaPainel());
 
-		usuarioList = new LinkedList<>();
-		agenciaTableModel = new UsuarioTm(usuarioList);
+	usuarioList = new LinkedList<>();
+	agenciaTableModel = new UsuarioTm(usuarioList);
 
-		table = new JTable();
-		table.setModel(agenciaTableModel);
-		for (int c = 0; c < table.getColumnCount(); ++c) {
-			table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
-		}
-		Tabela.configurarLarguraColunasTabela(table, UsuarioTm.largura);
-		((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
-				.setHorizontalAlignment(SwingConstants.RIGHT);
-		table.getColumnModel().getColumn(0).setMaxWidth(0);
-		table.getColumnModel().getColumn(0).setMinWidth(0);
-		table.getColumnModel().getColumn(0).setPreferredWidth(0);
-		table.setRowSelectionAllowed(true);
-		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setRowHeight(30);
-		table.setColumnSelectionAllowed(false);
-		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(new Rectangle(0, 0, 720, 420));
-		scrollPane.setViewportView(table);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		super.setLayout(new BorderLayout());
-		super.add(scrollPane, "Center");
+	table = new JTable();
+	table.setModel(agenciaTableModel);
+	for (int c = 0; c < table.getColumnCount(); ++c) {
+	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
+	Tabela.configurarLarguraColunasTabela(table, UsuarioTm.largura);
+	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
+		.setHorizontalAlignment(SwingConstants.RIGHT);
+	table.getColumnModel().getColumn(0).setMaxWidth(0);
+	table.getColumnModel().getColumn(0).setMinWidth(0);
+	table.getColumnModel().getColumn(0).setPreferredWidth(0);
+	table.setRowSelectionAllowed(true);
+	table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+	table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+	table.setRowHeight(30);
+	table.setColumnSelectionAllowed(false);
+	JScrollPane scrollPane = new JScrollPane(table);
+	scrollPane.setBounds(new Rectangle(0, 0, 720, 420));
+	scrollPane.setViewportView(table);
+	scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+	scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+	super.setLayout(new BorderLayout());
+	super.add(scrollPane, "Center");
+    }
 
-	public void atualizarGui(List<Usuario> usuarios) {
-		agenciaTableModel.setUsuarioList(usuarios);
-		agenciaTableModel.fireTableDataChanged();
-	}
+    public void atualizarGui(List<Usuario> usuarios) {
+	agenciaTableModel.setUsuarioList(usuarios);
+	agenciaTableModel.fireTableDataChanged();
+    }
 
-	public UsuarioTm getUsuarioTableModel() {
-		return agenciaTableModel;
-	}
+    public UsuarioTm getUsuarioTableModel() {
+	return agenciaTableModel;
+    }
 
-	public void iniciarControlador() {
-		UsuarioSel listener = new UsuarioSel(table);
-		table.getSelectionModel().addListSelectionListener(listener);
-	}
+    public void iniciarControlador() {
+	UsuarioSel listener = new UsuarioSel(table);
+	table.getSelectionModel().addListSelectionListener(listener);
+    }
 
-	public int pesquisarRegistro(Usuario usuario) {
-		usuarioList = new LinkedList<>();
-		try {
-			usuarioList = new LinkedList<>(UsuarioFac.pesquisarRegistro(usuario));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		atualizarGui(usuarioList);
-		return usuarioList.size();
+    public int pesquisarRegistro(Usuario usuario) {
+	usuarioList = new LinkedList<>();
+	try {
+	    usuarioList = new LinkedList<>(UsuarioFac.pesquisarRegistro(usuario));
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
+	atualizarGui(usuarioList);
+	return usuarioList.size();
+    }
 }
