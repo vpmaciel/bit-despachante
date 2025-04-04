@@ -216,7 +216,8 @@ final class ServicoControl {
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 	    long totalPesquisaRegistro = 0;
-	    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq().pesquisarRegistro(new Servico());
+	    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq()
+		    .pesquisarRegistro(new Servico());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {
@@ -280,24 +281,25 @@ final class ServicoControl {
 
 		if (mensagem == JOptionPane.YES_OPTION) {
 		    long totalPesquisaRegistro = 0;
-		    Servico servicoPesquisa = new Servico();		    
+		    Servico servicoPesquisa = new Servico();
 		    servicoPesquisa.setId(servico.getId());
-		    
-		    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq().pesquisarRegistro(servicoPesquisa);
-		    
+
+		    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq()
+			    .pesquisarRegistro(servicoPesquisa);
+
 		    if (totalPesquisaRegistro > 0) {
 			Msg.avisoCampoDuplicado("Registro");
 			return;
 		    }
-		   
+
 		    boolean salva;
-		    
+
 		    salva = atualizarObjeto(true);
-		    
+
 		    if (!salva) {
 			return;
 		    }
-		    
+
 		    ServicoFac.salvarRegistro(servico);
 		    servico = new Servico();
 		    MainController.getServicoJan().limparGui();
@@ -340,7 +342,7 @@ final class ServicoControl {
 	servico.setPlaca(getServicoPainelCad().getGuiPlaca().getText());
 	servico.setTelefoneCliente(getServicoPainelCad().getGuiTelefoneCliente().getText());
 	servico.setValor(Numero.stringToFloat(getServicoPainelCad().getGuiValor().getText()));
-	
+
 	return true;
     }
 

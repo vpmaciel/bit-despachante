@@ -162,7 +162,8 @@ final class PedidoPlacaControl {
 	    pedidoPlaca = new PedidoPlaca();
 	    atualizarObjeto(false);
 	    long totalPesquisaRegistro = 0;
-	    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq().pesquisarRegistro(pedidoPlaca);
+	    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq()
+		    .pesquisarRegistro(pedidoPlaca);
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {
@@ -221,58 +222,59 @@ final class PedidoPlacaControl {
 		if (((getPedidoPlacaPainelCad().getGuiQuantidade().getText()) == null)
 			|| (getPedidoPlacaPainelCad().getGuiQuantidade().getText().length() == 0)) {
 		    getPedidoPlacaPainelCad().getGuiQuantidade().requestFocus();
-		    Msg.avisoCampoObrigatorio("QUANTIDADE");
+		    Msg.avisoCampoObrigatorio("Quantidade");
 		    return;
 		}
 
 		if (((getPedidoPlacaPainelCad().getGuiPlaca().getText()) == null)
 			|| (getPedidoPlacaPainelCad().getGuiPlaca().getText().length() == 0)) {
 		    getPedidoPlacaPainelCad().getGuiPlaca().requestFocus();
-		    Msg.avisoCampoObrigatorio("PLACA DO VEÍCULO");
+		    Msg.avisoCampoObrigatorio("Placa do Veículo");
 		    return;
 		}
 
 		if (((getPedidoPlacaPainelCad().getGuiCorPlaca().getText()) == null)
 			|| (getPedidoPlacaPainelCad().getGuiCorPlaca().getText().length() == 0)) {
 		    getPedidoPlacaPainelCad().getGuiCorPlaca().requestFocus();
-		    Msg.avisoCampoObrigatorio("COR DA PALCA");
+		    Msg.avisoCampoObrigatorio("Cor da Placa");
 		    return;
 		}
 
 		if (((getPedidoPlacaPainelCad().getGuiTipoPlaca().getText()) == null)
 			|| (getPedidoPlacaPainelCad().getGuiTipoPlaca().getText().length() == 0)) {
 		    getPedidoPlacaPainelCad().getGuiTipoPlaca().requestFocus();
-		    Msg.avisoCampoObrigatorio("TIPO DE PLACA");
+		    Msg.avisoCampoObrigatorio("Tiplo de Placa");
 		    return;
 		}
 
 		if (((getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().getText()) == null)
 			|| (getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().getText().length() == 0)) {
 		    getPedidoPlacaPainelCad().getGuiCpfCnpjProprietario().requestFocus();
-		    Msg.avisoCampoObrigatorio("CPF | CNPJ DO PROPRIETÁRIO");
+		    Msg.avisoCampoObrigatorio("CPF | CNPJ do Proprietário");
 		    return;
 		}
 
 		if (mensagem == JOptionPane.YES_OPTION) {
-		    
+
 		    long totalPesquisaRegistro = 0;
 		    PedidoPlaca pedidoPlacaPesquisa = new PedidoPlaca();
 		    pedidoPlacaPesquisa.setId(pedidoPlaca.getId());
-		    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq().pesquisarRegistro(pedidoPlacaPesquisa);
-		    
+		    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq()
+			    .pesquisarRegistro(pedidoPlacaPesquisa);
+
 		    if (totalPesquisaRegistro > 0) {
 			Msg.avisoCampoDuplicado("CPF | CNPJ");
 			return;
 		    }
-		   
+
 		    boolean salva;
-		    
+
 		    salva = atualizarObjeto(true);
-		    
+
 		    if (!salva) {
 			return;
 		    }
-		    
+
 		    PedidoPlacaFac.salvarRegistro(pedidoPlaca);
 		    pedidoPlaca = new PedidoPlaca();
 		    MainController.getPedidoPlacaJan().limparGui();

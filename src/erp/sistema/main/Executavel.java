@@ -23,8 +23,8 @@ public class Executavel {
 	    exception.printStackTrace();
 	    Msg.erroLookAndFeel();
 	} catch (Exception exception) {
-	    exception.printStackTrace();	    
+	    exception.printStackTrace();
 	    Msg.erroGeral();
-	} 
+	}
     }
 }

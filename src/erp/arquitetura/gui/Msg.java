@@ -12,19 +12,20 @@ public final class Msg {
     private static Object[] botoesSimNao = new Object[] { "Sim", "Nao" };
 
     public static void avisoFecharSistema() {
-	JOptionPane.showMessageDialog(MainController.getLoginJan().getLoginPainelCad(), "O sistema será fechado !", "Erro",
-		JOptionPane.ERROR_MESSAGE);
+	JOptionPane.showMessageDialog(MainController.getLoginJan().getLoginPainelCad(), "O sistema será fechado !",
+		"Erro", JOptionPane.ERROR_MESSAGE);
     }
 
     public static void avisoCampoInvalido(Object campo) {
 	JOptionPane.showMessageDialog(null, campo.toString().toUpperCase() + " inválido !", "Informação",
 		JOptionPane.INFORMATION_MESSAGE);
     }
-    
+
     public static void avisoCampoInvalido(Object campo, Object valor) {
-	JOptionPane.showMessageDialog(null, campo.toString().toUpperCase() + " inválido !\nExemplo válido: " + valor.toString(), "Informação",
-	JOptionPane.INFORMATION_MESSAGE);
-	
+	JOptionPane.showMessageDialog(null,
+		campo.toString().toUpperCase() + " inválido !\nExemplo válido: " + valor.toString(), "Informação",
+		JOptionPane.INFORMATION_MESSAGE);
+
     }
 
     public static void avisoCampoDuplicado() {
@@ -56,12 +57,12 @@ public final class Msg {
 	JOptionPane.showMessageDialog(null, "Voce precisa preencher o campo " + campo.toString().toUpperCase(),
 		"Informação", JOptionPane.WARNING_MESSAGE);
     }
-    
+
     public static void avisoDebug(String campo, Object valor) {
 	JOptionPane.showMessageDialog(null, campo + " : " + valor + "\nJá está cadastrado em outro registro !",
 		"Informação", JOptionPane.WARNING_MESSAGE);
     }
-    
+
     public static void avisoImprimiRegistroNaoCadastrado() {
 	JOptionPane.showMessageDialog(null, "Registro não cadastrado no sistema !", "Informação",
 		JOptionPane.INFORMATION_MESSAGE);
@@ -77,7 +78,8 @@ public final class Msg {
     }
 
     public static void avisoUsuarioInvalido() {
-	JOptionPane.showMessageDialog(null, "Usuário e Senha não autorizados !", "Informação", JOptionPane.ERROR_MESSAGE);
+	JOptionPane.showMessageDialog(null, "Usuário e Senha não autorizados !", "Informação",
+		JOptionPane.ERROR_MESSAGE);
     }
 
     public static void avisoUsuarioNaoExcluiRegistro() {

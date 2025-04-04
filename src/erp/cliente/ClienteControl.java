@@ -166,7 +166,7 @@ final class ClienteControl {
 	    long totalPesquisaRegistro = 0;
 
 	    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq().pesquisarRegistro(cliente);
-	    
+
 	    if (totalPesquisaRegistro > 0) {
 		MainController.getClienteJan().getTabbedPane().setSelectedIndex(1);
 	    }
@@ -180,7 +180,8 @@ final class ClienteControl {
 
 	    long totalPesquisaRegistro = 0;
 
-	    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq().pesquisarRegistro(new Cliente());
+	    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq()
+		    .pesquisarRegistro(new Cliente());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {
@@ -236,25 +237,26 @@ final class ClienteControl {
 		}
 
 		if (mensagem == JOptionPane.YES_OPTION) {
-		    
+
 		    long totalPesquisaRegistro = 0;
 		    Cliente clientePesquisa = new Cliente();
 		    clientePesquisa.setCpfCnpj(getClientePainelCad().getGuiCpfCnpj().getText());
-		    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq().pesquisarRegistro(clientePesquisa);
-		    
+		    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq()
+			    .pesquisarRegistro(clientePesquisa);
+
 		    if (totalPesquisaRegistro > 0 && cliente.getId() == null) {
 			Msg.avisoCampoDuplicado("CPF | CNPJ");
 			return;
 		    }
-		   
+
 		    boolean salva;
-		    
+
 		    salva = atualizarObjeto(true);
-		    
+
 		    if (!salva) {
 			return;
 		    }
-		    
+
 		    ClienteFac.salvarRegistro(cliente);
 		    cliente = new Cliente();
 		    MainController.getClienteJan().limparGui();
@@ -300,16 +302,16 @@ final class ClienteControl {
 	cliente.setCpfCnpj(getClientePainelCad().getGuiCpfCnpj().getText());
 	cliente.setEmail(getClientePainelCad().getGuiEmail().getText());
 	cliente.setNome(getClientePainelCad().getGuiNome().getText());
-	
+
 	if (Telefone.validarFormato(getClientePainelCad().getGuiTelefone().getText())) {
-	    cliente.setTelefone(getClientePainelCad().getGuiTelefone().getText());    
+	    cliente.setTelefone(getClientePainelCad().getGuiTelefone().getText());
 	} else {
-	    if(pesquisa) {
+	    if (pesquisa) {
 		Msg.avisoCampoInvalido("TELEFONE", "00-000000000");
 		return false;
-	    }	    
+	    }
 	}
-	
+
 	return true;
     }
 

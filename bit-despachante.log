@@ -12149,3 +12149,777 @@
 2025-04-01 15:47:00.0043 TRACE BasicExtractor:61 - extracted value ([SERVICO_6_3_0_] : [VARCHAR]) - [KLC5D471]
 2025-04-01 15:47:00.0043 TRACE BasicExtractor:61 - extracted value ([SERVICO_7_3_0_] : [VARCHAR]) - [31-98582-1475]
 2025-04-01 15:47:00.0043 TRACE BasicExtractor:61 - extracted value ([SERVICO_8_3_0_] : [FLOAT]) - [500.0]
+2025-04-03 21:44:39.0859 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@32094895
+2025-04-03 21:44:39.0861 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@32094895
+2025-04-03 21:44:39.0862 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@32094895
+2025-04-03 21:44:39.0863 DEBUG BasicTypeRegistry:145 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@7b089e9b
+2025-04-03 21:44:39.0865 DEBUG BasicTypeRegistry:145 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@76634923
+2025-04-03 21:44:39.0866 DEBUG BasicTypeRegistry:145 - Adding type registration yes_no -> org.hibernate.type.YesNoType@174dc2ee
+2025-04-03 21:44:39.0867 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@3f645866
+2025-04-03 21:44:39.0867 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@3f645866
+2025-04-03 21:44:39.0867 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@3f645866
+2025-04-03 21:44:39.0869 DEBUG BasicTypeRegistry:145 - Adding type registration character -> org.hibernate.type.CharacterType@3bbceaa8
+2025-04-03 21:44:39.0869 DEBUG BasicTypeRegistry:145 - Adding type registration char -> org.hibernate.type.CharacterType@3bbceaa8
+2025-04-03 21:44:39.0869 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@3bbceaa8
+2025-04-03 21:44:39.0871 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@589b1114
+2025-04-03 21:44:39.0871 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@589b1114
+2025-04-03 21:44:39.0871 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@589b1114
+2025-04-03 21:44:39.0872 DEBUG BasicTypeRegistry:145 - Adding type registration integer -> org.hibernate.type.IntegerType@76bd9da5
+2025-04-03 21:44:39.0872 DEBUG BasicTypeRegistry:145 - Adding type registration int -> org.hibernate.type.IntegerType@76bd9da5
+2025-04-03 21:44:39.0873 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@76bd9da5
+2025-04-03 21:44:39.0875 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@74f3d9cf
+2025-04-03 21:44:39.0875 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@74f3d9cf
+2025-04-03 21:44:39.0875 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@74f3d9cf
+2025-04-03 21:44:39.0876 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@230c8b3
+2025-04-03 21:44:39.0876 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@230c8b3
+2025-04-03 21:44:39.0877 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@230c8b3
+2025-04-03 21:44:39.0878 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@26f54c11
+2025-04-03 21:44:39.0878 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@26f54c11
+2025-04-03 21:44:39.0878 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@26f54c11
+2025-04-03 21:44:39.0880 DEBUG BasicTypeRegistry:145 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@7983eef1
+2025-04-03 21:44:39.0880 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@7983eef1
+2025-04-03 21:44:39.0882 DEBUG BasicTypeRegistry:145 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@29a754c2
+2025-04-03 21:44:39.0882 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@29a754c2
+2025-04-03 21:44:39.0883 DEBUG BasicTypeRegistry:145 - Adding type registration string -> org.hibernate.type.StringType@1781d024
+2025-04-03 21:44:39.0883 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.String -> org.hibernate.type.StringType@1781d024
+2025-04-03 21:44:39.0884 DEBUG BasicTypeRegistry:145 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@871bedb
+2025-04-03 21:44:39.0885 DEBUG BasicTypeRegistry:145 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7f00a302
+2025-04-03 21:44:39.0886 DEBUG BasicTypeRegistry:145 - Adding type registration url -> org.hibernate.type.UrlType@79981d0d
+2025-04-03 21:44:39.0886 DEBUG BasicTypeRegistry:145 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@79981d0d
+2025-04-03 21:44:39.0887 DEBUG BasicTypeRegistry:145 - Adding type registration Duration -> org.hibernate.type.DurationType@5684fa51
+2025-04-03 21:44:39.0887 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5684fa51
+2025-04-03 21:44:39.0891 DEBUG BasicTypeRegistry:145 - Adding type registration Instant -> org.hibernate.type.InstantType@2c792aaa
+2025-04-03 21:44:39.0891 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2c792aaa
+2025-04-03 21:44:39.0893 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@32e2c810
+2025-04-03 21:44:39.0893 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@32e2c810
+2025-04-03 21:44:39.0894 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@6c71db72
+2025-04-03 21:44:39.0895 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@6c71db72
+2025-04-03 21:44:39.0896 DEBUG BasicTypeRegistry:145 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@5fae5a90
+2025-04-03 21:44:39.0896 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@5fae5a90
+2025-04-03 21:44:39.0898 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@7d43fb65
+2025-04-03 21:44:39.0898 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@7d43fb65
+2025-04-03 21:44:39.0900 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@3d7c6d18
+2025-04-03 21:44:39.0900 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@3d7c6d18
+2025-04-03 21:44:39.0901 DEBUG BasicTypeRegistry:145 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@355eb90b
+2025-04-03 21:44:39.0901 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@355eb90b
+2025-04-03 21:44:39.0903 DEBUG BasicTypeRegistry:145 - Adding type registration date -> org.hibernate.type.DateType@1ad9825b
+2025-04-03 21:44:39.0903 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@1ad9825b
+2025-04-03 21:44:39.0904 DEBUG BasicTypeRegistry:145 - Adding type registration time -> org.hibernate.type.TimeType@73a42d47
+2025-04-03 21:44:39.0904 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@73a42d47
+2025-04-03 21:44:39.0905 DEBUG BasicTypeRegistry:145 - Adding type registration timestamp -> org.hibernate.type.TimestampType@28975306
+2025-04-03 21:44:39.0905 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@28975306
+2025-04-03 21:44:39.0905 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@28975306
+2025-04-03 21:44:39.0907 DEBUG BasicTypeRegistry:145 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@38d2123c
+2025-04-03 21:44:39.0908 DEBUG BasicTypeRegistry:145 - Adding type registration calendar -> org.hibernate.type.CalendarType@5bb4015
+2025-04-03 21:44:39.0908 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@5bb4015
+2025-04-03 21:44:39.0909 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@5bb4015
+2025-04-03 21:44:39.0910 DEBUG BasicTypeRegistry:145 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@6e2ede12
+2025-04-03 21:44:39.0911 DEBUG BasicTypeRegistry:145 - Adding type registration locale -> org.hibernate.type.LocaleType@369bbe6e
+2025-04-03 21:44:39.0911 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@369bbe6e
+2025-04-03 21:44:39.0912 DEBUG BasicTypeRegistry:145 - Adding type registration currency -> org.hibernate.type.CurrencyType@22d7306a
+2025-04-03 21:44:39.0912 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@22d7306a
+2025-04-03 21:44:39.0913 DEBUG BasicTypeRegistry:145 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@4644de9c
+2025-04-03 21:44:39.0913 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@4644de9c
+2025-04-03 21:44:39.0914 DEBUG BasicTypeRegistry:145 - Adding type registration class -> org.hibernate.type.ClassType@2bc50f4
+2025-04-03 21:44:39.0914 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@2bc50f4
+2025-04-03 21:44:39.0915 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@e534c70
+2025-04-03 21:44:39.0915 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@e534c70
+2025-04-03 21:44:39.0916 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@50484ebb
+2025-04-03 21:44:39.0917 DEBUG BasicTypeRegistry:145 - Adding type registration binary -> org.hibernate.type.BinaryType@513c8f08
+2025-04-03 21:44:39.0917 DEBUG BasicTypeRegistry:145 - Adding type registration byte[] -> org.hibernate.type.BinaryType@513c8f08
+2025-04-03 21:44:39.0917 DEBUG BasicTypeRegistry:145 - Adding type registration [B -> org.hibernate.type.BinaryType@513c8f08
+2025-04-03 21:44:39.0918 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@1ac3e199
+2025-04-03 21:44:39.0918 DEBUG BasicTypeRegistry:145 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@1ac3e199
+2025-04-03 21:44:39.0918 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@1ac3e199
+2025-04-03 21:44:39.0918 DEBUG BasicTypeRegistry:145 - Adding type registration row_version -> org.hibernate.type.RowVersionType@11c2dc97
+2025-04-03 21:44:39.0920 DEBUG BasicTypeRegistry:145 - Adding type registration image -> org.hibernate.type.ImageType@1671959e
+2025-04-03 21:44:39.0920 DEBUG BasicTypeRegistry:145 - Adding type registration characters -> org.hibernate.type.CharArrayType@60685275
+2025-04-03 21:44:39.0921 DEBUG BasicTypeRegistry:145 - Adding type registration char[] -> org.hibernate.type.CharArrayType@60685275
+2025-04-03 21:44:39.0921 DEBUG BasicTypeRegistry:145 - Adding type registration [C -> org.hibernate.type.CharArrayType@60685275
+2025-04-03 21:44:39.0922 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@77fb258e
+2025-04-03 21:44:39.0922 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@77fb258e
+2025-04-03 21:44:39.0922 DEBUG BasicTypeRegistry:145 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@77fb258e
+2025-04-03 21:44:39.0923 DEBUG BasicTypeRegistry:145 - Adding type registration text -> org.hibernate.type.TextType@1c161d68
+2025-04-03 21:44:39.0923 DEBUG BasicTypeRegistry:145 - Adding type registration ntext -> org.hibernate.type.NTextType@21496685
+2025-04-03 21:44:39.0926 DEBUG BasicTypeRegistry:145 - Adding type registration blob -> org.hibernate.type.BlobType@5f5a172c
+2025-04-03 21:44:39.0926 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@5f5a172c
+2025-04-03 21:44:39.0926 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@28708739
+2025-04-03 21:44:39.0929 DEBUG BasicTypeRegistry:145 - Adding type registration clob -> org.hibernate.type.ClobType@6f35d7e7
+2025-04-03 21:44:39.0929 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@6f35d7e7
+2025-04-03 21:44:39.0931 DEBUG BasicTypeRegistry:145 - Adding type registration nclob -> org.hibernate.type.NClobType@554be6fc
+2025-04-03 21:44:39.0931 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@554be6fc
+2025-04-03 21:44:39.0931 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@600ce994
+2025-04-03 21:44:39.0932 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@59957ef8
+2025-04-03 21:44:39.0932 DEBUG BasicTypeRegistry:145 - Adding type registration serializable -> org.hibernate.type.SerializableType@7d8a571b
+2025-04-03 21:44:39.0934 DEBUG BasicTypeRegistry:145 - Adding type registration object -> org.hibernate.type.ObjectType@65f88aef
+2025-04-03 21:44:39.0934 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@65f88aef
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@31193106
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@7cdada73
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@6b9cd499
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@40d098d5
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@383910c8
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@129a4cfe
+2025-04-03 21:44:39.0936 DEBUG BasicTypeRegistry:145 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@1faf6a28
+2025-04-03 21:44:39.0937 DEBUG BasicTypeRegistry:145 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@5bfd4f38
+2025-04-03 21:44:40.0490 INFO  ENGINE:? - checkpointClose start
+2025-04-03 21:44:40.0490 INFO  ENGINE:? - checkpointClose synched
+2025-04-03 21:44:40.0500 INFO  ENGINE:? - checkpointClose script done
+2025-04-03 21:44:40.0519 INFO  ENGINE:? - checkpointClose end
+2025-04-03 21:44:40.0763 TRACE TypeFactory:58 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@47dc8ea2
+2025-04-03 21:44:40.0967 DEBUG SQL:92 - alter table CLIENTE drop constraint UK1v16uau92cnksr4njethm7bfd
+2025-04-03 21:44:40.0970 DEBUG SQL:92 - alter table CLIENTE add constraint UK1v16uau92cnksr4njethm7bfd unique (CLIENTE_CPF_CNPJ)
+2025-04-03 21:44:40.0972 DEBUG SQL:92 - alter table Usuario drop constraint INDEX_USUARIO_NOME
+2025-04-03 21:44:40.0976 DEBUG SQL:92 - alter table Usuario add constraint INDEX_USUARIO_NOME unique (nome)
+2025-04-03 21:44:40.0976 DEBUG SQL:92 - alter table VEICULO drop constraint UKkhbhxichdnj5jx9n3g76jitan
+2025-04-03 21:44:40.0977 DEBUG SQL:92 - alter table VEICULO add constraint UKkhbhxichdnj5jx9n3g76jitan unique (VEICULO_CPF_CNPJ_PROPRIETARIO, VEICULO_PLACA)
+2025-04-03 21:44:40.0977 DEBUG SQL:92 - alter table VEICULO drop constraint INDEX_VEICULO_PLACA
+2025-04-03 21:44:40.0978 DEBUG SQL:92 - alter table VEICULO add constraint INDEX_VEICULO_PLACA unique (VEICULO_PLACA)
+2025-04-03 21:44:41.0125 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where 1=1 */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where 1=1
+2025-04-03 21:44:41.0134 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:44:41.0138 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0140 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0140 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0154 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:44:41.0155 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:44:41.0155 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0156 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:44:41.0156 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0156 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0156 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0158 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:44:41.0159 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:44:41.0159 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0160 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:44:41.0160 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0160 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0160 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0167 INFO  Usuario:56 - LOGIN EFETUADO
+2025-04-03 21:44:41.0170 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where 1=1 */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where 1=1
+2025-04-03 21:44:41.0171 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:44:41.0171 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0171 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0171 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0174 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:44:41.0176 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:44:41.0176 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0176 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:44:41.0177 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0177 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0177 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0180 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:44:41.0181 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:44:41.0181 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0181 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:44:41.0181 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0181 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:44:41.0183 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:44:41.0183 INFO  Usuario:56 - LOGIN EFETUADO
+2025-04-03 21:44:45.0885 DEBUG SQL:92 - /* select generatedAlias0 from Cliente as generatedAlias0 where 1=1 */ select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_ from CLIENTE cliente0_ where 1=1
+2025-04-03 21:44:45.0886 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [2]
+2025-04-03 21:44:45.0886 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [05428448695]
+2025-04-03 21:44:45.0887 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-03 21:44:45.0887 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-03 21:44:45.0887 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-982857372]
+2025-04-03 21:44:45.0887 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [3]
+2025-04-03 21:44:45.0888 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04158447858]
+2025-04-03 21:44:45.0888 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leticia@gmail.com]
+2025-04-03 21:44:45.0888 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LETICIA APARECIDA MACIEL VIEIRA]
+2025-04-03 21:44:45.0888 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:44:45.0888 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [5]
+2025-04-03 21:44:45.0889 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04525869245]
+2025-04-03 21:44:45.0889 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [aline@gmail.com]
+2025-04-03 21:44:45.0889 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [ALINE BEATRIZ MACIEL DE ALMEIDA]
+2025-04-03 21:44:45.0890 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-112458574]
+2025-04-03 21:44:45.0890 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [6]
+2025-04-03 21:44:45.0890 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [11225874196]
+2025-04-03 21:44:45.0890 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leny@gmail.com]
+2025-04-03 21:44:45.0891 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LENY APARECIDA MACIEL]
+2025-04-03 21:44:45.0891 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:44:51.0634 DEBUG SQL:92 - /* select generatedAlias0 from Cliente as generatedAlias0 where 1=1 */ select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_ from CLIENTE cliente0_ where 1=1
+2025-04-03 21:44:51.0635 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [2]
+2025-04-03 21:44:51.0635 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [05428448695]
+2025-04-03 21:44:51.0636 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-03 21:44:51.0636 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-03 21:44:51.0636 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-982857372]
+2025-04-03 21:44:51.0637 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [3]
+2025-04-03 21:44:51.0637 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04158447858]
+2025-04-03 21:44:51.0637 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leticia@gmail.com]
+2025-04-03 21:44:51.0637 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LETICIA APARECIDA MACIEL VIEIRA]
+2025-04-03 21:44:51.0637 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:44:51.0637 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [5]
+2025-04-03 21:44:51.0639 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04525869245]
+2025-04-03 21:44:51.0639 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [aline@gmail.com]
+2025-04-03 21:44:51.0639 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [ALINE BEATRIZ MACIEL DE ALMEIDA]
+2025-04-03 21:44:51.0639 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-112458574]
+2025-04-03 21:44:51.0639 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [6]
+2025-04-03 21:44:51.0640 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [11225874196]
+2025-04-03 21:44:51.0640 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leny@gmail.com]
+2025-04-03 21:44:51.0640 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LENY APARECIDA MACIEL]
+2025-04-03 21:44:51.0640 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:44:51.0644 DEBUG SQL:92 - select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_0_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_0_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_0_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_0_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_0_ from CLIENTE cliente0_ where cliente0_.CLIENTE_IDENTIFICADOR=?
+2025-04-03 21:44:51.0645 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+2025-04-03 21:44:51.0647 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_0_] : [VARCHAR]) - [05428448695]
+2025-04-03 21:44:51.0647 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_0_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-03 21:44:51.0647 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_0_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-03 21:44:51.0647 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_0_] : [VARCHAR]) - [31-982857372]
+2025-04-03 21:50:43.0078 DEBUG SQL:92 - /* select generatedAlias0 from Servico as generatedAlias0 where 1=1 */ select servico0_.SERVICO_ID as SERVICO_1_3_, servico0_.SERVICO_CPF_CNPJ_CLIENTE as SERVICO_2_3_, servico0_.SERVICO_DATA as SERVICO_3_3_, servico0_.SERVICO_DESCRICAO as SERVICO_4_3_, servico0_.SERVICO_NOME_CLIENTE as SERVICO_5_3_, servico0_.SERVICO_PLACA_VEICULO as SERVICO_6_3_, servico0_.SERVICO_TELEFONE_CLIENTE as SERVICO_7_3_, servico0_.SERVICO_VALOR as SERVICO_8_3_ from SERVICO servico0_ where 1=1
+2025-04-03 21:50:43.0079 TRACE BasicExtractor:61 - extracted value ([SERVICO_1_3_] : [BIGINT]) - [9]
+2025-04-03 21:50:43.0080 TRACE BasicExtractor:61 - extracted value ([SERVICO_2_3_] : [VARCHAR]) - [05428448695]
+2025-04-03 21:50:43.0081 TRACE BasicExtractor:61 - extracted value ([SERVICO_3_3_] : [DATE]) - [2025-04-01]
+2025-04-03 21:50:43.0081 TRACE BasicExtractor:61 - extracted value ([SERVICO_4_3_] : [VARCHAR]) - [TRANSFERENCIA DE PROPRIEDADE]
+2025-04-03 21:50:43.0081 TRACE BasicExtractor:61 - extracted value ([SERVICO_5_3_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-03 21:50:43.0081 TRACE BasicExtractor:61 - extracted value ([SERVICO_6_3_] : [VARCHAR]) - [KLC5D471]
+2025-04-03 21:50:43.0081 TRACE BasicExtractor:61 - extracted value ([SERVICO_7_3_] : [VARCHAR]) - [31-98582-1475]
+2025-04-03 21:50:43.0082 TRACE BasicExtractor:61 - extracted value ([SERVICO_8_3_] : [FLOAT]) - [500.0]
+2025-04-03 21:53:44.0233 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@dcfdd5c
+2025-04-03 21:53:44.0235 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@dcfdd5c
+2025-04-03 21:53:44.0235 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@dcfdd5c
+2025-04-03 21:53:44.0237 DEBUG BasicTypeRegistry:145 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@6830ef23
+2025-04-03 21:53:44.0238 DEBUG BasicTypeRegistry:145 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@289e179e
+2025-04-03 21:53:44.0238 DEBUG BasicTypeRegistry:145 - Adding type registration yes_no -> org.hibernate.type.YesNoType@25f6b1cc
+2025-04-03 21:53:44.0239 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@37a6008
+2025-04-03 21:53:44.0240 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@37a6008
+2025-04-03 21:53:44.0241 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@37a6008
+2025-04-03 21:53:44.0241 DEBUG BasicTypeRegistry:145 - Adding type registration character -> org.hibernate.type.CharacterType@1c9dbc90
+2025-04-03 21:53:44.0242 DEBUG BasicTypeRegistry:145 - Adding type registration char -> org.hibernate.type.CharacterType@1c9dbc90
+2025-04-03 21:53:44.0242 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@1c9dbc90
+2025-04-03 21:53:44.0243 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@7fd9162
+2025-04-03 21:53:44.0243 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@7fd9162
+2025-04-03 21:53:44.0243 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@7fd9162
+2025-04-03 21:53:44.0244 DEBUG BasicTypeRegistry:145 - Adding type registration integer -> org.hibernate.type.IntegerType@70d6274
+2025-04-03 21:53:44.0244 DEBUG BasicTypeRegistry:145 - Adding type registration int -> org.hibernate.type.IntegerType@70d6274
+2025-04-03 21:53:44.0244 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@70d6274
+2025-04-03 21:53:44.0245 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@66ee92d6
+2025-04-03 21:53:44.0246 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@66ee92d6
+2025-04-03 21:53:44.0246 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@66ee92d6
+2025-04-03 21:53:44.0247 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@4dc3289c
+2025-04-03 21:53:44.0248 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@4dc3289c
+2025-04-03 21:53:44.0248 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@4dc3289c
+2025-04-03 21:53:44.0249 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@560fe324
+2025-04-03 21:53:44.0249 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@560fe324
+2025-04-03 21:53:44.0249 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@560fe324
+2025-04-03 21:53:44.0252 DEBUG BasicTypeRegistry:145 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@4ae71c62
+2025-04-03 21:53:44.0252 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@4ae71c62
+2025-04-03 21:53:44.0253 DEBUG BasicTypeRegistry:145 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@71ad204a
+2025-04-03 21:53:44.0253 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@71ad204a
+2025-04-03 21:53:44.0254 DEBUG BasicTypeRegistry:145 - Adding type registration string -> org.hibernate.type.StringType@5fb6c2ea
+2025-04-03 21:53:44.0254 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.String -> org.hibernate.type.StringType@5fb6c2ea
+2025-04-03 21:53:44.0255 DEBUG BasicTypeRegistry:145 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@3c98a542
+2025-04-03 21:53:44.0255 DEBUG BasicTypeRegistry:145 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@4a033463
+2025-04-03 21:53:44.0256 DEBUG BasicTypeRegistry:145 - Adding type registration url -> org.hibernate.type.UrlType@43e0961e
+2025-04-03 21:53:44.0256 DEBUG BasicTypeRegistry:145 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@43e0961e
+2025-04-03 21:53:44.0257 DEBUG BasicTypeRegistry:145 - Adding type registration Duration -> org.hibernate.type.DurationType@76eaf26c
+2025-04-03 21:53:44.0258 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@76eaf26c
+2025-04-03 21:53:44.0261 DEBUG BasicTypeRegistry:145 - Adding type registration Instant -> org.hibernate.type.InstantType@54edff7c
+2025-04-03 21:53:44.0261 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@54edff7c
+2025-04-03 21:53:44.0261 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@1dcecd96
+2025-04-03 21:53:44.0261 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@1dcecd96
+2025-04-03 21:53:44.0262 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@3d45955f
+2025-04-03 21:53:44.0263 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@3d45955f
+2025-04-03 21:53:44.0263 DEBUG BasicTypeRegistry:145 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@71654f8f
+2025-04-03 21:53:44.0264 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@71654f8f
+2025-04-03 21:53:44.0265 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@47784496
+2025-04-03 21:53:44.0265 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@47784496
+2025-04-03 21:53:44.0266 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@1c0a4cb7
+2025-04-03 21:53:44.0266 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@1c0a4cb7
+2025-04-03 21:53:44.0267 DEBUG BasicTypeRegistry:145 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@4baf47a6
+2025-04-03 21:53:44.0267 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@4baf47a6
+2025-04-03 21:53:44.0268 DEBUG BasicTypeRegistry:145 - Adding type registration date -> org.hibernate.type.DateType@21bdef35
+2025-04-03 21:53:44.0269 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@21bdef35
+2025-04-03 21:53:44.0270 DEBUG BasicTypeRegistry:145 - Adding type registration time -> org.hibernate.type.TimeType@490ee325
+2025-04-03 21:53:44.0270 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@490ee325
+2025-04-03 21:53:44.0271 DEBUG BasicTypeRegistry:145 - Adding type registration timestamp -> org.hibernate.type.TimestampType@1cdb0073
+2025-04-03 21:53:44.0271 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@1cdb0073
+2025-04-03 21:53:44.0271 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@1cdb0073
+2025-04-03 21:53:44.0272 DEBUG BasicTypeRegistry:145 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@3c77953
+2025-04-03 21:53:44.0273 DEBUG BasicTypeRegistry:145 - Adding type registration calendar -> org.hibernate.type.CalendarType@70e4cd96
+2025-04-03 21:53:44.0274 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@70e4cd96
+2025-04-03 21:53:44.0274 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@70e4cd96
+2025-04-03 21:53:44.0275 DEBUG BasicTypeRegistry:145 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5c684693
+2025-04-03 21:53:44.0275 DEBUG BasicTypeRegistry:145 - Adding type registration locale -> org.hibernate.type.LocaleType@12f4746b
+2025-04-03 21:53:44.0276 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@12f4746b
+2025-04-03 21:53:44.0276 DEBUG BasicTypeRegistry:145 - Adding type registration currency -> org.hibernate.type.CurrencyType@2e610c29
+2025-04-03 21:53:44.0277 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@2e610c29
+2025-04-03 21:53:44.0277 DEBUG BasicTypeRegistry:145 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@52f709db
+2025-04-03 21:53:44.0277 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@52f709db
+2025-04-03 21:53:44.0278 DEBUG BasicTypeRegistry:145 - Adding type registration class -> org.hibernate.type.ClassType@765dab6f
+2025-04-03 21:53:44.0278 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@765dab6f
+2025-04-03 21:53:44.0279 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@600c5adb
+2025-04-03 21:53:44.0280 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@600c5adb
+2025-04-03 21:53:44.0280 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@b780533
+2025-04-03 21:53:44.0281 DEBUG BasicTypeRegistry:145 - Adding type registration binary -> org.hibernate.type.BinaryType@3e148959
+2025-04-03 21:53:44.0281 DEBUG BasicTypeRegistry:145 - Adding type registration byte[] -> org.hibernate.type.BinaryType@3e148959
+2025-04-03 21:53:44.0281 DEBUG BasicTypeRegistry:145 - Adding type registration [B -> org.hibernate.type.BinaryType@3e148959
+2025-04-03 21:53:44.0281 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@32bd38db
+2025-04-03 21:53:44.0281 DEBUG BasicTypeRegistry:145 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@32bd38db
+2025-04-03 21:53:44.0282 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@32bd38db
+2025-04-03 21:53:44.0282 DEBUG BasicTypeRegistry:145 - Adding type registration row_version -> org.hibernate.type.RowVersionType@3a937342
+2025-04-03 21:53:44.0283 DEBUG BasicTypeRegistry:145 - Adding type registration image -> org.hibernate.type.ImageType@6b982173
+2025-04-03 21:53:44.0283 DEBUG BasicTypeRegistry:145 - Adding type registration characters -> org.hibernate.type.CharArrayType@6bc26072
+2025-04-03 21:53:44.0284 DEBUG BasicTypeRegistry:145 - Adding type registration char[] -> org.hibernate.type.CharArrayType@6bc26072
+2025-04-03 21:53:44.0284 DEBUG BasicTypeRegistry:145 - Adding type registration [C -> org.hibernate.type.CharArrayType@6bc26072
+2025-04-03 21:53:44.0285 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@31983cf8
+2025-04-03 21:53:44.0285 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@31983cf8
+2025-04-03 21:53:44.0285 DEBUG BasicTypeRegistry:145 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@31983cf8
+2025-04-03 21:53:44.0285 DEBUG BasicTypeRegistry:145 - Adding type registration text -> org.hibernate.type.TextType@10e11bf6
+2025-04-03 21:53:44.0286 DEBUG BasicTypeRegistry:145 - Adding type registration ntext -> org.hibernate.type.NTextType@6fa24549
+2025-04-03 21:53:44.0288 DEBUG BasicTypeRegistry:145 - Adding type registration blob -> org.hibernate.type.BlobType@6da5ebf4
+2025-04-03 21:53:44.0289 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@6da5ebf4
+2025-04-03 21:53:44.0290 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@682d2509
+2025-04-03 21:53:44.0292 DEBUG BasicTypeRegistry:145 - Adding type registration clob -> org.hibernate.type.ClobType@6b282549
+2025-04-03 21:53:44.0292 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@6b282549
+2025-04-03 21:53:44.0293 DEBUG BasicTypeRegistry:145 - Adding type registration nclob -> org.hibernate.type.NClobType@61f7ce74
+2025-04-03 21:53:44.0293 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@61f7ce74
+2025-04-03 21:53:44.0294 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@3f0ed3f1
+2025-04-03 21:53:44.0294 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@60e77d54
+2025-04-03 21:53:44.0296 DEBUG BasicTypeRegistry:145 - Adding type registration serializable -> org.hibernate.type.SerializableType@70f977b8
+2025-04-03 21:53:44.0297 DEBUG BasicTypeRegistry:145 - Adding type registration object -> org.hibernate.type.ObjectType@7b433cd2
+2025-04-03 21:53:44.0297 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7b433cd2
+2025-04-03 21:53:44.0297 DEBUG BasicTypeRegistry:145 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@3114d8a1
+2025-04-03 21:53:44.0298 DEBUG BasicTypeRegistry:145 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@10977e09
+2025-04-03 21:53:44.0298 DEBUG BasicTypeRegistry:145 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@31193106
+2025-04-03 21:53:44.0298 DEBUG BasicTypeRegistry:145 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7cdada73
+2025-04-03 21:53:44.0298 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@6b9cd499
+2025-04-03 21:53:44.0298 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@40d098d5
+2025-04-03 21:53:44.0298 DEBUG BasicTypeRegistry:145 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@383910c8
+2025-04-03 21:53:44.0299 DEBUG BasicTypeRegistry:145 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@129a4cfe
+2025-04-03 21:53:44.0747 INFO  ENGINE:? - checkpointClose start
+2025-04-03 21:53:44.0747 INFO  ENGINE:? - checkpointClose synched
+2025-04-03 21:53:44.0756 INFO  ENGINE:? - checkpointClose script done
+2025-04-03 21:53:44.0776 INFO  ENGINE:? - checkpointClose end
+2025-04-03 21:53:44.0990 TRACE TypeFactory:58 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@10dfe31
+2025-04-03 21:53:45.0161 DEBUG SQL:92 - alter table CLIENTE drop constraint UK1v16uau92cnksr4njethm7bfd
+2025-04-03 21:53:45.0163 DEBUG SQL:92 - alter table CLIENTE add constraint UK1v16uau92cnksr4njethm7bfd unique (CLIENTE_CPF_CNPJ)
+2025-04-03 21:53:45.0164 DEBUG SQL:92 - alter table Usuario drop constraint INDEX_USUARIO_NOME
+2025-04-03 21:53:45.0172 DEBUG SQL:92 - alter table Usuario add constraint INDEX_USUARIO_NOME unique (nome)
+2025-04-03 21:53:45.0173 DEBUG SQL:92 - alter table VEICULO drop constraint UKkhbhxichdnj5jx9n3g76jitan
+2025-04-03 21:53:45.0174 DEBUG SQL:92 - alter table VEICULO add constraint UKkhbhxichdnj5jx9n3g76jitan unique (VEICULO_CPF_CNPJ_PROPRIETARIO, VEICULO_PLACA)
+2025-04-03 21:53:45.0175 DEBUG SQL:92 - alter table VEICULO drop constraint INDEX_VEICULO_PLACA
+2025-04-03 21:53:45.0175 DEBUG SQL:92 - alter table VEICULO add constraint INDEX_VEICULO_PLACA unique (VEICULO_PLACA)
+2025-04-03 21:53:45.0294 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where 1=1 */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where 1=1
+2025-04-03 21:53:45.0303 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:53:45.0307 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:53:45.0307 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:53:45.0307 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:53:45.0321 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:53:45.0322 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:53:45.0322 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:53:45.0322 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:53:45.0323 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:53:45.0323 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:53:45.0323 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:53:45.0325 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:53:45.0325 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:53:45.0326 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:53:45.0326 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:53:45.0326 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:53:45.0326 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:53:45.0326 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:53:45.0334 INFO  Usuario:55 - LOGIN EFETUADO
+2025-04-03 21:53:54.0500 DEBUG SQL:92 - /* select generatedAlias0 from Cliente as generatedAlias0 where 1=1 */ select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_ from CLIENTE cliente0_ where 1=1
+2025-04-03 21:53:54.0501 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [2]
+2025-04-03 21:53:54.0502 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [05428448695]
+2025-04-03 21:53:54.0502 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-03 21:53:54.0502 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-03 21:53:54.0502 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-982857372]
+2025-04-03 21:53:54.0502 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [3]
+2025-04-03 21:53:54.0502 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04158447858]
+2025-04-03 21:53:54.0503 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leticia@gmail.com]
+2025-04-03 21:53:54.0503 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LETICIA APARECIDA MACIEL VIEIRA]
+2025-04-03 21:53:54.0503 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:53:54.0503 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [5]
+2025-04-03 21:53:54.0503 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04525869245]
+2025-04-03 21:53:54.0504 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [aline@gmail.com]
+2025-04-03 21:53:54.0504 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [ALINE BEATRIZ MACIEL DE ALMEIDA]
+2025-04-03 21:53:54.0504 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-112458574]
+2025-04-03 21:53:54.0504 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [6]
+2025-04-03 21:53:54.0505 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [11225874196]
+2025-04-03 21:53:54.0505 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leny@gmail.com]
+2025-04-03 21:53:54.0505 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LENY APARECIDA MACIEL]
+2025-04-03 21:53:54.0505 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:59:05.0217 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@6e3ce053
+2025-04-03 21:59:05.0220 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@6e3ce053
+2025-04-03 21:59:05.0221 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@6e3ce053
+2025-04-03 21:59:05.0221 DEBUG BasicTypeRegistry:145 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@377b29bf
+2025-04-03 21:59:05.0222 DEBUG BasicTypeRegistry:145 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@44efb2c3
+2025-04-03 21:59:05.0223 DEBUG BasicTypeRegistry:145 - Adding type registration yes_no -> org.hibernate.type.YesNoType@6b512ca4
+2025-04-03 21:59:05.0224 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@6c6bf775
+2025-04-03 21:59:05.0225 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@6c6bf775
+2025-04-03 21:59:05.0225 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@6c6bf775
+2025-04-03 21:59:05.0226 DEBUG BasicTypeRegistry:145 - Adding type registration character -> org.hibernate.type.CharacterType@c65bc40
+2025-04-03 21:59:05.0226 DEBUG BasicTypeRegistry:145 - Adding type registration char -> org.hibernate.type.CharacterType@c65bc40
+2025-04-03 21:59:05.0226 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@c65bc40
+2025-04-03 21:59:05.0227 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@3612c6bb
+2025-04-03 21:59:05.0227 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@3612c6bb
+2025-04-03 21:59:05.0228 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@3612c6bb
+2025-04-03 21:59:05.0229 DEBUG BasicTypeRegistry:145 - Adding type registration integer -> org.hibernate.type.IntegerType@723cb352
+2025-04-03 21:59:05.0229 DEBUG BasicTypeRegistry:145 - Adding type registration int -> org.hibernate.type.IntegerType@723cb352
+2025-04-03 21:59:05.0229 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@723cb352
+2025-04-03 21:59:05.0230 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@8059e4
+2025-04-03 21:59:05.0231 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@8059e4
+2025-04-03 21:59:05.0231 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@8059e4
+2025-04-03 21:59:05.0232 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@35c28100
+2025-04-03 21:59:05.0232 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@35c28100
+2025-04-03 21:59:05.0232 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@35c28100
+2025-04-03 21:59:05.0233 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@246753bb
+2025-04-03 21:59:05.0233 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@246753bb
+2025-04-03 21:59:05.0233 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@246753bb
+2025-04-03 21:59:05.0234 DEBUG BasicTypeRegistry:145 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@78c3d61f
+2025-04-03 21:59:05.0234 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@78c3d61f
+2025-04-03 21:59:05.0235 DEBUG BasicTypeRegistry:145 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@11f801f5
+2025-04-03 21:59:05.0235 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@11f801f5
+2025-04-03 21:59:05.0236 DEBUG BasicTypeRegistry:145 - Adding type registration string -> org.hibernate.type.StringType@4eeb445a
+2025-04-03 21:59:05.0236 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.String -> org.hibernate.type.StringType@4eeb445a
+2025-04-03 21:59:05.0237 DEBUG BasicTypeRegistry:145 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@66c37cae
+2025-04-03 21:59:05.0237 DEBUG BasicTypeRegistry:145 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@24ed47ac
+2025-04-03 21:59:05.0239 DEBUG BasicTypeRegistry:145 - Adding type registration url -> org.hibernate.type.UrlType@24b3b7b5
+2025-04-03 21:59:05.0239 DEBUG BasicTypeRegistry:145 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@24b3b7b5
+2025-04-03 21:59:05.0240 DEBUG BasicTypeRegistry:145 - Adding type registration Duration -> org.hibernate.type.DurationType@4fc5db04
+2025-04-03 21:59:05.0240 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@4fc5db04
+2025-04-03 21:59:05.0243 DEBUG BasicTypeRegistry:145 - Adding type registration Instant -> org.hibernate.type.InstantType@2c63f799
+2025-04-03 21:59:05.0244 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2c63f799
+2025-04-03 21:59:05.0244 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@2d206b77
+2025-04-03 21:59:05.0244 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@2d206b77
+2025-04-03 21:59:05.0245 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@5decd63e
+2025-04-03 21:59:05.0245 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@5decd63e
+2025-04-03 21:59:05.0246 DEBUG BasicTypeRegistry:145 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@69c12da9
+2025-04-03 21:59:05.0247 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@69c12da9
+2025-04-03 21:59:05.0247 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@31644cc7
+2025-04-03 21:59:05.0247 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@31644cc7
+2025-04-03 21:59:05.0249 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@131e13cd
+2025-04-03 21:59:05.0249 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@131e13cd
+2025-04-03 21:59:05.0251 DEBUG BasicTypeRegistry:145 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@6db1103c
+2025-04-03 21:59:05.0251 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@6db1103c
+2025-04-03 21:59:05.0252 DEBUG BasicTypeRegistry:145 - Adding type registration date -> org.hibernate.type.DateType@4c5d6895
+2025-04-03 21:59:05.0252 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@4c5d6895
+2025-04-03 21:59:05.0252 DEBUG BasicTypeRegistry:145 - Adding type registration time -> org.hibernate.type.TimeType@279f828b
+2025-04-03 21:59:05.0253 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@279f828b
+2025-04-03 21:59:05.0253 DEBUG BasicTypeRegistry:145 - Adding type registration timestamp -> org.hibernate.type.TimestampType@24bfa030
+2025-04-03 21:59:05.0253 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@24bfa030
+2025-04-03 21:59:05.0254 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@24bfa030
+2025-04-03 21:59:05.0255 DEBUG BasicTypeRegistry:145 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@5d21f8c
+2025-04-03 21:59:05.0255 DEBUG BasicTypeRegistry:145 - Adding type registration calendar -> org.hibernate.type.CalendarType@79f72fa
+2025-04-03 21:59:05.0255 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@79f72fa
+2025-04-03 21:59:05.0255 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@79f72fa
+2025-04-03 21:59:05.0257 DEBUG BasicTypeRegistry:145 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@4594efde
+2025-04-03 21:59:05.0257 DEBUG BasicTypeRegistry:145 - Adding type registration locale -> org.hibernate.type.LocaleType@16b41934
+2025-04-03 21:59:05.0258 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@16b41934
+2025-04-03 21:59:05.0258 DEBUG BasicTypeRegistry:145 - Adding type registration currency -> org.hibernate.type.CurrencyType@7694ffcd
+2025-04-03 21:59:05.0259 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7694ffcd
+2025-04-03 21:59:05.0259 DEBUG BasicTypeRegistry:145 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@5cd5d3d3
+2025-04-03 21:59:05.0259 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5cd5d3d3
+2025-04-03 21:59:05.0260 DEBUG BasicTypeRegistry:145 - Adding type registration class -> org.hibernate.type.ClassType@3a5da692
+2025-04-03 21:59:05.0260 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@3a5da692
+2025-04-03 21:59:05.0261 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@59b9759b
+2025-04-03 21:59:05.0261 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@59b9759b
+2025-04-03 21:59:05.0261 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@780be4fa
+2025-04-03 21:59:05.0262 DEBUG BasicTypeRegistry:145 - Adding type registration binary -> org.hibernate.type.BinaryType@7826c5d5
+2025-04-03 21:59:05.0262 DEBUG BasicTypeRegistry:145 - Adding type registration byte[] -> org.hibernate.type.BinaryType@7826c5d5
+2025-04-03 21:59:05.0262 DEBUG BasicTypeRegistry:145 - Adding type registration [B -> org.hibernate.type.BinaryType@7826c5d5
+2025-04-03 21:59:05.0263 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@5a215f60
+2025-04-03 21:59:05.0263 DEBUG BasicTypeRegistry:145 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@5a215f60
+2025-04-03 21:59:05.0263 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@5a215f60
+2025-04-03 21:59:05.0264 DEBUG BasicTypeRegistry:145 - Adding type registration row_version -> org.hibernate.type.RowVersionType@67bb81be
+2025-04-03 21:59:05.0264 DEBUG BasicTypeRegistry:145 - Adding type registration image -> org.hibernate.type.ImageType@7dc0c385
+2025-04-03 21:59:05.0265 DEBUG BasicTypeRegistry:145 - Adding type registration characters -> org.hibernate.type.CharArrayType@35719804
+2025-04-03 21:59:05.0265 DEBUG BasicTypeRegistry:145 - Adding type registration char[] -> org.hibernate.type.CharArrayType@35719804
+2025-04-03 21:59:05.0265 DEBUG BasicTypeRegistry:145 - Adding type registration [C -> org.hibernate.type.CharArrayType@35719804
+2025-04-03 21:59:05.0266 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@3f2b7adc
+2025-04-03 21:59:05.0266 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@3f2b7adc
+2025-04-03 21:59:05.0266 DEBUG BasicTypeRegistry:145 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@3f2b7adc
+2025-04-03 21:59:05.0267 DEBUG BasicTypeRegistry:145 - Adding type registration text -> org.hibernate.type.TextType@5562af40
+2025-04-03 21:59:05.0267 DEBUG BasicTypeRegistry:145 - Adding type registration ntext -> org.hibernate.type.NTextType@29849a2d
+2025-04-03 21:59:05.0270 DEBUG BasicTypeRegistry:145 - Adding type registration blob -> org.hibernate.type.BlobType@2786ea1f
+2025-04-03 21:59:05.0271 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2786ea1f
+2025-04-03 21:59:05.0271 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@21afe6d6
+2025-04-03 21:59:05.0273 DEBUG BasicTypeRegistry:145 - Adding type registration clob -> org.hibernate.type.ClobType@4c2ed446
+2025-04-03 21:59:05.0274 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@4c2ed446
+2025-04-03 21:59:05.0275 DEBUG BasicTypeRegistry:145 - Adding type registration nclob -> org.hibernate.type.NClobType@438280eb
+2025-04-03 21:59:05.0276 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@438280eb
+2025-04-03 21:59:05.0276 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@614a307f
+2025-04-03 21:59:05.0276 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@2c86dc5a
+2025-04-03 21:59:05.0277 DEBUG BasicTypeRegistry:145 - Adding type registration serializable -> org.hibernate.type.SerializableType@3aa8601a
+2025-04-03 21:59:05.0279 DEBUG BasicTypeRegistry:145 - Adding type registration object -> org.hibernate.type.ObjectType@4d738781
+2025-04-03 21:59:05.0279 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@4d738781
+2025-04-03 21:59:05.0279 DEBUG BasicTypeRegistry:145 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@58de217e
+2025-04-03 21:59:05.0279 DEBUG BasicTypeRegistry:145 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@18135cbd
+2025-04-03 21:59:05.0280 DEBUG BasicTypeRegistry:145 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@58403b6
+2025-04-03 21:59:05.0280 DEBUG BasicTypeRegistry:145 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@b4861ee
+2025-04-03 21:59:05.0280 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@22346428
+2025-04-03 21:59:05.0280 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@20c03267
+2025-04-03 21:59:05.0280 DEBUG BasicTypeRegistry:145 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@57c0c7a
+2025-04-03 21:59:05.0281 DEBUG BasicTypeRegistry:145 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@4d734a2a
+2025-04-03 21:59:05.0730 INFO  ENGINE:? - checkpointClose start
+2025-04-03 21:59:05.0730 INFO  ENGINE:? - checkpointClose synched
+2025-04-03 21:59:05.0739 INFO  ENGINE:? - checkpointClose script done
+2025-04-03 21:59:05.0759 INFO  ENGINE:? - checkpointClose end
+2025-04-03 21:59:05.0960 TRACE TypeFactory:58 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@247352c8
+2025-04-03 21:59:06.0145 DEBUG SQL:92 - alter table CLIENTE drop constraint UK1v16uau92cnksr4njethm7bfd
+2025-04-03 21:59:06.0147 DEBUG SQL:92 - alter table CLIENTE add constraint UK1v16uau92cnksr4njethm7bfd unique (CLIENTE_CPF_CNPJ)
+2025-04-03 21:59:06.0148 DEBUG SQL:92 - alter table Usuario drop constraint INDEX_USUARIO_NOME
+2025-04-03 21:59:06.0157 DEBUG SQL:92 - alter table Usuario add constraint INDEX_USUARIO_NOME unique (nome)
+2025-04-03 21:59:06.0158 DEBUG SQL:92 - alter table VEICULO drop constraint UKkhbhxichdnj5jx9n3g76jitan
+2025-04-03 21:59:06.0158 DEBUG SQL:92 - alter table VEICULO add constraint UKkhbhxichdnj5jx9n3g76jitan unique (VEICULO_CPF_CNPJ_PROPRIETARIO, VEICULO_PLACA)
+2025-04-03 21:59:06.0159 DEBUG SQL:92 - alter table VEICULO drop constraint INDEX_VEICULO_PLACA
+2025-04-03 21:59:06.0160 DEBUG SQL:92 - alter table VEICULO add constraint INDEX_VEICULO_PLACA unique (VEICULO_PLACA)
+2025-04-03 21:59:06.0287 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where 1=1 */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where 1=1
+2025-04-03 21:59:06.0296 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:59:06.0300 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:59:06.0301 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:59:06.0302 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:59:06.0315 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:59:06.0315 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:59:06.0316 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:59:06.0316 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:59:06.0316 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:59:06.0317 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:59:06.0317 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:59:06.0319 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-03 21:59:06.0319 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-03 21:59:06.0320 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:59:06.0320 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-03 21:59:06.0320 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:59:06.0321 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-03 21:59:06.0321 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-03 21:59:06.0327 INFO  Usuario:55 - LOGIN EFETUADO
+2025-04-03 21:59:14.0005 DEBUG SQL:92 - /* select generatedAlias0 from Cliente as generatedAlias0 where 1=1 */ select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_ from CLIENTE cliente0_ where 1=1
+2025-04-03 21:59:14.0006 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [2]
+2025-04-03 21:59:14.0007 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [05428448695]
+2025-04-03 21:59:14.0007 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-03 21:59:14.0007 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-03 21:59:14.0008 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-982857372]
+2025-04-03 21:59:14.0008 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [3]
+2025-04-03 21:59:14.0008 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04158447858]
+2025-04-03 21:59:14.0008 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leticia@gmail.com]
+2025-04-03 21:59:14.0009 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LETICIA APARECIDA MACIEL VIEIRA]
+2025-04-03 21:59:14.0009 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-03 21:59:14.0009 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [5]
+2025-04-03 21:59:14.0009 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04525869245]
+2025-04-03 21:59:14.0010 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [aline@gmail.com]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [ALINE BEATRIZ MACIEL DE ALMEIDA]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-112458574]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [6]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [11225874196]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leny@gmail.com]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LENY APARECIDA MACIEL]
+2025-04-03 21:59:14.0011 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-04 10:47:50.0452 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@7327a992
+2025-04-04 10:47:50.0454 DEBUG BasicTypeRegistry:145 - Adding type registration boolean -> org.hibernate.type.BooleanType@7327a992
+2025-04-04 10:47:50.0454 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7327a992
+2025-04-04 10:47:50.0457 DEBUG BasicTypeRegistry:145 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@6ecbe678
+2025-04-04 10:47:50.0459 DEBUG BasicTypeRegistry:145 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@748a0145
+2025-04-04 10:47:50.0459 DEBUG BasicTypeRegistry:145 - Adding type registration yes_no -> org.hibernate.type.YesNoType@7b55feb
+2025-04-04 10:47:50.0461 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@430457a1
+2025-04-04 10:47:50.0461 DEBUG BasicTypeRegistry:145 - Adding type registration byte -> org.hibernate.type.ByteType@430457a1
+2025-04-04 10:47:50.0461 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@430457a1
+2025-04-04 10:47:50.0462 DEBUG BasicTypeRegistry:145 - Adding type registration character -> org.hibernate.type.CharacterType@6545c22a
+2025-04-04 10:47:50.0462 DEBUG BasicTypeRegistry:145 - Adding type registration char -> org.hibernate.type.CharacterType@6545c22a
+2025-04-04 10:47:50.0463 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6545c22a
+2025-04-04 10:47:50.0464 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@1d9dc8cb
+2025-04-04 10:47:50.0464 DEBUG BasicTypeRegistry:145 - Adding type registration short -> org.hibernate.type.ShortType@1d9dc8cb
+2025-04-04 10:47:50.0464 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@1d9dc8cb
+2025-04-04 10:47:50.0465 DEBUG BasicTypeRegistry:145 - Adding type registration integer -> org.hibernate.type.IntegerType@66279e23
+2025-04-04 10:47:50.0465 DEBUG BasicTypeRegistry:145 - Adding type registration int -> org.hibernate.type.IntegerType@66279e23
+2025-04-04 10:47:50.0465 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@66279e23
+2025-04-04 10:47:50.0468 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@1ea62a35
+2025-04-04 10:47:50.0468 DEBUG BasicTypeRegistry:145 - Adding type registration long -> org.hibernate.type.LongType@1ea62a35
+2025-04-04 10:47:50.0468 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@1ea62a35
+2025-04-04 10:47:50.0469 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@3c14bf0e
+2025-04-04 10:47:50.0470 DEBUG BasicTypeRegistry:145 - Adding type registration float -> org.hibernate.type.FloatType@3c14bf0e
+2025-04-04 10:47:50.0470 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3c14bf0e
+2025-04-04 10:47:50.0471 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@5ed73660
+2025-04-04 10:47:50.0472 DEBUG BasicTypeRegistry:145 - Adding type registration double -> org.hibernate.type.DoubleType@5ed73660
+2025-04-04 10:47:50.0472 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@5ed73660
+2025-04-04 10:47:50.0473 DEBUG BasicTypeRegistry:145 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@4fd4d28e
+2025-04-04 10:47:50.0474 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@4fd4d28e
+2025-04-04 10:47:50.0475 DEBUG BasicTypeRegistry:145 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@64c8e322
+2025-04-04 10:47:50.0475 DEBUG BasicTypeRegistry:145 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@64c8e322
+2025-04-04 10:47:50.0477 DEBUG BasicTypeRegistry:145 - Adding type registration string -> org.hibernate.type.StringType@3303b47f
+2025-04-04 10:47:50.0477 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.String -> org.hibernate.type.StringType@3303b47f
+2025-04-04 10:47:50.0479 DEBUG BasicTypeRegistry:145 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@59aef52d
+2025-04-04 10:47:50.0479 DEBUG BasicTypeRegistry:145 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@32d48cc9
+2025-04-04 10:47:50.0480 DEBUG BasicTypeRegistry:145 - Adding type registration url -> org.hibernate.type.UrlType@3b4212b6
+2025-04-04 10:47:50.0480 DEBUG BasicTypeRegistry:145 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@3b4212b6
+2025-04-04 10:47:50.0481 DEBUG BasicTypeRegistry:145 - Adding type registration Duration -> org.hibernate.type.DurationType@7aa4522a
+2025-04-04 10:47:50.0481 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@7aa4522a
+2025-04-04 10:47:50.0484 DEBUG BasicTypeRegistry:145 - Adding type registration Instant -> org.hibernate.type.InstantType@ad53bd
+2025-04-04 10:47:50.0484 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@ad53bd
+2025-04-04 10:47:50.0486 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@622d6d9
+2025-04-04 10:47:50.0486 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@622d6d9
+2025-04-04 10:47:50.0488 DEBUG BasicTypeRegistry:145 - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@52f802ae
+2025-04-04 10:47:50.0488 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@52f802ae
+2025-04-04 10:47:50.0490 DEBUG BasicTypeRegistry:145 - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@4227581b
+2025-04-04 10:47:50.0491 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@4227581b
+2025-04-04 10:47:50.0493 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@318b918f
+2025-04-04 10:47:50.0493 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@318b918f
+2025-04-04 10:47:50.0494 DEBUG BasicTypeRegistry:145 - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@127d0153
+2025-04-04 10:47:50.0494 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@127d0153
+2025-04-04 10:47:50.0495 DEBUG BasicTypeRegistry:145 - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@70547fec
+2025-04-04 10:47:50.0495 DEBUG BasicTypeRegistry:145 - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@70547fec
+2025-04-04 10:47:50.0497 DEBUG BasicTypeRegistry:145 - Adding type registration date -> org.hibernate.type.DateType@678ac75d
+2025-04-04 10:47:50.0498 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@678ac75d
+2025-04-04 10:47:50.0498 DEBUG BasicTypeRegistry:145 - Adding type registration time -> org.hibernate.type.TimeType@2753293d
+2025-04-04 10:47:50.0499 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@2753293d
+2025-04-04 10:47:50.0499 DEBUG BasicTypeRegistry:145 - Adding type registration timestamp -> org.hibernate.type.TimestampType@4b918ad7
+2025-04-04 10:47:50.0499 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@4b918ad7
+2025-04-04 10:47:50.0499 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@4b918ad7
+2025-04-04 10:47:50.0501 DEBUG BasicTypeRegistry:145 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@78fc0206
+2025-04-04 10:47:50.0501 DEBUG BasicTypeRegistry:145 - Adding type registration calendar -> org.hibernate.type.CalendarType@43084d58
+2025-04-04 10:47:50.0501 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@43084d58
+2025-04-04 10:47:50.0503 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@43084d58
+2025-04-04 10:47:50.0503 DEBUG BasicTypeRegistry:145 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@ed4b811
+2025-04-04 10:47:50.0504 DEBUG BasicTypeRegistry:145 - Adding type registration locale -> org.hibernate.type.LocaleType@28527702
+2025-04-04 10:47:50.0504 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@28527702
+2025-04-04 10:47:50.0506 DEBUG BasicTypeRegistry:145 - Adding type registration currency -> org.hibernate.type.CurrencyType@1ed3606b
+2025-04-04 10:47:50.0506 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@1ed3606b
+2025-04-04 10:47:50.0507 DEBUG BasicTypeRegistry:145 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@3302b1bf
+2025-04-04 10:47:50.0507 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@3302b1bf
+2025-04-04 10:47:50.0508 DEBUG BasicTypeRegistry:145 - Adding type registration class -> org.hibernate.type.ClassType@77a38648
+2025-04-04 10:47:50.0508 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@77a38648
+2025-04-04 10:47:50.0509 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@405a682
+2025-04-04 10:47:50.0509 DEBUG BasicTypeRegistry:145 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@405a682
+2025-04-04 10:47:50.0510 DEBUG BasicTypeRegistry:145 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@77eded55
+2025-04-04 10:47:50.0511 DEBUG BasicTypeRegistry:145 - Adding type registration binary -> org.hibernate.type.BinaryType@29cb767d
+2025-04-04 10:47:50.0511 DEBUG BasicTypeRegistry:145 - Adding type registration byte[] -> org.hibernate.type.BinaryType@29cb767d
+2025-04-04 10:47:50.0511 DEBUG BasicTypeRegistry:145 - Adding type registration [B -> org.hibernate.type.BinaryType@29cb767d
+2025-04-04 10:47:50.0511 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@580fda12
+2025-04-04 10:47:50.0511 DEBUG BasicTypeRegistry:145 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@580fda12
+2025-04-04 10:47:50.0512 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@580fda12
+2025-04-04 10:47:50.0512 DEBUG BasicTypeRegistry:145 - Adding type registration row_version -> org.hibernate.type.RowVersionType@739890d
+2025-04-04 10:47:50.0514 DEBUG BasicTypeRegistry:145 - Adding type registration image -> org.hibernate.type.ImageType@734dccc
+2025-04-04 10:47:50.0514 DEBUG BasicTypeRegistry:145 - Adding type registration characters -> org.hibernate.type.CharArrayType@1fbdef1d
+2025-04-04 10:47:50.0515 DEBUG BasicTypeRegistry:145 - Adding type registration char[] -> org.hibernate.type.CharArrayType@1fbdef1d
+2025-04-04 10:47:50.0515 DEBUG BasicTypeRegistry:145 - Adding type registration [C -> org.hibernate.type.CharArrayType@1fbdef1d
+2025-04-04 10:47:50.0515 DEBUG BasicTypeRegistry:145 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@5e873d36
+2025-04-04 10:47:50.0516 DEBUG BasicTypeRegistry:145 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@5e873d36
+2025-04-04 10:47:50.0516 DEBUG BasicTypeRegistry:145 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@5e873d36
+2025-04-04 10:47:50.0517 DEBUG BasicTypeRegistry:145 - Adding type registration text -> org.hibernate.type.TextType@5929f212
+2025-04-04 10:47:50.0517 DEBUG BasicTypeRegistry:145 - Adding type registration ntext -> org.hibernate.type.NTextType@151ebbdb
+2025-04-04 10:47:50.0521 DEBUG BasicTypeRegistry:145 - Adding type registration blob -> org.hibernate.type.BlobType@20b2769
+2025-04-04 10:47:50.0522 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@20b2769
+2025-04-04 10:47:50.0522 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@661e6a3f
+2025-04-04 10:47:50.0525 DEBUG BasicTypeRegistry:145 - Adding type registration clob -> org.hibernate.type.ClobType@51e3a1b
+2025-04-04 10:47:50.0525 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@51e3a1b
+2025-04-04 10:47:50.0527 DEBUG BasicTypeRegistry:145 - Adding type registration nclob -> org.hibernate.type.NClobType@39670f80
+2025-04-04 10:47:50.0529 DEBUG BasicTypeRegistry:145 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@39670f80
+2025-04-04 10:47:50.0529 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@40317351
+2025-04-04 10:47:50.0529 DEBUG BasicTypeRegistry:145 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5825d773
+2025-04-04 10:47:50.0530 DEBUG BasicTypeRegistry:145 - Adding type registration serializable -> org.hibernate.type.SerializableType@2e30d826
+2025-04-04 10:47:50.0531 DEBUG BasicTypeRegistry:145 - Adding type registration object -> org.hibernate.type.ObjectType@74cabc68
+2025-04-04 10:47:50.0531 DEBUG BasicTypeRegistry:145 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@74cabc68
+2025-04-04 10:47:50.0533 DEBUG BasicTypeRegistry:145 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@65eaffea
+2025-04-04 10:47:50.0533 DEBUG BasicTypeRegistry:145 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@4071b0ef
+2025-04-04 10:47:50.0533 DEBUG BasicTypeRegistry:145 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@10405175
+2025-04-04 10:47:50.0533 DEBUG BasicTypeRegistry:145 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@4560142d
+2025-04-04 10:47:50.0534 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@7747a6c4
+2025-04-04 10:47:50.0534 DEBUG BasicTypeRegistry:145 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@3afc960b
+2025-04-04 10:47:50.0534 DEBUG BasicTypeRegistry:145 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@28a5a3d8
+2025-04-04 10:47:50.0534 DEBUG BasicTypeRegistry:145 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6d210b9d
+2025-04-04 10:47:51.0104 INFO  ENGINE:? - checkpointClose start
+2025-04-04 10:47:51.0105 INFO  ENGINE:? - checkpointClose synched
+2025-04-04 10:47:51.0112 INFO  ENGINE:? - checkpointClose script done
+2025-04-04 10:47:51.0135 INFO  ENGINE:? - checkpointClose end
+2025-04-04 10:47:51.0378 TRACE TypeFactory:58 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@6dfefe92
+2025-04-04 10:47:51.0584 DEBUG SQL:92 - alter table CLIENTE drop constraint UK1v16uau92cnksr4njethm7bfd
+2025-04-04 10:47:51.0585 DEBUG SQL:92 - alter table CLIENTE add constraint UK1v16uau92cnksr4njethm7bfd unique (CLIENTE_CPF_CNPJ)
+2025-04-04 10:47:51.0587 DEBUG SQL:92 - alter table Usuario drop constraint INDEX_USUARIO_NOME
+2025-04-04 10:47:51.0592 DEBUG SQL:92 - alter table Usuario add constraint INDEX_USUARIO_NOME unique (nome)
+2025-04-04 10:47:51.0594 DEBUG SQL:92 - alter table VEICULO drop constraint UKkhbhxichdnj5jx9n3g76jitan
+2025-04-04 10:47:51.0595 DEBUG SQL:92 - alter table VEICULO add constraint UKkhbhxichdnj5jx9n3g76jitan unique (VEICULO_CPF_CNPJ_PROPRIETARIO, VEICULO_PLACA)
+2025-04-04 10:47:51.0595 DEBUG SQL:92 - alter table VEICULO drop constraint INDEX_VEICULO_PLACA
+2025-04-04 10:47:51.0596 DEBUG SQL:92 - alter table VEICULO add constraint INDEX_VEICULO_PLACA unique (VEICULO_PLACA)
+2025-04-04 10:47:51.0735 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where 1=1 */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where 1=1
+2025-04-04 10:47:51.0744 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-04 10:47:51.0750 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-04 10:47:51.0751 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-04 10:47:51.0751 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-04 10:47:51.0764 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-04 10:47:51.0765 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-04 10:47:51.0765 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-04 10:47:51.0766 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-04 10:47:51.0766 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-04 10:47:51.0766 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-04 10:47:51.0766 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-04 10:47:51.0768 DEBUG SQL:92 - /* select generatedAlias0 from Usuario as generatedAlias0 where ( generatedAlias0.nome=:param0 ) and ( generatedAlias0.senha=:param1 ) */ select usuario0_.id as id1_4_, usuario0_.email as email2_4_, usuario0_.nome as nome3_4_, usuario0_.senha as senha4_4_ from Usuario usuario0_ where usuario0_.nome=? and usuario0_.senha=?
+2025-04-04 10:47:51.0769 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [ADMIN]
+2025-04-04 10:47:51.0769 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-04 10:47:51.0769 TRACE BasicExtractor:61 - extracted value ([id1_4_] : [BIGINT]) - [1]
+2025-04-04 10:47:51.0769 TRACE BasicExtractor:61 - extracted value ([email2_4_] : [VARCHAR]) - [ADMIN]
+2025-04-04 10:47:51.0769 TRACE BasicExtractor:61 - extracted value ([nome3_4_] : [VARCHAR]) - [ADMIN]
+2025-04-04 10:47:51.0770 TRACE BasicExtractor:61 - extracted value ([senha4_4_] : [VARCHAR]) - [835D6DC88B708BC646D6DB82C853EF4182FABBD4A8DE59C213F2B5AB3AE7D9BE]
+2025-04-04 10:47:51.0777 INFO  Usuario:55 - LOGIN EFETUADO
+2025-04-04 10:48:23.0678 DEBUG SQL:92 - /* select generatedAlias0 from Cliente as generatedAlias0 where 1=1 */ select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_ from CLIENTE cliente0_ where 1=1
+2025-04-04 10:48:23.0680 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [2]
+2025-04-04 10:48:23.0680 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [05428448695]
+2025-04-04 10:48:23.0680 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-04 10:48:23.0680 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-04 10:48:23.0680 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-982857372]
+2025-04-04 10:48:23.0681 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [3]
+2025-04-04 10:48:23.0681 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04158447858]
+2025-04-04 10:48:23.0681 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leticia@gmail.com]
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LETICIA APARECIDA MACIEL VIEIRA]
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [5]
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04525869245]
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [aline@gmail.com]
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [ALINE BEATRIZ MACIEL DE ALMEIDA]
+2025-04-04 10:48:23.0682 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-112458574]
+2025-04-04 10:48:23.0683 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [6]
+2025-04-04 10:48:23.0683 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [11225874196]
+2025-04-04 10:48:23.0683 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leny@gmail.com]
+2025-04-04 10:48:23.0683 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LENY APARECIDA MACIEL]
+2025-04-04 10:48:23.0683 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-04 10:48:57.0372 DEBUG SQL:92 - /* select generatedAlias0 from Cliente as generatedAlias0 where 1=1 */ select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_ from CLIENTE cliente0_ where 1=1
+2025-04-04 10:48:57.0373 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [2]
+2025-04-04 10:48:57.0373 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [05428448695]
+2025-04-04 10:48:57.0373 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-04 10:48:57.0374 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-04 10:48:57.0374 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-982857372]
+2025-04-04 10:48:57.0374 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [3]
+2025-04-04 10:48:57.0374 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04158447858]
+2025-04-04 10:48:57.0374 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leticia@gmail.com]
+2025-04-04 10:48:57.0375 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LETICIA APARECIDA MACIEL VIEIRA]
+2025-04-04 10:48:57.0375 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-04 10:48:57.0375 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [5]
+2025-04-04 10:48:57.0375 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [04525869245]
+2025-04-04 10:48:57.0375 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [aline@gmail.com]
+2025-04-04 10:48:57.0376 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [ALINE BEATRIZ MACIEL DE ALMEIDA]
+2025-04-04 10:48:57.0376 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - [31-112458574]
+2025-04-04 10:48:57.0376 TRACE BasicExtractor:61 - extracted value ([CLIENTE_1_1_] : [BIGINT]) - [6]
+2025-04-04 10:48:57.0376 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_] : [VARCHAR]) - [11225874196]
+2025-04-04 10:48:57.0376 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_] : [VARCHAR]) - [leny@gmail.com]
+2025-04-04 10:48:57.0377 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_] : [VARCHAR]) - [LENY APARECIDA MACIEL]
+2025-04-04 10:48:57.0377 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_] : [VARCHAR]) - []
+2025-04-04 10:48:57.0381 DEBUG SQL:92 - select cliente0_.CLIENTE_IDENTIFICADOR as CLIENTE_1_1_0_, cliente0_.CLIENTE_CPF_CNPJ as CLIENTE_2_1_0_, cliente0_.CLIENTE_EMAIL as CLIENTE_3_1_0_, cliente0_.CLIENTE_NOME as CLIENTE_4_1_0_, cliente0_.CLIENTE_TELEFONE as CLIENTE_5_1_0_ from CLIENTE cliente0_ where cliente0_.CLIENTE_IDENTIFICADOR=?
+2025-04-04 10:48:57.0382 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [2]
+2025-04-04 10:48:57.0384 TRACE BasicExtractor:61 - extracted value ([CLIENTE_2_1_0_] : [VARCHAR]) - [05428448695]
+2025-04-04 10:48:57.0384 TRACE BasicExtractor:61 - extracted value ([CLIENTE_3_1_0_] : [VARCHAR]) - [vpmaciel@gmail.com]
+2025-04-04 10:48:57.0384 TRACE BasicExtractor:61 - extracted value ([CLIENTE_4_1_0_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-04 10:48:57.0384 TRACE BasicExtractor:61 - extracted value ([CLIENTE_5_1_0_] : [VARCHAR]) - [31-982857372]
+2025-04-04 10:49:11.0390 DEBUG SQL:92 - /* select generatedAlias0 from Servico as generatedAlias0 where 1=1 */ select servico0_.SERVICO_ID as SERVICO_1_3_, servico0_.SERVICO_CPF_CNPJ_CLIENTE as SERVICO_2_3_, servico0_.SERVICO_DATA as SERVICO_3_3_, servico0_.SERVICO_DESCRICAO as SERVICO_4_3_, servico0_.SERVICO_NOME_CLIENTE as SERVICO_5_3_, servico0_.SERVICO_PLACA_VEICULO as SERVICO_6_3_, servico0_.SERVICO_TELEFONE_CLIENTE as SERVICO_7_3_, servico0_.SERVICO_VALOR as SERVICO_8_3_ from SERVICO servico0_ where 1=1
+2025-04-04 10:49:11.0391 TRACE BasicExtractor:61 - extracted value ([SERVICO_1_3_] : [BIGINT]) - [9]
+2025-04-04 10:49:11.0391 TRACE BasicExtractor:61 - extracted value ([SERVICO_2_3_] : [VARCHAR]) - [05428448695]
+2025-04-04 10:49:11.0392 TRACE BasicExtractor:61 - extracted value ([SERVICO_3_3_] : [DATE]) - [2025-04-01]
+2025-04-04 10:49:11.0392 TRACE BasicExtractor:61 - extracted value ([SERVICO_4_3_] : [VARCHAR]) - [TRANSFERENCIA DE PROPRIEDADE]
+2025-04-04 10:49:11.0392 TRACE BasicExtractor:61 - extracted value ([SERVICO_5_3_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-04 10:49:11.0392 TRACE BasicExtractor:61 - extracted value ([SERVICO_6_3_] : [VARCHAR]) - [KLC5D471]
+2025-04-04 10:49:11.0392 TRACE BasicExtractor:61 - extracted value ([SERVICO_7_3_] : [VARCHAR]) - [31-98582-1475]
+2025-04-04 10:49:11.0393 TRACE BasicExtractor:61 - extracted value ([SERVICO_8_3_] : [FLOAT]) - [500.0]
+2025-04-04 10:49:23.0427 DEBUG SQL:92 - /* select generatedAlias0 from Servico as generatedAlias0 where 1=1 */ select servico0_.SERVICO_ID as SERVICO_1_3_, servico0_.SERVICO_CPF_CNPJ_CLIENTE as SERVICO_2_3_, servico0_.SERVICO_DATA as SERVICO_3_3_, servico0_.SERVICO_DESCRICAO as SERVICO_4_3_, servico0_.SERVICO_NOME_CLIENTE as SERVICO_5_3_, servico0_.SERVICO_PLACA_VEICULO as SERVICO_6_3_, servico0_.SERVICO_TELEFONE_CLIENTE as SERVICO_7_3_, servico0_.SERVICO_VALOR as SERVICO_8_3_ from SERVICO servico0_ where 1=1
+2025-04-04 10:49:23.0427 TRACE BasicExtractor:61 - extracted value ([SERVICO_1_3_] : [BIGINT]) - [9]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_2_3_] : [VARCHAR]) - [05428448695]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_3_3_] : [DATE]) - [2025-04-01]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_4_3_] : [VARCHAR]) - [TRANSFERENCIA DE PROPRIEDADE]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_5_3_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_6_3_] : [VARCHAR]) - [KLC5D471]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_7_3_] : [VARCHAR]) - [31-98582-1475]
+2025-04-04 10:49:23.0428 TRACE BasicExtractor:61 - extracted value ([SERVICO_8_3_] : [FLOAT]) - [500.0]
+2025-04-04 10:49:23.0433 DEBUG SQL:92 - select servico0_.SERVICO_ID as SERVICO_1_3_0_, servico0_.SERVICO_CPF_CNPJ_CLIENTE as SERVICO_2_3_0_, servico0_.SERVICO_DATA as SERVICO_3_3_0_, servico0_.SERVICO_DESCRICAO as SERVICO_4_3_0_, servico0_.SERVICO_NOME_CLIENTE as SERVICO_5_3_0_, servico0_.SERVICO_PLACA_VEICULO as SERVICO_6_3_0_, servico0_.SERVICO_TELEFONE_CLIENTE as SERVICO_7_3_0_, servico0_.SERVICO_VALOR as SERVICO_8_3_0_ from SERVICO servico0_ where servico0_.SERVICO_ID=?
+2025-04-04 10:49:23.0434 TRACE BasicBinder:65 - binding parameter [1] as [BIGINT] - [9]
+2025-04-04 10:49:23.0434 TRACE BasicExtractor:61 - extracted value ([SERVICO_2_3_0_] : [VARCHAR]) - [05428448695]
+2025-04-04 10:49:23.0434 TRACE BasicExtractor:61 - extracted value ([SERVICO_3_3_0_] : [DATE]) - [2025-04-01]
+2025-04-04 10:49:23.0434 TRACE BasicExtractor:61 - extracted value ([SERVICO_4_3_0_] : [VARCHAR]) - [TRANSFERENCIA DE PROPRIEDADE]
+2025-04-04 10:49:23.0434 TRACE BasicExtractor:61 - extracted value ([SERVICO_5_3_0_] : [VARCHAR]) - [VICENTE PAULO MACIEL]
+2025-04-04 10:49:23.0435 TRACE BasicExtractor:61 - extracted value ([SERVICO_6_3_0_] : [VARCHAR]) - [KLC5D471]
+2025-04-04 10:49:23.0435 TRACE BasicExtractor:61 - extracted value ([SERVICO_7_3_0_] : [VARCHAR]) - [31-98582-1475]
+2025-04-04 10:49:23.0435 TRACE BasicExtractor:61 - extracted value ([SERVICO_8_3_0_] : [FLOAT]) - [500.0]

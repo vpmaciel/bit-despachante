@@ -74,19 +74,19 @@ public final class UsuarioPainelCad extends JPanel implements Gui {
 
 	add(toolBar.getTB());
 
-	add(new JLabel("Nome"));
+	add(new JLabel("NOME"));
 
 	fieldNome = new JTextField();
 	fieldNome.setDocument(new EntradaMaiuscula(50));
 	add(fieldNome);
 
-	add(new JLabel("E-mail"));
+	add(new JLabel("E-MAIL"));
 
 	fieldEmail = new JTextField();
 	fieldEmail.setDocument(new EntradaMaiuscula(100));
 	add(fieldEmail);
 
-	add(new JLabel("Senha"));
+	add(new JLabel("SENHA"));
 
 	fieldSenha = new JTextField();
 	fieldSenha.setDocument(new EntradaMaiuscula(10));

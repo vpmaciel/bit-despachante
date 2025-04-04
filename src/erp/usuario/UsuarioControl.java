@@ -180,7 +180,8 @@ final class UsuarioControl {
 
 	    long totalPesquisaRegistro = 0;
 
-	    totalPesquisaRegistro = MainController.getUsuarioJan().getUsuarioPainelPesq().pesquisarRegistro(new Usuario());
+	    totalPesquisaRegistro = MainController.getUsuarioJan().getUsuarioPainelPesq()
+		    .pesquisarRegistro(new Usuario());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {

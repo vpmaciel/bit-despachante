@@ -176,7 +176,8 @@ final class VeiculoControl {
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 	    long totalPesquisaRegistro = 0;
-	    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq().pesquisarRegistro(new Veiculo());
+	    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq()
+		    .pesquisarRegistro(new Veiculo());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {
@@ -220,25 +221,26 @@ final class VeiculoControl {
 		if (((getVeiculoPainelCad().getGuiPlaca().getText()) == null)
 			|| (getVeiculoPainelCad().getGuiPlaca().getText().length() == 0)) {
 		    getVeiculoPainelCad().getGuiPlaca().requestFocus();
-		    Msg.avisoCampoObrigatorio("PLACA DO VEÍCULO");
+		    Msg.avisoCampoObrigatorio("Placa do Veículo");
 		    return;
 		}
 		if (mensagem == JOptionPane.YES_OPTION) {
-		   
+
 		    long totalPesquisaRegistro = 0;
 		    Veiculo veiculoPesquisa = new Veiculo();
 		    veiculoPesquisa.setPlaca(getVeiculoPainelCad().getGuiPlaca().getText());
-		    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq().pesquisarRegistro(veiculoPesquisa);
-		    
+		    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq()
+			    .pesquisarRegistro(veiculoPesquisa);
+
 		    if (totalPesquisaRegistro > 0 && veiculo.getId() == null) {
 			Msg.avisoCampoDuplicado("CPF | CNPJ");
 			return;
 		    }
-		   
+
 		    boolean salva;
-		    
+
 		    salva = atualizarObjeto(true);
-		    
+
 		    if (!salva) {
 			return;
 		    }
@@ -289,7 +291,7 @@ final class VeiculoControl {
 	veiculo.setModelo(getVeiculoPainelCad().getGuiModelo().getText());
 	veiculo.setNomeProprietario(getVeiculoPainelCad().getGuiNomeProprietario().getText());
 	veiculo.setPlaca(getVeiculoPainelCad().getGuiPlaca().getText());
-	
+
 	return true;
     }
 

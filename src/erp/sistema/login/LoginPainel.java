@@ -71,19 +71,19 @@ public final class LoginPainel extends JPanel implements Gui {
 	add(new JLabel("USUÁRIO"));
 
 	fieldNome = new JTextField(50);
-	fieldNome.setDocument(new EntradaMaiuscula(50));	
+	fieldNome.setDocument(new EntradaMaiuscula(50));
 	fieldNome.requestFocus();
 	add(fieldNome);
 
 	add(new JLabel("SENHA"));
 
 	fieldSenha = new JPasswordField(50);
-	fieldSenha.setDocument(new EntradaMaiuscula(8));	
+	fieldSenha.setDocument(new EntradaMaiuscula(8));
 	add(fieldSenha);
 
 	add(new JLabel(""));
 
-	buttonEntrar = new JButton("Entrar");
+	buttonEntrar = new JButton("ENTRAR");
 	buttonEntrar.setBackground(Color.LIGHT_GRAY);
 	buttonEntrar.setOpaque(true);
 	buttonEntrar.setPreferredSize(new Dimension(100, 30));

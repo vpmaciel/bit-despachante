@@ -36,7 +36,7 @@ public final class LoginJan extends JFrame implements Gui {
     private LoginPainel loginPainel;
 
     public LoginPainel getLoginPainel() {
-        return loginPainel;
+	return loginPainel;
     }
 
     public LoginJan() {

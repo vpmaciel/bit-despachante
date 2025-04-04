@@ -135,7 +135,7 @@ final class UsuarioImp implements UsuarioDao {
 		predicateList.add(criteriaBuilder.equal(rootUsuario.get("id"), usuario.getId()));
 	    }
 	    if ((usuario.getNome() != null) && (usuario.getNome().length() > 0)) {
-		predicateList.add(criteriaBuilder.equal(rootUsuario.get("nome"), usuario.getNome()));		
+		predicateList.add(criteriaBuilder.equal(rootUsuario.get("nome"), usuario.getNome()));
 	    }
 	    if ((usuario.getSenha() != null) && (usuario.getSenha().length() > 0)) {
 		predicateList.add(criteriaBuilder.equal(rootUsuario.get("senha"), usuario.getSenha()));
@@ -153,7 +153,7 @@ final class UsuarioImp implements UsuarioDao {
 		entityManager.close();
 	    }
 	}
-		
+
 	return usuarioList;
     }
 

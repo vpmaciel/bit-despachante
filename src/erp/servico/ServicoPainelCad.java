@@ -94,44 +94,44 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 
 	add(toolBar.getTB());
 
-	add(new JLabel("Data"));
+	add(new JLabel("DATA"));
 
 	fieldData = new JTextField();
 	fieldData.setEnabled(false);
 	add(fieldData);
 
-	add(new JLabel("Placa do Veículo"));
+	add(new JLabel("PLACA DO VEÍCULO"));
 
 	fieldPlaca = new JTextField();
 	fieldPlaca.setDocument(new EntradaMaiuscula(8));
 	add(fieldPlaca);
 
-	add(new JLabel("Descrição do Serviço"));
+	add(new JLabel("DESCRIÇÃO DO VEÍCULO"));
 
 	fieldDescricao = new JTextField();
 	fieldDescricao.setDocument(new EntradaMaiuscula(50));
 	add(fieldDescricao);
 
-	add(new JLabel("Valor do Serviço"));
+	add(new JLabel("VALOR DO SERVÍÇO"));
 
 	fieldValor = new JTextField();
 	fieldValor.addKeyListener(new NumeroDecimal());
 	fieldValor.setDocument(new EntradaMaiuscula(15));
 	add(fieldValor);
 
-	add(new JLabel("CPF | CNPJ do Cliente"));
+	add(new JLabel("CPF | CNPJ DO CLIENTE"));
 
 	fieldCpfCnpjCliente = new JTextField();
 	fieldCpfCnpjCliente.setDocument(new EntradaMaiuscula(20));
 	add(fieldCpfCnpjCliente);
 
-	add(new JLabel("Nome do do Cliente"));
+	add(new JLabel("NOME DO CLIENTE"));
 
 	fieldNomeCliente = new JTextField();
 	fieldNomeCliente.setDocument(new EntradaMaiuscula(50));
 	add(fieldNomeCliente);
 
-	add(new JLabel("Telefone do Cliente"));
+	add(new JLabel("TELEFONE DO CLIENTE"));
 
 	fieldTelefoneCliente = new JTextField();
 	fieldTelefoneCliente.setDocument(new EntradaMaiuscula(15));

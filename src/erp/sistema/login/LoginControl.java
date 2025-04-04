@@ -38,8 +38,7 @@ public class LoginControl {
 		usuario.setSenha(Senha.criptografar("ADMIN"));
 		usuario.setEmail("ADMIN");
 		UsuarioFac.salvarRegistro(usuario);
-		JOptionPane.showMessageDialog(null,
-			"Usuário criado !\nUsuário:  ADMIN\nSenha: ADMIN", "Informação",
+		JOptionPane.showMessageDialog(null, "Usuário criado !\nUsuário:  ADMIN\nSenha: ADMIN", "Informação",
 			JOptionPane.INFORMATION_MESSAGE);
 		logger.warn("USUÁRIO ADMIN CRIADO");
 	    }
@@ -49,7 +48,7 @@ public class LoginControl {
 	    usuario = lerEntrada();
 
 	    if (UsuarioFac.isRegistroValido(usuario)) {
-		List<Usuario> list = (List<Usuario>) UsuarioFac.pesquisarRegistro(usuario);		
+		List<Usuario> list = (List<Usuario>) UsuarioFac.pesquisarRegistro(usuario);
 		Sis.setUsuario(list.get(0));
 		MainController.getLoginJan().setVisible(false);
 		MainController.getMainJan().toFront();
@@ -114,7 +113,7 @@ public class LoginControl {
 	return usuario;
     }
 
-    public boolean temUsuarioAdmin() {	
+    public boolean temUsuarioAdmin() {
 	List<Usuario> list = (List<Usuario>) UsuarioFac.pesquisarRegistro(new Usuario());
 
 	for (Usuario usuarioIterator : list) {
