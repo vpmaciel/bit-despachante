@@ -92,19 +92,14 @@ public class Imagem {
 	return imageIcon;
     }
 
-    public static ImageIcon getLogoTelaInicialImageIcon() {
-	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/inicial.png"));
-	return imageIcon;
-    }
-
-    public static Image getLogoTipoImage() {
-	caminhoImagem = recursos.getResource("erp/arquitetura/gui/imagem/logo.png");
+      public static Image getLogoTipoImage() {
+	caminhoImagem = recursos.getResource("erp/arquitetura/gui/imagem/logo1.png");
 	iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
 	return iconeTitulo;
     }
 
     public static ImageIcon getLogoTipoImageIcon() {
-	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/logo.png"));
+	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/logo1.png"));
 	return imageIcon;
     }
 

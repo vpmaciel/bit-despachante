@@ -15,7 +15,7 @@ public class ClienteTm extends AbstractTableModel {
     private static boolean[] podeEditar;
     private static TabelaModelo tabelaModelo = new TabelaModelo();
     static {
-	tabelaModelo.adicionarColuna("ID", 0, 50);
+	tabelaModelo.adicionarColuna("ID", 0, 250);
 	tabelaModelo.adicionarColuna("NOME", 1, 500);
 	tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 250);
 

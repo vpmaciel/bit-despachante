@@ -280,18 +280,6 @@ final class ServicoControl {
 		}
 
 		if (mensagem == JOptionPane.YES_OPTION) {
-		    long totalPesquisaRegistro = 0;
-		    Servico servicoPesquisa = new Servico();
-		    servicoPesquisa.setId(servico.getId());
-
-		    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq()
-			    .pesquisarRegistro(servicoPesquisa);
-
-		    if (totalPesquisaRegistro > 0) {
-			Msg.avisoCampoDuplicado("Registro");
-			return;
-		    }
-
 		    boolean salva;
 
 		    salva = atualizarObjeto(true);
@@ -324,7 +312,7 @@ final class ServicoControl {
 	    return;
 	}
 	getServicoPainelCad().getGuiCpfCnpjCliente().setText(servico.getCpfCnpjCliente());
-	getServicoPainelCad().getGuiData().setText(servico.getData().toString());
+	getServicoPainelCad().getGuiData().setText(servico.getDataFormatada());
 	getServicoPainelCad().getGuiDescricao().setText(servico.getDescricao());
 	getServicoPainelCad().getGuiNomeCliente().setText(servico.getNomeCliente());
 	getServicoPainelCad().getGuiPlaca().setText(servico.getPlaca());

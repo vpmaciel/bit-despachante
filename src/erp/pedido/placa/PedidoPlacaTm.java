@@ -15,8 +15,8 @@ public class PedidoPlacaTm extends AbstractTableModel {
     private static boolean[] podeEditar;
     private static TabelaModelo tabelaModelo = new TabelaModelo();
     static {
-	tabelaModelo.adicionarColuna("ID", 0, 50);
-	tabelaModelo.adicionarColuna("QUANTIDADE", 1, 200);
+	tabelaModelo.adicionarColuna("ID", 0, 250);
+	tabelaModelo.adicionarColuna("QUANTIDADE", 1, 100);
 	tabelaModelo.adicionarColuna("PLACA DO VEÍCULO", 2, 200);
 
 	largura = new int[tabelaModelo.getTotalColunas()];

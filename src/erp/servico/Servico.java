@@ -61,6 +61,16 @@ public class Servico implements Serializable {
 	return data;
     }
 
+    public String getDataFormatada() {
+	if (data == null) {
+	    return null;
+	}
+
+	java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
+
+	return sdf.format(data);
+    }
+
     public String getDescricao() {
 	return descricao;
     }

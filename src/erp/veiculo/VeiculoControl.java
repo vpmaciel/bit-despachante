@@ -226,17 +226,6 @@ final class VeiculoControl {
 		}
 		if (mensagem == JOptionPane.YES_OPTION) {
 
-		    long totalPesquisaRegistro = 0;
-		    Veiculo veiculoPesquisa = new Veiculo();
-		    veiculoPesquisa.setPlaca(getVeiculoPainelCad().getGuiPlaca().getText());
-		    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq()
-			    .pesquisarRegistro(veiculoPesquisa);
-
-		    if (totalPesquisaRegistro > 0 && veiculo.getId() == null) {
-			Msg.avisoCampoDuplicado("CPF | CNPJ");
-			return;
-		    }
-
 		    boolean salva;
 
 		    salva = atualizarObjeto(true);

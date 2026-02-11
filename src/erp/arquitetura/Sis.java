@@ -38,7 +38,9 @@ public class Sis {
     }
 
     public static Border getBordaPainel() {
-	return BorderFactory.createTitledBorder("DADOS");
+	Border bordaLinha = BorderFactory.createRaisedBevelBorder();
+	Border margem = BorderFactory.createEmptyBorder(10, 10, 10, 10);
+	return BorderFactory.createCompoundBorder(bordaLinha, margem);
     }
 
     public static String getCaminhoApp() {

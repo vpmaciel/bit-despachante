@@ -256,17 +256,6 @@ final class PedidoPlacaControl {
 
 		if (mensagem == JOptionPane.YES_OPTION) {
 
-		    long totalPesquisaRegistro = 0;
-		    PedidoPlaca pedidoPlacaPesquisa = new PedidoPlaca();
-		    pedidoPlacaPesquisa.setId(pedidoPlaca.getId());
-		    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq()
-			    .pesquisarRegistro(pedidoPlacaPesquisa);
-
-		    if (totalPesquisaRegistro > 0) {
-			Msg.avisoCampoDuplicado("CPF | CNPJ");
-			return;
-		    }
-
 		    boolean salva;
 
 		    salva = atualizarObjeto(true);

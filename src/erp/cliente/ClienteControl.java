@@ -1,6 +1,7 @@
 package erp.cliente;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -166,6 +167,7 @@ final class ClienteControl {
 	    long totalPesquisaRegistro = 0;
 
 	    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq().pesquisarRegistro(cliente);
+	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {
 		MainController.getClienteJan().getTabbedPane().setSelectedIndex(1);
@@ -238,17 +240,18 @@ final class ClienteControl {
 
 		if (mensagem == JOptionPane.YES_OPTION) {
 
+		    
 		    long totalPesquisaRegistro = 0;
 		    Cliente clientePesquisa = new Cliente();
 		    clientePesquisa.setCpfCnpj(getClientePainelCad().getGuiCpfCnpj().getText());
 		    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq()
 			    .pesquisarRegistro(clientePesquisa);
-
+		    
 		    if (totalPesquisaRegistro > 0 && cliente.getId() == null) {
 			Msg.avisoCampoDuplicado("CPF | CNPJ");
 			return;
 		    }
-
+		    
 		    boolean salva;
 
 		    salva = atualizarObjeto(true);
