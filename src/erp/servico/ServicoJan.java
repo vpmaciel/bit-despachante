@@ -93,7 +93,7 @@ public final class ServicoJan extends JFrame implements Gui {
 
     @Override
     public void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "SERVIÇO");
+	setTitle(Sis.getNomeSistema() + " - " + "Serviço");
 	setIconImage(Imagem.getLogoTipoImage());
 	tabbedPane = new JTabbedPane();
 	marcaPainelCad = new ServicoPainelCad();

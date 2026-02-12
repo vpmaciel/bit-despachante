@@ -20,7 +20,6 @@ public class Sis {
     private static Sis instancia;
     private static String separadorApp = System.getProperty("file.separator");
     private static Dimension tamanhoTela;
-    @SuppressWarnings("unused")
     private static Usuario usuario;
 
     static {
@@ -38,9 +37,9 @@ public class Sis {
     }
 
     public static Border getBordaPainel() {
-	Border bordaLinha = BorderFactory.createRaisedBevelBorder();
-	Border margem = BorderFactory.createEmptyBorder(10, 10, 10, 10);
-	return BorderFactory.createCompoundBorder(bordaLinha, margem);
+	Border externa = BorderFactory.createEtchedBorder();
+	Border interna = BorderFactory.createEmptyBorder(15, 15, 15, 15);
+	return BorderFactory.createCompoundBorder(externa, interna);
     }
 
     public static String getCaminhoApp() {
@@ -68,7 +67,7 @@ public class Sis {
     }
 
     public static String getNomeSistema() {
-	return "BIT - DESPACHANTE DE VEÍCULOS";
+	return "Bit - Despachante de Veículos";
     }
 
     public static Cursor getNovaJanelaCursor() {

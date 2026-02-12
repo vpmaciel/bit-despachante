@@ -42,14 +42,17 @@ public final class MainController {
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
+
+	    if (actionEvent.getSource() == mainJan.getMenuItemAjudaSobreSistema()) {
+		Msg.ajuda();
+		return;
+	    }
+	    
 	    if (Sis.getUsuario() == null) {
 		mostrarFrame(loginJan);
 		return;
 	    }
 
-	    if (actionEvent.getSource() == mainJan.getMenuItemAjudaSobreSistema()) {
-		Msg.ajuda();
-	    }
 	    if (actionEvent.getSource() == mainJan.getMenuItemArquivoSair()) {
 		if (Msg.confirmarSairDoSistema() == 0) {
 		    System.exit(0);

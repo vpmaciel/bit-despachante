@@ -15,6 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import erp.arquitetura.Formatacao;
+import erp.arquitetura.Numero;
 
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
@@ -93,6 +94,10 @@ public class Servico implements Serializable {
 
     public Float getValor() {
 	return valor;
+    }
+    
+    public String getValorFormatado() {
+	return Numero.FloatToString(valor);
     }
 
     @Override

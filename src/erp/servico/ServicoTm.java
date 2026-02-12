@@ -30,16 +30,16 @@ public class ServicoTm extends AbstractTableModel {
 	    podeEditar[i] = false;
 	}
     }
-    private Servico marca;
+    private Servico servico;
 
-    private List<Servico> marcaList = new LinkedList<>();
+    private List<Servico> servicoList = new LinkedList<>();
 
     public ServicoTm() {
 
     }
 
     public ServicoTm(List<Servico> lista) {
-	marcaList.addAll(lista);
+	servicoList.addAll(lista);
     }
 
     @Override
@@ -79,46 +79,46 @@ public class ServicoTm extends AbstractTableModel {
     }
 
     public List<Servico> getContaList() {
-	return marcaList;
+	return servicoList;
     }
 
     public Servico getMarca(int linha) {
-	if (marcaList.size() > 0) {
-	    return marcaList.get(linha);
+	if (servicoList.size() > 0) {
+	    return servicoList.get(linha);
 	}
 	return null;
     }
 
     @Override
     public int getRowCount() {
-	return marcaList.size();
+	return servicoList.size();
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-	Servico marca = marcaList.get(rowIndex);
+	Servico servico = servicoList.get(rowIndex);
 
 	if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-	    return marca.getId();
+	    return servico.getId();
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("DATA")) {
-	    return marca.getData();
+	    return servico.getDataFormatada();
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
-	    return marca.getPlaca();
+	    return servico.getPlaca();
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
-	    return marca.getDescricao();
+	    return servico.getDescricao();
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("VALOR DO SERVIÇO")) {
-	    return marca.getValor();
+	    return servico.getValorFormatado();
 	}
 
-	return marca;
+	return servico;
     }
 
     @Override
@@ -127,31 +127,31 @@ public class ServicoTm extends AbstractTableModel {
     }
 
     public void setContaList(List<Servico> marca) {
-	marcaList = marca;
+	servicoList = marca;
     }
 
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-	marca = marcaList.get(rowIndex);
+	servico = servicoList.get(rowIndex);
 
 	if (tabelaModelo.getNome(columnIndex).equals("ID")) {
-	    marca.setId(Long.parseLong(aValue.toString()));
+	    servico.setId(Long.parseLong(aValue.toString()));
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("DATA")) {
-	    marca.setData(Data.retornaData(aValue.toString()));
+	    servico.setData(Data.retornaData(aValue.toString()));
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("PLACA DO VEÍCULO")) {
-	    marca.setPlaca(aValue.toString());
+	    servico.setPlaca(aValue.toString());
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("DESCRIÇÃO DO SERVIÇO")) {
-	    marca.setDescricao(aValue.toString());
+	    servico.setDescricao(aValue.toString());
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("VALOR DO SERVIÇO")) {
-	    marca.setValor(Float.parseFloat(aValue.toString()));
+	    servico.setValor(Float.parseFloat(aValue.toString()));
 	}
 
 	fireTableDataChanged();

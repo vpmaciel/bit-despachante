@@ -26,6 +26,7 @@ public final class ClienteJan extends JFrame implements Gui {
     private ClienteControl clienteControl;
     private ClientePainelCad clientePainelCad;
     private ClientePainelPesq clientePainelPesq;
+    private ClientePainelGraf clientePainelGraf;
 
     public ClienteJan() {
 	iniciarLayout();
@@ -95,11 +96,12 @@ public final class ClienteJan extends JFrame implements Gui {
 
     @Override
     public void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "CLIENTE");
+	setTitle(Sis.getNomeSistema() + " - " + "Cliente");
 	setIconImage(Imagem.getLogoTipoImage());
 	tabbedPane = new JTabbedPane();
 	clientePainelCad = new ClientePainelCad();
 	clientePainelPesq = new ClientePainelPesq();
+	clientePainelGraf = new ClientePainelGraf();
 
 	final JScrollPane scrollPane = new JScrollPane(clientePainelCad);
 
@@ -121,6 +123,7 @@ public final class ClienteJan extends JFrame implements Gui {
 
 	tabbedPane.addTab("Cadastro", scrollPane);
 	tabbedPane.addTab("Pesquisa", clientePainelPesq);
+	tabbedPane.addTab("Painel", clientePainelGraf);
 
 	add(tabbedPane);
 	setContentPane(tabbedPane);

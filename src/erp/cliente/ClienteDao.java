@@ -1,6 +1,7 @@
 package erp.cliente;
 
 import java.util.Collection;
+import java.util.Map;
 
 public interface ClienteDao {
 
@@ -10,7 +11,9 @@ public interface ClienteDao {
 
     Cliente getRegistro(Cliente marca);
 
-    Collection<Cliente> pesquisarRegistro(Cliente marca);
+    Collection<Cliente> pesquisarRegistro(Cliente cliente);
+    
+    public Map<Integer, Long> pesquisarTotalClientesPorMes();
 
     void salvarRegistro(Cliente marca);
 }

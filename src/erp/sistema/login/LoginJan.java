@@ -83,7 +83,7 @@ public final class LoginJan extends JFrame implements Gui {
 
     @Override
     public void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "LOGIN");
+	setTitle(Sis.getNomeSistema() + " - " + "Login");
 	setIconImage(Imagem.getLogoTipoImage());
 	loginPainel = new LoginPainel();
 

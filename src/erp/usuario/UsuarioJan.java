@@ -92,7 +92,7 @@ public final class UsuarioJan extends JFrame implements Gui {
 
     @Override
     public void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "USUÁRIO");
+	setTitle(Sis.getNomeSistema() + " - " + "Usuário");
 	setIconImage(Imagem.getLogoTipoImage());
 	tabbedPane = new JTabbedPane();
 	usuarioPainelCad = new UsuarioPainelCad();

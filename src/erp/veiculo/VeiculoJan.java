@@ -95,7 +95,7 @@ public final class VeiculoJan extends JFrame implements Gui {
 
     @Override
     public void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "VEÍCULO");
+	setTitle(Sis.getNomeSistema() + " - " + "Veículo");
 	setIconImage(Imagem.getLogoTipoImage());
 	tabbedPane = new JTabbedPane();
 	marcaPainelCad = new VeiculoPainelCad();

@@ -1,6 +1,7 @@
 package erp.cliente;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -10,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 import erp.arquitetura.Formatacao;
@@ -33,6 +36,8 @@ public class Cliente implements Serializable {
     private String email;
     @Column(length = 15, name = "CLIENTE_TELEFONE")
     private String telefone;
+    @Temporal(TemporalType.DATE)
+    private Date dataCadastro = new Date();
 
     @Override
     public boolean equals(Object obj) {
@@ -62,6 +67,14 @@ public class Cliente implements Serializable {
 
     public String getTelefone() {
 	return telefone;
+    }
+
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     @Override

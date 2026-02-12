@@ -29,12 +29,12 @@ public class SobrePainel extends JPanel {
 	setLayout(new GridBagLayout());
 	setBorder(BorderFactory.createEtchedBorder());
 
-	labelTitulo.setText("BIT - DESPACHANTE DE VEÍCULOS 1.0");
+	labelTitulo.setText("Bit - Despachante de veículos 1.0");
 
 	labelAutor.setText("<html>Vicente Paulo Maciel - <a href=\"vpmaciel@gmail.com\">vpmaciel@gmail.com</a><html>");
 	labelAutor.setCursor(Sis.getNovaJanelaCursor());
 	labelAutor.addMouseListener(new Internet().new MailSistema("vpmaciel@gmail.com"));
-	labelCopyright.setText("Copyright 2023. Todos os direitos reservados.");
+	labelCopyright.setText("Copyright 2027. Todos os direitos reservados.");
 	labelEmpresa.setText(
 		"<html><a href=\"https://www.linkedin.com/in/vpmaciel/\">https://www.linkedin.com/in/vpmaciel/</a><html>");
 	labelEmpresa.setCursor(Sis.getNovaJanelaCursor());

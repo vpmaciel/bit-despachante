@@ -12,8 +12,7 @@ public class Numero {
 	DecimalFormat formato = new DecimalFormat("0.00"); // Define o formato desejado
 
 	String numeroString = formato.format(numeroFloat);
-
-	System.out.println("Número formatado: " + numeroString);
+	
 	return numeroString;
     }
 
@@ -27,8 +26,7 @@ public class Numero {
 
 	try {
 	    Number numero = format.parse(numeroString);
-	    numeroFloat = numero.floatValue();
-	    System.out.println("Número float: " + numeroFloat);
+	    numeroFloat = numero.floatValue();	    
 	} catch (ParseException e) {
 	    System.err.println("Erro de conversão: " + e.getMessage());
 	}

@@ -102,7 +102,7 @@ public class MainJan extends JFrame {
     }
 
     private void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "PRINCIPAL");
+	setTitle(Sis.getNomeSistema() + " - " + "Principal");
 	setIconImage(Imagem.getLogoTipoImage());
 	setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 	setMinimumSize(Sis.getTamanhoJanela());

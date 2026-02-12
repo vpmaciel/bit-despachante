@@ -1,14 +1,19 @@
 package erp.cliente;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -110,6 +115,7 @@ final class ClienteImp implements ClienteDao {
 	    if ((cliente.getTelefone() != null) && (cliente.getTelefone().length() > 0)) {
 		predicateList.add(criteriaBuilder.equal(rootCliente.get("telefone"), cliente.getTelefone()));
 	    }
+	    
 	    criteriaQuery.select(rootCliente).where(predicateList.toArray(new Predicate[] {}));
 	    clienteList = entityManager.createQuery(criteriaQuery).getResultList();
 	} catch (Exception exception) {
@@ -122,6 +128,36 @@ final class ClienteImp implements ClienteDao {
 	}
 	return clienteList;
     }
+    
+    
+    public Map<Integer, Long> pesquisarTotalClientesPorMes() {
+
+	    EntityManager em = null;
+	    Map<Integer, Long> resultado = new HashMap<>();
+
+	    try {
+	        em = Jpa.getEntityManagerFactory().createEntityManager();
+
+	        String jpql = "SELECT MONTH(c.dataCadastro), COUNT(c) FROM Cliente c WHERE YEAR(c.dataCadastro) = YEAR(CURRENT_DATE) GROUP BY MONTH(c.dataCadastro) ORDER BY MONTH(c.dataCadastro)";
+
+	        List<Object[]> lista = em.createQuery(jpql, Object[].class)
+	                                  .getResultList();
+
+	        for (Object[] obj : lista) {
+	            Integer mes = (Integer) obj[0];
+	            Long total = (Long) obj[1];
+	            resultado.put(mes, total);
+	        }
+
+	    } finally {
+	        if (em != null && em.isOpen()) {
+	            em.close();
+	        }
+	    }
+
+	    return resultado;
+	}
+
 
     @Override
     public void salvarRegistro(Cliente cliente) {

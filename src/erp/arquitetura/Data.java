@@ -124,6 +124,16 @@ public class Data {
 
 	return data;
     }
+    
+    public String getDataFormatada(Date data) {
+	if (data == null) {
+	    return null;
+	}
+
+	java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
+
+	return sdf.format(data);
+    }
 
     private Data() {
 

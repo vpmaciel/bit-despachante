@@ -95,7 +95,7 @@ public final class PedidoPlacaJan extends JFrame implements Gui {
 
     @Override
     public void iniciarGui() {
-	setTitle(Sis.getNomeSistema() + " - " + "PEDIDO DE PLACA");
+	setTitle(Sis.getNomeSistema() + " - " + "Pedido de Placa");
 	setIconImage(Imagem.getLogoTipoImage());
 	tabbedPane = new JTabbedPane();
 	pedidoPlacaPainelCad = new PedidoPlacaPainelCad();

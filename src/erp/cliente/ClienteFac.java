@@ -1,6 +1,7 @@
 package erp.cliente;
 
 import java.util.Collection;
+import java.util.Map;
 
 public final class ClienteFac {
 
@@ -21,6 +22,11 @@ public final class ClienteFac {
     public static Collection<Cliente> pesquisarRegistro(Cliente marca) {
 	return marcaDao.pesquisarRegistro(marca);
     }
+    
+    public static Map<Integer, Long> pesquisarTotalClientesPorMes() {
+	return marcaDao.pesquisarTotalClientesPorMes();
+    }
+
 
     public static void salvarRegistro(Cliente marca) {
 	marcaDao.salvarRegistro(marca);
