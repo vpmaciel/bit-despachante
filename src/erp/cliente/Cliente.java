@@ -20,7 +20,7 @@ import erp.arquitetura.Formatacao;
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
-@Table(name = "CLIENTE", uniqueConstraints = { @UniqueConstraint(columnNames = { "CLIENTE_CPF_CNPJ" }) })
+@Table(name = "CLIENTE", uniqueConstraints = { @UniqueConstraint(columnNames = { "CPF_CNPJ_CLIENTE" }) })
 
 public class Cliente implements Serializable {
 
@@ -28,15 +28,16 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CLIENTE_IDENTIFICADOR")
     private Long id = null;
-    @Column(length = 100, name = "CLIENTE_NOME")
+    @Column(length = 100, name = "NOME")
     private String nome;
-    @Column(length = 20, name = "CLIENTE_CPF_CNPJ")
+    @Column(length = 20, name = "CPF_CNPJ_CLIENTE")
     private String cpfCnpj;
-    @Column(length = 200, name = "CLIENTE_EMAIL")
+    @Column(length = 200, name = "EMAIL")
     private String email;
-    @Column(length = 15, name = "CLIENTE_TELEFONE")
+    @Column(length = 15, name = "TELEFONE")
     private String telefone;
     @Temporal(TemporalType.DATE)
+    @Column(name = "DATA_CADASTRO")
     private Date dataCadastro = new Date();
 
     @Override

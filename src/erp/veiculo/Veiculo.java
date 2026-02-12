@@ -1,6 +1,7 @@
 package erp.veiculo;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,9 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Index;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 import erp.arquitetura.Formatacao;
@@ -18,25 +20,26 @@ import erp.arquitetura.Formatacao;
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
-@Table(name = "VEICULO", uniqueConstraints = {
-	@UniqueConstraint(columnNames = { "VEICULO_CPF_CNPJ_PROPRIETARIO", "VEICULO_PLACA" }) }, indexes = {
-		@Index(name = "INDEX_VEICULO_PLACA", columnList = "VEICULO_PLACA", unique = true) })
+@Table(name = "VEICULO", uniqueConstraints = { @UniqueConstraint(columnNames = { "PLACA_VEICULO" }) })
 public class Veiculo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "VEICULO_ID")
+    @Column(name = "VEICULO_IDENTIFICADOR")
     private Long id = null;
-    @Column(length = 8, name = "VEICULO_PLACA")
+    @Column(length = 8, name = "PLACA_VEICULO")
     private String placa;
-    @Column(length = 50, name = "VEICULO_MARCA")
+    @Column(length = 50, name = "MARCA_VEICULO")
     private String marca;
-    @Column(length = 20, name = "VEICULO_CPF_CNPJ_PROPRIETARIO")
+    @Column(length = 20, name = "CPF_CNPJ_PROPRIETARIO")
     private String cpfCnpjProprietario;
-    @Column(length = 50, name = "VEICULO_NOME_PROPRIETARIO")
+    @Column(length = 50, name = "NOME_PROPRIETARIO")
     private String nomeProprietario;
-    @Column(length = 50, name = "VEICULO_MODELO")
+    @Column(length = 50, name = "MODELO_VEICULO")
     private String modelo;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATA_CADASTRO")
+    private Date dataCadastro = new Date();
 
     @Override
     public boolean equals(Object obj) {
@@ -46,6 +49,14 @@ public class Veiculo implements Serializable {
 	    return false;
 	Veiculo other = (Veiculo) obj;
 	return Objects.equals(id, other.id);
+    }
+    
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public String getCpfCnpjProprietario() {

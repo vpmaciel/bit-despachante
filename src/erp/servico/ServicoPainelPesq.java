@@ -19,21 +19,24 @@ import erp.arquitetura.gui.Tabela;
 @SuppressWarnings("serial")
 public final class ServicoPainelPesq extends JPanel {
 
-    private final ServicoTm marcaTableModel;
+    private final ServicoTm servicoTm;
     private final JTable table;
-    List<Servico> marcaList = null;
+    List<Servico> servicoList = null;
 
     public ServicoPainelPesq() {
 	setBorder(Sis.getBordaPainel());
 
-	marcaList = new LinkedList<>();
-	marcaTableModel = new ServicoTm(marcaList);
+	servicoList = new LinkedList<>();
+	servicoTm = new ServicoTm(servicoList);
 
 	table = new JTable();
-	table.setModel(marcaTableModel);
+	table.setModel(servicoTm);
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
+	
+	table.removeColumn(table.getColumnModel().getColumn(ServicoTm.ID));
+	
 	Tabela.configurarLarguraColunasTabela(table, ServicoTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -52,12 +55,12 @@ public final class ServicoPainelPesq extends JPanel {
     }
 
     public void atualizarGui(List<Servico> contaList) {
-	marcaTableModel.setContaList(contaList);
-	marcaTableModel.fireTableDataChanged();
+	servicoTm.setContaList(contaList);
+	servicoTm.fireTableDataChanged();
     }
 
     public ServicoTm getContaTableModel() {
-	return marcaTableModel;
+	return servicoTm;
     }
 
     public void iniciarControlador() {
@@ -66,13 +69,13 @@ public final class ServicoPainelPesq extends JPanel {
     }
 
     public int pesquisarRegistro(Servico marca) {
-	marcaList = new LinkedList<>();
+	servicoList = new LinkedList<>();
 	try {
-	    marcaList = new LinkedList<>(ServicoFac.pesquisarRegistro(marca));
+	    servicoList = new LinkedList<>(ServicoFac.pesquisarRegistro(marca));
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-	atualizarGui(marcaList);
-	return marcaList.size();
+	atualizarGui(servicoList);
+	return servicoList.size();
     }
 }

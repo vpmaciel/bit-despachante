@@ -19,21 +19,24 @@ import erp.arquitetura.gui.Tabela;
 @SuppressWarnings("serial")
 public final class VeiculoPainelPesq extends JPanel {
 
-    private final VeiculoTm marcaTableModel;
+    private final VeiculoTm veiculoTm;
     private final JTable table;
-    List<Veiculo> marcaList = null;
+    List<Veiculo> vecituloList = null;
 
     public VeiculoPainelPesq() {
 	setBorder(Sis.getBordaPainel());
 
-	marcaList = new LinkedList<>();
-	marcaTableModel = new VeiculoTm(marcaList);
+	vecituloList = new LinkedList<>();
+	veiculoTm = new VeiculoTm(vecituloList);
 
 	table = new JTable();
-	table.setModel(marcaTableModel);
+	table.setModel(veiculoTm);
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
+	
+	table.removeColumn(table.getColumnModel().getColumn(VeiculoTm.ID));
+	
 	Tabela.configurarLarguraColunasTabela(table, VeiculoTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -52,12 +55,12 @@ public final class VeiculoPainelPesq extends JPanel {
     }
 
     public void atualizarGui(List<Veiculo> contaList) {
-	marcaTableModel.setContaList(contaList);
-	marcaTableModel.fireTableDataChanged();
+	veiculoTm.setContaList(contaList);
+	veiculoTm.fireTableDataChanged();
     }
 
     public VeiculoTm getContaTableModel() {
-	return marcaTableModel;
+	return veiculoTm;
     }
 
     public void iniciarControlador() {
@@ -66,13 +69,13 @@ public final class VeiculoPainelPesq extends JPanel {
     }
 
     public int pesquisarRegistro(Veiculo marca) {
-	marcaList = new LinkedList<>();
+	vecituloList = new LinkedList<>();
 	try {
-	    marcaList = new LinkedList<>(VeiculoFac.pesquisarRegistro(marca));
+	    vecituloList = new LinkedList<>(VeiculoFac.pesquisarRegistro(marca));
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-	atualizarGui(marcaList);
-	return marcaList.size();
+	atualizarGui(vecituloList);
+	return vecituloList.size();
     }
 }

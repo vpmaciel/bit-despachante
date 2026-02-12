@@ -19,21 +19,24 @@ import erp.arquitetura.gui.Tabela;
 @SuppressWarnings("serial")
 public final class PedidoPlacaPainelPesq extends JPanel {
 
-    private final PedidoPlacaTm marcaTableModel;
+    private final PedidoPlacaTm pedidoPlacaTm;
     private final JTable table;
-    List<PedidoPlaca> marcaList = null;
+    List<PedidoPlaca> pedidoPlacaList = null;
 
     public PedidoPlacaPainelPesq() {
 	setBorder(Sis.getBordaPainel());
 
-	marcaList = new LinkedList<>();
-	marcaTableModel = new PedidoPlacaTm(marcaList);
+	pedidoPlacaList = new LinkedList<>();
+	pedidoPlacaTm = new PedidoPlacaTm(pedidoPlacaList);
 
 	table = new JTable();
-	table.setModel(marcaTableModel);
+	table.setModel(pedidoPlacaTm);
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
+
+	table.removeColumn(table.getColumnModel().getColumn(PedidoPlacaTm.ID));
+
 	Tabela.configurarLarguraColunasTabela(table, PedidoPlacaTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -52,12 +55,12 @@ public final class PedidoPlacaPainelPesq extends JPanel {
     }
 
     public void atualizarGui(List<PedidoPlaca> contaList) {
-	marcaTableModel.setContaList(contaList);
-	marcaTableModel.fireTableDataChanged();
+	pedidoPlacaTm.setContaList(contaList);
+	pedidoPlacaTm.fireTableDataChanged();
     }
 
     public PedidoPlacaTm getContaTableModel() {
-	return marcaTableModel;
+	return pedidoPlacaTm;
     }
 
     public void iniciarControlador() {
@@ -66,13 +69,13 @@ public final class PedidoPlacaPainelPesq extends JPanel {
     }
 
     public int pesquisarRegistro(PedidoPlaca marca) {
-	marcaList = new LinkedList<>();
+	pedidoPlacaList = new LinkedList<>();
 	try {
-	    marcaList = new LinkedList<>(PedidoPlacaFac.pesquisarRegistro(marca));
+	    pedidoPlacaList = new LinkedList<>(PedidoPlacaFac.pesquisarRegistro(marca));
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
-	atualizarGui(marcaList);
-	return marcaList.size();
+	atualizarGui(pedidoPlacaList);
+	return pedidoPlacaList.size();
     }
 }

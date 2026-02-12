@@ -19,7 +19,7 @@ import erp.arquitetura.gui.Tabela;
 @SuppressWarnings("serial")
 public final class UsuarioPainelPesq extends JPanel {
 
-    private final UsuarioTm agenciaTableModel;
+    private final UsuarioTm usuarioTm;
     private final JTable table;
     List<Usuario> usuarioList = null;
 
@@ -27,13 +27,16 @@ public final class UsuarioPainelPesq extends JPanel {
 	setBorder(Sis.getBordaPainel());
 
 	usuarioList = new LinkedList<>();
-	agenciaTableModel = new UsuarioTm(usuarioList);
+	usuarioTm = new UsuarioTm(usuarioList);
 
 	table = new JTable();
-	table.setModel(agenciaTableModel);
+	table.setModel(usuarioTm);
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
+	
+	table.removeColumn(table.getColumnModel().getColumn(UsuarioTm.ID));
+	
 	Tabela.configurarLarguraColunasTabela(table, UsuarioTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -55,12 +58,12 @@ public final class UsuarioPainelPesq extends JPanel {
     }
 
     public void atualizarGui(List<Usuario> usuarios) {
-	agenciaTableModel.setUsuarioList(usuarios);
-	agenciaTableModel.fireTableDataChanged();
+	usuarioTm.setUsuarioList(usuarios);
+	usuarioTm.fireTableDataChanged();
     }
 
     public UsuarioTm getUsuarioTableModel() {
-	return agenciaTableModel;
+	return usuarioTm;
     }
 
     public void iniciarControlador() {

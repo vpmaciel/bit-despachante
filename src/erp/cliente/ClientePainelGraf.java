@@ -47,7 +47,7 @@ public class ClientePainelGraf extends JPanel {
 
         // Atualização automática a cada 60 segundos
         Timer timer = new Timer(60000, e -> atualizarGrafico());
-        timer.start();
+        //timer.start();
     }
 
     private List<Integer> carregarDados() {
@@ -69,7 +69,7 @@ public class ClientePainelGraf extends JPanel {
         return totais;
     }
 
-    private void atualizarGrafico() {
+    void atualizarGrafico() {
 
         List<Integer> novosDados = carregarDados();
 

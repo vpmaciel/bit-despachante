@@ -1,9 +1,11 @@
-/*C3*/SET SCHEMA PUBLIC
-alter table CLIENTE drop constraint UK1v16uau92cnksr4njethm7bfd
-alter table CLIENTE add constraint UK1v16uau92cnksr4njethm7bfd unique (CLIENTE_CPF_CNPJ)
-alter table Usuario drop constraint INDEX_USUARIO_NOME
-alter table Usuario add constraint INDEX_USUARIO_NOME unique (nome)
-alter table VEICULO drop constraint UKkhbhxichdnj5jx9n3g76jitan
-alter table VEICULO add constraint UKkhbhxichdnj5jx9n3g76jitan unique (VEICULO_CPF_CNPJ_PROPRIETARIO, VEICULO_PLACA)
-alter table VEICULO drop constraint INDEX_VEICULO_PLACA
-alter table VEICULO add constraint INDEX_VEICULO_PLACA unique (VEICULO_PLACA)
+/*C4*/SET SCHEMA PUBLIC
+alter table CLIENTE drop constraint UKdib4ic13r4qu7sx9jvq4d9nnd
+alter table CLIENTE add constraint UKdib4ic13r4qu7sx9jvq4d9nnd unique (CPF_CNPJ_CLIENTE)
+alter table USUARIO drop constraint UK4saakddco30990dkmfthsissr
+alter table USUARIO add constraint UK4saakddco30990dkmfthsissr unique (NOME)
+alter table VEICULO drop constraint UK68jgaf7wmi3kribjlmluw426p
+alter table VEICULO add constraint UK68jgaf7wmi3kribjlmluw426p unique (PLACA_VEICULO)
+/*C8*/SET SCHEMA PUBLIC
+INSERT INTO CLIENTE VALUES(4,'22222222','2026-02-12','3333333','1111111','77-7777777')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 5
+COMMIT

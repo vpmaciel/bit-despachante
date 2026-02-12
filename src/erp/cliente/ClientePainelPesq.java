@@ -19,7 +19,7 @@ import erp.arquitetura.gui.Tabela;
 @SuppressWarnings("serial")
 public final class ClientePainelPesq extends JPanel {
 
-    private final ClienteTm marcaTableModel;
+    private final ClienteTm clienteTm;
     private final JTable table;
     List<Cliente> clienteList = null;
 
@@ -27,13 +27,15 @@ public final class ClientePainelPesq extends JPanel {
 	setBorder(Sis.getBordaPainel());
 
 	clienteList = new LinkedList<>();
-	marcaTableModel = new ClienteTm(clienteList);
+	clienteTm = new ClienteTm(clienteList);
 
 	table = new JTable();
-	table.setModel(marcaTableModel);
+	table.setModel(clienteTm);
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
+	table.removeColumn(table.getColumnModel().getColumn(ClienteTm.ID));
+
 	Tabela.configurarLarguraColunasTabela(table, ClienteTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -52,12 +54,12 @@ public final class ClientePainelPesq extends JPanel {
     }
 
     public void atualizarGui(List<Cliente> contaList) {
-	marcaTableModel.setContaList(contaList);
-	marcaTableModel.fireTableDataChanged();
+	clienteTm.setContaList(contaList);
+	clienteTm.fireTableDataChanged();
     }
 
     public ClienteTm getContaTableModel() {
-	return marcaTableModel;
+	return clienteTm;
     }
 
     public void iniciarControlador() {

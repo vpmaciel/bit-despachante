@@ -26,23 +26,26 @@ public class Servico implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "SERVICO_ID")
+    @Column(name = "SERVICO_IDENTIFICADOR")
     private Long id = null;
-    @Column(name = "SERVICO_DATA", columnDefinition = "date")
+    @Column(name = "DATA", columnDefinition = "date")
     @Temporal(TemporalType.DATE)
     private Date data = new Date();
-    @Column(length = 8, name = "SERVICO_PLACA_VEICULO")
+    @Column(length = 8, name = "PLACA_VEICULO")
     private String placa;
-    @Column(name = "SERVICO_VALOR")
+    @Column(name = "VALOR")
     private Float valor;
-    @Column(length = 50, name = "SERVICO_DESCRICAO")
+    @Column(length = 50, name = "DESCRICAO")
     private String descricao;
-    @Column(length = 20, name = "SERVICO_CPF_CNPJ_CLIENTE")
+    @Column(length = 20, name = "CPF_CNPJ_CLIENTE")
     private String cpfCnpjCliente;
-    @Column(length = 50, name = "SERVICO_NOME_CLIENTE")
+    @Column(length = 50, name = "NOME_CLIENTE")
     private String nomeCliente;
-    @Column(length = 15, name = "SERVICO_TELEFONE_CLIENTE")
+    @Column(length = 15, name = "TELEFONE_CLIENTE")
     private String telefoneCliente;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATA_CADASTRO")
+    private Date dataCadastro = new Date();
 
     @Override
     public boolean equals(Object obj) {
@@ -52,6 +55,14 @@ public class Servico implements Serializable {
 	    return false;
 	Servico other = (Servico) obj;
 	return Objects.equals(id, other.id);
+    }
+    
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public String getCpfCnpjCliente() {

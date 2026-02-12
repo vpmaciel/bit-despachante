@@ -25,23 +25,26 @@ public class PedidoPlaca implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "PEDIDO_DE_PLACA_ID")
+    @Column(name = "PEDIDO_DE_PLACA_IDENTIFICADOR")
     private Long id = null;
-    @Column(name = "PEDIDO_DE_PLACA_DATA", columnDefinition = "TIMESTAMP")
+    @Column(name = "DATA", columnDefinition = "TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date data;
-    @Column(length = 8, name = "PEDIDO_DE_PLACA_PLACA_VEICULO")
+    @Column(length = 8, name = "PLACA_VEICULO")
     private String placa;
-    @Column(name = "PEDIDO_DE_PLACA_QUANTIDADE")
+    @Column(name = "QUANTIDADE")
     private Integer quantidade;
-    @Column(length = 50, name = "PEDIDO_DE_PLACA_RENAVAM")
+    @Column(length = 50, name = "RENAVAM")
     private String renavam;
-    @Column(length = 20, name = "PEDIDO_DE_PLACA_CPF_CNPJ_PROPRIETARIO")
+    @Column(length = 20, name = "CPF_CNPJ_PROPRIETARIO")
     private String cpfCnpjProprietario;
-    @Column(length = 50, name = "PEDIDO_DE_PLACA_COR_PLACA")
+    @Column(length = 50, name = "COR_PLACA")
     private String corPlaca;
-    @Column(length = 50, name = "PEDIDO_DE_PLACA_TIPO_PLACA")
+    @Column(length = 50, name = "TIPO_PLACA")
     private String tipoPlaca;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATA_CADASTRO")
+    private Date dataCadastro = new Date();
 
     @Override
     public boolean equals(Object obj) {
@@ -52,7 +55,14 @@ public class PedidoPlaca implements Serializable {
 	PedidoPlaca other = (PedidoPlaca) obj;
 	return Objects.equals(id, other.id);
     }
+    
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
 
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
     public String getCorPlaca() {
 	return corPlaca;
     }

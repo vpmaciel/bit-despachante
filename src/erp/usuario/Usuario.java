@@ -1,6 +1,7 @@
 package erp.usuario;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,23 +11,30 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @SuppressWarnings("serial")
 @PersistenceContext(unitName = "erp")
 @Entity
-@Table(indexes = { @Index(name = "INDEX_USUARIO_NOME", columnList = "nome", unique = true) })
+@Table(name = "USUARIO", uniqueConstraints = { @UniqueConstraint(columnNames = { "NOME" }) })
 
 public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "USUARIO_IDENTIFICADOR")
     private Long id;
-    @Column(length = 100)
+    @Column(length = 100, name = "NOME")
     private String nome;
-    @Column(length = 200)
+    @Column(length = 200, name = "SENHA")
     private String senha;
-    @Column(length = 100)
+    @Column(length = 200, name = "EMAIL")
     private String email;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATA_CADASTRO")
+    private Date dataCadastro = new Date();
 
     @Override
     public int hashCode() {
@@ -53,6 +61,14 @@ public class Usuario implements Serializable {
 	    return false;
 	}
 	return true;
+    }
+    
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public Long getId() {

@@ -1,7 +1,0 @@
-/*C3*/SET SCHEMA PUBLIC
-alter table Usuario drop constraint INDEX_USUARIO_NOME
-alter table Usuario add constraint INDEX_USUARIO_NOME unique (nome)
-alter table VEICULO drop constraint UKkhbhxichdnj5jx9n3g76jitan
-alter table VEICULO add constraint UKkhbhxichdnj5jx9n3g76jitan unique (VEICULO_CPF_CNPJ_PROPRIETARIO, VEICULO_PLACA)
-alter table VEICULO drop constraint INDEX_VEICULO_PLACA
-alter table VEICULO add constraint INDEX_VEICULO_PLACA unique (VEICULO_PLACA)
