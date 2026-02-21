@@ -118,10 +118,10 @@ public final class LoginJan extends JFrame implements Gui {
     @Override
     public void iniciarLayout() {
 	setLayout(new FlowLayout(FlowLayout.CENTER));
-	setPreferredSize(Sis.getTamanhoJanela());
-	setMinimumSize(Sis.getTamanhoJanela());
-	setSize(Sis.getTamanhoJanela());
-	setMaximumSize(Sis.getTamanhoJanela());
+	setPreferredSize(Sis.getTamanhoJanelaLogin());
+	setMinimumSize(Sis.getTamanhoJanelaLogin());
+	setSize(Sis.getTamanhoJanelaLogin());
+	setMaximumSize(Sis.getTamanhoJanelaLogin());
     }
 
     @Override

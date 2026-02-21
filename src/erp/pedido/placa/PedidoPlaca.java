@@ -55,14 +55,15 @@ public class PedidoPlaca implements Serializable {
 	PedidoPlaca other = (PedidoPlaca) obj;
 	return Objects.equals(id, other.id);
     }
-    
+
     public Date getDataCadastro() {
-        return dataCadastro;
+	return dataCadastro;
     }
 
     public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+	this.dataCadastro = dataCadastro;
     }
+
     public String getCorPlaca() {
 	return corPlaca;
     }

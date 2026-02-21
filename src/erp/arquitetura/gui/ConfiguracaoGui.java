@@ -29,58 +29,58 @@ public final class ConfiguracaoGui extends Container {
 
 		if (comp instanceof JLabel) {
 		    JLabel label = (JLabel) comp;
-		    label.setPreferredSize(new Dimension(620, 30));
-		    label.setMinimumSize(new Dimension(620, 30));
-		    label.setSize(new Dimension(620, 30));
-		    label.setMaximumSize(new Dimension(620, 30));
+		    label.setPreferredSize(new Dimension(820, 30));
+		    label.setMinimumSize(new Dimension(820, 30));
+		    label.setSize(new Dimension(820, 30));
+		    label.setMaximumSize(new Dimension(820, 30));
 		    label.setAlignmentX(LEFT_ALIGNMENT);
 		}
 		if (comp instanceof JTextField) {
 		    JTextField field = (JTextField) comp;
-		    field.setPreferredSize(new Dimension(620, 30));
-		    field.setMinimumSize(new Dimension(620, 30));
-		    field.setSize(new Dimension(620, 30));
-		    field.setMaximumSize(new Dimension(620, 30));
+		    field.setPreferredSize(new Dimension(820, 30));
+		    field.setMinimumSize(new Dimension(820, 30));
+		    field.setSize(new Dimension(820, 30));
+		    field.setMaximumSize(new Dimension(820, 30));
 		    field.setAlignmentX(LEFT_ALIGNMENT);
 		}
 		if (comp instanceof JTextField) {
 		    JTextField textField = (JTextField) comp;
-		    textField.setPreferredSize(new Dimension(620, 30));
-		    textField.setMinimumSize(new Dimension(620, 30));
-		    textField.setSize(new Dimension(620, 30));
-		    textField.setMaximumSize(new Dimension(620, 30));
+		    textField.setPreferredSize(new Dimension(820, 30));
+		    textField.setMinimumSize(new Dimension(820, 30));
+		    textField.setSize(new Dimension(820, 30));
+		    textField.setMaximumSize(new Dimension(820, 30));
 		    textField.setAlignmentX(LEFT_ALIGNMENT);
 		}
 		if (comp instanceof JPasswordField) {
 		    JPasswordField passwordField = (JPasswordField) comp;
-		    passwordField.setPreferredSize(new Dimension(620, 30));
-		    passwordField.setMinimumSize(new Dimension(620, 30));
-		    passwordField.setSize(new Dimension(620, 30));
-		    passwordField.setMaximumSize(new Dimension(620, 30));
+		    passwordField.setPreferredSize(new Dimension(820, 30));
+		    passwordField.setMinimumSize(new Dimension(820, 30));
+		    passwordField.setSize(new Dimension(820, 30));
+		    passwordField.setMaximumSize(new Dimension(820, 30));
 		    passwordField.setAlignmentX(LEFT_ALIGNMENT);
 		}
 		if (comp instanceof JComboBox<?>) {
 		    JComboBox<?> comboBox = (JComboBox<?>) comp;
-		    comboBox.setPreferredSize(new Dimension(620, 30));
-		    comboBox.setMinimumSize(new Dimension(620, 30));
-		    comboBox.setSize(new Dimension(620, 30));
-		    comboBox.setMaximumSize(new Dimension(620, 30));
+		    comboBox.setPreferredSize(new Dimension(820, 30));
+		    comboBox.setMinimumSize(new Dimension(820, 30));
+		    comboBox.setSize(new Dimension(820, 30));
+		    comboBox.setMaximumSize(new Dimension(820, 30));
 		    comboBox.setAlignmentX(LEFT_ALIGNMENT);
 		}
 		if (comp instanceof JScrollPane) {
 		    JScrollPane scrollPane = (JScrollPane) comp;
-		    scrollPane.setPreferredSize(new Dimension(620, 150));
-		    scrollPane.setMinimumSize(new Dimension(620, 150));
-		    scrollPane.setSize(new Dimension(620, 150));
-		    scrollPane.setMaximumSize(new Dimension(620, 150));
+		    scrollPane.setPreferredSize(new Dimension(820, 150));
+		    scrollPane.setMinimumSize(new Dimension(820, 150));
+		    scrollPane.setSize(new Dimension(820, 150));
+		    scrollPane.setMaximumSize(new Dimension(820, 150));
 		    scrollPane.setAlignmentX(LEFT_ALIGNMENT);
 		}
 		if (comp instanceof JTextArea) {
 		    JTextArea textArea = (JTextArea) comp;
-		    textArea.setPreferredSize(new Dimension(620, 150));
-		    textArea.setMinimumSize(new Dimension(620, 150));
-		    textArea.setSize(new Dimension(620, 150));
-		    textArea.setMaximumSize(new Dimension(620, 150));
+		    textArea.setPreferredSize(new Dimension(820, 150));
+		    textArea.setMinimumSize(new Dimension(820, 150));
+		    textArea.setSize(new Dimension(820, 150));
+		    textArea.setMaximumSize(new Dimension(820, 150));
 		    textArea.setAlignmentX(LEFT_ALIGNMENT);
 		}
 

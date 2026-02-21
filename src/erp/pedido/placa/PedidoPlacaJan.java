@@ -81,9 +81,7 @@ public final class PedidoPlacaJan extends JFrame implements Gui {
 	pedidoPlacaPainelCad.getTB().getRelatorioBtn().addActionListener(pedidoPlacaControl.new Relatorio());
 	pedidoPlacaPainelCad.getTB().getSalvarBtn().addActionListener(pedidoPlacaControl.new Salva());
 	pedidoPlacaPainelCad.getTB().getHomeBtn().addActionListener(pedidoPlacaControl.new Home());
-	pedidoPlacaPainelCad.getTB().getRegistrosBtn().addActionListener(pedidoPlacaControl.new Registro());
 	pedidoPlacaPainelCad.getTB().getCsvBtn().addActionListener(pedidoPlacaControl.new FormatoCsv());
-	pedidoPlacaPainelCad.getTB().getJsonBtn().addActionListener(pedidoPlacaControl.new FormatoJson());
 
 	pedidoPlacaPainelPesq.iniciarControlador();
     }

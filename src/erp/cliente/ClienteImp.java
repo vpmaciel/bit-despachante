@@ -112,7 +112,7 @@ final class ClienteImp implements ClienteDao {
 	    if ((cliente.getTelefone() != null) && (cliente.getTelefone().length() > 0)) {
 		predicateList.add(criteriaBuilder.equal(rootCliente.get("telefone"), cliente.getTelefone()));
 	    }
-	    
+
 	    criteriaQuery.select(rootCliente).where(predicateList.toArray(new Predicate[] {}));
 	    clienteList = entityManager.createQuery(criteriaQuery).getResultList();
 	} catch (Exception exception) {
@@ -125,36 +125,33 @@ final class ClienteImp implements ClienteDao {
 	}
 	return clienteList;
     }
-    
-    
+
     public Map<Integer, Long> pesquisarTotalClientesPorMes() {
 
-	    EntityManager em = null;
-	    Map<Integer, Long> resultado = new HashMap<>();
+	EntityManager em = null;
+	Map<Integer, Long> resultado = new HashMap<>();
 
-	    try {
-	        em = Jpa.getEntityManagerFactory().createEntityManager();
+	try {
+	    em = Jpa.getEntityManagerFactory().createEntityManager();
 
-	        String jpql = "SELECT MONTH(c.dataCadastro), COUNT(c) FROM Cliente c WHERE YEAR(c.dataCadastro) = YEAR(CURRENT_DATE) GROUP BY MONTH(c.dataCadastro) ORDER BY MONTH(c.dataCadastro)";
+	    String jpql = "SELECT MONTH(c.dataCadastro), COUNT(c) FROM Cliente c WHERE YEAR(c.dataCadastro) = YEAR(CURRENT_DATE) GROUP BY MONTH(c.dataCadastro) ORDER BY MONTH(c.dataCadastro)";
 
-	        List<Object[]> lista = em.createQuery(jpql, Object[].class)
-	                                  .getResultList();
+	    List<Object[]> lista = em.createQuery(jpql, Object[].class).getResultList();
 
-	        for (Object[] obj : lista) {
-	            Integer mes = (Integer) obj[0];
-	            Long total = (Long) obj[1];
-	            resultado.put(mes, total);
-	        }
-
-	    } finally {
-	        if (em != null && em.isOpen()) {
-	            em.close();
-	        }
+	    for (Object[] obj : lista) {
+		Integer mes = (Integer) obj[0];
+		Long total = (Long) obj[1];
+		resultado.put(mes, total);
 	    }
 
-	    return resultado;
+	} finally {
+	    if (em != null && em.isOpen()) {
+		em.close();
+	    }
 	}
 
+	return resultado;
+    }
 
     @Override
     public void salvarRegistro(Cliente cliente) {

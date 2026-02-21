@@ -34,7 +34,6 @@ public final class ClientePainelPesq extends JPanel {
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
-	table.removeColumn(table.getColumnModel().getColumn(ClienteTm.ID));
 
 	Tabela.configurarLarguraColunasTabela(table, ClienteTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())

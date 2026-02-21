@@ -34,9 +34,7 @@ public final class ServicoPainelPesq extends JPanel {
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
-	
-	table.removeColumn(table.getColumnModel().getColumn(ServicoTm.ID));
-	
+
 	Tabela.configurarLarguraColunasTabela(table, ServicoTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);

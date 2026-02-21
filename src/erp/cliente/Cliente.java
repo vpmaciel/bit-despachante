@@ -71,11 +71,11 @@ public class Cliente implements Serializable {
     }
 
     public Date getDataCadastro() {
-        return dataCadastro;
+	return dataCadastro;
     }
 
     public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+	this.dataCadastro = dataCadastro;
     }
 
     @Override

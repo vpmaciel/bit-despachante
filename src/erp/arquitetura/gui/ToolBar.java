@@ -45,7 +45,7 @@ public class ToolBar {
 	toolBar.add(buttonPesquisa);
 
 	buttonRegistros.setToolTipText("Registros");
-	toolBar.add(buttonRegistros);
+	// toolBar.add(buttonRegistros);
 
 	buttonImprime.setToolTipText("Imprimir");
 	toolBar.add(buttonImprime);
@@ -54,10 +54,14 @@ public class ToolBar {
 	toolBar.add(buttonCsv);
 
 	buttonJson.setToolTipText("Arquivo json");
-	toolBar.add(buttonJson);
+	// toolBar.add(buttonJson);
 
 	buttonRelatorio.setToolTipText("Relatório");
 	toolBar.add(buttonRelatorio);
+	
+	buttonFecharCaixa.setToolTipText("Fechar Caixa");
+	buttonFecharCaixa.setVisible(false);
+	toolBar.add(buttonFecharCaixa);
     }
 
     public JButton getCsvBtn() {
@@ -76,20 +80,12 @@ public class ToolBar {
 	return buttonImprime;
     }
 
-    public JButton getJsonBtn() {
-	return buttonJson;
-    }
-
     public JButton getNovoBtn() {
 	return buttonNovo;
     }
 
     public JButton getPesquisarBtn() {
 	return buttonPesquisa;
-    }
-
-    public JButton getRegistrosBtn() {
-	return buttonRegistros;
     }
 
     public JButton getRelatorioBtn() {

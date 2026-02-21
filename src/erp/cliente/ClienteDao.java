@@ -12,7 +12,7 @@ public interface ClienteDao {
     Cliente getRegistro(Cliente marca);
 
     Collection<Cliente> pesquisarRegistro(Cliente cliente);
-    
+
     public Map<Integer, Long> pesquisarTotalClientesPorMes();
 
     void salvarRegistro(Cliente marca);

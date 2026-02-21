@@ -173,23 +173,6 @@ final class UsuarioControl {
 	}
     }
 
-    public class Registro implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-
-	    long totalPesquisaRegistro = 0;
-
-	    totalPesquisaRegistro = MainController.getUsuarioJan().getUsuarioPainelPesq()
-		    .pesquisarRegistro(new Usuario());
-	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
-
-	    if (totalPesquisaRegistro > 0) {
-		MainController.getUsuarioJan().getTabbedPane().setSelectedIndex(1);
-	    }
-	}
-    }
-
     public class Relatorio implements ActionListener {
 
 	@Override

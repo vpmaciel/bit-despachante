@@ -20,39 +20,33 @@ public class ClientePainelGraf extends JPanel {
     private CategoryChart chart;
     private XChartPanel<CategoryChart> chartPanel;
 
-    private final List<String> meses = Arrays.asList(
-            "Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
-            "Jul", "Ago", "Set", "Out", "Nov", "Dez"
-    );
+    private final List<String> meses = Arrays.asList("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set",
+	    "Out", "Nov", "Dez");
 
     public ClientePainelGraf() {
-	
+
 	int anoAtual = Year.now().getValue();
 
-        setLayout(new BorderLayout());
+	setLayout(new BorderLayout());
 
-        // Criar gráfico
-        chart = new CategoryChartBuilder()
-                .width(800)
-                .height(500)
-                .title("Total de Clientes por Mês em " + anoAtual)
-                .xAxisTitle("Mês")
-                .yAxisTitle("Quantidade de Clientes")
-                .build();
+	// Criar gráfico
+	chart = new CategoryChartBuilder().width(800).height(500).title("Total de Clientes por Mês em " + anoAtual)
+		.xAxisTitle("Mês").yAxisTitle("Quantidade de Clientes").build();
 
-        chart.addSeries("Clientes", meses, carregarDados());
+	chart.addSeries("Clientes", meses, carregarDados());
 
-        chartPanel = new XChartPanel<>(chart);
-        add(chartPanel, BorderLayout.CENTER);
+	chartPanel = new XChartPanel<>(chart);
+	add(chartPanel, BorderLayout.CENTER);
 
-        // Atualização automática a cada 60 segundos
-        Timer timer = new Timer(60000, e -> atualizarGrafico());
-        //timer.start();
+	// Atualização automática a cada 60 segundos
+	@SuppressWarnings("unused")
+	Timer timer = new Timer(60000, e -> atualizarGrafico());
+	// timer.start();
     }
 
     private List<Integer> carregarDados() {
 
-        Map<Integer, Long> mapa = null;
+	Map<Integer, Long> mapa = null;
 	try {
 	    mapa = ClienteFac.pesquisarTotalClientesPorMes();
 	} catch (Exception e) {
@@ -60,22 +54,22 @@ public class ClientePainelGraf extends JPanel {
 	    e.printStackTrace();
 	}
 
-        List<Integer> totais = new ArrayList<>();
+	List<Integer> totais = new ArrayList<>();
 
-        for (int mes = 1; mes <= 12; mes++) {
-            totais.add(mapa.getOrDefault(mes, 0L).intValue());
-        }
+	for (int mes = 1; mes <= 12; mes++) {
+	    totais.add(mapa.getOrDefault(mes, 0L).intValue());
+	}
 
-        return totais;
+	return totais;
     }
 
     void atualizarGrafico() {
 
-        List<Integer> novosDados = carregarDados();
+	List<Integer> novosDados = carregarDados();
 
-        chart.updateCategorySeries("Clientes", meses, novosDados, null);
+	chart.updateCategorySeries("Clientes", meses, novosDados, null);
 
-        chartPanel.revalidate();
-        chartPanel.repaint();
+	chartPanel.revalidate();
+	chartPanel.repaint();
     }
 }

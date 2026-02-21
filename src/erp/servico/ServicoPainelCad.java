@@ -136,7 +136,6 @@ public final class ServicoPainelCad extends JPanel implements Gui {
 	fieldTelefoneCliente = new JTextField();
 	fieldTelefoneCliente.setDocument(new EntradaMaiuscula(15));
 	add(fieldTelefoneCliente);
-
     }
 
     @Override

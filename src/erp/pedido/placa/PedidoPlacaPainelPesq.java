@@ -35,8 +35,6 @@ public final class PedidoPlacaPainelPesq extends JPanel {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
 
-	table.removeColumn(table.getColumnModel().getColumn(PedidoPlacaTm.ID));
-
 	Tabela.configurarLarguraColunasTabela(table, PedidoPlacaTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);

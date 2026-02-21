@@ -50,13 +50,13 @@ public class Veiculo implements Serializable {
 	Veiculo other = (Veiculo) obj;
 	return Objects.equals(id, other.id);
     }
-    
+
     public Date getDataCadastro() {
-        return dataCadastro;
+	return dataCadastro;
     }
 
     public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+	this.dataCadastro = dataCadastro;
     }
 
     public String getCpfCnpjProprietario() {

@@ -1,7 +1,6 @@
 package erp.cliente;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -12,7 +11,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
 import erp.arquitetura.validacao.Telefone;
@@ -67,23 +65,6 @@ final class ClienteControl {
 	    ClienteArqCsv clienteArqCsv = new ClienteArqCsv(listConta);
 	    clienteArqCsv.retornarArquivo(true);
 	    Sis.abrirDiretorio();
-
-	}
-    }
-
-    public class FormatoJson implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-	    try {
-
-		ArquivoJson<Cliente> arquivoJson = new ArquivoJson<>(cliente, "cliente");
-		arquivoJson.gravarArquivo(ClienteFac.getRegistro());
-		arquivoJson.retornarArquivo(true);
-		Sis.abrirDiretorio();
-	    } catch (Exception e) {
-		e.printStackTrace();
-	    }
 
 	}
     }
@@ -240,18 +221,17 @@ final class ClienteControl {
 
 		if (mensagem == JOptionPane.YES_OPTION) {
 
-		    
 		    long totalPesquisaRegistro = 0;
 		    Cliente clientePesquisa = new Cliente();
 		    clientePesquisa.setCpfCnpj(getClientePainelCad().getGuiCpfCnpj().getText());
 		    totalPesquisaRegistro = MainController.getClienteJan().getClientePainelPesq()
 			    .pesquisarRegistro(clientePesquisa);
-		    
+
 		    if (totalPesquisaRegistro > 0 && cliente.getId() == null) {
 			Msg.avisoCampoDuplicado("CPF | CNPJ");
 			return;
 		    }
-		    
+
 		    boolean salva;
 
 		    salva = atualizarObjeto(true);

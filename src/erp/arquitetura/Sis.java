@@ -20,11 +20,13 @@ public class Sis {
     private static Sis instancia;
     private static String separadorApp = System.getProperty("file.separator");
     private static Dimension tamanhoTela;
+    private static Dimension tamanhoTelaLogin;
     private static Usuario usuario;
 
     static {
 	caminhoApp = caminhoApp + separadorApp;
-	tamanhoTela = new Dimension(700, 555);
+	tamanhoTela = new Dimension(900, 675);
+	tamanhoTelaLogin = new Dimension(900, 255);
     }
 
     public static void abrirDiretorio() {
@@ -88,5 +90,9 @@ public class Sis {
 
     public static Usuario getUsuario() {
 	return Sis.usuario;
+    }
+
+    public static Dimension getTamanhoJanelaLogin() {
+	return tamanhoTelaLogin;
     }
 }

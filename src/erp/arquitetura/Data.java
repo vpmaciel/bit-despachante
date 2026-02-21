@@ -124,7 +124,7 @@ public class Data {
 
 	return data;
     }
-    
+
     public String getDataFormatada(Date data) {
 	if (data == null) {
 	    return null;

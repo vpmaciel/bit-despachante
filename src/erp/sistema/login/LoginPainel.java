@@ -1,6 +1,5 @@
 package erp.sistema.login;
 
-import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.BoxLayout;
@@ -73,19 +72,19 @@ public final class LoginPainel extends JPanel implements Gui {
 	fieldNome = new JTextField(50);
 	fieldNome.setDocument(new EntradaMaiuscula(50));
 	fieldNome.requestFocus();
+	fieldNome.setText("ADMIN");
 	add(fieldNome);
 
 	add(new JLabel("SENHA"));
 
 	fieldSenha = new JPasswordField(50);
 	fieldSenha.setDocument(new EntradaMaiuscula(8));
+	fieldSenha.setText("ADMIN");
 	add(fieldSenha);
 
 	add(new JLabel(""));
 
-	buttonEntrar = new JButton("ENTRAR");
-	buttonEntrar.setBackground(Color.LIGHT_GRAY);
-	buttonEntrar.setOpaque(true);
+	buttonEntrar = new JButton("Entrar");
 	buttonEntrar.setPreferredSize(new Dimension(100, 30));
 	buttonEntrar.setMinimumSize(new Dimension(100, 30));
 	buttonEntrar.setSize(new Dimension(100, 30));

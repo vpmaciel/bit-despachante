@@ -23,9 +23,9 @@ public final class VeiculoJan extends JFrame implements Gui {
 
     private ConfiguracaoGui configuracaoGui;
     private JTabbedPane tabbedPane;
-    private VeiculoControl marcaControl;
-    private VeiculoPainelCad marcaPainelCad;
-    private VeiculoPainelPesq marcaPainelPesq;
+    private VeiculoControl veiculoControl;
+    private VeiculoPainelCad veiculoPainelCad;
+    private VeiculoPainelPesq veiculoPainelPesq;
 
     public VeiculoJan() {
 	iniciarLayout();
@@ -50,7 +50,7 @@ public final class VeiculoJan extends JFrame implements Gui {
     }
 
     public VeiculoPainelCad getPanelVeiculo() {
-	return marcaPainelCad;
+	return veiculoPainelCad;
     }
 
     public JTabbedPane getTabbedPane() {
@@ -58,34 +58,32 @@ public final class VeiculoJan extends JFrame implements Gui {
     }
 
     public VeiculoControl getVeiculoCont() {
-	return marcaControl;
+	return veiculoControl;
     }
 
     public VeiculoPainelCad getVeiculoPainelCad() {
-	return marcaPainelCad;
+	return veiculoPainelCad;
     }
 
     public VeiculoPainelPesq getVeiculoPainelPesq() {
-	return marcaPainelPesq;
+	return veiculoPainelPesq;
     }
 
     @Override
     public void iniciarControlador() {
 	setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-	marcaControl = new VeiculoControl();
-	addWindowListener(marcaControl.new Frame());
-	marcaPainelCad.getTB().getExcluirBtn().addActionListener(marcaControl.new Exclui());
-	marcaPainelCad.getTB().getNovoBtn().addActionListener(marcaControl.new Novo());
-	marcaPainelCad.getTB().getPesquisarBtn().addActionListener(marcaControl.new Pesquisa());
-	marcaPainelCad.getTB().getImprimirBtn().addActionListener(marcaControl.new Imprime());
-	marcaPainelCad.getTB().getRelatorioBtn().addActionListener(marcaControl.new Relatorio());
-	marcaPainelCad.getTB().getSalvarBtn().addActionListener(marcaControl.new Salva());
-	marcaPainelCad.getTB().getHomeBtn().addActionListener(marcaControl.new Home());
-	marcaPainelCad.getTB().getRegistrosBtn().addActionListener(marcaControl.new Registro());
-	marcaPainelCad.getTB().getCsvBtn().addActionListener(marcaControl.new FormatoCsv());
-	marcaPainelCad.getTB().getJsonBtn().addActionListener(marcaControl.new FormatoJson());
+	veiculoControl = new VeiculoControl();
+	addWindowListener(veiculoControl.new Frame());
+	veiculoPainelCad.getTB().getExcluirBtn().addActionListener(veiculoControl.new Exclui());
+	veiculoPainelCad.getTB().getNovoBtn().addActionListener(veiculoControl.new Novo());
+	veiculoPainelCad.getTB().getPesquisarBtn().addActionListener(veiculoControl.new Pesquisa());
+	veiculoPainelCad.getTB().getImprimirBtn().addActionListener(veiculoControl.new Imprime());
+	veiculoPainelCad.getTB().getRelatorioBtn().addActionListener(veiculoControl.new Relatorio());
+	veiculoPainelCad.getTB().getSalvarBtn().addActionListener(veiculoControl.new Salva());
+	veiculoPainelCad.getTB().getHomeBtn().addActionListener(veiculoControl.new Home());
+	veiculoPainelCad.getTB().getCsvBtn().addActionListener(veiculoControl.new FormatoCsv());
 
-	marcaPainelPesq.iniciarControlador();
+	veiculoPainelPesq.iniciarControlador();
     }
 
     @Override
@@ -98,10 +96,10 @@ public final class VeiculoJan extends JFrame implements Gui {
 	setTitle(Sis.getNomeSistema() + " - " + "Veículo");
 	setIconImage(Imagem.getLogoTipoImage());
 	tabbedPane = new JTabbedPane();
-	marcaPainelCad = new VeiculoPainelCad();
-	marcaPainelPesq = new VeiculoPainelPesq();
+	veiculoPainelCad = new VeiculoPainelCad();
+	veiculoPainelPesq = new VeiculoPainelPesq();
 
-	final JScrollPane scrollPane = new JScrollPane(marcaPainelCad);
+	final JScrollPane scrollPane = new JScrollPane(veiculoPainelCad);
 
 	KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner",
 		new PropertyChangeListener() {
@@ -112,15 +110,15 @@ public final class VeiculoJan extends JFrame implements Gui {
 			    return;
 			}
 			JComponent focused = (JComponent) evt.getNewValue();
-			if (marcaPainelCad.isAncestorOf(focused)) {
-			    marcaPainelCad.scrollRectToVisible(focused.getBounds());
+			if (veiculoPainelCad.isAncestorOf(focused)) {
+			    veiculoPainelCad.scrollRectToVisible(focused.getBounds());
 			}
 		    }
 		});
 	scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
 	tabbedPane.addTab("Cadastro", scrollPane);
-	tabbedPane.addTab("Pesquisa", marcaPainelPesq);
+	tabbedPane.addTab("Pesquisa", veiculoPainelPesq);
 
 	add(tabbedPane);
 	setContentPane(tabbedPane);
@@ -149,11 +147,11 @@ public final class VeiculoJan extends JFrame implements Gui {
 
     @Override
     public void limparGui() {
-	marcaPainelCad.limparGui();
+	veiculoPainelCad.limparGui();
     }
 
     @Override
     public void reiniciarGui() {
-	marcaPainelCad.reiniciarGui();
+	veiculoPainelCad.reiniciarGui();
     }
 }

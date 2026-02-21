@@ -98,7 +98,6 @@ public final class ClientePainelCad extends JPanel implements Gui {
 	fieldTelefone = new JTextField();
 	fieldTelefone.setDocument(new EntradaMaiuscula(15));
 	add(fieldTelefone);
-
     }
 
     @Override

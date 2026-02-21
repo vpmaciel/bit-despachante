@@ -12,7 +12,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
 import erp.sistema.main.MainController;
@@ -67,22 +66,6 @@ final class PedidoPlacaControl {
 	    clienteArqCsv.retornarArquivo(true);
 	    Sis.abrirDiretorio();
 
-	}
-    }
-
-    public class FormatoJson implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-	    try {
-
-		ArquivoJson<PedidoPlaca> arquivoJson = new ArquivoJson<>(pedidoPlaca, "pedido-de-placa");
-		arquivoJson.gravarArquivo(PedidoPlacaFac.getRegistro());
-		arquivoJson.retornarArquivo(true);
-		Sis.abrirDiretorio();
-	    } catch (Exception e) {
-		e.printStackTrace();
-	    }
 	}
     }
 
@@ -164,21 +147,6 @@ final class PedidoPlacaControl {
 	    long totalPesquisaRegistro = 0;
 	    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq()
 		    .pesquisarRegistro(pedidoPlaca);
-	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
-
-	    if (totalPesquisaRegistro > 0) {
-		MainController.getPedidoPlacaJan().getTabbedPane().setSelectedIndex(1);
-	    }
-	}
-    }
-
-    public class Registro implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-	    long totalPesquisaRegistro = 0;
-	    totalPesquisaRegistro = MainController.getPedidoPlacaJan().getPedidoPlacaPainelPesq()
-		    .pesquisarRegistro(new PedidoPlaca());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {

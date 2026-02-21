@@ -81,7 +81,6 @@ public final class UsuarioJan extends JFrame implements Gui {
 	usuarioPainelCad.getTB().getRelatorioBtn().addActionListener(usuarioControl.new Relatorio());
 	usuarioPainelCad.getTB().getSalvarBtn().addActionListener(usuarioControl.new Salva());
 	usuarioPainelCad.getTB().getHomeBtn().addActionListener(usuarioControl.new Home());
-	usuarioPainelCad.getTB().getRegistrosBtn().addActionListener(usuarioControl.new Registro());
 	usuarioPainelPesq.iniciarControlador();
     }
 

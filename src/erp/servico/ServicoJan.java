@@ -77,9 +77,7 @@ public final class ServicoJan extends JFrame implements Gui {
 	marcaPainelCad.getTB().getRelatorioBtn().addActionListener(marcaControl.new Relatorio());
 	marcaPainelCad.getTB().getSalvarBtn().addActionListener(marcaControl.new Salva());
 	marcaPainelCad.getTB().getHomeBtn().addActionListener(marcaControl.new Home());
-	marcaPainelCad.getTB().getRegistrosBtn().addActionListener(marcaControl.new Registro());
 	marcaPainelCad.getTB().getCsvBtn().addActionListener(marcaControl.new FormatoCsv());
-	marcaPainelCad.getTB().getJsonBtn().addActionListener(marcaControl.new FormatoJson());
 	marcaPainelCad.getTB().getFecharCaixaBtn().setVisible(true);
 	marcaPainelCad.getTB().getFecharCaixaBtn().addActionListener(marcaControl.new FechaCaixa());
 

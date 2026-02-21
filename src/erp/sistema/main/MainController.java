@@ -47,7 +47,7 @@ public final class MainController {
 		Msg.ajuda();
 		return;
 	    }
-	    
+
 	    if (Sis.getUsuario() == null) {
 		mostrarFrame(loginJan);
 		return;

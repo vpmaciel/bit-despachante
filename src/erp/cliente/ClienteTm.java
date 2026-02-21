@@ -15,9 +15,9 @@ public class ClienteTm extends AbstractTableModel {
     private static boolean[] podeEditar;
     private static TabelaModelo tabelaModelo = new TabelaModelo();
     static {
-	tabelaModelo.adicionarColuna("ID", 0, 50);
-	tabelaModelo.adicionarColuna("NOME", 1, 100);
-	tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 250);	
+	tabelaModelo.adicionarColuna("ID", 0, 150);
+	tabelaModelo.adicionarColuna("NOME", 1, 400);
+	tabelaModelo.adicionarColuna("CPF | CNPJ", 2, 200);
 
 	largura = new int[tabelaModelo.getTotalColunas()];
 	podeEditar = new boolean[tabelaModelo.getTotalColunas()];
@@ -31,7 +31,7 @@ public class ClienteTm extends AbstractTableModel {
     private List<Cliente> clienteList = new LinkedList<>();
 
     public ClienteTm() {
-	
+
     }
 
     public ClienteTm(List<Cliente> lista) {
@@ -88,7 +88,10 @@ public class ClienteTm extends AbstractTableModel {
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
-	    return cliente.getNome();
+	    if (cliente.getNome().length() > 50)
+		return cliente.getNome().substring(0, 50);
+	    else
+		return cliente.getNome();
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {
@@ -116,7 +119,7 @@ public class ClienteTm extends AbstractTableModel {
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("NOME")) {
-	    cliente.setNome(aValue.toString().substring(0, 10) );
+	    cliente.setNome(aValue.toString());
 	}
 
 	if (tabelaModelo.getNome(columnIndex).equals("CPF | CNPJ")) {

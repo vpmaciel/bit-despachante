@@ -23,7 +23,7 @@ public class Imagem {
     }
 
     public static ImageIcon getFecharCaixa() {
-	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/business_32px.png"));
+	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/close_window_32px.png"));
 	return imageIcon;
     }
 
@@ -92,7 +92,7 @@ public class Imagem {
 	return imageIcon;
     }
 
-      public static Image getLogoTipoImage() {
+    public static Image getLogoTipoImage() {
 	caminhoImagem = recursos.getResource("erp/arquitetura/gui/imagem/logo1.png");
 	iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
 	return iconeTitulo;

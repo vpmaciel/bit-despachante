@@ -82,22 +82,19 @@ public final class ClienteJan extends JFrame implements Gui {
 	clientePainelCad.getTB().getRelatorioBtn().addActionListener(clienteControl.new Relatorio());
 	clientePainelCad.getTB().getSalvarBtn().addActionListener(clienteControl.new Salva());
 	clientePainelCad.getTB().getHomeBtn().addActionListener(clienteControl.new Home());
-	clientePainelCad.getTB().getRegistrosBtn().addActionListener(clienteControl.new Registro());
 	clientePainelCad.getTB().getCsvBtn().addActionListener(clienteControl.new FormatoCsv());
-	clientePainelCad.getTB().getJsonBtn().addActionListener(clienteControl.new FormatoJson());
 
 	clientePainelPesq.iniciarControlador();
-	
+
 	tabbedPane.addChangeListener(e -> {
 
 	    JTabbedPane source = (JTabbedPane) e.getSource();
 	    int indexSelecionado = source.getSelectedIndex();
 
 	    if (source.getComponentAt(indexSelecionado) instanceof ClientePainelGraf) {
-	        ClientePainelGraf painel = 
-	            (ClientePainelGraf) source.getComponentAt(indexSelecionado);
+		ClientePainelGraf painel = (ClientePainelGraf) source.getComponentAt(indexSelecionado);
 
-	        painel.atualizarGrafico();
+		painel.atualizarGrafico();
 	    }
 	});
     }

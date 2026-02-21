@@ -1,7 +1,6 @@
 package erp.veiculo;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -12,7 +11,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
 import erp.sistema.main.MainController;
@@ -67,22 +65,6 @@ final class VeiculoControl {
 	    veiculoArqCsv.retornarArquivo(true);
 	    Sis.abrirDiretorio();
 
-	}
-    }
-
-    public class FormatoJson implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-
-	    try {
-		ArquivoJson<Veiculo> arquivoJson = new ArquivoJson<>(veiculo, "veiculo");
-		arquivoJson.gravarArquivo(VeiculoFac.getRegistro());
-		arquivoJson.retornarArquivo(true);
-		Sis.abrirDiretorio();
-	    } catch (Exception e) {
-		e.printStackTrace();
-	    }
 	}
     }
 
@@ -163,21 +145,6 @@ final class VeiculoControl {
 	    atualizarObjeto(false);
 	    long totalPesquisaRegistro = 0;
 	    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq().pesquisarRegistro(veiculo);
-	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
-
-	    if (totalPesquisaRegistro > 0) {
-		MainController.getVeiculoJan().getTabbedPane().setSelectedIndex(1);
-	    }
-	}
-    }
-
-    public class Registro implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-	    long totalPesquisaRegistro = 0;
-	    totalPesquisaRegistro = MainController.getVeiculoJan().getVeiculoPainelPesq()
-		    .pesquisarRegistro(new Veiculo());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {

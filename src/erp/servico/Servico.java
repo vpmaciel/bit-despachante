@@ -56,13 +56,13 @@ public class Servico implements Serializable {
 	Servico other = (Servico) obj;
 	return Objects.equals(id, other.id);
     }
-    
+
     public Date getDataCadastro() {
-        return dataCadastro;
+	return dataCadastro;
     }
 
     public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+	this.dataCadastro = dataCadastro;
     }
 
     public String getCpfCnpjCliente() {
@@ -106,7 +106,7 @@ public class Servico implements Serializable {
     public Float getValor() {
 	return valor;
     }
-    
+
     public String getValorFormatado() {
 	return Numero.FloatToString(valor);
     }

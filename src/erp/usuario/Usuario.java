@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Index;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -62,13 +61,13 @@ public class Usuario implements Serializable {
 	}
 	return true;
     }
-    
+
     public Date getDataCadastro() {
-        return dataCadastro;
+	return dataCadastro;
     }
 
     public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
+	this.dataCadastro = dataCadastro;
     }
 
     public Long getId() {

@@ -34,9 +34,7 @@ public final class UsuarioPainelPesq extends JPanel {
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
-	
-	table.removeColumn(table.getColumnModel().getColumn(UsuarioTm.ID));
-	
+
 	Tabela.configurarLarguraColunasTabela(table, UsuarioTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);

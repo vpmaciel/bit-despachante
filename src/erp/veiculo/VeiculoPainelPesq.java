@@ -34,9 +34,7 @@ public final class VeiculoPainelPesq extends JPanel {
 	for (int c = 0; c < table.getColumnCount(); ++c) {
 	    table.setDefaultRenderer(table.getColumnClass(c), Tabela.getDefaultTableCellRenderer());
 	}
-	
-	table.removeColumn(table.getColumnModel().getColumn(VeiculoTm.ID));
-	
+
 	Tabela.configurarLarguraColunasTabela(table, VeiculoTm.largura);
 	((DefaultTableCellRenderer) table.getTableHeader().getDefaultRenderer())
 		.setHorizontalAlignment(SwingConstants.RIGHT);

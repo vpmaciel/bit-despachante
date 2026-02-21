@@ -11,7 +11,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import erp.arquitetura.ArquivoJson;
 import erp.arquitetura.Numero;
 import erp.arquitetura.Sis;
 import erp.arquitetura.gui.Msg;
@@ -109,23 +108,6 @@ final class ServicoControl {
 	}
     }
 
-    public class FormatoJson implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-	    try {
-
-		ArquivoJson<Servico> arquivoJson = new ArquivoJson<>(servico, "servico");
-		arquivoJson.gravarArquivo(ServicoFac.getRegistro());
-		arquivoJson.retornarArquivo(true);
-		Sis.abrirDiretorio();
-
-	    } catch (Exception e) {
-		e.printStackTrace();
-	    }
-	}
-    }
-
     public class Frame extends WindowAdapter {
 
 	@Override
@@ -203,21 +185,6 @@ final class ServicoControl {
 	    atualizarObjeto(false);
 	    long totalPesquisaRegistro = 0;
 	    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq().pesquisarRegistro(servico);
-	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
-
-	    if (totalPesquisaRegistro > 0) {
-		MainController.getServicoJan().getTabbedPane().setSelectedIndex(1);
-	    }
-	}
-    }
-
-    public class Registro implements ActionListener {
-
-	@Override
-	public void actionPerformed(ActionEvent actionEvent) {
-	    long totalPesquisaRegistro = 0;
-	    totalPesquisaRegistro = MainController.getServicoJan().getServicoPainelPesq()
-		    .pesquisarRegistro(new Servico());
 	    Msg.avisoRegistroEncontrado(totalPesquisaRegistro);
 
 	    if (totalPesquisaRegistro > 0) {
