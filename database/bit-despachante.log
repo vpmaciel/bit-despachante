@@ -1,12 +1,7 @@
-/*C4*/SET SCHEMA PUBLIC
+/*C3*/SET SCHEMA PUBLIC
 alter table CLIENTE drop constraint UKdib4ic13r4qu7sx9jvq4d9nnd
 alter table CLIENTE add constraint UKdib4ic13r4qu7sx9jvq4d9nnd unique (CPF_CNPJ_CLIENTE)
 alter table USUARIO drop constraint UK4saakddco30990dkmfthsissr
 alter table USUARIO add constraint UK4saakddco30990dkmfthsissr unique (NOME)
 alter table VEICULO drop constraint UK68jgaf7wmi3kribjlmluw426p
 alter table VEICULO add constraint UK68jgaf7wmi3kribjlmluw426p unique (PLACA_VEICULO)
-/*C8*/SET SCHEMA PUBLIC
-DELETE FROM SERVICO WHERE SERVICO_IDENTIFICADOR=5
-COMMIT
-DELETE FROM SERVICO WHERE SERVICO_IDENTIFICADOR=6
-COMMIT

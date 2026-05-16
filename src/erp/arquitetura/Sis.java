@@ -1,5 +1,6 @@
 package erp.arquitetura;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.Dimension;
@@ -94,5 +95,9 @@ public class Sis {
 
     public static Dimension getTamanhoJanelaLogin() {
 	return tamanhoTelaLogin;
+    }
+
+    public static Color getCorFundo() {
+	return new Color(255, 255, 255);
     }
 }

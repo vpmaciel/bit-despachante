@@ -1,9 +1,10 @@
 package erp.sistema.main;
 
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.WindowConstants;
 
 import erp.arquitetura.Sis;
@@ -26,79 +27,63 @@ public class MainJan extends JFrame {
 	MainController.mostrarFrame(frame);
     }
 
-    private JMenu menuAjuda;
-    private JMenu menuArquivo;
-    private JMenuBar menuBar = new JMenuBar();
-    private JMenu menuCadastro;
-    private JMenuItem menuItemAjudaSobreSistema;
-    private JMenuItem menuItemArquivoLogin;
-    private JMenuItem menuItemArquivoUsuario;
-    private JMenuItem menuItemArquivoSair;
-    private JMenuItem menuItemCadastroCliente;
-    private JMenuItem menuItemCadastroVeiculo;
-    private JMenuItem menuItemCadastroServico;
-    private JMenuItem menuItemCadastroPedidoPlaca;
+    private JButton buttonAjudaSobreSistema;
+    private JButton buttonArquivoLogin;
+    private JButton buttonArquivoUsuario;
+    private JButton buttonArquivoSair;
+    private JButton buttonCadastroCliente;
+    private JButton buttonCadastroVeiculo;
+    private JButton buttonCadastroServico;
+    private JButton buttonCadastroPedidoPlaca;
 
     public MainJan() {
 	iniciarGui();
 	iniciarController();
     }
 
-    public JMenu getMenuAjuda() {
-	return menuAjuda;
+    public JButton getButtonAjudaSobreSistema() {
+	return buttonAjudaSobreSistema;
     }
 
-    public JMenu getMenuArquivo() {
-	return menuArquivo;
+    public Object getButtonArquivoLogin() {
+	return buttonArquivoLogin;
     }
 
-    public JMenu getMenuCadastro() {
-	return menuCadastro;
+    public Object getButtonArquivoUsuario() {
+	return buttonArquivoUsuario;
     }
 
-    public JMenuItem getMenuItemAjudaSobreSistema() {
-	return menuItemAjudaSobreSistema;
+    public JButton getButtonArquivoSair() {
+	return buttonArquivoSair;
     }
 
-    public Object getMenuItemArquivoLogin() {
-	return menuItemArquivoLogin;
+    public JButton getButtonCadastroCliente() {
+	return buttonCadastroCliente;
     }
 
-    public Object getMenuItemArquivoUsuario() {
-	return menuItemArquivoUsuario;
+    public JButton getButtonCadastroPedidoPlaca() {
+	return buttonCadastroPedidoPlaca;
     }
 
-    public JMenuItem getMenuItemArquivoSair() {
-	return menuItemArquivoSair;
+    public JButton getButtonCadastroServico() {
+	return buttonCadastroServico;
     }
 
-    public JMenuItem getMenuItemCadastroCliente() {
-	return menuItemCadastroCliente;
-    }
-
-    public JMenuItem getMenuItemCadastroPedidoPlaca() {
-	return menuItemCadastroPedidoPlaca;
-    }
-
-    public JMenuItem getMenuItemCadastroServico() {
-	return menuItemCadastroServico;
-    }
-
-    public JMenuItem getMenuItemCadastroVeiculo() {
-	return menuItemCadastroVeiculo;
+    public JButton getButtonCadastroVeiculo() {
+	return buttonCadastroVeiculo;
     }
 
     public void iniciarController() {
 	mainController = MainController.getInstance(this);
 	addWindowListener(mainController.new FrameGerenteEventos());
-	menuItemArquivoSair.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemArquivoUsuario.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemArquivoLogin.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemCadastroVeiculo.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemCadastroPedidoPlaca.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemCadastroServico.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemCadastroCliente.addActionListener(mainController.new MenuGerenteEventos());
-	menuItemAjudaSobreSistema.addActionListener(mainController.new MenuGerenteEventos());
+	buttonArquivoSair.addActionListener(mainController.new MenuGerenteEventos());
+	buttonArquivoUsuario.addActionListener(mainController.new MenuGerenteEventos());
+	buttonArquivoLogin.addActionListener(mainController.new MenuGerenteEventos());
+	buttonCadastroVeiculo.addActionListener(mainController.new MenuGerenteEventos());
+	buttonCadastroPedidoPlaca.addActionListener(mainController.new MenuGerenteEventos());
+	buttonCadastroServico.addActionListener(mainController.new MenuGerenteEventos());
+	buttonCadastroCliente.addActionListener(mainController.new MenuGerenteEventos());
+	buttonAjudaSobreSistema.addActionListener(mainController.new MenuGerenteEventos());
     }
 
     private void iniciarGui() {
@@ -110,48 +95,42 @@ public class MainJan extends JFrame {
 	setPreferredSize(Sis.getTamanhoJanela());
 	setMaximumSize(Sis.getTamanhoJanela());
 
-	menuArquivo = new JMenu("Arquivo");
-	menuArquivo.setMnemonic('A');
+	Container container = getContentPane();
 
-	menuItemArquivoLogin = new JMenuItem("Login");
+	container.setLayout(null);
+	container.setBackground(Sis.getCorFundo());
 
-	menuArquivo.add(menuItemArquivoLogin);
+	buttonArquivoLogin = new JButton("Login");
+	buttonArquivoLogin.setBounds(20, 20, 140, 30);
+	container.add(buttonArquivoLogin);
 
-	menuItemArquivoUsuario = new JMenuItem("Usuário");
+	buttonArquivoUsuario = new JButton("Usuario");
+	buttonArquivoUsuario.setBounds(20, 60, 140, 30);
+	container.add(buttonArquivoUsuario);
 
-	menuArquivo.add(menuItemArquivoUsuario);
+	buttonArquivoSair = new JButton("Sair");
+	buttonArquivoSair.setBounds(20, 100, 140, 30);
+	container.add(buttonArquivoSair);
 
-	menuItemArquivoSair = new JMenuItem("Sair");
+	buttonAjudaSobreSistema = new JButton("Sobre o Sistema");
+	buttonAjudaSobreSistema.setBounds(20, 140, 140, 30);
+	container.add(buttonAjudaSobreSistema);
 
-	menuArquivo.add(menuItemArquivoSair);
+	buttonCadastroCliente = new JButton("Cliente");
+	buttonCadastroCliente.setBounds(20, 180, 140, 30);
+	container.add(buttonCadastroCliente);
 
-	menuBar.add(menuArquivo);
+	buttonCadastroPedidoPlaca = new JButton("Pedido de Placa");
+	buttonCadastroPedidoPlaca.setBounds(20, 220, 140, 30);
+	container.add(buttonCadastroPedidoPlaca);
 
-	menuCadastro = new JMenu("Cadastro");
-	menuCadastro.setMnemonic('C');
+	buttonCadastroServico = new JButton("Serviço");
+	buttonCadastroServico.setBounds(20, 260, 140, 30);
+	container.add(buttonCadastroServico);
 
-	menuItemCadastroPedidoPlaca = new JMenuItem("Pedido de Placa");
-	menuCadastro.add(menuItemCadastroPedidoPlaca);
+	buttonCadastroVeiculo = new JButton("Veículo");
+	buttonCadastroVeiculo.setBounds(20, 300, 140, 30);
+	container.add(buttonCadastroVeiculo);
 
-	menuItemCadastroServico = new JMenuItem("Serviço");
-	menuCadastro.add(menuItemCadastroServico);
-
-	menuItemCadastroVeiculo = new JMenuItem("Veículo");
-	menuCadastro.add(menuItemCadastroVeiculo);
-
-	menuItemCadastroCliente = new JMenuItem("Cliente");
-	menuCadastro.add(menuItemCadastroCliente);
-
-	menuBar.add(menuCadastro);
-
-	menuAjuda = new JMenu("Ajuda");
-	menuAjuda.setMnemonic('u');
-
-	menuItemAjudaSobreSistema = new JMenuItem("Sobre o Sistema");
-	menuAjuda.add(menuItemAjudaSobreSistema);
-
-	menuBar.add(menuAjuda);
-
-	setJMenuBar(menuBar);
     }
 }

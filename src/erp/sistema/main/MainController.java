@@ -42,8 +42,14 @@ public final class MainController {
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
+	    
+	    if (actionEvent.getSource() == mainJan.getButtonArquivoSair()) {
+		if (Msg.confirmarSairDoSistema() == 0) {
+		    System.exit(0);
+		}
+	    }
 
-	    if (actionEvent.getSource() == mainJan.getMenuItemAjudaSobreSistema()) {
+	    if (actionEvent.getSource() == mainJan.getButtonAjudaSobreSistema()) {
 		Msg.ajuda();
 		return;
 	    }
@@ -53,27 +59,28 @@ public final class MainController {
 		return;
 	    }
 
-	    if (actionEvent.getSource() == mainJan.getMenuItemArquivoSair()) {
-		if (Msg.confirmarSairDoSistema() == 0) {
-		    System.exit(0);
-		}
-	    }
-	    if (actionEvent.getSource() == mainJan.getMenuItemArquivoUsuario()) {
+
+	    if (actionEvent.getSource() == mainJan.getButtonArquivoUsuario()) {
 		mostrarFrame(usuarioJan);
 	    }
-	    if (actionEvent.getSource() == mainJan.getMenuItemCadastroPedidoPlaca()) {
+	    
+	    if (actionEvent.getSource() == mainJan.getButtonCadastroPedidoPlaca()) {
 		mostrarFrame(pedidoPlacaJan);
 	    }
-	    if (actionEvent.getSource() == mainJan.getMenuItemCadastroServico()) {
+	    
+	    if (actionEvent.getSource() == mainJan.getButtonCadastroServico()) {
 		mostrarFrame(servicoJan);
 	    }
-	    if (actionEvent.getSource() == mainJan.getMenuItemCadastroCliente()) {
+	    
+	    if (actionEvent.getSource() == mainJan.getButtonCadastroCliente()) {
 		mostrarFrame(clienteJan);
 	    }
-	    if (actionEvent.getSource() == mainJan.getMenuItemCadastroVeiculo()) {
+	    
+	    if (actionEvent.getSource() == mainJan.getButtonCadastroVeiculo()) {
 		mostrarFrame(veiculoJan);
 	    }
-	    if (actionEvent.getSource() == mainJan.getMenuItemArquivoLogin()) {
+	    
+	    if (actionEvent.getSource() == mainJan.getButtonArquivoLogin()) {
 		mostrarFrame(loginJan);
 	    }
 	}

@@ -44,7 +44,7 @@ public final class ClientePainelPesq extends JPanel {
 	table.setRowHeight(30);
 	table.setColumnSelectionAllowed(false);
 	JScrollPane scrollPane = new JScrollPane(table);
-	scrollPane.setBounds(new Rectangle(0, 0, 720, 420));
+	scrollPane.setBounds(new Rectangle(0, 0, 570, 420));
 	scrollPane.setViewportView(table);
 	scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 	scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);

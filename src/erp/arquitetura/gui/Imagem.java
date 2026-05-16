@@ -93,13 +93,13 @@ public class Imagem {
     }
 
     public static Image getLogoTipoImage() {
-	caminhoImagem = recursos.getResource("erp/arquitetura/gui/imagem/logo1.png");
+	caminhoImagem = recursos.getResource("erp/arquitetura/gui/imagem/business_32px.png");
 	iconeTitulo = Toolkit.getDefaultToolkit().getImage(caminhoImagem);
 	return iconeTitulo;
     }
 
     public static ImageIcon getLogoTipoImageIcon() {
-	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/logo1.png"));
+	imageIcon = new ImageIcon(recursos.getResource("erp/arquitetura/gui/imagem/business_32px.png"));
 	return imageIcon;
     }
 
